@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		基本
+#id 
+element 
+.class 
+* 
+selector1,selector2,selectorN 
+层级
+ancestor descendant  $("div a") div后代的a标签
+parent > child     $("div>a") div的子a标签  
+prev + next 下一个标签
+prev ~ siblings 
+基本
+:first 
+:last 
+:not(selector) 排除选择器所包括的内容
+:even 匹配所有索引值为偶数的元素，从 0 开始计数
+:odd 匹配所有索引值为奇数的元素，从 0 开始计数
+:eq(index) 匹配一个给定索引值的元素
+:gt(index) 匹配所有大于给定索引值的元素
+:lt(index) 匹配所有小于给定索引值的元素
+:header 匹配如 h1, h2, h3之类的标题元素
+:animated 匹配所有正在执行动画效果的元素
+:focus1.6+ 
+内容
+:contains(text) 匹配包含给定文本的元素
+:empty 匹配所有不包含子元素或者文本的空元素
+:has(selector) 匹配含有选择器所匹配的元素的元素
+:parent 匹配含有子元素或者文本的元素
+可见性
+:hidden 匹配所有不可见元素，或者type为hidden的元素
+:visible 匹配所有的可见元素
+属性
+[attribute] 
+[attribute=value] 
+[attribute!=value] 
+[attribute^=value] 
+[attribute$=value] 
+[attribute*=value] 
+[attrSel1][attrSel2][attrSelN] 
+子元素
+:nth-child 
+:first-child 
+:last-child 
+:only-child 
+表单
+:input 
+:text 
+:password 
+:radio 
+:checkbox 
+:submit 
+:image 
+:reset 
+:button 
+:file 
+:hidden 
+表单对象属性
+:enabled 
+:disabled 
+:checked 
+:selected
+
+
+过滤
+eq(index|-index) 
+first() 
+last() 
+hasClass(class) 
+filter(expr|obj|ele|fn) 
+is(expr|obj|ele|fn)1.6* 
+map(callback) 
+has(expr|ele) 
+not(expr|ele|fn) 
+slice(start,[end]) 
+查找
+children([expr]) 
+closest(e,[c|o|e)1.6* 
+find(e|o|e)1.6* 
+next([expr]) 
+nextall([expr]) 
+nextUntil([e|e][,f])1.6* 
+offsetParent() 
+parent([expr]) 
+parents([expr]) 
+parentsUntil([e|e][,f])1.6* 
+prev([expr]) 
+prevall([expr]) 
+prevUntil([e|e][,f])1.6* 
+siblings([expr]) 
+串联
+add(e|e|h|o[,c]) 
+andSelf() 
+contents() 
+end() 
+
+	</body>
+</html>

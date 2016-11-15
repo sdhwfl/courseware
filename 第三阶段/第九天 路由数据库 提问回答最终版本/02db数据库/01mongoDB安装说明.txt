@@ -1,0 +1,31 @@
+1. 选择 custom自定安装，安装位置：c:\Mongo
+
+2. 在c:\Mongo 创建db目录，log目录
+db 放数据库数据
+log 日志
+
+3. 将mongoDb安装成windows服务
+在 c:\Mongo 下面创建一个(mongod.cfg)
+
+mongod.cfg文件：
+systemLog:
+  destination: file
+  path: c:\Mongo\log\mongod.log
+storage:
+  dbPath: c:\Mongo\db
+
+systemLog: 数据库存放地址
+storage： 数据库数据存放地址
+
+以管理员身分 运行cmd
+ 进入 C:\Mongo\bin 执行
+ mongod.exe --config c:\mongo\mongod.cfg --install
+
+ mongod.exe  是mongoDb服务端程序
+ --config c:\mongo\mongod.cfg  指明配置文件的路径
+ --install 安装成windows服务
+
+在任务管理器--> 服务 --> MongoDB
+
+
+

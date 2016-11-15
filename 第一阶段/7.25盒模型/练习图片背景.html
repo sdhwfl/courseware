@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>图片练习</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: pink;
+            background-repeat: no-repeat;
+            background-image: url(images/22.jpg);
+            background-size: 100% 100%;
+            /*固定背景图片不动*/
+            background-attachment: fixed;
+            margin: 0 auto;
+            color: red;
+        }
+        
+        div {
+            height: 100px;
+            width: 100%;
+            background-color: blue;
+            margin-top: 0;
+            position: fixed;
+        }
+        
+        div span {
+            float: right;
+            font-size: 20px;
+            margin-top: 40px;
+            padding-right: 100px;
+        }
+        
+        div>img {
+            height: 100px;
+            width: 150px;
+            position: absolute;
+            left: 20%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img src="images/1.jpg" alt="">
+        <span>关于我们&#x3000&#x3000</span>
+        <span>拍照预约&#x3000&#x3000</span>
+        <span>客片欣赏&#x3000&#x3000</span>
+        <span>首页&#x3000&#x3000</span>
+
+    </div>
+</body>
+
+</html>

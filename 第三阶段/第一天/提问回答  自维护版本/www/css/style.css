@@ -1,0 +1,228 @@
+@charset "utf-8";
+.h50 {
+    height: 50px;
+}
+
+/* 导航 公用*/
+
+#nav {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    background-color: #286091;
+    z-index: 1000;
+}
+
+.nav {
+    padding: 0 15px;
+    max-width: 1140px;
+    margin: 0 auto;
+    height: 50px;
+    position: relative;
+    color: #ffffff;
+}
+
+.nav .back,
+.nav .logo {
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.nav .user {
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.nav .user .fs18 {
+    font-size: 18px;
+}
+
+.nav .title {
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* 用户下拉 */
+
+.user-info {
+    position: absolute;
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    background-color: #fff;
+    width: 158px;
+    box-shadow: 0px 0px 8px #aaa;
+    display: none;
+}
+
+.user-info a {
+    border-bottom: 1px solid #e5e5e5;
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 14px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.user-info a:last-child {
+    border-bottom: 0;
+}
+
+/* 主内容区 公用*/
+
+main {
+    padding: 0 15px;
+    max-width: 1140px;
+    height:3000px;
+    margin: 0 auto;
+   background-color: #fff;
+    box-shadow: 0px 0px 10px  deepskyblue;
+
+}
+
+/* 用户留言内容 */
+
+.messages {
+    padding-top: 10px;
+}
+
+.messages li {
+    position: relative;
+    margin-bottom: 8px;
+    font-family: "华文行楷";
+}
+
+.messages li .user-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.messages .ask .div{
+    height: 20vh;
+    width: 20vw;
+    border:solid 2px deepskyblue;
+    border-radius:10px;
+    text-align: left;
+    position: relative;
+}
+.messages .ask .div .span{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-right: 10px solid deepskyblue;
+    border-left: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 20px;
+    left:-20px;
+}
+
+.messages .answer .div{
+    height: 20vh;
+    width: 20vw;
+    border:solid 2px deeppink;
+    border-radius:10px;
+    text-align: right;
+    position: relative;
+}
+.messages .answer .div .span{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid deeppink;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 20px;
+    right:-20px;
+}
+.messages .ask .h4-title {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: deeppink;
+}
+
+.messages .ask .ptext {
+    font-size: 16px;
+    line-height: 24px;
+    color: deeppink;
+}
+.messages .answer .h4-title {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: deepskyblue;
+}
+
+.messages .answer .ptext {
+    font-size: 16px;
+    line-height: 24px;
+    color:deepskyblue;
+}
+
+
+.messages .ask .ptime {
+    margin-top: 3px;
+    font-size: 12px;
+    color: deeppink;
+    line-height: 22px;
+}
+.messages .answer .ptime {
+    margin-top: 3px;
+    font-size: 12px;
+    color: deepskyblue;
+    line-height: 22px;
+}
+
+.messages .ask {
+    padding-left: 74px;
+}
+
+.messages .ask .user-photo {
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.messages .answer {
+    padding-right: 74px;
+    float: right;
+}
+
+.messages .answer .user-photo {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+/* 提问表单 */
+
+.ask-content {
+    padding-top: 13px;
+}
+
+.ask-content .btn {
+    display: block;
+    width: 100%;
+}

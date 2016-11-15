@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery入门</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+
+	</head>
+	<body>
+		<div id="myDiv">我是花花</div>
+		<!--
+        jQuery理念：Write Less，Do More，写尽量少的代码，完成尽量多的工作。
+
+        1、jQuery是众多js第三方库中的一个，但是使用比较广泛，主要功能包括:
+        提供给我们更简便的操作DOM元素的一种方法、
+        内部帮我们实现了一些代码，便于消除各个浏览器之间的差异，形成一种统一的实现、
+        更方便的实现动画、修改css样式
+
+        2、jQuery根据使用场景不同，分为压缩版(compressed)和未压缩版(uncompressed)。
+        压缩版主要在发布产品的时候使用，能够减少发布包的体积；未压缩版主要在开发的时候使用，便于查看源代码。
+
+        3、如何使用jQuery库？只需要在head引入js文件就行了。
+        -->
+		<script type="text/javascript">
+	    	//通过标签名找到div
+		    var div=document.getElementsByTagName('div')[0];
+		    console.log(div);
+		    //通过id名找到div
+		    var div2=document.getElementById('myDiv');
+		    console.log(div2);
+		    //通过jQuery找到div
+			var div3=$('#myDiv');
+			console.log(div3);
+		   //$符号仅仅是jQuery的一个别名
+		   console.log($==jQuery);
+		 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>浮动分栏</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        footer {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            background: hotpink;
+            text-align: center;
+            bottom: 0px;
+        }
+        /*处理列表*/
+        
+        ul {
+            /*清除内外边距*/
+            margin: 0;
+            padding-left: 0px;
+        }
+        
+        li {
+            /*将列表子项默认的竖直排列 修改为横向排列*/
+            float: left;
+            list-style: none;
+            width: 24.8%;
+            vertical-align: center;
+            padding: 4px 0;
+            border-right: 2px solid blue;
+        }
+        
+        li:last-of-type {
+            border-right: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: red;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <ul>
+            <li><a href="">微信</a></li>
+            <li><a href="">通讯录</a></li>
+            <li><a href="">发现</a></li>
+            <li><a href="">我</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

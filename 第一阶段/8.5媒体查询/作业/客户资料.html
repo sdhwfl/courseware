@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>客户资料</title>
+    <style>
+        main {
+            height: 730px;
+            width: 440px;
+            background-image: url(0.jpg);
+            background-size: 100%;
+            margin: 0 auto;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        main>div {
+            height: 660px;
+            width: 400px;
+            margin: 0 auto;
+            /*background-color: pink;*/
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            line-height: 150%;
+        }
+        
+        .step {
+            width: 240px;
+            height: 25px;
+        }
+        
+        .step:hover {
+            border: 1px solid red;
+        }
+        
+        .address:hover {
+            border: 1px solid red;
+        }
+        
+        fieldset {
+            background-image: url(3.jpg);
+            background-size: 100%;
+            text-shadow: 0 1px 1px #c0d576;
+        }
+        
+        legend {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <form action="">
+                <legend>Step1:客户详细资料</legend>
+                <fieldset>
+                    用户姓名：&#x3000&#x3000<input type="text" class="step" placeholder="请输入用户姓名">
+                </fieldset>
+                <fieldset>
+                    邮件地址：&#x3000&#x3000<input type="text" class="step" placeholder="请输入邮件地址">
+                </fieldset>
+                <fieldset>
+                    电话号码：&#x3000&#x3000<input type="text" class="step" placeholder="180****4079">
+                </fieldset>
+
+
+
+
+                <legend>Step2：家庭住址(收件地址) </legend>
+
+                <fieldset>详细地址：&#x3000&#x3000<textarea name="" id="" cols="26" rows="1" class="address"></textarea> </fieldset>
+
+
+
+                <fieldset>
+                    邮政编码：&#x3000&#x3000<input type="text" class="step">
+                </fieldset>
+
+                <fieldset>
+                    国&#x3000&#x3000家：&#x3000&#x3000<input type="text" class="step">
+                </fieldset>
+
+                <legend>Step3：付款方式</legend>
+                <fieldset id="card">
+                    <input type="radio" name="card"> &#x3000 &#x3000中国工商银行 &#x3000<input type="radio" name="card">&#x3000&#x3000中国建设银行<br>
+                    <input type="radio" name="card">&#x3000&#x3000&#x3000中国邮政银行
+                </fieldset>
+                <fieldset>
+                    银行卡号：&#x3000 &#x3000<input type="number" class="step">
+                </fieldset>
+                <fieldset>
+                    验证码：&#x3000 &#x3000 &#x3000<input type="number" class="step">
+                </fieldset>
+
+                <fieldset>
+                    持卡人：&#x3000 &#x3000 &#x3000<input type="text" class="step" placeholder="确定是否有该用户！">
+                </fieldset>
+                <br>
+                <input type="submit" value="现在购买">
+            </form>
+        </div>
+    </main>
+</body>
+<html>

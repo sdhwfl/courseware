@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>todo</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            height: 100%;
+            width: 100%;
+            background-image: url(todo/bg.png);
+            margin: 20px auto;
+        }
+        
+        #logo>img {
+            margin: 20px 300px;
+        }
+        
+        #logo>img:hover {
+            transform: translateX(-10px);
+        }
+        
+        #ft {
+            height: 35px;
+            width: 325px;
+            margin: -170px 1300px;
+        }
+        
+        #ft>table {
+            height: 33px;
+            width: 320px;
+        }
+        
+        .td1,
+        .td2,
+        .td3,
+        .td4 >img {
+            transition-property: all;
+        }
+        
+        .td1>img:hover {
+            opacity: 0.5;
+            transition-duration: 1.0s;
+        }
+        
+        .td2>img:hover {
+            opacity: 0.5;
+            transition-duration: 1.0s;
+        }
+        
+        .td3>img:hover {
+            opacity: 0.5;
+            transition-duration: 1.0s;
+        }
+        
+        .td4>img:hover {
+            opacity: 0.5;
+            transition-duration: 1.0s;
+        }
+        
+        .td5_btn {
+            background-color: #666;
+            height: 25px;
+            color: white;
+        }
+        
+        main {
+            height: 260px;
+            width: 1020px;
+            margin: 260px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #ca-content:hover {
+            border-radius: 19px;
+            box-shadow: 0px 0px 11px #000000;
+            opacity: 0.5;
+            transition: all 400ms linear 0s;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 20px auto;
+            width: 1020px;
+        }
+        
+        ul>li {
+            width: 230px;
+            height: 230px;
+            border: 10px solid #f6f6f6;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            background: #fff;
+            margin-right: 4px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 125px;
+            transition: all 400ms linear;
+        }
+        
+        span {
+            font-family: 'WebSymbolsRegular', cursive;
+            font-size: 40px;
+            color: #f6f6f6;
+            line-height: 60px;
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            left: 0px;
+            top: 30px;
+            text-align: center;
+            transition: all 400ms linear;
+        }
+        
+        h4 {
+            font-size: 26px;
+            position: absolute;
+            top: 110px;
+            height: 80px;
+            width: 170px;
+            left: 50%;
+            margin-left: -85px;
+            opacity: 0.8;
+            text-align: center;
+            color: purple;
+        }
+        
+        h3 {
+            text-align: center;
+            color: #000;
+            font-size: 20px;
+            position: absolute;
+            height: 80px;
+            width: 170px;
+            left: 50%;
+            margin-left: -85px;
+            top: 110px;
+            opacity: 0;
+            transition: all 400ms linear;
+            color: blue;
+        }
+        
+        ul li:hover {
+            background: #f7f7f7;
+            border-color: #fff;
+            transform: rotate(360deg);
+            box-shadow: 0 45px 60px -50px #000000;
+        }
+        
+        ul li:hover span {
+            font-size:40px;
+            color: blue;
+        }
+        
+        ul li:hover h4 {
+            display: none;
+        }
+        
+        ul li:hover h3 {
+            opacity: 0.8;
+        }
+        
+        #ylz {
+            height: 270px;
+            width: 930px;
+            margin: -260px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        #ylz>div {
+            height: 130px;
+            width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            color: purple;
+            font-size: 30px;
+        }
+        
+        #ylz>div>img {
+            border: 3px solid white;
+            height: 180px;
+            width: 300px;
+            border-radius: 10px;
+            transition-property: all;
+            transition-duration: 0.5s
+        }
+        
+        #ylz>div>img:hover {
+            opacity: 0.5;
+        }
+        
+        #read {
+            width: 980px;
+            height: 240px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 1px black;
+            margin: 320px auto;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+        
+        #read>div:nth-of-type(1) {
+            height: 220px;
+            width: 415px;
+            background-color: white;
+            background-image: url(todo/p1.png);
+        }
+        
+        #read>div:nth-of-type(2) {
+            height: 80px;
+            width: 490px;
+        }
+        
+        .sub-btn {
+            position: absolute;
+            right: 30px;
+        }
+        
+        .sub-btn:hover {
+            color: orange;
+        }
+        
+        #inspiration {
+            height: 60px;
+            width: 920px;
+            margin: -310px auto;
+            font-size: 28px;
+            color: #333;
+        }
+        
+        #duihao {
+            height: 160px;
+            width: 1010px;
+            margin: 300px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #duihao>div {
+            height: 160px;
+            width: 320px;
+            background-image: url(todo/cross.png);
+            box-shadow: 0px 1px 1px #333;
+        }
+        
+        #duihao>div>div {
+            height: 140px;
+            width: 300px;
+            margin: 20px auto;
+            font-size: 12px;
+            color: #666;
+            line-height: 200%;
+        }
+        
+        #duihao>div>div a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+            transition-property: all;
+            transition-duration: 1s;
+        }
+        
+        #duihao>div>div a:hover {
+            opacity: 0.5;
+        }
+        
+        footer {
+            height: 340px;
+            width: 100%;
+            background-image: url(todo/footer_bg.png);
+            margin: -200px auto;
+            position: relative;
+        }
+        
+        #table_footer {
+            height: 130px;
+            width: 1200px;
+            position: absolute;
+            top: 80px;
+            left: 20%;
+        }
+        
+        #table_footer td {
+            font-size: 24px;
+            color: orange;
+            text-shadow: 1px 1px 1px black;
+            width: 400px;
+        }
+        
+        #table_footer a {
+            text-decoration: none;
+            font-size: 12px;
+            color: green;
+        }
+        
+        #table_footer td:hover {
+            background-color: white;
+        }
+        
+        hr {
+            width: 1200px;
+        }
+        
+        hr:nth-child(1) {
+            height: 2px;
+            position: absolute;
+            top: 115px;
+            left: 20%;
+        }
+        
+        hr:nth-child(2) {
+            height: 2px;
+            position: absolute;
+            top: 158px;
+            left: 20%;
+        }
+        
+        hr:nth-child(3) {
+            height: 2px;
+            position: absolute;
+            top: 200px;
+            left: 20%;
+        }
+        
+        footer>section {
+            height: 50px;
+            width: 1200px;
+            position: absolute;
+            top: 40px;
+            left: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+        
+        footer>section>div {
+            height: 40px;
+            width: 400px;
+            font-size: 24px;
+            color: orange;
+            text-shadow: 1px 1px 1px black;
+        }
+        
+        #shengming {
+            height: 30px;
+            width: 280px;
+            position: absolute;
+            top: 220px;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+    <section id="logo"><img src="todo/logo.png" alt=""></section>
+    <section id="ft">
+        <table>
+            <tr>
+                <td class="td1"><img src="todo/facebook_32.png" alt=""></td>
+                <td class="td2"><img src="todo/twitter_32.png" alt=""></td>
+                <td class="td3"><img src="todo/linkedin_32.png" alt=""></td>
+                <td class="td4"><img src="todo/email_32.png" alt=""></td>
+                <td>
+                    <input type="text" placeholder="search" class="td5_btn">
+
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+
+    <main>
+        <ul id="ca-menu">
+            <li>
+                <span>A</span>
+                <div class="ca-content">
+                    <h4>Exceptional Service</h4>
+                    <h3>Personalized to your needs</h3>
+                </div>
+
+            </li>
+
+            <li>
+
+                <span>B</span>
+                <div class="ca-content">
+                    <h4>Creative Storytelling</h4>
+                    <h3>Advanced use of technology</h3>
+                </div>
+
+            </li>
+            <li>
+
+                <span>C</span>
+                <div class="ca-content">
+                    <h4>Infographical Education</h4>
+                    <h3>Understanding visually</h3>
+                </div>
+
+            </li>
+            <li>
+
+                <span>D</span>
+                <div class="ca-content">
+                    <h4>Sophisticated Team</h4>
+                    <h3>Professionals in action</h3>
+                </div>
+
+            </li>
+        </ul>
+    </main>
+
+    <section id="ylz">
+        <div>
+            <p>Communication <br>Graphic... </p>
+        </div>
+        <div>
+            <p>From the heart <br> Ideas... </p>
+        </div>
+        <div>
+            <p>Fluid from the <br> thought...</p>
+        </div>
+        <div> <img src="todo/bror.jpg" alt=""></div>
+        <div><img src="todo/nat.jpg" alt=""></div>
+        <div><img src="todo/nas.jpg" alt=""></div>
+    </section>
+
+    <section id="read">
+        <div></div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iste necessitatibus quo rerum consectetur molestias, eligendi,
+                harum explicabo consequatur laboriosam maiores enim, eum soluta id cupiditate facilis. Fugiat, delectus,
+                eum.
+            </p>
+            <input type="submit" value="Read More..." class="sub-btn">
+        </div>
+    </section>
+    <section id="inspiration">
+        <p><img src="todo/quote-left.png" alt=""> The inspiration is the desire by extension, do you think is right?<img src="todo/quote-right.png"
+                alt=""></p>
+    </section>
+
+    <section id="duihao">
+        <div>
+            <div>
+                <img src="todo/fav.png" alt=""> <a href="">Resources</a><br>
+                <img src="todo/dialog-ok.png" alt=""> Lorem Ipsum quntum <br>
+                <img src="todo/dialog-ok.png" alt=""> Lorem ipsum dolor sit amet <br>
+                <img src="todo/dialog-ok.png" alt=""> Integer vehicula laoreet purus ac tincidunt <br>
+                <img src="todo/dialog-ok.png" alt="">distinctly portfolio architectural five-star.
+            </div>
+
+        </div>
+        <div>
+            <div>
+                <img src="todo/fav.png" alt=""> <a href="">Blogs</a><br>
+                <img src="todo/dialog-ok.png" alt=""> Lorem Ipsum quntum <br>
+                <img src="todo/dialog-ok.png" alt=""> Lorem ipsum dolor sit amet <br>
+                <img src="todo/dialog-ok.png" alt=""> Integer vehicula laoreet purus ac tincidunt <br>
+                <img src="todo/dialog-ok.png" alt="">distinctly portfolio architectural five-star.
+            </div>
+
+        </div>
+        <div>
+            <div>
+                <img src="todo/fav.png" alt=""> <a href="">Design </a><br>
+                <img src="todo/dialog-ok.png" alt=""> Lorem Ipsum quntum <br>
+                <img src="todo/dialog-ok.png" alt=""> Lorem ipsum dolor sit amet <br>
+                <img src="todo/dialog-ok.png" alt=""> Integer vehicula laoreet purus ac tincidunt <br>
+                <img src="todo/dialog-ok.png" alt="">distinctly portfolio architectural five-star.
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <hr>
+        <hr>
+        <hr>
+        <section>
+            <div>Imediacreatives</div>
+            <div>User Comments</div>
+            <div>Design & Project</div>
+        </section>
+        <table id="table_footer">
+
+
+            <tr>
+                <td>
+                    <a href="">Css3 Kitesurf</a>
+                </td>
+                <td>
+                    <a href="">SWF XLM Sldeshow </a>
+                </td>
+                <td>
+                    <a href="">CSS3 Design</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="">Layout Design Gardenfolio</a>
+                </td>
+                <td>
+                    <a href="">Michelangelo</a>
+                </td>
+                <td>
+                    <a href="">Psd to CSS</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="">BlueBand</a>
+                </td>
+                <td>
+                    <a href="">Another Templates Principato</a>
+                </td>
+                <td>
+                    <a href="">Psd to Html5</a>
+                </td>
+            </tr>
+
+        </table>
+
+        <section id="shengming"><strong>Copyright</strong> &copy; yoursite.com -2011.</section>
+    </footer>
+
+
+
+
+</body>
+<html>

@@ -1,0 +1,71 @@
+
+1、安装template
+npm install art-template 
+2、atr-template 引入并设置配置
+const express = require("express");
+const template = require("art-template");
+app = express();
+//模板是否进行缓存
+//开发阶段设置为false    方便我们看变化 
+//上线时设置为true 可以减小服务器的压力
+template.config("Cache", false)
+//指定使用解析的模板引擎
+template.engine(".html", "template._express");
+//指定使用html视图引擎
+app.set("view engine","html")
+//指定views目录 为模板的存放目录
+//app.set('views', __dirname + '/views');
+3、art-template使用方法
+
+使用方法一：
+app.get("/",function(req,res){
+	console.log("这是根目录")
+	//template(参数1，参数2)
+	//参数1  不再是模板id 而是模板的名字字符串(不包括.html)
+	//在当前文件的目录下
+	//参数二：数据
+	var  html=template("template",{
+		htitle:"网站的标题",
+		hTitle:"这里是h1标题",
+		content:"这里是内容文本",
+		tags:["html","css","javascript","jQuery","nodeJs"]
+	});
+	console.log(html);
+	res.status(200).send(html);
+})
+app.listen(3000,function(){
+	console.log("服务器正常启动")
+})
+
+使用方法二
+app.get("/tem", (req, res) => {
+//	console.log("tem");
+//res.render(参数1，参数2)  这是express里专为模板提供的方法
+//参数1：模板字符串 不包括扩展名(.html),另外它会去存放模板的目录去寻找
+//默认目录是views
+//参数2：数据
+//参数3：回调函数 如果没有直接把解析结果传给浏览器
+res.render("template", {
+				htitle: "网站的标题2",
+				hTitle: "这里是h1标题2",
+				content: "这里是内容文本2",
+				tags: ["html", "css", "javascript", "jQuery", "nodeJs"]
+				})
+          console.log(html)
+           res.status(200).send(html)
+})
+
+views不在静态目录
+使用模板引擎，可以将服务器的静态页面变成动态页面
+静态页面：浏览器需要时直接下载，不需要服务器动态生成
+动态页面：经过服务器程序(模板引擎)把数据和模板合成生成页面
+静态页(模板)
++              =>生成页面 
+数据(文件，数据库) 
+
+静态页(模板)
++              =>生成页面 
+数据(文件，数据库) 
+
+     ||
+     保存到静态目录中又生成了静态页

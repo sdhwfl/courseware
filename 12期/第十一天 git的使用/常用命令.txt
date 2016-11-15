@@ -1,0 +1,25 @@
+
+git init 初始化时git仓库
+
+git reflog 多行打印
+
+git add * 添加所有改动到git仓库
+
+git commit -a -m   add+commit 但是新建的文件不能使用此方法
+只能使用 
+git add -m 操作
+git status 打印状态
+git reset --hard f9bb（版本号前四位） 回退到某个版本
+
+
+撤销修改
+
+<1>git checkout -- 文件名 返回到上一次add的状态
+适用于修改了还没add的文本 从缓存区回退到工作区
+
+
+
+<2>git reset HEAD 文件名 ->git checkout -- 文件名
+适用于修改了并且add之后的文件回退 先把文件回退到add之前的状态 再撤销修改
+
+删除文件、

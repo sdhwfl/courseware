@@ -1,0 +1,40 @@
+1、什么是数据库
+数据库（DataBase）(db)
+数据库是一种用于存储，管理，并提供高效数据访问的一种计算机技术
+2、广泛应用的数据库
+
+数据库应用非常广泛，现在技术成熟的数据库有oricle，MySQL，SqlServer，这些都属于关系型数据库
+(数据库中的数据是以表的数据存储的，表之间是通过特定的关系关联起来的)
+
+对于传统的数据库需要使用传统的SQL(structured Query language），结构化查询语言
+现在又出现一种新型的数据库， no-SQL 它 的意思是不仅仅是SQL
+
+mongoDB是一种 no-SQL数据库，是一种文档型数据库
+mongoDB数据库 使用js语句进行操作
+另外 express 支持mongoDB数据库
+
+3、数据库相关概念
+SQL术语/概念 	MongoDB术语/概念 	解释/说明
+database 	    database 	        数据库
+table 	        collection 	        数据库表/集合
+row 	        document 	        数据记录行/文档
+column 	        field 	            数据字段/域
+index 	        index 	            索引
+table           joins 	  	        表连接,MongoDB不支持
+primary key 	primary key 	    主键,MongoDB自动将_id字段设置为主键
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

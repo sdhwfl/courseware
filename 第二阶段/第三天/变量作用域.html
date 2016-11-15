@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>变量作用域</title>
+		<style type="text/css">
+
+		</style>
+		<script type="text/javascript">
+			//在script标签内直接创建的变量，作用域是全局变量
+			//		var value=10;
+			//		alert(value);
+			//		if(true){
+			//			alert(value);
+			//			if(true){
+			//				alert(value);
+			//			}
+			//		}
+		</script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//			if(true) {
+			//				alert(value + 'body');
+			//			}
+			//2.在方法中声明的变量。作用域仅限于方法内部，超出范围无效 局部变量
+			//			function test() {
+			//				var
+			//				function_value = 30;
+			//				alert(function_value);
+			//			}
+			//			test();
+			//			3.js中没有块级作用域这一说。只要是在方法中声明的变量，在整个方法的范围内都有效
+			//			function test3() {
+			//              if(true){
+			//              	var value =40;
+			//              	alert(value+'1');
+			//              }
+			//              alert(value+'2');
+			//			}
+			//			test3();
+			//			4.js中不允许有重复变量，当声明了两个重复的变量时，会默认使用首次声明的变量
+			//			for(var index = 0; index < 5; index++) {
+			//				document.write("这是一个for循环" + '<br>');
+			//
+			//			}
+			//			var index=0;//undefined//值的覆盖
+			//			document.write(index + '<br>');//undefined
+			//			for( ; index < 10; index++) {
+			//				document.write("这是第二个for循环" + '<br>');
+			//			}
+			//5声明变量的时候可以省略var，假如省略了var，则认为该变量在整个脚本作用域内都有效。
+			//			
+			//			function  test(){
+			//				myvalue ='未声明var';
+			//			}
+			//			test();
+			//			console.log(myvalue);
+			//注意 undefined是一种未知的状态 null是一种已知状态
+			//双等号仅仅对内容进行判断，三等号对内容和类型同时进行判断
+			//			var interage = 1;
+			//			var mystring = '1';
+			//			if(interage == mystring) {
+			//				console.log('sdh');
+			//			}
+			//			if(interage === mystring) {
+			//				console.log('wfl');
+			//			}
+			//2.判断变量是否可用 当myvalue为 false、0、null、undefined时变量不可用
+			//			var myvalue =null;
+			//			if(myvalue){
+			//				console.log("myvalue可用");
+			//			}
+			//			else{
+			//				console.log("myvalue不可用");
+			//			}
+		</script>
+	</body>
+
+</html>

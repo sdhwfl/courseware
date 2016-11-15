@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery样式操作</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+
+		<style type="text/css">
+			.style0 {
+				width: 100px;
+				height: 100px;
+				background-color: #00BFFF;
+			}
+			
+			.style1 {
+				background-color: pink;
+			}
+			.style2{
+				display: none;
+				visibility: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="">这就是一个空的div <b>sdh</b></div>
+         <input type="" name="" id="" value="输入框的value值" />
+		<button>addclass</button>
+		<script type="text/javascript">
+			//1.通过attr方法,修改class属性值,简介修改样式
+			//2.通过addclass()方法,修改class属性值,间接修改样式  假如需要添加多个类名 ，可以直接拼接，类名用空格隔开
+			//			var $txt = $('div').addClass('style0').addClass('style1').text();
+			//			console.log($txt); //通过多次调用addclass(),多次添加类名
+
+			$(function() {
+					$('button').click(function() {
+//						var $myDiv = $('div');
+//						$myDiv.addClass('style0 style1');
+//
+//						$('div').removeClass('style1');//参数直接写需要删除的类名
+						//$('div').toggleClass('style2');
+						//$('div').hide();//显示
+						//$('div').show();//隐藏
+						console.log($('div').html());
+						console.log($('div').text());
+						console.log($('input').val());
+					    console.log($('input').attr('value','新添加的value值'));
+					})
+				})
+				//3.通过removeclass()方法,修改class属性值,间接修改样式
+//			$('div').attr('class', 'style0 style1');
+//			$('div').removeClass('style1');
+//			//4.通过css()方法,直接操作style,比如:css('color','green'),直接修改样式  操作结果会在行内体现
+//			//第一个参数，需要修改的属性 第二个参数：需要修改的属性值
+//			$('div').css('color','purple').css('width','150px');
+//			//js原生操作dom
+//			$('div').get(0).style.color='yellow';
+			//5.hide()和show()代替了display的none和block
+			//6.toggle()方法,修改class属性,间接修改样式  删除。。。添加。。。删除
+		</script>
+	</body>
+
+</html>

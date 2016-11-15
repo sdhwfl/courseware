@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>rotate3D</title>
+    <style>
+        body {
+            /*透视：可以理解为在三维空间中的视力距离，就是眼睛与元素的距离*/
+            -webkit-perspective: 300px;
+            /*透视起点：三维空间中的视角，就是眼睛的位置*/
+            /*默认的是50% 50%，中间。可以用像素值，百分比，也可以用left center right  top center bottom*/
+            -webkit-perspective-origin: left center;
+        }
+        
+        section {
+            height: 100px;
+            width: 100px;
+            margin: 60px auto;
+            background-color: pink;
+        }
+        
+        section:hover {
+            /*x轴上下旋转*/
+            transform: rotateX(60deg);
+        }
+        
+        section:nth-of-type(2):hover {
+            /*y轴左右旋转*/
+            transform: rotateY(60deg);
+        }
+        
+        section:nth-of-type(3):hover {
+            /*z轴绕中心点旋转*/
+            transform: rotateZ(60deg);
+            /*表示只在z轴缩放元素*/
+            /*transform: scaleZ(0.1);*/
+        }
+        
+        div {
+            height: 30px;
+            width: 30px;
+            margin: 10px auto;
+            background-color: red;
+            transform: rotateX(60deg);
+            /*transform-style: 变换风格 指定嵌套元素怎样在三维空间中呈现
+            两个值 flat 子元素不保留3D位置
+                  preserve-3d 子元素保留其3D位置
+            */
+            -webkit-transform-style: preserve-3d;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+
+<body>
+    <section>鼠标放上去的时候, 绕x轴旋转60度 </section>
+    <section>鼠标放上去的时候, 绕y轴旋转60度 </section>
+    <section>鼠标放上去的时候, 绕z轴旋转60度 </section>
+    <section>
+        <div></div>
+    </section>
+</body>
+<html>

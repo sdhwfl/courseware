@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>set</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var myarry=['sdh','wfl' , 'sdh'];
+			console.log(myarry);
+			//用一个数组去初始化一个set
+			var myset=new Set(myarry);
+			console.log(myset);
+			//数组和set都可以存储数据，只是数组允许数据重复 ，set直接过滤掉重复的（数据）键
+			console.log('--'.repeat(20));
+			var emptyset=new Set();
+			//添加数据
+			emptyset.add('nxh');
+			emptyset.add('bff');
+			emptyset.add('wfl');
+			emptyset.add('bff');
+			console.log(emptyset);
+			//删除数据
+			emptyset.delete('bff');
+			console.log(emptyset);
+			console.log('--'.repeat(20));
+		</script>
+	</body>
+</html>

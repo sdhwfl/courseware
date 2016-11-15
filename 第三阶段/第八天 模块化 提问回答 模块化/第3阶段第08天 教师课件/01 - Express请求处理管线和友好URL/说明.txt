@@ -1,0 +1,29 @@
+1. res.end() 
+向浏览器端发送最后一个处理数据
+
+
+2. 请求处理管线
+
+get("/" fun ...)
+
+---->函数1---->函数2---->函数3---->最后一个函数
+
+
+获取客户端数据：
+1. 获取url中QueryString（？name="zhangsan" 通过get方法发送的）
+req.query
+2. 获取请求体中的数据（通过post发送的请求）
+需要安装（body-parser）
+req.body
+3. 获取cookie数据
+需要安装（cookie-parser）
+req.cookies
+4. 获取请求头中的数据
+req.get("name")
+5. 获取url路径 path中数据
+req.path
+req.parames(参数)
+
+
+4 `` 可以用${变量} 
+`您好${name},您今年${age}岁了`

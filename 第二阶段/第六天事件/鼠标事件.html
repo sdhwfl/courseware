@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+	</head>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 14px;
+		}
+		
+		div {
+			width: 250px;
+			height: 250px;
+			border: 1px solid #ccc;
+			margin: 50px auto;
+		}
+		
+		div section {
+			width: 100px;
+			height: 100px;
+			margin: 0 auto;
+			text-align: center;
+			line-height: 100px;
+			border-radius: 50%;
+			background: green;
+		}
+		
+		div section:nth-of-type(1) {
+			color: red;
+		}
+		
+		.in {
+			opacity: 0.5;
+			transition: all 1s ease-out;
+		}
+	</style>
+
+	<body>
+		<div class="box">
+			<section class="in">
+				内容1
+			</section>
+			<section class="out">
+				内容2
+			</section>
+		</div>
+
+		<script type="text/javascript">
+			var box = document.querySelector('.box');
+			var box1 = document.querySelector('.in');
+			var box2 = document.querySelector('.out');
+			//如果click事件出现双击的话，会转化为两次单独的单击
+			box1.addEventListener('click', function(e) {
+				//event对象里面关于鼠标按下那个键的信息
+				console.log(e.button);
+				//event对象里面关于发生事件的目标的信息
+				console.log(e.target);
+				console.log('我被点击了');
+				//相对于文档的鼠标位置
+				console.log(e.pageX);
+				console.log(e.pageY);
+				//相对与视图的鼠标位置
+				console.log(e.clientX);
+				console.log(e.clientY);
+				//相对于屏幕的鼠标位置
+				console.log(e.screenX);
+				console.log(e.screenY);
+				//相对于事件元素的鼠标位置
+				console.log(e.offsetX);
+				console.log(e.offsetY);
+			})
+
+			//box.addEventListener('mousemove', function() {
+			//	console.log('我在移动,不停的移动');
+			//})
+
+			//鼠标移入
+			//按钮这种效果,五星评分这种会用到
+			box1.addEventListener('mouseover', function() {
+				console.log('鼠标移入了');
+				box1.style.background = 'pink';
+				box1.style.boxShadow = '1px 1px 1px black';
+				box1.style.opacity = '1';
+				box1.style.transform = 'scale(1.5,1.5) rotate(360deg)';
+			})
+			box1.addEventListener('mouseout', function() {
+					console.log('鼠标移出了');
+					box1.style.background = 'yellow';
+					box1.style.boxShadow = '0px 0px 0px white';
+					box1.style.opacity = '0.5';
+					box1.style.transform = 'scale(1,1) rotate(0deg)';
+				})
+				//主要是用来写这个拖拽效果的
+			box2.addEventListener('mousedown', function() {
+				console.log('鼠标按下');
+			})
+			box2.addEventListener('mouseup', function() {
+					console.log('鼠标松开');
+				})
+				//鼠标按下的时候开始拖拽
+			$(document).mousedown(function() {
+				$(document).mousemove(function() {})
+
+			})
+			$(document).mouseup(function() {})
+				//mouseleave 和mouseenter跟mouseover、mouseout是一样的
+				//他们两者的区别在于一个冒泡，一个不冒泡
+
+			document.addEventListener('wheel', function(e) {
+				console.log('鼠标滚轮在动');
+				console.log(e.deltaX);
+				console.log(e.deltaY);
+				console.log(e.deltaZ);
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件里面的event对象</title>
+	</head>
+	<body>
+		<a href="#">点我试试！</a>
+		<script type="text/javascript">
+			var a=document.querySelector('a');
+			//元素被操作的时候，会返回一个事件对象，里面是一个属性列表，包含很多数据
+			a.addEventListener('click',function(event){
+				console.log(event);
+				console.log(event.href);
+			})
+		</script>
+	</body>
+</html>

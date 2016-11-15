@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>闹闹</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            /*background-image: radial-gradient(ellipse, white, palegoldenrod, palegreen, springgreen, yellow);*/
+            background-image: url(bg3.jpg);
+            margin: 0 auto;
+        }
+        
+        main {
+            height: 900px;
+            width: 900px;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            background-size: 100% 100%;
+            margin: 10px auto;
+            border: 10px solid purple;
+            box-shadow: 1px white;
+            position: relative;
+        }
+        
+        #dot {
+            height: 50px;
+            width: 50px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 450px;
+            left: 450px;
+            z-index: 4;
+        }
+        
+        #second {
+            height: 370px;
+            width: 5px;
+            background-color: yellow;
+            position: absolute;
+            top: 200px;
+            left: 472.5px;
+            animation: rotate 60s linear infinite;
+            border-radius: 10px;
+            z-index: 3;
+            transform-origin: 75% 75%;
+        }
+        
+        #minute {
+            height: 320px;
+            width: 15px;
+            background-color: blue;
+            position: absolute;
+            top: 220px;
+            left: 467.5px;
+            animation: rotate 3600s linear infinite;
+            border-radius: 10px;
+            z-index: 2;
+            transform-origin: 80% 80%;
+        }
+        
+        #hour {
+            height: 260px;
+            width: 20px;
+            background-color: red;
+            position: absolute;
+            top: 260px;
+            left: 465px;
+            animation: rotate 43200s linear infinite;
+            border-radius: 10px;
+            transform-origin: 82.5% 82.5%;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="dot"></div>
+        <div id="second"></div>
+        <div id="minute"> </div>
+        <div id="hour"> </div>
+    </main>
+</body>
+<html>

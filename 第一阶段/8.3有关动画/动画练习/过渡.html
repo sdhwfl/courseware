@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>过渡</title>
+    <style>
+        section {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: pink;
+            /*过度属性就是为了指定那一个属性以过度的形式改变，默认为all（也就是所有的属性变化都呈现一个过程）；假如需要对多个属性添加过渡效果，属性间用逗号隔开*/
+            /*transition-property: all;*/
+            /*可以设置动画变化过程持续的时间，默认是0 表示不过渡 单位是秒和毫秒*/
+            /*transition-duration: 1.0s;*/
+            /*过渡延迟执行时间，设置过渡多久之后开始执行，单位是秒和毫秒*/
+            /*transition-delay: 2.0s*/
+            /* transition-timing-function过渡时间函数，设置动画过渡过程中的速度变化的效果默认为ease  linear：匀速 ease：逐渐慢下来  ease-in加速  ease-out减速   ease-in-out先加速后减速 */
+            /*transition-timing-function: ease-in;*/
+            position: absolute;
+            left: 0px;
+            /*transition:过渡复合 复合属性 推荐顺序：过渡属性 持续时间 速度效果 延迟*/
+            transition: left 1.0s linear;
+        }
+        
+        section:hover {
+            background-color: blue;
+            /*transform: scale(2.0) rotate(360deg);*/
+            width: 300px;
+            height: 300px;
+            font-size: 50px;
+            left: 500px;
+        }
+        
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            background-color: pink;
+            background-image: url(images/1.jpg);
+            border-radius: 50%;
+            background-size: 100% 100%;
+            transition-property: background-image;
+            transition-duration: 1s;
+        }
+        
+        div:hover {
+            background-image: url(images/20.jpg);
+            transform: rotate(360deg);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        你是不是傻
+    </section>
+    <div>
+
+    </div>
+</body>
+<html>

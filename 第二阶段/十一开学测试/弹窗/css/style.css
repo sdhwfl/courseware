@@ -1,0 +1,70 @@
+body {
+	/*background-image: url(../img/jt.png);*/
+	background-repeat: no-repeat;
+	height: 2000px;
+}
+
+.popup {
+	position: fixed;
+	z-index: 99999;
+	border: solid 5px dodgerblue;
+	background: #fff;
+	width: 360px;
+	height: 220px;
+	left: 40%;
+	top: 40%;
+    
+}
+
+.popup .pop-close {
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+	color: #747675;
+	cursor: pointer;
+}
+
+.popup .pop-title {
+	height: 42px;
+	line-height: 42px;
+	border-bottom: 5px solid dodgerblue;
+	color: #696b6a;
+	font-size: 14px;
+	background-color: deepskyblue;
+}
+
+.popup .pop-content {
+	padding-top: 50px;
+	text-align: center;
+	font-size: 22px;
+	line-height: 50px;
+	color: dodgerblue;
+}
+.pop-close div{
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+}
+.pop-title div{
+	height: 30px;
+	margin-left: 20px;
+	color: #fff;
+	font-size: 16px;
+}
+.mask {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 99998;
+	background-color: #000;
+	opacity: 0.7;
+}

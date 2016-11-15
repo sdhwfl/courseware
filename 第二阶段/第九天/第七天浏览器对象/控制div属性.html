@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>控制div属性</title>
+		<style type="text/css">
+			#div1 {
+				height: 200px;
+				width: 200px;
+				background-color: pink;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div1">我是多变的div <br>我可以改变颜色 <br>改变宽高 <br>会隐身<br>会重现<br>哈哈，佩服我吧</div>
+		<script type="text/javascript">
+			var myDiv = document.getElementById('div1');
+
+			function changeColor() {
+				myDiv.style.color = "red";
+				myDiv.style.backgroundColor = "lightblue";
+			}
+
+			function changewh() {
+				myDiv.style.height = "240px"
+				myDiv.style.width = "240px"
+			}
+
+			function yincang() {
+				myDiv.style.display = 'none'
+			}
+
+			function chuxian() {
+				myDiv.style.display = 'block'
+			}
+
+			function reset() {
+				var message = confirm("你确定要重置所有设置么？");
+				if(message == true) {
+					myDiv.removeAttribute('style');
+				}
+			}
+		</script>
+		<button onclick="changeColor()">改变颜色</button>
+		<button onclick="changewh()">改变宽高</button>
+		<button onclick="yincang()"> 隐藏</button>
+		<button onclick="chuxian()">出现</button>
+		<button onclick="reset()">取消所有设置</button>
+	</body>
+
+</html>

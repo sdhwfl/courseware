@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>论文处理</title>
+      <style>
+        .jiacu{
+            font-weight: bold;
+        }
+        .xieti{
+            font-style: italic;
+        }
+        .xiahuaxian{
+            text-decoration: underline;
+        }
+        .shanchu{
+            text-decoration: line-through;
+        }
+        .zhongkuohao{
+            quotes: '['']';
+        }
+         .zhongkuohao_qt{
+             /*引号包含一对将要替换的的引号
+             靠在最前面的那对引号，就是最外层引号*/
+             quotes: '['']''('')';
+         }
+    </style>
+</head>
+<body>
+  <!--普通文本-->
+  普通文本
+  <br>
+  <span>span标签包含的普通文本，便于样式处理</span>
+  <br>
+  <!--加粗文本-->
+  <b>b标签加粗</b>
+  <br>
+  <span class="jiacu">样式处理加粗效果</span><br>
+  <strong>strong强调</strong><br>
+  <!--斜体文本-->
+  <i>i标签斜体</i><br>
+  <em>em标签斜体</em><br>
+  <span class="xieti">样式处理斜体</span><br>
+  <!--下划线-->
+  <u>u标签下划线</u><br>
+  <ins>ins标签下划线</ins><br>
+  <span class="xiahuaxian">样式处理下划线</span><br>
+  <!--删除线-->
+  <del>del删除线</del><br>
+  <s>s删除线</s><br>
+  <span class="shanchu">样式处理删除</span><br>
+  <!--小字号-->
+  <small>小字号</small><br>
+  <big>大字号</big><br>
+  <!--上标 下标 -->
+  <span>普通文本<sup>上标</sup></span><br>
+  <span>普通文本<sub>下标</sub></span><br>
+  <!--带引号文本-->
+  <q>带引号的文本</q><br>
+  <q>带引号的文本 <q>嵌套文本</q></q><br>
+  <q class="zhongkuohao">中括号</q>
+  <br>
+    <q class="zhongkuohao_qt">中括号里面的<q>小括号</q></q>
+    <br>
+  
+</body>
+</html>

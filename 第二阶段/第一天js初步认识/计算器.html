@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>计算器</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        div {
+            height: 300px;
+            width: 800px;
+            margin: 20px auto;
+            border: dotted 10px springgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        div>section {
+            height: 200px;
+            width: 600px;
+            background-image: url();
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <section>
+            <label for="" id="s1"></label>
+            <label for="" id="s2"></label>
+            <label for="" id="s3" onclick="jisuan()"></label> 长
+            <input id="s4" type="text" placeholder="0"> &#x3000X 宽
+            <input id="s5" type="text" placeholder="0">
+            <input type="button" value="=" id="s6" onclick="cal()">
+
+            <label id="return" style="color:red"></label>&#x3000&#x3000㎡
+            <label id="jieguo"></label>
+        </section>
+    </div>
+    <script>
+        //     function jisuan()
+    //   {
+    //    var a=document.getElementById('s1').value;
+    //    var b=document.getElementById('s2').value;
+    //    var c=a*b;
+    //    c=Math.round(c*100)/100;
+	//  document.getElementById('jieguo').innerHTML=c;        
+    //  }
+    //  function cal()
+    //   {
+    //    var a=document.getElementById('s4').value;
+    //    var b=document.getElementById('s5').value;
+    //    var c=a*b;
+    //    c=Math.round(c*100)/100;
+	// document.getElementById('return').innerHTML=c;        
+    //  }
+    </script>
+</body>
+<script src="计算器.js"></script>
+
+</html>

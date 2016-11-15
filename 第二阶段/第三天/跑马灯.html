@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="宋典花">
+		<title>跑马灯</title>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<div id="sdh">魔镜啊、魔镜、我是不是这个世界上最美丽的女人？</div>
+		<script type="text/javascript">
+			function pMD() {
+				var wfl = document.getElementById('sdh').innerHTML;
+				//console.log(wfl);
+				var ss = wfl.substr(1, (wfl.length - 1)) + wfl.substr(0, 1);
+				// console.log(ss);
+
+				document.getElementById('sdh').innerHTML = ss;
+			}
+			pMD();
+			setInterval(pMD, 500);
+			//个人小结 此处运用的是是字符串截取，每次截取字符串中的一个字符，然后运用setinterval函数让函数 pMD()            
+			//每隔一段时间刷新一次，一个个单个的字符就会组成流动的字符串了。
+		</script>
+	</body>
+
+</html>

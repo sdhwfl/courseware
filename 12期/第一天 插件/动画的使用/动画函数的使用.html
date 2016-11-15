@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="tool.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        body,html {
+            font-size:14px;
+        }
+        #box {
+            width:100px;
+            height:100px;
+            border:1px solid #ccc;
+            margin:10px auto;
+            background-color:red;
+            color:blue;
+            line-height:100px;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">盒子</div>
+</body>
+</html>
+<script>
+    //设置动画
+    var animate = function(obj){
+            //先将每个文档元素保存下来
+            var element = document.querySelector('#box');
+            //对象数据的初始化
+            var attr = obj['attr'] == 'x' ? 'left' : obj['attr'] == 'y' ? 'top':
+                    obj['attr'] == 'w' ? 'width': obj['attr'] == 'h' ? 'height' :
+                            obj['attr'] == 'o' ? 'opacity' : obj['attr'] != undefined ? obj['attr'] : 'left';
+
+            var start = obj['start'] != undefined ? obj['start'] :
+                    attr == 'opacity' ? parseFloat(getStyle(element,attr))*100 : parseInt(getStyle(element,attr));
+            var t = obj['t'] != undefined ? obj['t'] : 30;
+            var step = obj['step'] != undefined ? obj['step'] : 10;
+            var alter = obj['alter'];
+            var target = obj['target'];
+            //同步动画
+            var mul = obj['mul'];
+            //缓冲运动
+            var speed = obj['speed'] != undefined ? obj['speed'] : 10;
+            var type = obj['type'] == 0 ? 'constant' : obj['type'] == 1 ? 'buffer' : 'buffer';
+            //目标量和增量的判断
+            if(alter != undefined && target == undefined){
+                target = alter + start;
+            }else if(alter == undefined && target == undefined && mul == undefined){
+                throw new Error('错误');
+            }
+            //解决是负数的问题
+            if(start > target){
+                step = - step;
+            }
+            if(attr == 'opacity'){
+                element.style.opacity = parseInt(start) / 100;
+                element.style.filter =  'alpha(opacity=' + parseInt(start) + ')';
+
+            }else{
+                //每次都会从起始点开始
+                element.style[attr] = start + 'px';
+            }
+            //每次timer调用的时候，速度都会累加，所以，要把timer每次都清空
+            if(mul == undefined){
+                mul = {};
+                mul[attr] = target;
+            }
+            clearInterval(element.timer);
+            element.timer = setInterval(function(){
+                //多个动画最后一个动画执行完毕了，才清空定时器
+                var flag = true;
+                for(var i in mul){
+                    attr = i == 'x' ? 'left' : i == 'y' ? 'top' : i == 'w' ? 'width' : i == 'h' ? 'height' : i == 'o' ? 'opacity' : i != undefined ? i : 'left';
+                    target = mul[i];
+                    //缓冲效果
+                    if(type == 'buffer'){
+                        var parse = attr == 'opacity' ? (target - parseFloat(getStyle(element,attr)) * 100) :
+                                (target - parseInt(getStyle(element,attr)));
+                        var temp = parse/speed ;
+                        step = step > 0 ? Math.ceil(temp) : Math.floor(temp);
+                    }
+                    //如果是透明度渐变
+                    if(attr == 'opacity'){
+                        if(step == 0){
+                            setOpacity();
+                        }else if( step > 0 && Math.abs(parseFloat(getStyle(element,attr)) * 100 - target) <= step){
+
+                            setOpacity();
+                        }else if(step < 0 && (parseFloat(getStyle(element,attr)) * 100 - target)  <= Math.abs(step)){
+                            setOpacity();
+                        }else{
+                            var temp = parseFloat(getStyle(element,attr)) * 100;
+                            element.style.opacity = parseInt(temp + step)/100;
+                            element.style.filter = 'alpha(opacity=' + parseInt(temp + step) + ')';
+                        }
+                        if(parseInt(target) != parseInt(parseFloat(getStyle(element,attr)) * 100)){
+                            flag = false;
+                        }
+
+                    }else{
+                        //这个是运动动画
+                        if(step == 0){
+                            setTarget();
+                        }else if( step > 0 && Math.abs(parseInt(getStyle(element,attr)) - target) <= step){
+                            setTarget();//累加情况
+                        }else if(step < 0 && (parseInt(getStyle(element,attr)) - target) <= Math.abs(step)){
+                            setTarget();//累减情况
+                        }else{
+                            element.style[attr] = parseInt(getStyle(element,attr)) + step + 'px';
+
+                        }
+                        if(parseInt(target) != parseInt(getStyle(element,attr))){
+                            flag = false;
+                        }
+                    }
+
+                }
+                if(flag){
+                    clearInterval(element.timer);
+                    if (obj.fn != undefined) obj.fn();
+                }
+
+            },t);
+            //重复代码
+            function setTarget(){
+                element.style[attr] = target + 'px';
+
+            }
+            function setOpacity(){
+                element.style.opacity = parseInt(target)/100;
+                element.style.filter = 'alpha(opacity=' + parseInt(target) + ')';
+
+            }
+
+
+
+    };
+    /*
+     属性：
+     left 向左移动
+     top  向下移动
+     width 宽度变化
+     height 高度变化
+     opacity 透明度变化
+
+     start 开始的位置  obj['start'] != undefined ? obj['start'] : getStyleNum(element,attr);
+     如果不给，就是文档默认的CSS属性，否则接收传递过来的 element.style[attr] = start + 'px';
+
+     t 每多少毫秒执行一次  obj['t'] != undefined ? obj['t'] : 30;
+
+     step 每次变化的长度  var step = obj['step'] != undefined ? obj['step'] : 10;
+
+     alter 变化的总长度 ，如果定义了，那么  target = alter + start;如果没定义，就看target
+
+     target 变化结束后的长度 ,不能两个都不定义
+
+     speed 速度，这个值是为了达到缓冲的效果，变化的总长度（每次都不一样，因为处在变化中）/速度=每次变化的长度
+
+     type 是缓冲还是无缓冲 obj['type'] == 0 ? 'constant' : obj['type'] == 1 ? 'buffer' : 'buffer';
+     */
+
+    //动画的思路分析：首先我们要考虑用setInterval这种定时器的方式，每隔一段时间，就改变元素的偏移量left值
+    //element.style[attr] = getStyleNum(element,attr) + step + 'px';
+    //if(start > target){step = - step;}因为没有right和bottom属性，所以，如果开始的位置小于要达到的位置，我们每次都会减去变化的量。
+    //因为每次变化的长度可能是正的，从起始位置相加step到目标位置，也有可能是负的，从起始位置相减step到目标位置
+    //所以，你要考虑着两种情况同时存在的时候
+
+
+    //下面我们要解决几个问题
+    //1.到目标点停止,并且如果每次变化的长度累加，累加的数并不是恰恰等于目标点的情况，比如目标300,累加到303发现到目标了，再回到300会有一个突兀的效果。
+    // element.style[attr] = target + 'px';clearInterval(timer); 这两句话的意思就是到达目标点就清除这个动画了。但，问题是什么情况下，清除并到达目标点
+    //应该是还未到达目标点，快达到的时候，直接跳到300，就解决上面的问题了。
+    //2.到目标点停止，并且如果每次变化的长度累减，累减的数并不是恰恰等于目标点的情况，例如目标0,累减到-1发现目标了，再回到0
+    //
+</script>
+<script>
+    animate({
+        attr : 'o',
+        target : 0,
+        t : 30,
+        step : 10,
+        fn : function () {
+            console.log('动画结束');
+        }
+    })
+</script>

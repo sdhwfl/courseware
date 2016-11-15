@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>媒体查询</title>
+    <!--媒体查询准备工作1：设置视口规则-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minmum-scale=1.0,mixmum-scale=1.0,user-scalable=no">
+
+    <style>
+        /*body设置默认背景颜色*/
+        
+        body {
+            background-color: orange;
+        }
+        /*
+        一，使用规则
+        1.@media 
+        2.特定的查询条件
+       3. 满足条件的时候，需要做出改变的样式
+       */
+        /*
+        二，查询条件（大于，等于，小于）
+        max-width 最大宽度
+        min-width 最小宽度
+        max-height 最大高度
+        min-height 最小高度
+        width  浏览器可视宽度
+        */
+        /*
+        三，查询条件的关系（关系：“与and” “或or” “非not”）
+        媒体查询可以包含复杂表达式，在表达式中，可以根据需要使用任意数量的条件。
+        and：当所有条件都满足的时候，应用后面的样式；
+        or：当所有的条件至少满足一个的时候，应用后面的样式；
+        not：当不满足指定条件的时候，应用后面的样式
+        
+        */
+        
+        @media screen and (max-width:500px) and (min-width:400px) {
+            body {
+                background-color: blue;
+            }
+        }
+        /*@media screen and (max-width:800px) {
+            body {
+                background-color: red;
+            }
+        }*/
+        
+        @media screen and (max-width:400px) {
+            body {
+                background-color: green;
+            }
+        }
+        /*当屏幕尺寸大于960px时，样式的变化*/
+        /*@media screen and (min-width:800px) {
+            body {
+                background-color: pink;
+            }
+        }
+        
+        @media screen and (min-width:800px) and ( max-width:1000px) {
+            body {
+                background-color: purple;
+            }
+        }*/
+    </style>
+</head>
+
+<body>
+</body>
+<html>

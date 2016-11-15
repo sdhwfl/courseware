@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>javascript基本数据类型</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //    javascript基本上分为6大数据类型
+        // 其中，5大基本数据类型，分别为
+        // undefined、变量根本没有声明 或者是声明了，没有定义
+        // null、变量声明了，但是没有给初始值，或者初始值是空的 当一个object对象中没有内容的时候，那么这个对象就是null
+        // Boolean、布尔，用于判断真假，真true 假false
+        
+        // Number、数据类型，比如整数，小数
+        // String字符串类型，比如var mystring ="hello world";
+        // 除此之外还有一种复杂数据类型，object 对象,或者是null
+        
+        // 2、一般使用typeof操作符，用来判断检测变量的数据类型
+    //  var mystring ="hello world";//string
+    //  mystring =122;//number
+    //  mystring =false;//Boolean
+    //  mystring=null;//object
+    //  mystring=''//string
+    //  console.log('检测mystring的数据类型是' + typeof(mystring));
+    // 3、关于数据类型的说明
+    // a、undefined
+    // console.log(typeof(myname));
+    // console.log(myname)//会报错，reference error 引用错误，变量没声明
+    // var myage;
+    // console.log(typeof(myage));
+    // b、null
+    // 一般我们把一个变量定义为null，是为了在将来的某个时刻存储对象的
+    //   var mysex =null;
+    //   console.log(mysex);
+    // c、Boolean
+    //只有两个值true和false但是 true 不应定等于1 ，false不一定等于0 一般用于条件判断的时候
+    // 一般用于判断的时候，对比判断结果，条件符合，执行一个逻辑流程，不符合执行另一个
+    // if else
+    // var Age =17;
+    // if(Age>18){
+    //     console.log("满足条件")
+    // }
+    // else{
+    //     // 否则就是false
+    //      console.log("未满18禁止进入");
+    //      alert("未满18禁止进入");
+    // }
+    // d、number
+    // 整型
+    // var intvalue = 66;
+    // 浮点型
+    // var floatvalue1 = 6.6;
+    // 讲别的数据类型转换成number类型
+//   console.log(Number(false));//0
+//   console.log(Number(true));//1
+//   console.log(Number('18037304079'));
+//   console.log(Number('0x8f'));//十六进制
+//   console.log(Number('0558'));//八进制
+//   console.log(Number(' '))//空字符串0
+//    console.log(Number(' null'))//null 0
+  
+//   parsetInt()/ parsetFloat解析函数
+// 将一个数值字符串转换成数值，常用于从网络获取账户信息后，进行的数据类型转换
+// console.log(parSet());
+// e、string类型
+// 主要用以表示已短文本内容，可以用双引号或者单引号其包括，推荐使用单引号
+// var myenglishname ="sdh"
+// 将数值转化为字符串
+ var myweight =50;
+  console.log(typeof(myWeight));
+ console.log( typeof(myweight.toString()));
+// 6.object对象
+// 一些数据的集合
+    </script>
+</body>
+
+</html>

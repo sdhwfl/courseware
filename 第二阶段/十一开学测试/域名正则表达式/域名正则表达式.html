@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>域名的正则</title>
+		<script src="js/jquery-2.0.3.js"></script>
+	</head>
+
+	<body>
+		<textarea name="" id="" cols="30" rows="10"></textarea><br>
+		<button>验证</button>
+		<div id="myDiv"></div>
+
+		<script>
+//			var reg1 = /^(https?:\/\/)?(www\.)[a-zA-Z\d\u4E00-\u9FFF][a-zA-Z\d]*[a-zA-Z\d\u4E00-\u9FFF]\.[a-zA-Z\d\u4E00-\u9FFF]{2,}(\.[\u4E00-\u9FFF]+)?$/
+           //可以验证一级二级域名
+			var reg1 = /^(https?:\/\/)?(www\.)[a-zA-Z\d\u4E00-\u9FFF][a-zA-Z-\d]*[a-zA-Z\d\u4E00-\u9FFF]\.[a-zA-Z\d\u4E00-\u9FFF]{2,}(\.[a-zA-Z\u4E00-\u9FFF]{2,})?$/
+
+			var splitreg = /[；;\r\n\s]+/;
+			//点击事件
+			$('button').click(function() {
+				//文本框里面内容    trim去掉空格   ;保留最后一个
+				var domainStr = $('textarea').val().trim() + ';';
+				//分割成数组
+				var domainArr = domainStr.split(splitreg);
+				domainArr.pop();
+				//清空一下
+				$('div').html('')
+				domainArr.forEach(function(element, index) {
+
+					//查找有没有 --字符串  -1判断有没有
+					if(element.indexOf('--') > -1) {
+						$('div').append("<p style='color:red'>" + element + '域名验证失败！' + "</p>")
+					} else {
+						if(reg1.test(element)) {
+							$('div').append("<p style='color:green'>" + element + '域名验证成功！' + "</p>")
+						} else {
+							$('div').append("<p style='color:red'>" + element + '域名验证失败！' + "</p>")
+						}
+					}
+				});
+				//console.log(domainArr);
+			})
+		</script>
+	</body>
+
+</html>

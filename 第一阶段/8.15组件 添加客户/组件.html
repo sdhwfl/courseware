@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>组件</title>
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <!--图标引用-->
+    <span class="glyphicon glyphicon-trash"></span>
+    <!--aria-hidden="true":仅仅用作装饰-->
+    <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-fast-forward"></span>
+
+    <button class="btn-lg btn-success">
+    <span class="glyphicon glyphicon-cog"></span>
+    Setting
+</button>
+    <button class="btn-lg btn-warning">
+    <span class="glyphicon glyphicon-trash"></span>
+   Delect
+</button>
+    <!--下拉菜单-->
+    <!--dropdown：下拉  dropup：上拉-->
+    <div class="dropdown ">
+        <a href="#" data-toggle="dropdown">激活元素</a>
+        <!--dropdown-menu-right：让菜单显示在右侧 一般不用-->
+        <ul class="dropdown-menu ">
+            <li class="dropdown-header">这是第一组标题</li>
+            <li><a href="#">菜单项1</a></li>
+            <li><a href="#">菜单项2</a></li>
+            <!--隔板：是一个元素-->
+            <li class="divider"></li>
+            <li class="dropdown-header">这是第二组标题</li>
+            <li><a href="#">菜单项3</a></li>
+            <li class="disabled"><a href="#">禁用菜单项</a></li>
+        </ul>
+    </div>
+    <!--nav-pills :胶囊导航-->
+    <ul class="nav ">
+        <!--导航下拉菜单-->
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown">我的淘宝</a>
+            <ul class="dropdown-menu">
+                <li>买到的宝贝</li>
+                <li>看过的宝贝</li>
+                <li>买不起的宝贝</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown">购物车</a>
+            <ul class="dropdown-menu">
+                <li>吹风机</li>
+                <li>洗衣液</li>
+                <li>卫龙辣条</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown">收藏夹</a>
+            <ul class="dropdown-menu">
+                <li>收藏的宝贝</li>
+                <li>收藏的店铺</li>
+            </ul>
+        </li>
+    </ul>
+    <!--btn-toolbar：标记一个按钮工具栏，把一组按钮放进一行，组成更复杂的按钮组合-->
+    <!--把一组 <div class="btn-group"> 组合进一个 <div class="btn-toolbar"> 中就可以做成更复杂的组件。-->
+    <div class="btn-toolbar" style="background-color:pink;  padding:5px;">
+        <!--btn-group：标记一个按钮组容器 把一组按钮放在同一行里-->
+        <!--将按钮组内部尺寸设置为最大-->
+        <div class="btn-group btn-group-lg">
+            <button class="btn btn-success">
+    按钮1
+</button>
+            <button class="btn btn-success">
+    按钮2
+</button>
+            <button class="btn btn-success">
+    按钮3
+</button>
+            <button class="btn btn-success">
+    按钮4
+</button>
+        </div>
+        <div class="btn-group btn-group-md">
+            <button class="btn btn-warning">
+    按钮1
+</button>
+            <button class="btn btn-warning">
+    按钮2
+</button>
+            <button class="btn btn-warning">
+    按钮3
+</button>
+            <button class="btn btn-warning">
+    按钮4
+</button>
+        </div>
+        <div class="btn-group btn-group-sm">
+            <button class="btn btn-info">
+    按钮1
+</button>
+            <button class="btn btn-info">
+    按钮2
+</button>
+            <button class="btn btn-info">
+    按钮3
+</button>
+            <button class="btn btn-info">
+    按钮4
+</button>
+        </div>
+        <div class="btn-group btn-group-xs">
+            <button class="btn btn-danger">
+    按钮1
+</button>
+            <button class="btn btn-danger">
+    按钮2
+</button>
+            <button class="btn btn-danger">
+    按钮3
+</button>
+            <button class="btn btn-danger">
+    按钮4
+</button>
+        </div>
+    </div>
+    <!--btn-group-vertical:竖直排列-->
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">1</button>
+        <button type="button" class="btn btn-default">2</button>
+
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+      <span class="caret"></span>
+    </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Left</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Middle</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action <span class="caret"></span>
+  </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   info<span class="caret"></span>
+  </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   danger <span class="caret info"></span>
+  </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    <!--输入框组-->
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">@example.com</span>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-addon">.00</span>
+    </div>
+    <!--nav-tabs：标签页导航 nav-pills：胶囊导航   nav-stacked：垂直排列  nav-justified：列表子项均分宽度-->
+    <ul class="nav  nav-pills nav-justified ">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+        <li role="presentation"><a href="#">info</a></li>
+    </ul>
+    <!--备注：role的作用-->
+    <!--给链接、导航等元素嵌套 <span class="badge"> 元素，可以很醒目的展示新的或未读的信息条目。-->
+    <button class="btn btn-primary" type="button">
+  Messages <span class="badge">4</span>
+    </button>
+    <!--巨幕-->
+    <div class="jumbotron">
+        <h1>Hello, world!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam, quas adipisci, dolorem corporis iste repudiandae
+            a eligendi nostrum accusamus aut distinctio laboriosam exercitationem. Beatae dolorem nisi doloremque alias pariatur!</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+    <!--页头-->
+    <div class="page-header">
+        <h1>Example page header <small>Subtext for header</small></h1>
+    </div>
+    <!--警告框-->
+    <div class="alert alert-success" role="alert">alert-success</div>
+    <div class="alert alert-info" role="alert"> alert-info</div>
+    <div class="alert alert-warning" role="alert">alert-warning</div>
+    <div class="alert alert-danger" role="alert"> alert-danger</div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+<html>

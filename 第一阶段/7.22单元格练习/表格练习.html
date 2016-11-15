@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表格练习</title>
+    <style>
+        table {
+            width: 300px;
+            height: 300px;
+            color: red;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        th {
+            color: blue;
+        }
+        
+        caption {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table border="1">
+        <caption>
+            课程表
+        </caption>
+        <tr>
+            <th>周一</th>
+            <th>周二</th>
+            <th>周三</th>
+            <th>周四</th>
+            <th>周五</th>
+            <th>周六</th>
+            <th>周日</th>
+        </tr>
+        <tr>
+            <!--colspan:对行中的列进行合并 表示横向合并单元格-->
+             <!--colspan="5"表示水平合并5列单元格-->
+             <!--rowspan：竖向合并单元格-->
+            <!--rowspan="4" 表示纵向合并4个单元格-->
+
+            <td colspan="5">学习</td>
+
+            <td>自习</td>
+            <td rowspan="4">休息</td>
+        </tr>
+        <tr>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>自习</td>
+            <!--<td>休息</td>-->
+        </tr>
+        <tr>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>自习</td>
+            <!--<td>休息</td>-->
+        </tr>
+        <tr>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>学习</td>
+            <td>自习</td>
+            <!--<td>休息</td>-->
+        </tr>
+    </table>
+</body>
+
+</html>

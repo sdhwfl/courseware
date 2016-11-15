@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-2.0.3.js"></script>
+    <title>排序 去重格式化输出</title>
+</head>
+<body>
+<script>
+    <!--对数组进行排序 去重然后以货币的样式输出-->
+    //    如下所示 [1,2,3,6,5,4,3,0]
+    //    ￥12,365,430
+
+
+    var arr = [1, 2, 3, 6,5, 5, 4, 3, 0]
+    //    去重
+    function unique(array) {
+        var n = []; //一个新的临时数组
+        //遍历当前数组
+        for (var i = 0; i < array.length; i++) {
+            //如果当前数组的第i已经保存进了临时数组，那么跳过，
+            //否则把当前项push到临时数组里面
+            if (n.indexOf(array[i]) == -1) {
+                n.push(array[i]);
+            }
+        }
+        return n;
+    }
+    console.log("去重后的数组：" + unique(arr));
+    //    排序
+    function sort(array) {
+        var i, j, tmp, result;
+        result = array.slice(0);
+        for (i = 0; i < array.length; i++) {
+            for (j = i + 1; j <= array.length - 1; j++) {
+                if (result[i] > result[j]) {
+                    tmp = result[j];
+                    result[j] = result[i];
+                    result[i] = tmp;
+                }
+            }
+        }
+        return result;
+
+    }
+    console.log("排序后的数组：" + sort(unique(arr)));
+
+
+    //   格式化
+    function formatArr(array) {
+        var arr = array;
+        var arrStr =arr.reverse().join("");
+        var result;
+        for (var i = 0; i < arrStr.length; i++) {
+            result += arrStr[i];
+            if ( i % 3 == 1) {
+                result += ",";
+            }
+        }
+        return result;
+    }
+    var arr2 = sort(unique(arr));
+    console.log("￥" + formatArr(arr2.reverse()));
+
+
+    //   面对对象方法
+    //    先去重
+    //        Array.prototype.unique =function(){
+    //
+    //        }
+    //   排序
+    //    Array.prototype.sort =function(){
+    //
+    //    }
+    //    格式化
+    //    Array.prototype.format =function(){
+    //
+    //    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

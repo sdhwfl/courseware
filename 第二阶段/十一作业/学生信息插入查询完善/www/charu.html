@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>学生信息查询</title>
+	<meta charset='UTF-8'>
+	<meta name="Keywords " content="$SiteKeywords " />
+	<meta name="Description " content="$SiteDescription " />
+	<link rel="stylesheet " type="text/css " href="css/globle.css " />
+	<script src='js/jquery-2.0.3.js'></script>
+	<style>
+   ul{
+	   text-align: center;
+	   margin-top: 30px;
+   }
+   ul li{
+	   margin-top: 10px;
+	  
+   }
+    ul li label{
+		font-size: 18px;
+	}
+	 ul>li input{
+		 height: 22px;
+	 }
+	 #btn1{
+		 height: 28px;
+	 }
+	</style>
+</head>
+
+<body>
+	<form action="/insert" method="GET">
+	<ul>
+		<li>
+			<label>姓名：</label>
+			<input type="text" name="name">
+		</li>
+		<li>
+			<label>性别：</label>
+			<input type="text" name="sex">
+		</li>
+		<li>
+			<label>手机：</label>
+			<input type="text" name="phone">
+		</li>
+		<li>
+			<label>邮箱：</label>
+			<input type="text" name="email">
+		</li>
+		<li>
+			<label>简介：</label>
+			<input type="text" name="info">
+		</li>
+		<li>
+			<input type="submit" value="确定录入" id="btn1">
+		</li>
+	</ul>
+</form>
+</body>
+
+</html>

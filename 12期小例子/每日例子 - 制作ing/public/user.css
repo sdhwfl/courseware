@@ -1,0 +1,237 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#box{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 1280px;
+    height: 800px;
+    background: url("images/bg.png");
+    position: relative;
+}
+/*头像最终显示图片*/
+#image{
+    width: 51px;
+    height: 51px;
+    position: relative;
+    top: 11px;
+    left: 786px;
+    background-color: white;
+    border: 3px solid #7C6F48;
+}
+.img{
+    width: 51px;
+    height: 51px;
+}
+/*名字*/
+#name{
+    width: 180px;
+    height: 22px;
+    background-color: #003C46;
+    border-radius: 3px;
+    position: absolute;
+    top: 11px;
+    left: 848px;
+    background-color:#003B46;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+/*缩小图标 加JS*/
+#scale{
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    position: absolute;
+    top: 90px;
+    right: 9px;
+    opacity: 0;
+    z-index: 100;
+}
+/*人形小图标 加JS*/
+#people{
+    width: 70px;
+    height: 28px;
+    background-color: white;
+    position: absolute;
+    right: 156px;
+    bottom: 7px;
+    opacity: 0;
+    z-index: 100;
+}
+/*社交整体栏*/
+#friend{
+    width: 228px;
+    height: 684px;
+    position: absolute;
+    top: 83px;
+    right: 0px;
+    background: url("images/friend.png");
+    opacity: 0;
+}
+
+#image2{
+    width: 51px;
+    height: 51px;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+.img2{
+    width: 51px;
+    height: 51px;
+}
+#name2{
+    width: 130px;
+    height: 17px;
+    position: absolute;
+    top: 15px;
+    left: 62px;
+    background-color: #0B1A25 ;
+    color: white;
+    font-size: 14px;
+}
+/*选择头像*/
+#kinds{
+    width: 784px;
+    height: 338px;
+    position: relative;
+    background: url("images/11.png");
+    top: 200px;
+    left: 250px;
+    opacity: 0;
+}
+
+#sm_box{
+    width: 380px;
+    height: 215px;
+    /*border: 1px solid black;*/
+    position: absolute;
+    top: 59.5px;
+    left: 22px;
+}
+#sm_box img{
+    width: 62px;
+    height: 62px;
+    margin-right: 13px;
+}
+#sm_box img:hover{
+    cursor: pointer;
+}
+
+/*确定和取消按钮*/
+/*取消*/
+button{
+    width: 100px;
+    height: 28px;
+    position: absolute;
+    bottom: 11px;
+    right: 126px;
+    padding: 0;
+    opacity: 0;
+}
+/*确认*/
+#input{
+    width: 100px;
+    height: 28px;
+    position: absolute;
+    bottom: 11px;
+    right: 13px;
+    padding: 0;
+    opacity: 0;
+}
+
+button,#input:hover{
+    cursor: pointer;
+}
+#people,#scale:hover{
+    cursor: pointer;
+}
+#image,#off:hover{
+    cursor: pointer;
+}
+#footer{
+    width: 600px;
+    height: 25px;
+    background-color: #0E1E28;
+    position: absolute;
+    bottom: 9px;
+    left: 17px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+}
+#off{
+    width: 22px;
+    height: 22px;
+    background: url("images/off.png");
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+/*聊天框*/
+#talk_box{
+    width: 600px;
+    height: 500px;
+    background-color: #0E1E28;
+    position: absolute;
+    left: 17px;
+    bottom:34px ;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#talk_box > ul{
+    width: 600px;
+    height: 472px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#talk_box > ul >li:nth-of-type(1){
+    margin-top: 25px;
+}
+#talk_box >ul >li{
+    width: 550px;
+    margin-left: 25px;
+    background-color: black;
+    margin-bottom: 3px;
+    font-size: 20px;
+    color: yellow;
+}
+/*聊天输入框*/
+form{
+    opacity: 0;
+
+}
+#input2{
+    width: 500px;
+    height: 28px;
+    left: 45px;
+    position: absolute;
+    bottom: 36px;
+}
+
+#input666{
+    position: absolute;
+    height: 35px;
+    bottom:36px;
+    left: 554px;
+    background-color:#0E1E28 ;
+    border: 1px solid black;
+    color: #906330;
+}
+/*滚动条的样式*/
+

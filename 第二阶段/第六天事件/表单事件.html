@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>表单事件</title>
+	</head>
+
+	<body>
+		<form action="" method="post">
+          <label>用户名：</label>
+          <input type="text" name="username" id="username" value="" /><br />
+          <label>密码：</label>
+          <input type="password" name="password" id="password" value="" />
+          
+			<input type="submit" value="提交" />
+			<input type="reset" name="" id="" value="重置" />
+		</form>
+		
+		<script type="text/javascript">
+			var form=document.querySelector('form');
+			form.addEventListener('submit',function(){
+				console.log('表单进行了提交');
+			});
+			
+			form.addEventListener('reset',function(){
+				console.log('表单的内容已经清空了！');
+			});
+			
+			form.addEventListener('click',function(){
+				console.log('表单被单击了');
+			});
+			form.addEventListener('change',function(){
+				console.log('表单的内容发生了变化');
+			});
+			
+			form.addEventListener('focusin',function(){
+				console.log('获取焦点')
+			});
+			
+			form.addEventListener('focusout',function(){
+				console.log('失去焦点');
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>JSON和XML认识</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            //一、 XML（extensible markup language可拓展标记语言）跟HTML（Hyper text markup language超文本标记语言）一样，都是用标签去标记对象的。
+            /*
+            游戏中的一个英雄
+            属性：
+            姓名 剑圣
+            生命值  1000
+            魔法值  800
+            方法：
+            阿尔法突袭 : 60%几率造成400魔法伤害
+            冥想: 在5秒内回复700生命值
+            */ 
+            // <hero>
+            //     <name>剑圣</name>
+            //     <blood>1000</blood>
+            //     <magic>800</magic>
+            //     <skill>
+            //         <alphaTuxi>60%几率造成400魔法伤害</alphaTuxi>
+            //         <meditation>在5秒内回复700生命值</meditation>
+            //     </skill>
+            // </hero>
+            // 上面就是用XML简单封装了一个英雄的基本数据了。
+            // 需要明确的地方：1、XML的标签都是自己定义的，跟HTML不一样。 2、标签必须符合嵌套规则，有头有尾，成双成对
+            // 使用XML数据的时候，一般都是从单个数据单元最外层标签开始定位，然后依次向内部标签定位，直至找到目标标签。
+            // 劣势：1、XML构件数据数据时代码量比较多 2、XML数据解析的时候，需要大量代码，而且可能嵌套层次太多，导致解析结构复杂 3、XML占用空间较大
+
+            // 二、JSON （JavaScript Object Notation js对象标记／表示法）
+            var heroInfo = {
+                'name':'剑圣',
+                'blood':1000,
+                'magic':800,
+                'skill':{
+                    'alphaTuxi':'60%几率造成400魔法伤害',
+                    'meditation':'在5秒内回复700生命值'
+                }
+            };
+            // 上面就是使用JSON（JavaScript Object Notation js对象标记）封装的数据
+            console.log(heroInfo);
+            
+            // JSON 数据输出的时候，默认会把大括号内部内容当成一个对象处理
+
+            // 将JavaScript对象转换成JSON字符串,序列化
+            var myStr = JSON.stringify(heroInfo);
+            console.log(myStr);
+            // 转换成字符串之前，JSON数据是有层次的，转换之后，就变成一串字符了。
+
+            // 将JSON字符串转换成JavaScript对象，反序列化
+            var myJSObj = JSON.parse(myStr);
+            console.log(myJSObj);
+
+            // 如何找到对象中的数据？
+            console.log(myJSObj.skill);
+            console.log(myJSObj.skill.meditation);
+            // 通过JavaScript对象，按照JSON的层次结构，从最外层，依次向内找
+
+            // 或者，可以直接对象.属性，得到相应的值
+            console.log(heroInfo.skill);
+            console.log(heroInfo.skill.meditation);
+        </script>
+    </body>
+</html>

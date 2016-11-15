@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>练习使用clip</title>
+    <style>
+        body {
+            background: gray;
+        }
+        
+        section {
+            height: 150px;
+            width: 600px;
+            background: white;
+            margin: 100px auto;
+            border-radius: 10px;
+            position: relative;
+        }
+        /*clip：只能在元素设置了position：absolute或者position：fixed才能使用*/
+        /*当bottom和right取值为auto时，相当于元素的100%*/
+        /*rect：矩形   clip 裁剪*/
+        /*rect四个参数
+            第一个值：上方切掉的范围
+            第二个值：从左到右保留的范围
+            第三个值：从上到下保留的范围
+            第四个值：左侧切掉的范围*/
+        /*上 右 下 左*/
+        /*clip: rect(60px 200px 140px 0px);*/
+        
+        div:nth-of-type(1) {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 40px;
+            left: 50px;
+            clip: rect(90px, 200px, 200px, 0px);
+        }
+        
+        div:nth-of-type(2) {
+            height: 150px;
+            width: 150px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            left: 150px;
+            top: 30px;
+            clip: rect(0px, 150px, 120px, 0px);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

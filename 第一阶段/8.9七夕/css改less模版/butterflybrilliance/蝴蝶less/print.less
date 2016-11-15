@@ -1,0 +1,21 @@
+@mycolor:#000;
+body { 
+  color :@mycolor; 
+  background : #ffffff; 
+  font-family : "Times New Roman", Times, serif;
+  font-size : 12px; 
+}
+
+a { 
+  text-decoration : underline; 
+  color :@mycolor+#00f; 
+}
+
+a:link:after, a:visited:after {
+content: " (" attr(href) ") ";
+font-size: 70%;
+}
+
+nav, sidebar, footer, header, aside { 
+  display : none; 
+}

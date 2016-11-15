@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery查找拓展</title>
+		<script type="text/javascript" src="jquery-2.0.3.js">	</script>
+			
+	
+	</head>
+
+	<body>
+		<div>
+			<ul class="web">
+				<li>Web入门</li>
+				<li name="html">HTML5</li>
+				<li id="css">CSS3</li>
+				<li class="js">JavaScript</li>
+				<li class="js jquery">jQuery</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+		//1、在某一个元素的所有子元素中进行二次查找，使用find()
+		var ulobj=$('ul.web');
+		var classobjs=ulobj.find('.css');
+		console.log(classobjs);
+		
+		</script>
+	</body>
+
+</html>

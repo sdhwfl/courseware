@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM 节点属性</title>
+	</head>
+	<body>
+		<ul>
+			<li>第1个列表子项</li>
+			<li>第2个列表子项</li>
+			<li>第3个列表子项</li>
+			<li>第4个列表子项</li>
+			<li>第5个列表子项</li>
+		</ul>
+		<script type="text/javascript">
+			//常用dom节点属性
+			//第一步找到元素  第二步：元素，属性
+			//找到ul
+			var myul =document.getElementsByTagName('ul')[0];
+			console.log(myul);
+			//得到ul的长度/子节点的数量
+			var licount =myul.childElementCount;
+			console.log("子节点的数量是"+licount);
+			var lilist=myul.children;
+			console.log("子节点列表的长度是："+lilist.length);
+			
+			var lilist2=myul.childNodes;
+			console.log("ul子节点是："+lilist2.length);
+			//小总结
+			//childelementcount得到是元素中的子元素的节点，强调是元素节点。
+			//childnodes得到的是这里面容纳的所有节点，包括元素节点和文本节点。可以通过childnodes.length得到子节点的数量
+			// children得到的是元素中的子元素节点，可以通过childen.length得到子元素节点的数量
+			//nodename//nodetype//nodevalue
+           //console.log('------'.repeat(20));
+
+			console.log("ul的节点名是："+myul.nodeName);
+			console.log("ul的节点类型是："+myul.nodeType);
+			console.log("ul的节点值是："+myul.nodeValue);
+			
+			var myli=myul.children[1];
+			console.log("li的节点名是："+myli.nodeName);
+			console.log("li的节点类型是："+myli.nodeType);
+			console.log("li的节点值是："+myli.nodeValue);
+			
+			//childen只能找到元素节点
+			var mytext =myli.childNodes[0];
+			console.log("li内部的文本节点值是"+mytext.nodeValue);
+			console.log("li内部的文本节点名是："+mytext.nodeName);
+			console.log("li内部的文本节点类型是："+mytext.nodeType);
+			
+			function getvalue(){
+				 var mychildrencount =10;
+				 //
+				 return mychildrencount;
+			}
+			var quzhi =getvalue();
+			console.log('取到的值是：'+quzhi);
+		   //对象调用属性，原理上是对象调用方法，然后返回一个属性值 
+		   myli.style.color='pink';
+		   myli.style.listStyle='none';
+		   myli.style.backgroundColor='green';
+		   myli.style.height='100px';
+		   
+		</script>
+	</body>
+</html>

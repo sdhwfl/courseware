@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>上传图片</title>
+		<meta charset="utf-8">
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		<form action="user/photo" method="post" enctype="multipart/form-data">
+			<input type="file" name="photo" id="photo" value=""  required accept=".jpg,.png,.gif"/><br />
+			<input type="submit" value="上传图片" class="btn"/>
+		</form>
+	</body>
+
+</html>

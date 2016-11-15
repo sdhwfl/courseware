@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>小米商城主页</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+        
+        header {
+            position: relative;
+        }
+        
+        .a1 img {
+            width: 100%;
+        }
+        
+        .a2 {
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        
+        .a2:hover {
+            color: #fff;
+        }
+        
+        .sousuo {
+            color: #999;
+            font-size: 30px;
+            padding: 10px;
+        }
+        
+        .sousuo:hover {
+            color: #999;
+        }
+        
+        .sousuo>div {
+            height: 50px;
+            width: 100%;
+            margin: 5px;
+            border-bottom: 1px solid #999;
+        }
+        /*简介图片轮播*/
+        
+        .carousel {
+            margin-top: -30px;
+            height: 300px;
+            /*margin-bottom: 60px;*/
+        }
+        
+        .carousel-caption {
+            z-index: 10;
+        }
+        
+        .carousel .item {
+            height: 300px;
+            width: 100%;
+            background-color: #777;
+            margin: 0 auto;
+        }
+        
+        .carousel-inner > .item > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 300px;
+        }
+        
+        .featurette-divider {
+            margin: 80px 0;
+        }
+        
+        .featurette-heading {
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        
+        .col-xs-4 {
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        
+        .neirong {
+            height: 280px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .col-xs-4 h4 {
+            color: #999;
+            /*color: lightgoldenrodyellow*/
+        }
+        
+        .col-xs-4 a {
+            color: #333;
+        }
+        
+        .col-xs-4>a:hover {
+            text-decoration: none;
+        }
+        
+        .a-spzs:hover {
+            text-decoration: none;
+        }
+        
+        .spzs {
+            margin-top: 10px;
+            height: 200px;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+        }
+        
+        .tp {
+            margin-top: 30px;
+            width: 20%;
+            height: 150px;
+            text-align: center;
+            position: relative;
+        }
+        /*.tp>img:nth-of-type(2) {
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            bottom: 20px;
+            left: 5%;
+        }*/
+        
+        .introduce {
+            margin-left: 20px;
+            height: 200px;
+            width: 75%;
+        }
+        
+        .introduce>p {
+            font-size: 20px;
+            color: #999;
+        }
+        
+        .introduce>span {
+            color: red;
+            font-size: 20px;
+        }
+        
+        .dianliang img {
+            width: 100%;
+            margin-bottom: 120px;
+        }
+        /*底部*/
+        
+        .navbar {
+            height: 80px;
+            width: 100%;
+            border-top: solid 1px #aaa;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+        
+        .navbar>a {
+            color: #666;
+        }
+        
+        .navbar>a:hover {
+            color: orangered;
+        }
+        
+        .glyphicon {
+            margin-top: 5px;
+            font-size: 24px;
+        }
+        
+        .active {
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="商城/1-9332e67dfd.png" class="a1">
+            <img src="商城/ios.png" alt="">
+        </a>
+        <a href="" class="a2">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+    </header>
+    <main>
+        <!--搜索框-->
+        <a href="搜索.html" class="sousuo">
+            <div class=" glyphicon glyphicon-search">搜索商品名称</div>
+        </a>
+        <!--新品-->
+        <a href="详情.html" class="xp">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="商城/0.jpg" alt="">
+
+                    </div>
+                    <div class="item">
+                        <img src="商城/1.jpg" alt="">
+
+                    </div>
+                    <div class="item">
+                        <img src="商城/2.jpg" alt="">
+
+                    </div>
+
+
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </a>
+
+        <div class="container">
+            <div class="col-xs-4">
+                <a href="详情.html">
+                    <div class="neirong" style="background-color: bisque">
+                        <h3>红米3s</h3>
+                        <h4>两天续航，指纹解锁</h4>
+                        <h3>699元起</h3>
+                        <img src="分类/T1W1KgB4Ev1R4cSCrK.png" alt="">
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-xs-4">
+                <a href="详情.html">
+                    <div class="neirong" style="background-color: lightcyan">
+                        <h3>红米pro</h3>
+                        <h4>双摄十核旗舰手机</h4>
+                        <h3>1499元起</h3>
+                        <img src="分类/2a53e44a-6faf-7ed2-1dad-6c0f6c4331f6.png" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-4">
+                <a href="详情.html">
+                    <div class="neirong" style="background-color: azure">
+                        <h3>红米note3</h3>
+                        <h4>金属机身 指纹识别</h4>
+                        <h3>899元起</h3>
+                        <img src="分类/T1egD_B7Cv1RXrhCrK.jpg" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="详情.html">
+                    <div class="neirong" style="background-color: azure">
+                        <h3>小米5</h3>
+                        <h4>黑科技手机</h4>
+                        <h3>1799元起</h3>
+                        <img src="分类/35ef7c97-7f9e-5cdd-16b1-61efc5c4d483.png" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-4">
+                <a href="详情.html">
+                    <div class="neirong" style="background-color:floralwhite">
+                        <h3>小米max</h3>
+                        <h4>4850mAh 大电量</h4>
+                        <h3>1499元起</h3>
+                        <img src="分类/T1m5KjBC_v1R4cSCrK.png" alt="">
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-xs-4">
+                <a href="详情.html">
+                    <div class="neirong" style="background-color: lightgoldenrodyellow">
+                        <h3>小米笔记本</h3>
+                        <h4>轻薄金属机身</h4>
+                        <h3>3499元起</h3>
+                        <img src="分类/f8eb5bd2-1377-04d7-fa29-fc6c429e2d4f.png" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--商品展示-->
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+
+                <section class="tp">
+                    <img src="分类/f8eb5bd2-1377-04d7-fa29-fc6c429e2d4f.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米笔记本Air</h2>
+                    <p>轻薄全金属机身 / 11.5 小时超长续航，支持1C快充 / Intel 酷睿m3 处理器 / 4GB 内存 + 128GB SSD / FHD 全贴合屏幕</p>
+                    <span>3499元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/小米max5.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米max5</h2>
+                    <p>6.44"大屏黄金尺寸 / 128GB 容量 / 4GB内存 / 4850mAh 大电量 / 骁龙652处理器 / 金属机身 / 指纹识别 / 2.5D玻璃</p>
+                    <span>1999元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/红米3x.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>红米3x</h2>
+                    <p>高通骁龙430 八核处理器 / 2GB内存 + 32GB存储 / 标配指纹识别 / 全网通 4G双卡双待 / 高光亮边金属机身</p>
+                    <span>799元</span>
+                </section>
+            </div>
+        </a>
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+
+                <section class="tp">
+                    <img src="分类/f8eb5bd2-1377-04d7-fa29-fc6c429e2d4f.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米笔记本Air</h2>
+                    <p>轻薄全金属机身 / 11.5 小时超长续航，支持1C快充 / Intel 酷睿m3 处理器 / 4GB 内存 + 128GB SSD / FHD 全贴合屏幕</p>
+                    <span>3499元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/小米max5.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米max5</h2>
+                    <p>6.44"大屏黄金尺寸 / 128GB 容量 / 4GB内存 / 4850mAh 大电量 / 骁龙652处理器 / 金属机身 / 指纹识别 / 2.5D玻璃</p>
+                    <span>1999元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/红米3x.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>红米3x</h2>
+                    <p>高通骁龙430 八核处理器 / 2GB内存 + 32GB存储 / 标配指纹识别 / 全网通 4G双卡双待 / 高光亮边金属机身</p>
+                    <span>799元</span>
+                </section>
+            </div>
+        </a>
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+
+                <section class="tp">
+                    <img src="分类/f8eb5bd2-1377-04d7-fa29-fc6c429e2d4f.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米笔记本Air</h2>
+                    <p>轻薄全金属机身 / 11.5 小时超长续航，支持1C快充 / Intel 酷睿m3 处理器 / 4GB 内存 + 128GB SSD / FHD 全贴合屏幕</p>
+                    <span>3499元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/小米max5.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米max5</h2>
+                    <p>6.44"大屏黄金尺寸 / 128GB 容量 / 4GB内存 / 4850mAh 大电量 / 骁龙652处理器 / 金属机身 / 指纹识别 / 2.5D玻璃</p>
+                    <span>1999元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/红米3x.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>红米3x</h2>
+                    <p>高通骁龙430 八核处理器 / 2GB内存 + 32GB存储 / 标配指纹识别 / 全网通 4G双卡双待 / 高光亮边金属机身</p>
+                    <span>799元</span>
+                </section>
+            </div>
+        </a>
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+
+                <section class="tp">
+                    <img src="分类/f8eb5bd2-1377-04d7-fa29-fc6c429e2d4f.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米笔记本Air</h2>
+                    <p>轻薄全金属机身 / 11.5 小时超长续航，支持1C快充 / Intel 酷睿m3 处理器 / 4GB 内存 + 128GB SSD / FHD 全贴合屏幕</p>
+                    <span>3499元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/小米max5.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>小米max5</h2>
+                    <p>6.44"大屏黄金尺寸 / 128GB 容量 / 4GB内存 / 4850mAh 大电量 / 骁龙652处理器 / 金属机身 / 指纹识别 / 2.5D玻璃</p>
+                    <span>1999元</span>
+                </section>
+            </div>
+        </a>
+
+        <a href="详情.html" class="a-spzs">
+            <div class="spzs">
+                <section class="tp">
+                    <img src="images/红米3x.png" alt="">
+
+                </section>
+                <section class="introduce">
+                    <h2>红米3x</h2>
+                    <p>高通骁龙430 八核处理器 / 2GB内存 + 32GB存储 / 标配指纹识别 / 全网通 4G双卡双待 / 高光亮边金属机身</p>
+                    <span>799元</span>
+                </section>
+            </div>
+        </a>
+
+
+
+
+        <div class="dianliang">
+            <img src="商城/7386b1f5-e77c-14e5-8185-28db2d1b5517.jpg" alt="">
+        </div>
+    </main>
+
+    <footer class="navbar navbar-fixed-bottom">
+        <a href="主页.html"><span class="glyphicon glyphicon-piggy-bank  active"><br>商城</span></a>
+        <a href="分类.html"><span class="glyphicon glyphicon-filter "><br>分类</span></a>
+        <a href="购物车.html"><span class="glyphicon glyphicon-shopping-cart"><br>购物车</span></a>
+        <a href="服务.html"><span class="glyphicon glyphicon-grain"><br>服务</span></a>
+
+    </footer>
+</body>
+
+</html>

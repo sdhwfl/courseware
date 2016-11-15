@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自练习嵌套自增编号</title>
+    <style>
+        body {
+            counter-reset: h3;
+            counter-reset: h2 ;
+            counter-reset: h1 -1;
+        }
+        
+        h1 {
+            counter-increment: h1;
+        }
+        
+        h1:before {
+            content: counter(h1)':';
+        }
+        
+        h2 {
+            counter-increment: h2;
+        }
+        
+        h2:before {
+            content: counter(h1)'.'counter(h2)':';
+        }
+        h3{
+            counter-increment: h3;
+        }
+        h3:before{
+            content:counter(h1)'.'counter(h2)'.'counter(h3)':';
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>一级标题1</h1>
+    <h2>二级标题1</h2>
+    <h2>二级标题2</h2>
+    <h2>二级标题3</h2>
+    <h3>三级标题1</h3>
+    <h3>三级标题2</h3>
+    <h3>三级标题3</h3>
+    <h1>一级标题2</h1>
+    <h1>一级标题3</h1>
+
+</body>
+
+</html>

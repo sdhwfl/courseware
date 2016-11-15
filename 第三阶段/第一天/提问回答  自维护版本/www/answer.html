@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>提交回答</title>
+		<meta charset="utf-8">
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/popupInsert.css" />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/answer.js"></script>
+		<script src="js/popupInsert.js"></script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+
+	<body>
+				<div class="h50"></div>
+		<div id="nav">
+
+			<nav class="nav">
+
+				<div class="back">
+					<span class="glyphicon glyphicon-chevron-left">
+					</span>
+				</div>
+				<div class="title askquest">回答</div>
+				<div class="user">
+				<span class="glyphicon glyphicon-home"></span>&#x3000;
+
+				</div>
+			</nav>
+		</div>
+
+		<main>
+			<form action="/user/ask" method="post" class="ask-content">
+				<div class="form-group">
+					<textarea name="content" class="form-control form_content" placeholder="请详细描述您的问题" rows="10"></textarea>
+				</div>
+				<input type="submit" class="btn btn-primary form-control" value="提交回答" data-toggle="modal" data-target="#myModal">
+
+		</main>
+
+	</body>
+
+	
+
+</html>

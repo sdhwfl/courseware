@@ -1,0 +1,27 @@
+{{include "share/header"}}
+		<div class="h50"></div>
+		<div id="nav">
+
+			<nav class="nav">
+
+				<div class="back">
+					<span class="glyphicon glyphicon-chevron-left">
+					</span>
+				</div>
+				<div class="title askquest">回答</div>
+				<div class="user">
+					<span class="glyphicon glyphicon-home"></span>&#x3000;
+				</div>
+			</nav>
+		</div>
+
+		 <main>
+			<form action="/answer" method="get" class="ask-content">
+				<div class="form-group">
+					<textarea name="content" class="form-control form_content" placeholder="请详细描述您的问题" rows="10"></textarea>
+				</div>
+				<input type="submit" class="btn btn-success form-control" value="提交回答" data-toggle="modal" data-target="#myModal">
+
+		</main>
+
+{{include "share/footer"}}

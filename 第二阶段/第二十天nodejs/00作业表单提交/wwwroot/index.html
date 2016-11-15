@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>标题</title>
+		<meta charset='UTF-8'>;
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		<form action="/user">
+			<ul>
+				<li>
+					<label>姓名：</label>
+					<!--required必须填写的内容-->
+					<!--pattern-->
+					<input type="text" name="name" required pattern="[\u2E80-\u9FFF]{2,4}" >
+				</li>
+				<li>
+					<label>手机：</label>
+					<input type="text" name="phone" required pattern="1[3578]\d{9}" >
+				</li>
+				<li>
+					<label>邮箱：</label>
+					<input type="text" name="email"  required  pattern="[a-zA-Z\d\.]+@([a-zA-Z\d\-]+\.)+([a-zA-Z]+\.)?[a-zA-Z\u4E00-\u9FFF]+">
+
+				</li>
+				<li>
+					<label>qq：</label>
+					<input type="text" name='qq' pattern="[1-9]\d{4,10}">
+				</li>
+				<li>
+					<input type="submit" value="确认提交">
+				</li>
+			</ul>
+		</form>
+		<!--<script type="text/javascript">
+			$('.submit-btn').click(function(){
+		    $(':input[name=name]').val();
+			})
+		</script>-->
+		
+		
+	</body>
+
+</html>

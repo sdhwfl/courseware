@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>跳动的文字</title>
+</head>
+<style>
+  body{
+    background-color: #333;
+  }
+</style>
+<body>
+    <p id="p1">我是第一段文字</p>
+    <p id="p2">我是第二段文字</p>
+
+    <script type="text/javascript">
+        document.write("hello");    
+        document.getElementById("p1").style.color="blue";
+        document.getElementById("p2").style.color="purple";
+         
+    </script>
+    <style type="text/css">
+        a {
+            text-decoration: none
+        }
+    </style>
+    <div id="newsticker"><span id="tickertitle"></span>
+        <a id="typewriter" href="#"></a>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    // please keep these lines on when you copy the source   
+var current = 0 ; 
+var x = 0  ;
+var speed = 100 ;
+var speed2 = 2000  ;
+function initArray(n) {  
+  this.length = n;  
+  for (var i =1; i <= n; i++) {  
+    this[i] = ' '  
+  }  
+}  
+typ = new initArray(16);  
+typ[0]="406:red:这是我第一次写js代码 (July 2015)";  
+typ[1]="409:orange:The Insolvency Service last in UK Central Government (June 2008)";  
+typ[2]="384:yellow:Federated States of Micronesia 1st in US Gov State and Territorial Government Websites (April 2008)";  
+typ[3]="413:green:U.S. Immigration and Customs Enforcement highest climber in US Gov Federal Agencies  (up 188) - June 2008";  
+typ[4]="371:pink:Iowa 1st in US Gov State Governors Websites (April 2008)";  
+typ[5]="373:blue:Directgov Jobs and Skills 1st in UK Central Government (April 2008)";  
+typ[6]="379:red:Birmingham last in UK Local Government (April 2008)";  
+typ[7]="406:green:Utah highest climber in US Gov State Governors Websites (up 16) - June 2008";  
+typ[8]="380:red:Kent Police greatest faller in Police Forces (down 31) - April 2008";  
+function typewrite() {  
+  var m = typ[current];  
+  document.getElementById("typewriter").href = '/survey/report.html?rt=' + m.substring(0,m.indexOf(':'));  
+  m = m.substring(m.indexOf(':') + 1);  
+  document.getElementById("typewriter").style.color = m.substring(0,m.indexOf(':'));  
+  m = m.substring(m.indexOf(':') + 1);  
+  m = m.replace("&","and");  
+  document.getElementById("typewriter").innerHTML = m.substring(0, x++) + "_";  
+    
+  if (x == m.length + 1) {  
+    x = 0  
+    current++  
+    if (current > typ.length - 1) {  
+      current = 0  
+    }  
+    setTimeout("typewrite()", speed2)  
+    }  
+  else {  
+    setTimeout("typewrite()", speed)  
+  }  
+}  
+
+typewrite()
+
+</script>
+
+</body>
+
+</html>

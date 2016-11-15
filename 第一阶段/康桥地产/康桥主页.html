@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>林溪湾主页</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(林溪湾主页/1.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        
+        ul {
+            list-style: none;
+            font-size: 16px;
+            position: absolute;
+            bottom: 20px;
+            left: -40px;
+        }
+        
+        ul>li {
+            background-color: #111;
+            margin: 5px 0;
+            color: #fff;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        a>img {
+            height: 12px;
+            width: 12px;
+            margin-top: 7px;
+        }
+        
+        ul>li:nth-of-type(1) {
+            height: 30px;
+            width: 130px;
+            transition-property: all;
+            transition-duration: 1.0s;
+            animation: rotate 1s linear;
+            animation-fill-mode: backwards;
+        }
+        
+        ul>li:nth-of-type(2) {
+            height: 30px;
+            width: 140px;
+            transition-property: all;
+            transition-duration: 1.0s;
+            animation: rotate 2s linear;
+            animation-fill-mode: backwards;
+        }
+        
+        ul>li:nth-of-type(3) {
+            height: 30px;
+            width: 180px;
+            transition-property: all;
+            transition-duration: 1.0s;
+            animation: rotate 3s linear;
+            animation-fill-mode: backwards;
+        }
+        
+        ul>li:nth-of-type(4) {
+            height: 30px;
+            width: 150px;
+            transition-property: all;
+            transition-duration: 1.0s;
+            animation: rotate 4s linear;
+            animation-fill-mode: backwards;
+        }
+        
+        ul>li:nth-of-type(5) {
+            height: 30px;
+            width: 150px;
+            transition-property: all;
+            transition-duration: 1.0s;
+            animation: rotate 5s linear;
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: translate(-200px);
+            }
+            to {
+                transform: translate(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a href="楼盘详情.html">楼盘详情&#X3000&#X3000<img src="林溪湾主页/icon_default.png" alt=""></a></li>
+            <li><a href="全景户型.html">全景户型&#X3000&#X3000&#X3000<img src="林溪湾主页/icon_default.png" alt=""></a></li>
+            <li><a href="项目图册.html">项目图册&#X3000&#X3000&#X3000&#X3000&#X3000<img src="林溪湾主页/icon_default.png" alt=""></a></li>
+            <li><a href="预约看房.html">预约看房&#X3000&#X3000&#X3000<img src="林溪湾主页/icon_default.png" alt=""></a></li>
+            <li><a href="房贷计算器.html">房贷计算器&#X3000&#X3000<img src="林溪湾主页/icon_default.png" alt=""></a></li>
+        </ul>
+    </div>
+</body>
+<html>

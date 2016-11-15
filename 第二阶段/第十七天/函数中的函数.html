@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>函数中的函数</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var number = 1;
+
+			function box() {
+				//var number = 3;
+				//函数具有捕获上一级作用域的能力
+				//如果上级作用域没有那个人变量，则继续往上一级作用域查找  直到查到全局为止
+				//一旦找到则不再往上查找
+				return function() {
+					number++;
+					return number;
+				}
+			}
+			var b = box();
+
+			console.log(b());
+			console.log(b());
+			console.log(b());
+
+			console.log(box()());
+			console.log(box()());
+			console.log(box()());
+		</script>
+	</body>
+
+</html>

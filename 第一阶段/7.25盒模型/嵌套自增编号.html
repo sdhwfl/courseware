@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套自增编号</title>
+    <style>
+        body {
+            /*默认从0开始计数*/
+            /*为了避免计数错误，重置计数器的顺序尽量从内到外进行*/
+            counter-reset: h5;
+            counter-reset: h4;
+            counter-reset: h3;
+            counter-reset: h2;
+        }
+        
+        h2 {
+            /*默认增值为正值*/
+            counter-increment: h2;
+            text-indent: 2em;
+        }
+        
+        h2:before {
+            content: counter(h2)':';
+        }
+        
+        h3 {
+            counter-increment: h3;
+            text-indent: 4em;
+        }
+        
+        h3:before {
+            content: counter(h2) '.'counter(h3)':';
+        }
+        
+        h4 {
+            counter-increment: h4;
+            text-indent: 6em;
+        }
+        
+        h4:before {
+            content: counter(h2)'.'counter(h3)'.'counter(h4)':';
+        }
+        /*特定条件下对某些值进行重置*/
+        /*重置规则保持一致*/
+        
+        h5 {
+            counter-increment: h5;
+            text-indent: 8em;
+        }
+        
+        h5:before {
+            content: counter(h2)'.'counter(h3)'.'counter(h4)'.'counter(h5);
+        }
+        
+        h2:nth-of-type(2) {
+            counter-reset: h3;
+        }
+        
+        h2:nth-of-type(3) {
+            counter-reset: h3;
+        }
+        
+        h4:nth-of-type(4) {
+            counter-reset: h4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>个人简历</h1>
+
+
+    <h2>基本信息</h2>
+    <h3>精通html5</h3>
+    <h3>精通Javascript</h3>
+    <h3>精通css3</h3>
+
+    <h2>专业技能</h2>
+    <h3>精通html5</h3>
+    <h3>精通Javascript</h3>
+    <h3>精通css3</h3>
+    <h4>信息工程学院</h4>
+    <h4>电子与通信工程系</h4>
+    <h4>网络工程</h4>
+    <h5>河南省</h5>
+    <h5>周口市</h5>
+    <h5>鹿邑县</h5>
+
+
+
+    <h2>求职意向</h2>
+    <h3>精通html5</h3>
+    <h3>精通Javascript</h3>
+    <h3>精通css3</h3>
+    <h4>信息工程学院</h4>
+    <h4>电子与通信工程系</h4>
+    <h4>网络工程</h4>
+
+</body>
+
+</html>

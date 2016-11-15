@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>css的位置和尺寸</title>
+		<script type="text/javascript" src="jquery-2.0.3.js "></script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				border: 0;
+				margin: 0;
+			}
+			
+			#container {
+				height: 70px;
+				background-color: #111;
+				position: relative;
+			}
+			
+			#box {
+				width: 1000px;
+				height: 70px;
+				background-color: #000;
+				color: #fff;
+				margin: 0 auto;
+			}
+			
+			
+			#min-box ul li {
+				height: 70px;
+				font-size: 22px;
+				color: #fff;
+				line-height: 70px;
+				padding: 0 10px;
+				float: left;
+				list-style: none;
+				
+			}
+			
+			#reg {
+				position: absolute;
+				right: 10px;
+				top: 20px;
+				height: 30px;
+				line-height: 30px;
+			}
+			.myul1{
+				height: 100px;
+				width: 150px;
+				background-color: #333;
+				color: #fff;
+				text-align: center;
+				margin-top: 5px;
+				display: none;
+				position:absolute;
+				top: 70;
+				left: 280px;
+			
+			}
+			.myul1 li{
+				padding: 5px 0;
+				
+			}
+		</style>
+	</head>
+
+	<script type="text/javascript">
+		$(function() {
+			//相对视口的位置
+			//返回一个对象 {left：num top：num}
+			//console.log($('#reg').offset());
+			//到窗口左边的距离
+			//console.log($('#reg').offset().left);
+			//到窗口顶部的距离
+			//console.log($('#reg').offset().top);
+			//获取匹配元素相对父元素的距离
+			//console.log($('#reg').position());
+			//console.log($('#reg').position().top);
+			//console.log($('#reg').position().left);
+			//当前元素的高度
+			//console.log($('#reg').height());
+			//console.log($('#reg').width());
+			//innerHeight()当前元素的高度 不包括border padding
+			//innerWidth()当前元素的宽度 不包括border padding
+			//scrollTop([val]) 获取匹配元素相对滚动条顶部的偏移 此方法对可见和隐藏元素均有效。
+			//scrollLeft([val]) 获取匹配元素相对滚动条左侧的偏移。 此方法对可见和隐藏元素均有效。
+			
+			$('ul li:eq(0)').mouseover(function(){
+			  $('.myul1').slideDown();
+			})
+            $('ul li:eq(0)').mouseout(function(){
+			  $('.myul1').slideUp();
+			})
+            $('ul li:eq(1)').mouseover(function(){
+			  $('.myul1').slideDown();
+			
+			})
+            $('ul li:eq(1)').mouseout(function(){
+			  $('.myul1').slideUp();
+			})
+
+		})
+	</script>
+
+	<body>
+		<div id="container">
+			<div id="box">
+				<div id="min-box">
+					<ul>
+						<li>第1个列表子项</li>
+						<li>第2个列表子项</li>
+						<li>第3个列表子项</li>
+						<li>第4个列表子项</li>
+						<li>第5个列表子项</li>
+					</ul>
+				</div>
+				<div id="reg"> 注册  | 登录</div>
+			</div>
+		</div>
+		<ul class="myul1">
+			<li>第1个子列表子项</li>
+			<li>第2个子列表子项</li>
+			<li>第3个子列表子项</li>
+		</ul>
+	</body>
+
+</html>

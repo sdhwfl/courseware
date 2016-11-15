@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>计算器</title>
+	</head>
+	<style type="text/css">
+		main {
+			height: 600px;
+			width: 500px;
+			border: solid 1px hotpink;
+			position: relative;
+			margin: auto;
+		}
+		
+		#header {
+			height: 60px;
+			width: 500px;
+			text-align: center;
+			line-height: 60px;
+			background-color: hotpink;
+			font-size: 20px;
+			color: #fff;
+		}
+		
+		#benjin {
+			height: 30px;
+			width: 400px;
+			position: absolute;
+			top: 120px;
+			left: 50px;
+			border: solid 1px hotpink;
+			color: deeppink;
+		}
+		
+		#lixi {
+			height: 30px;
+			width: 400px;
+			position: absolute;
+			top: 180px;
+			left: 50px;
+			border: solid 1px hotpink;
+			color: deeppink;
+		}
+		
+		#qishu {
+			height: 30px;
+			width: 400px;
+			position: absolute;
+			top: 240px;
+			left: 50px;
+			border: solid 1px hotpink;
+			color: deeppink;
+		}
+		
+		#return {
+			height: 40px;
+			width: 400px;
+			position: absolute;
+			top: 300px;
+			left: 50px;
+			background-color: hotpink;
+			color: #fff;
+			font-size: 16px;
+			border: none;
+		}
+		
+		#jieguo {
+			height: 60px;
+			width: 400px;
+			/*background: hotpink;*/
+			position: absolute;
+			top: 360px;
+			left: 50px;
+			line-height: 60px;
+			text-align: center;
+			color: red;
+		}
+	</style>
+
+	<body>
+		<main>
+			<div id="header">计算器</div>
+			<input type="" name="benjin" id="benjin" value="" placeholder="存款本金" />
+			<input type="" name="lixi" id="lixi" value="" placeholder="存款利息" />
+			<input type="" name="qishu" id="qishu" value="" placeholder="存款期数" />
+
+			<button id="return" onclick="jisuan()">开始计算</button>
+			<div id="jieguo"></div>
+		</main>
+		<script type="text/javascript">
+			function jisuan() {
+				var bj = document.getElementById('benjin').value;
+				var lx = document.getElementById('lixi').value;
+				var qs = document.getElementById('qishu').value;
+
+				var jg = bj * lx * qs;
+				var bxh=Number(bj)+Number(jg);
+				document.getElementById("jieguo").innerHTML = "本息合计为：" + bxh+ "元";
+				
+			}
+		</script>
+
+	</body>
+
+</html>

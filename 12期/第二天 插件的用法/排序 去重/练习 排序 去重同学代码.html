@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-2.0.3.js"></script>
+    <title></title>
+</head>
+
+<body>
+<!--[7,8,9,5,0,4,4,5,3]-->
+<!--￥9，875，430-->
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+    // 数组去重
+    Array.prototype.unique1 = function() {
+        var n = []; //一个新的临时数组
+        //遍历当前数组
+        for(var i = 0; i < this.length; i++) {
+            //如果当前数组的第i已经保存进了临时数组，那么跳过，
+            //否则把当前项push到临时数组里面
+            if(n.indexOf(this[i]) == -1) n.push(this[i]);
+        }
+        return n;
+    }
+    // 数组排序
+    Array.prototype.sort1 = function() {
+        var array = this;
+         console.log(array)
+        var len = array.length;
+        for(var i = 0; i < len; i++) {
+            //比较两个相邻的元素
+            for(var j = 0; j < len - i - 1; j++) {
+                if(array[j] > array[j + 1]) {
+                    var t = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = t;
+                }
+            }
+        }
+        return array;
+    }
+    //正则分割字符串
+    Array.prototype.format=function () {
+        console.log(this);
+        var atr1=this.toString();
+        var reg=/\,/g;
+        var str=atr1.replace(reg,'');
+
+        var a1=str.split("").reverse().join("");
+        var a2=  a1.replace(/(.{3})/g,'$1\,');
+        if(a2[a2.length-1]==','||a2[a2.length-1==0]){
+            var s= a2.slice(0,a2.length-1);
+            return s.split("").reverse().join("");
+        }else{
+            return  '￥'+a2.split("").reverse().join("");
+        }
+
+    }
+
+    // 数组内容以货币格式输出
+    Array.prototype.format = function() {
+//        var array = this;
+        // 如果数组第一个为0，则删除
+        if(array[0] == '0') {
+            array = array.slice(1);
+        }
+        // 将数组转化为字符串, 并去掉其中的逗号
+        var str = array.join('');
+        // 递归格式化函数
+        function formatNumber(str) {
+            // 字符串长度小于3，则返回当前字符串
+            if(str.length <= 3) {
+                return str;
+            } else {
+                return formatNumber(str.substr(0, str.length - 3)) + ',' + str.substr(str.length - 3);
+            }
+        }
+        // 调用格式化函数并接收返回值str
+        str = formatNumber(str);
+        return '￥'+str;
+    }
+
+    var arr = [9, 8, 8, 7, 5, 4, 5, 0, 1,6,3];
+    var result =arr.unique1().sort1().format();
+    console.log(result)
+</script>

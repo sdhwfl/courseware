@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>事件绑定</title>
+	<script type="text/javascript" src="jquery-2.0.3.js"></script>
+</head>
+
+<body>
+	<input type="text" name="" id="" value="" class="input" />
+	<button class="btn">添加</button>
+	<ul id="myul">
+		<li>li里面的内容1</li>
+		<li>li里面的内容2</li>
+		<li>li里面的内容3</li>
+		<li>li里面的内容4</li>
+		<li>li里面的内容5</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	//on绑定一个事件 
+		//off删除一个事件
+		var $btn = $('.btn');
+		var $input = $('.input');
+		var $myul = $('#myul');
+		$(function() {
+			$btn.click(function() {
+				var $li = $('<li></li>');
+				$li.html($input.val());
+				$myul.append($li);
+			})
+			$('li').on('click',function() {
+					alert($(this).html());
+				})
+				//li事件 on的第二种写法  事件代理
+			$('body').on('click', 'li', fun1)
+			function fun1() {
+				alert($(this).html());
+			}
+         setTimeout(function(){
+         	$('body').off('click','li',fun1)
+         },2*1000)
+		 $('li').hover(function(){
+			 $(this).css('color','deeppink');
+		 },function(){
+			  $(this).css('color','deepskyblue');
+		 });
+		 var hei=0;
+		 hei = $('li:eq(2)').height();
+		 $('li:eq(2)').hover(function(){
+			 $(this).animate({
+				 height:'60px' 
+			 },1000)
+		 },function(){
+		 	 $(this).stop(true,true)
+			 $(this).animate({
+				 height:hei +'px'
+			 },1000)
+		 })
+		 
+		 //stop 停止动画
+		 //第一参数 true 或false 默认是false true意思是清除队列   可以立即结束动画
+		 //第二参数 true 或false 默认是false  true意思是完成动画的状态 false是继续完成动画
+		
+ })
+
+</script>
+
+</html>

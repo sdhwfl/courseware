@@ -1,0 +1,5 @@
+/*引入base.css*/
+@import "base.css";
+body,html{
+    font-size: 14px;
+}

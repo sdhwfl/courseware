@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>msjs</title>
+    <style>
+        body {
+            background-color: #eee;
+            margin: 0;
+        }
+        
+        .dk {
+            margin-top: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 120px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        
+        .form2 {
+            margin-top: 10px;
+        }
+        
+        .Powered {
+            height: 60px;
+            /*background-color: pink;*/
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        function jisuan()
+      {
+       var a=document.getElementById('s1').value;
+       var b=document.getElementById('s2').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('jieguo').innerHTML=c;        
+     }
+     function cal()
+      {
+       var a=document.getElementById('s4').value;
+       var b=document.getElementById('s5').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('return').innerHTML=c;        
+     }
+    </script>
+</head>
+
+<body>
+
+
+    <form action="" style="font-size:16px;">
+        <div class="dk col-xs-12">
+            <label for="">贷款类型</label>
+            <label for="">商业</label>
+        </div>
+
+        <div class="dk col-xs-12">
+            <label for="">还款方式</label>
+            <label for="">等额本息</label>
+        </div>
+        <div class="dk col-xs-12">
+            <label for="">贷款总额</label>
+            <label for="">0万元</label>
+        </div>
+        <div class="dk col-xs-12">
+            <label for="">贷款年限</label>
+            <label for="">10年</label>
+        </div>
+        <div class="dk col-xs-12">
+            <label for="">贷款利率</label>
+            <label for="" id="s1"></label>
+            <label for="" id="s2"></label>
+            <label for="" id="s3" onclick="jisuan()"></label>
+            <input id="s4" type="text" placeholder="0">% &#x3000X
+            <input id="s5" type="text" placeholder="0">倍
+            <input type="button" value="=" id="s6" onclick="cal()">
+
+            <label id="return"></label>%
+            <label id="jieguo"></label>
+        </div>
+
+
+        <div class="dk col-xs-12" style="margin-top:15px;">
+            <label for="">还款总额</label>
+            <label for="">0.00元</label>
+        </div>
+        <div class="dk col-xs-12">
+            <label for="">贷款月数</label>
+            <label for="">120月</label>
+        </div>
+        <div class="dk col-xs-12">
+            <label for="">支付利息</label>
+            <label for="">0.00元</label>
+        </div>
+        <div class="dk col-xs-12">
+            <label for="">月均还款</label>
+            <label for="">0.00元</label>
+        </div>
+
+    </form>
+
+
+
+
+    <div class="Powered col-xs-12">
+        <span>Powered by 颂宋</span>
+    </div>
+
+
+
+    <!--返回-->
+    <a href="房贷计算器.html"><button type="button" class="btn btn-success btn-lg col-xs-10 col-xs-offset-1" >返回</button></a>
+</body>
+
+<html>

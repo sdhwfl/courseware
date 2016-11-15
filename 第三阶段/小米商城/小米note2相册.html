@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>相册</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			.page1 {
+				height: 1228px;
+				width: 100%;
+			}
+			
+			.page1 .img {
+				height: 818px;
+				width: 100%;
+				background-image: url(img/c-bg1.jpg);
+				background-size: 100% 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.page1 .img .txt {
+				height: 300px;
+				width: 800px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				font-size: 41px;
+			}
+			
+			.page1 .content {
+				height: 410px;
+				width: 100%;
+				/*border: solid 1px pink;*/
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.page1 .content .txt {
+				height: 168px;
+				width: 1200px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				/*border: solid 1px red;*/
+			}
+			
+			.page1 .content .txt .p {
+				color: #333333;
+				font-size: 17px;
+			}
+			
+			.page1 .content .txt .summary {
+				height: 82px;
+				width: 872px;
+				margin: 0 auto;
+				/*border: solid 1px blue;*/
+				display: flex;
+				margin-bottom: -15px;
+			}
+			
+			.page1 .content .txt .summary .span {
+				display: inline-block;
+				height: 82px;
+				width: 290px;
+				border-right: solid 1px #f1f1f1;
+				color: #333333;
+				font-size: 17px;
+				margin-bottom: 5px;
+			}
+			
+			.page1 .content .txt .summary .span:last-child {
+				border: none;
+			}
+			
+			.page1 .content .txt .summary .span span {
+				font-size: 29px;
+				color: #949494;
+			}
+			
+			.page2 {
+				height: 1375px;
+				width: 100%;
+				background-color: #e0e5eb;
+			}
+			
+			.page2 .txt {
+				height: 330px;
+				width: 1000px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 auto;
+				font-size: 41px;
+				color: #333333;
+			}
+			
+			.page2 .img {
+				height: 750px;
+				width: 100%;
+				background-image: url(img/phone.png);
+				background-repeat: no-repeat;
+			}
+			
+			.page2 .txt2 {
+				height: 300px;
+				width: 100%;
+				text-align: center;
+				/*border: solid 1px red;*/
+				color: #333333;
+			}
+			
+			.page2 .txt2 p:first-child {
+				font-size: 39px;
+				color: #333333;
+				margin-top: 100px;
+			}
+			
+			.page2 .txt2 p:last-child {
+				margin-top: 47px;
+				font-size: 17px;
+			}
+			/*轮播图*/
+			
+			#banner {
+				width: 1519px;
+				height: 750px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			#banner ul {
+				width: 4557px;
+				overflow: hidden;
+				position: absolute;
+			}
+			
+			#banner ul>li {
+				width: 100vw;
+				height: 750px;
+				float: left;
+			}
+			
+			#banner ul>li img {
+				max-width: 100%;
+			}
+			
+			.leftbtn,
+			.rightbtn {
+				height: 62px;
+				line-height: 62px;
+				width: 62px;
+				border: solid 2px #fff;
+				border-radius: 50%;
+				text-align: center;
+				color: #fff;
+				font-size: 26px;
+			}
+			
+			.leftbtn {
+				position: absolute;
+				top: calc(50% - 31px);
+				left: 30px;
+			}
+			
+			.rightbtn {
+				position: absolute;
+				top: calc(50% - 31px);
+				right: 30px;
+			}
+		</style>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+
+			$('.rightbtn').click(function() {
+				if(!$("#banner ul").is(":animated")) {
+					$("#banner ul").stop().animate({
+						marginLeft: "-100vw"
+					}, 500, function() {
+						$("#banner ul li").eq(0).appendTo($("#banner ul"));
+						$("#banner ul").css('marginLeft', '0px');
+					});
+				}
+			})
+
+			if(!$("#banner ul").is(":animated")) {
+				$('.leftbtn').click(function() {
+					$("#banner ul").css('marginLeft', '-100vw');
+					$("#banner ul li").eq(2).prependTo($("#banner ul"));
+					$("#banner ul").stop().animate({
+						marginLeft: "0px"
+					}, 500);
+				})
+			}
+
+		})
+	</script>
+
+	<body>
+		<section class="page1">
+			<div class="img">
+				<div class="txt">
+					<p>细节多得惊人<br> 2256万超高像素相机 </p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="txt">
+					<p class="p">像素越多，细节越丰富。小米Note 2 采用索尼 IMX318 ，有效像素高达 2256万，为照片提供 5488 x 4112<br> 的超高分辨率，放大看依然清晰。同时内置硬件级电子防抖，你可以随时随地拍摄清晰稳定的 4K 视频。 </p><br>
+					<div class="summary">
+						<span class="span"> <span>IMX318</span> <br>索尼最高像素</span>
+						<span class="span"> <span>IMX318</span> <br>索尼最高像素</span>
+						<span class="span"> <span>IMX318</span> <br>索尼最高像素</span>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="page2">
+			<div class="txt">
+				<p>像素数越高，记录的信息越多<br> 即使放大看，依然清晰 </p>
+			</div>
+			<div class="img"></div>
+			<div class="txt2">
+				<p>来自小米Note 2 的震撼大作 </p>
+				<p>灵感爆发，就立即创作吧。小米Note 2 的高画质性能和快速对焦，为你捕捉每个精彩瞬间提供了强大的基础，清晰<br> 记录美景、人文故事的细节，每一次放大回看，都仿佛在细细品味那个故事。 </p>
+			</div>
+
+		</section>
+		<!--轮播图-->
+
+		<div id="banner">
+			<ul>
+				<li><img src="img/c-ban1.jpg" alt="" /></li>
+				<li><img src="img/c-ban2.jpg" alt="" /></li>
+				<li><img src="img/c-ban3.jpg" alt="" /></li>
+			</ul>
+			<div class="leftbtn">＜</div>
+			<div class="rightbtn">＞</div>
+		</div>
+
+	</body>
+
+</html>

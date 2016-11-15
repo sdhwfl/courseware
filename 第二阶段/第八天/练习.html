@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>练习</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var myNumber = 128;
+			console.log('128转化为十六进制为:' + myNumber.toString(16)) // 返回 80
+			console.log('128转化为八进制为:' + myNumber.toString(8)) // 返回 200
+			console.log('128转化为二进制为:' + myNumber.toString(2)) // 返回 10000000
+
+			var x = 123;
+			var y = new Number(123);
+			console.log(typeof(x)); // 返回 Number
+			console.log(typeof(y)); // 返回 Object
+
+            //时间日期对象
+			var x = new Date();
+			x.setFullYear(2100, 0, 14);
+			var today = new Date();
+
+			if(x > today) {
+				alert("今天是2100年1月14日之前");
+			} else {
+				alert("今天是2100年1月14日之后");
+			}
+			//
+		</script>
+	</body>
+
+</html>

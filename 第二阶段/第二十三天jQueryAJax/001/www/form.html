@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<meta charset='UTF-8'>
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<form action="/form" method="post">
+			<label for="">姓名：</label><input type="text" name="name" id="" value="" /><br>
+			<label for="">年龄：</label><input type="text" name="age" id="" value="" /><br>
+			<label for="">手机：</label><input type="text" name="phone" id="" value="" /><br>
+			<label for="">邮箱：</label><input type="text" name="email" id="" value="" /><br>
+
+			<button id="btn1">multer请求</button>
+			<div id=""></div>
+
+		</form>
+
+		<script type="text/javascript">
+			$('#btn1').click(function() {
+
+				//创建一个formdata对象 
+				//只能用来发给服务器 本身是输出不了
+				var data = new FormData(this);
+				//创建一个XMLHttpRequest对象
+				var xhr = new XMLHttpRequest();
+
+				xhr.onreadystatechange = function() {
+					//服务器正确响应了内容
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							//内容
+							//							xhr.responseText
+							$('div').html(xhr.responseText);
+						}
+					}
+				};
+
+				//xhr.send(data);
+				//				data.append('name', 'sdh');
+				//				data.append('age', 23);
+				//				data.append('phone', 18037304079);
+				xhr.open('POST', '/form', true);
+				xhr.send(data);
+
+			})
+		</script>
+	</body>
+
+</html>

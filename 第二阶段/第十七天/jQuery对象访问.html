@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery对象访问</title>
+		<script src="jquery-2.0.3.js"></script>
+		<script type="text/javascript">
+			//each 对jQuery每一个对象进行单独处理
+			//each的用法 $('div').each(function(){})
+			$(function() {
+				$('li').each(function() {
+						//$(this) 等于每一个查找到的jQuery对象
+						console.log($(this).html());
+					})
+					//length 属性  查找到的jQuery对象的个数
+					//size() 查找到的jQuery对象的个数
+				console.log($('li').size());
+				console.log($('li').length);
+				//get（x） 把下标为几的jQuery对象转换为dom对象
+				$('li').get(0).style.color = 'red';
+				//jQuery对象 [0] 也可转换为dom对象 不再是jQuery对象
+				$('li')[1].style.color='pink'
+				//index 在同辈相同标签的位置
+				console.log($('li').index());
+				console.log($('li:eq(3)').index());
+				
+			})
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>第1个列表子项</li>
+			<li>第2个列表子项</li>
+			<li>第3个列表子项</li>
+			<li>第4个列表子项</li>
+			<li>第5个列表子项</li>
+			<li>第6个列表子项</li>
+		</ul>
+		<ul>
+			<li>第1个列表子项</li>
+			<li>第2个列表子项</li>
+			<li>第3个列表子项</li>
+			<li class="sdh">第4个列表子项</li>
+			<li>第5个列表子项</li>
+			<li>第6个列表子项</li>
+		</ul>
+	</body>
+
+</html>

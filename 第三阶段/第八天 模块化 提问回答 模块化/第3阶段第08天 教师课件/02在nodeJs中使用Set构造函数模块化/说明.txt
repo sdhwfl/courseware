@@ -1,0 +1,22 @@
+在html 中 script标签引入的
+在node js中 怎么引入其它script
+
+node js中 每一个js文件都是一个模块
+模块内部的作用域与模块外部是完全隔离的
+如果希望在一个模块中使用另一个模块的内容
+
+node js提供了一个方法
+只有先导出才可以使用
+
+4. 导出一个对象  第一个js文件中都有一个module对象
+// module.exports  导出一个对象
+// module.exports = {
+//  name:"尹学江",
+//  age:31
+// }
+
+5. 导出一个函数
+module.exports = Set;
+
+
+

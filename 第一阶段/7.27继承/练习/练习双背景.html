@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>练习双背景</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        section {
+            height: 200px;
+            width: 600px;
+            background: white;
+            background-image: url(huang.jpg), url(lan.jpg);
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            background-blend-mode: multiply;
+            margin: 40px auto;
+            background-position: 50% 100%, 100% 0%;
+            position: relative;
+        }
+        
+        section>p {
+            position: absolute;
+            top: 30px;
+            left: 200px;
+            font-size: 22px;
+            font-family: "华文行楷";
+            
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <p>
+            双背景实现重叠
+        </p>
+
+    </section>
+</body>
+
+</html>

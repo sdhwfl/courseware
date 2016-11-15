@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>练习div嵌套实现双背景</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        main {
+            height: 150px;
+            width: 600px;
+            background: white;
+            border-radius: 10px;
+            margin: 0 auto;
+            margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+         
+        }
+        main>p{
+             position: absolute;
+             top: 30px;
+             right: 150px;
+             z-index: 10;
+             font-size: 24px;
+        }
+        
+        div:nth-of-type(1) {
+            height: 150px;
+            width: 150px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 100px;
+        }
+        
+        div:nth-of-type(2) {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            left: 150px;
+            bottom: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+       <p> div嵌套实现双背景</p>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </main>
+</body>
+
+</html>

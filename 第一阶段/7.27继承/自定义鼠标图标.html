@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="宋典花">
+        <title>自定义鼠标指针样式</title>
+        <style>
+            html{
+                height: 100%;
+            }
+            /*鼠标引动到body中section的时候显示特殊的图标*/
+            section{
+                /*设置高度*/
+                height: 300px;
+                width: 800px;
+                margin:30px  auto;
+                background: pink; 
+                /*注意图片源后面添加 ， auto才有效果*/
+                cursor: url("images/q4.gif"),auto;
+            }
+            body{
+                /*使用系统提供的状态*/
+                cursor: wait;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            
+        </section>
+    </body>
+</html>

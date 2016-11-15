@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="author" content="宋典花">
+    <title>我的留言板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: beige;
+        }
+
+        .content article section span {
+            margin-left: 30px;
+            color: deeppink;
+            float: right;
+        }
+
+        .content {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        .content h1 {
+            color: deepskyblue;
+            margin-bottom: 10px;
+        }
+
+        .content button {
+            background-color: deepskyblue;
+            border: none;
+            height: 30px;
+            width: 80px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .content article {
+            margin-top: 20px;
+        }
+
+        .content article section {
+            padding: 10px 0;
+            border-bottom: solid 1px #ccc;
+        }
+
+        .content article section div {
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<section class="content">
+    <h1>我的留言板，欢迎进行留言</h1>
+    <button onclick="location.href='/add'">我要留言</button>
+    <article>
+        <!--展示留言的地方-->
+    </article>
+</section>
+
+</body>
+</html>
+<!--发送留言的XHR对象-->
+<script src="index.js"></script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+	</head>
+	<body>
+		<a href="#">百度1</a>
+		<a href="#">百度2</a>
+		<a href="#">百度3</a>
+		<a href="#">百度4</a>
+		<a href="#">百度5</a>
+		<a href="#">百度6</a>
+		<a href="#">百度7</a>
+		<a href="#">百度8</a>
+		<a href="#">百度9</a>
+		<a href="#">百度10</a>
+		<script type="text/javascript">
+			$(function(){
+				$("a").click(function(event){
+					//加上点击事件 阻止默认事件以及跳转
+					event.preventDefault();
+					$('.div-box').remove();
+					//创建一个div元素
+					var div=$('<div></div>');
+					//shezhidiv元素里面的值
+					div.html($(this).html());
+					div.addClass('div-box');
+					//设置div的属性
+					div.css({
+						position:'absolute',
+						left:'50%',
+						top:'50%',
+						height:'150px',
+						width:'150px',
+						textAlign:'center',
+						lineHeight:'150px',
+						fontSize:'30px',
+						border:'1px solid hotpink',
+						
+					})
+					//加入body中
+					div.appendTo($('body'))
+					event.stopPropagation();
+				})
+				//body加点击事件
+				$("html").click(function(){
+					$('.div-box').remove();
+				})
+			})
+		</script>
+	</body>
+</html>

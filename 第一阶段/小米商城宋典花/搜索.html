@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>搜索</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+        
+        .daohang {
+            height: 80px;
+            width: 100%;
+            /*background-color: pink;*/
+            font-size: 30px;
+            padding: 20px;
+            border-bottom: solid 1px #999;
+        }
+        
+        .daohang>a {
+            color: #999;
+        }
+        
+        .daohang>a:hover {
+            text-decoration: none;
+        }
+        
+        .daohang>a>input {
+            width: 85%;
+        }
+        
+        main {
+            height: 300px;
+            width: 100%;
+            /*background-color: aquamarine;*/
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        
+        main>div {
+            height: 60px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            color: #000;
+            padding: 20px;
+        }
+        .xuanzhong{
+            border:solid 1px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="daohang">
+        <a href="主页.html" class="glyphicon glyphicon-home"></a>
+        <a href=""><input type="text"></a>
+        <a href="" class="glyphicon glyphicon-search"></a>
+
+    </div>
+
+    <main>
+        <div class="xuanzhong">小米5 &nbsp直降200</div>
+        <div class="xuanzhong">红米3X</div>
+        <div class="xuanzhong">红米3s</div>
+        <div>红米note3</div>
+        <div>自拍神器</div>
+        <div>小米max现货</div>
+        <div>红米pro</div>
+        <div>笔记本</div>
+        <div>手环</div>
+    </main>
+
+</body>
+
+</html>

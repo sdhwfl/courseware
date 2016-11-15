@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+
+    <title>房贷计算器</title>
+    <style>
+        body {
+            background-color: #eee;
+            margin: 0;
+        }
+        
+        .form-group {
+            height: 80px;
+            background-color: #fff;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin: 1px;
+            padding: 30px;
+        }
+        
+        .dk {
+            margin-top: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            background-color: #fff;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function jisuan()
+      {
+       var a=document.getElementById('s1').value;
+       var b=document.getElementById('s2').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('jieguo').innerHTML=c;        
+     }
+     function cal()
+      {
+       var a=document.getElementById('s4').value;
+       var b=document.getElementById('s5').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('return').innerHTML=c;        
+     }
+     
+     
+        function jisuan1()
+      {
+       var a=document.getElementById('s11').value;
+       var b=document.getElementById('s12').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('jieguo1').innerHTML=c;        
+     }
+     function cal()
+      {
+       var a=document.getElementById('s14').value;
+       var b=document.getElementById('s15').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('return1').innerHTML=c;        
+     }
+     
+        function jisuan2()
+      {
+       var a=document.getElementById('s21').value;
+       var b=document.getElementById('s22').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('jieguo2').innerHTML=c;        
+     }
+     function cal()
+      {
+       var a=document.getElementById('s24').value;
+       var b=document.getElementById('s25').value;
+       var c=a*b;
+       c=Math.round(c*100)/100;
+	document.getElementById('return2').innerHTML=c;        
+     }
+    </script>
+</head>
+
+<body>
+
+    <div class="row">
+        <ul class="nav nav-tabs" role="tablist" style="font-size:20px;">
+            <li role="presentation" class="active col-xs-4"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">商业</a></li>
+            <li role="presentation" class="col-xs-4"><a href="#gjj" aria-controls="gjj" role="tab" data-toggle="tab">公积金</a></li>
+            <li role="presentation" class="col-xs-4"><a href="#zh" aria-controls="zh" role="tab" data-toggle="tab">组合</a></li>
+
+        </ul>
+
+        <!--商业-->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <form action="" style="font-size:16px; margin-top:20px;">
+                    <div class="form-group">
+                        <label for="">还款方式：</label>&#X3000&#X3000&#X3000
+                        <input type="radio" name="hk"><label for="">等额本金 </label>&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000
+                        &#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000
+                        <input type="radio" name="hk"> <label for="">等额本息</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">贷款总额：</label>
+                        <label for=""> 0万元</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">贷款年限：</label>
+                        <label for="">10年</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">贷款利率</label>
+                        <label for="" id="s1"></label>
+                        <label for="" id="s2"></label>
+                        <label for="" id="s3" onclick="jisuan()"></label>
+                        <input id="s4" type="text" placeholder="0">% &#x3000X
+                        <input id="s5" type="text" placeholder="0">倍
+                        <input type="button" value="=" id="s6" onclick="cal()">
+
+                        <label id="return"></label>%
+                        <label id="jieguo"></label>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">当前年限基准利率：&#x3000 商业：5.15%&#X3000 公积金:3.25%</label>
+                    </div>
+
+                </form>
+
+                <!--马上计算-->
+
+                <a href="msjs.html"> <button type="button" class="btn btn-success btn-lg col-xs-10 col-xs-offset-1 ">马上计算</button></a>
+
+            </div>
+            <!--公积金-->
+            <div role="tabpanel" class="tab-pane" id="gjj">
+                <form action="" style="font-size:16px; margin-top:20px;">
+                    <div class="form-group">
+                        <label for="">还款方式：</label>&#X3000&#X3000&#X3000
+                        <input type="radio" name="hk"><label for="">等额本金 </label>&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000
+                        &#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000
+                        <input type="radio" name="hk"> <label for="">等额本息</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">贷款总额：</label>
+                        <label for=""> 0万元</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">贷款年限：</label>
+                        <label for="">10年</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">贷款利率</label>
+                        <label for="" id="s11"></label>
+                        <label for="" id="s12"></label>
+                        <label for="" id="s13" onclick="jisuan()"></label>
+                        <input id="s14" type="text" placeholder="0">% &#x3000X
+                        <input id="s15" type="text" placeholder="0">倍
+                        <input type="button" value="=" id="s16" onclick="cal()">
+
+                        <label id="return1"></label>%
+                        <label id="jieguo1"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">当前年限基准利率：&#x3000 商业：5.15%&#X3000 公积金:3.25%</label>
+                    </div>
+
+                </form>
+                <a href="msjs.html"> <button type="button" class="btn btn-success btn-lg col-xs-10 col-xs-offset-1 ">马上计算</button></a>
+
+            </div>
+            <!--综合-->
+            <div role="tabpanel" class="tab-pane" id="zh">
+                <form action="" style="font-size:16px; margin-top:20px;">
+                    <div class="form-group">
+                        <label for="">还款方式：</label>&#X3000&#X3000&#X3000
+                        <input type="radio" name="hk"><label for="">等额本金 </label>&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000
+                        &#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000&#X3000
+                        <input type="radio" name="hk"> <label for="">等额本息</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">贷款总额：</label>
+                        <label for=""> 0万元</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">贷款年限：</label>
+                        <label for="">10年</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">公积金：</label>
+                        <label for="">0</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">贷款利率</label>
+                        <label for="" id="s21"></label>
+                        <label for="" id="s22"></label>
+                        <label for="" id="s23" onclick="jisuan()"></label>
+                        <input id="s24" type="text" placeholder="0">% &#x3000X
+                        <input id="s25" type="text" placeholder="0">倍
+                        <input type="button" value="=" id="s26" onclick="cal()">
+
+                        <label id="return2"></label>%
+                        <label id="jieguo2"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">当前年限基准利率：&#x3000 商业：5.15%&#X3000 公积金:3.25%</label>
+                    </div>
+
+                </form>
+                <a href="msjs.html"> <button type="button" class="btn btn-success btn-lg col-xs-10 col-xs-offset-1 ">马上计算</button></a>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+<html>

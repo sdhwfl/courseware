@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>跑马灯2</title>
+		<style>
+		#Text1 {
+			height: 60px;
+			/*width:info.value.length -1;*/
+			width: 400px;
+			background-color: pink;
+			font-family:'华文行楷' ;
+			color: red;
+			font-size: 18px;
+		}
+	</style>
+	</head>
+	
+
+	<body>
+		<input id="Text1" value="热烈欢迎学弟学妹的的到来，我的心在等待，永远在等待！" />
+
+		<script type="text/javascript">
+			function show() {
+				var info = document.getElementById('Text1');
+				info.value = info.value[info.value.length - 1] + info.value.substr(0, info.value.length - 1);
+			}
+			setInterval(show,1000);
+		</script>
+	</body>
+
+</html>

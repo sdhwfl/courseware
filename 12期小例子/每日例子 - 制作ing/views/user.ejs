@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运行界面</title>
+    <link rel="stylesheet" type="text/css" href="user.css">
+    <script src="js/jquery-2.0.3.js"></script>
+</head>
+<style>
+    ul>li>span{
+        float:right;
+    }
+</style>
+<body>
+<div id="box">
+    <div id="image"><img class="img" src="images/00.png" alt=""/></div>
+    <div id="name">
+
+    </div>
+    <div id="people"></div>
+    <div id="friend">
+        <div id="image2"><img class="img2" src="images/00.png" alt=""/></div>
+        <div id="name2">
+
+        </div>
+    </div>
+    <div id="scale"></div>
+    <!--中间选择头像位置-->
+    <div id="kinds">
+        <div id="sm_box"><img src="images/00.png" alt=""/><img src="images/01.png" alt=""/><img src="images/02.png" alt=""/><img src="images/03.png" alt=""/><img
+                    src="images/04.png" alt=""/></div>
+        <!--确认取消按钮-->
+        <input id="input" type="submit"/>
+        <button></button>
+    </div>
+    <!--聊天室内容框-->
+    <div id="talk_box">
+        <ul class="talk_text">
+        </ul>
+    </div>
+    <!--footer-->
+    <form action="/user" method="POST">
+        <!--<input id="name" name="name">-->
+        <!--</input>-->
+        <input id="input2" type="text" id="content" name="content"/>
+        <input id="input666" type="submit" value="<—"/>
+    </form>
+    <div id="footer">欢迎进入德玛西亚聊天室
+        <div id="off"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+//    将表单的内容提交给服务器
+document.forms[0].onsubmit = function (e){
+    e.preventDefault();
+    var data = new FormData(this);
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function (){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var result = JSON.parse(xhr.responseText);
+            alert(result.message);
+            location.href = '/user';
+        }
+    }
+    xhr.open('POST','/user');
+    xhr.send(data);
+}
+
+myopacity = '0';
+
+$('div#people').click(function () {
+    if (myopacity == 0) {
+        myopacity = '1';
+        $('#friend').css('opacity', '1');
+    }
+    else {
+        myopacity = '0';
+        $('#friend').css('opacity', '0');
+    }
+})
+$('div#scale').click(function () {
+    if (myopacity == 0) {
+        myopacity = '1';
+        $('#friend').css('opacity', '1');
+    }
+    else {
+        myopacity = '0';
+        $('#friend').css('opacity', '0');
+    }
+})
+
+//    点击图片
+//$('#sm_box > img').click(function () {
+//    console.log(this)
+//    console.log(this.getAttribute("src"));
+//    $('#image img').attr("src","images/00.png");
+//    $('#image2 img').attr("src","images/00.png");
+//})
+//    提交 取消
+$('#input').click(function () {
+    $('#kinds').css('opacity', '0');
+})
+$('button').click(function () {
+    $('#kinds').css('opacity', '0');
+})
+//    点击头像加载出来div#kindes
+$('#image').click(function () {
+    $('#kinds').css('opacity', '1');
+})
+//    footer
+myopacity2 = 0;
+$('#footer').click(function(){
+    if (myopacity2 == 0) {
+        myopacity2 = '1';
+        $('#talk_box').css('opacity', '1');
+        $('form').css('opacity', '1');
+    }
+    else {
+        myopacity2 = '0';
+        $('#talk_box').css('opacity', '0');
+        $('form').css('opacity', '0');
+    }
+})
+
+</script>
+<script src="js/index.js"></script>
+<script src="js/information.js"></script>
+
+

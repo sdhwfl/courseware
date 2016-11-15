@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-AU-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="晏敬文">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        lable {
+            text-align: right;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .btn-group {
+            float: right;
+            position: relative;
+        }
+        .user {
+            padding: 0;
+            color: white;
+            background-color: #222222;
+            margin-top: 14px;
+        }
+        .user:hover {
+            color: white;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 40px;
+            left: -145px;
+        }
+        @media (max-width:768px){
+            .btn-group{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target="#navbar" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">爱迷尼儿童摄影</a>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle user" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user urser"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="">用户管理</a></li>
+                    <li><a href="">修改密码</a></li>
+                    <li><a href="">安全退出</a></li>
+                </ul>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="">首页</a></li>
+                    <li class="active"><a href="">客户</a></li>
+                    <li><a href="">宝贝</a></li>
+                    <li><a href="">孕妈咪</a></li>
+                    <li><a href="">会员卡</a></li>
+                    <li><a href="">订单</a></li>
+                    <li><a href="">预约</a></li>
+                    <li><a href="">产品</a></li>
+                </ul>
+            </div>
+            <!--<div style="clear:both"></div>-->
+        </div>
+
+    </nav>
+    <div class="title">
+        <div class="container">
+            <p class="lead">客户查询与管理</p>
+        </div>
+    </div>
+    <div class="container">
+        <botton type="button" class="btn btn-success"><a href="添加客户.html" target="_blank">添加客户</a></botton>
+        <button type="button" class="btn btn-warning">
+            <span class="glyphicon glyphicon-search"></span>
+            <span><a href="">搜索</a></span>
+        </button>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="active">
+                    <th>添加时间</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>QQ</th>
+                    <th>手机</th>
+                    <th>客户经理</th>
+                    <th>详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2016-06-26 16:03</td>
+                    <td>郭雪梅</td>
+                    <td>女士</td>
+                    <td>1376889057</td>
+                    <td>18666666666</td>
+                    <td>小李子</td>
+                    <td class="center"><span class="glyphicon glyphicon-edit"></span></td>
+                </tr>
+                <tr>
+                    <td>2016-06-26 16:03</td>
+                    <td>曹泽</td>
+                    <td>先生</td>
+                    <td>2306941069</td>
+                    <td>18666666666</td>
+                    <td>小李子</td>
+                    <td class="center"><span class="glyphicon glyphicon-edit"></span></td>
+                </tr>
+                <tr>
+                    <td>2016-06-26 16:03</td>
+                    <td>张泰玮</td>
+                    <td>先生</td>
+                    <td>47698799</td>
+                    <td>18666666666</td>
+                    <td>小李子</td>
+                    <td class="center"><span class="glyphicon glyphicon-edit"></span></td>
+                </tr>
+            </tbody>
+        </table>
+        <form>
+            <div class="content">
+                <lable>姓名：</lable>
+                <input type="text" placeholder="客户姓名">
+            </div>
+
+            <div class="content">
+                <lable> QQ：</lable>
+                <input type="text" placeholder="QQ号">
+            </div>
+
+            <div class="content">
+                <lable>手机：</lable>
+                <input type="text" placeholder="手机号">
+            </div>
+
+            <div class="content">
+                <lable>身份证：</lable>
+                <input type="text" placeholder="身份证号">
+            </div>
+
+            <div class="content">
+                <lable>客户经理：</lable>
+                <input type="text" placeholder="客户经理">
+            </div>
+
+        </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>详情</title>
+    <style>
+        header {
+            height: 480px;
+            width: 100%;
+            background-color: #fff;
+            /*background-color: pink;*/
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            color: #999;
+            padding: 15px;
+            font-size: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .a1,
+        .a2 {
+            height: 60px;
+            width: 50%;
+            color: #999;
+        }
+        
+        header>div {
+            margin-top: -60px;
+            height: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .middle {
+            height: 450px;
+            width: 100%;
+            /*background-color: lightcoral;*/
+            padding: 20px 10px;
+            font-size: 30px;
+        }
+        
+        .middle>section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .middle>section a {
+            color: #aaa;
+        }
+        
+        .middle>section>h2 {
+            height: 150px;
+            width: 85%;
+        }
+        
+        .middle>h3 {
+            margin-top: -15px;
+            color: #999;
+        }
+        
+        .jiage {
+            margin-top: 15px;
+            color: red;
+        }
+        
+        .jx {
+            height: 200px;
+            width: 350px;
+            /*background-color: pink;*/
+            display: flex;
+            padding: 10px 0;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 24px;
+            color: #999;
+        }
+        
+        .jx>div {
+            height: 80px;
+            width: 150px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .col-xs-4>a {
+            font-size: 28px;
+            color: #999;
+        }
+        
+        .navbar-fixed-bottom {
+            height: 90px;
+            background-color: #fff;
+            padding: 10px 5px;
+            width: 100%;
+            font-size: 30px;
+            border-top: 1px solid #ccc;
+        }
+        
+        .navbar-fixed-bottom >a>button {
+            height: 60px;
+            width: 75%;
+        }
+        
+        .navbar-fixed-bottom >a {
+            height: 60px;
+            width: 10%;
+            color: #999;
+        }
+        
+        .navbar-fixed-bottom >a:hover {
+            text-decoration: none;
+        }
+        
+        #xq img,
+        #cs img {
+            width: 100%;
+        }
+        
+        footer div a {
+            padding-left: 5px;
+        }
+        
+        .back img {
+            margin-top: -300px;
+        }
+        
+        .pjdaohang>a {
+            color: #666;
+        }
+        
+        .pjdaohang {
+            height: 80px;
+            width: 100%;
+            background-color: #eee;
+            border-bottom: solid 1px #bbb;
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+        }
+        
+        .pjtx {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .pjtx>section {
+            height: 150px;
+            /*background-color: pink;*/
+            width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .pjtx>section img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        
+        .pjtx>span button {
+            height: 60px;
+            width: 100px;
+            color: red;
+            border: 1px solid red;
+        }
+        
+        .yhpj {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            border-bottom: solid 1px #ddd;
+        }
+        
+        .yhpj>img {
+            height: 100px;
+            width: 100px;
+            /*border-radius: 50%;*/
+            padding: 10px 0;
+        }
+        
+        .yhpj>p {
+            padding-left: 30px;
+            height: 100px;
+            width: 90%;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="主页.html" class="a1">
+            <div class="glyphicon glyphicon-menu-left"></div>
+        </a>
+        <!--<div style=" text-align: center;">商品分类</div>-->
+        <a href="搜索.html" class="a2" style="text-align: right;">
+            <div class="glyphicon glyphicon-search"></div>
+        </a>
+        <div>
+            <img src="images/小米52.jpg" alt="">
+        </div>
+    </header>
+    <div class="middle">
+        <section>
+            <h2>
+                红米手机3X 全网通版 2GB内存 32GB 经典银白 32GB
+                <br>
+            <p class="jiage">799元</p>
+            </h2><br>
+
+            <a href=""><span class="glyphicon glyphicon-menu-right"></span></a>
+        </section>
+
+        <h3>高通骁龙430 八核处理器 / 2GB内存 + 32GB存储 / 标配指纹识别 / 全网通 4G双卡双待 / 高光亮边金属机身</h3>
+        <div class="jx">
+            <div style="background:#ddd; border:solid 1px red;">经典银白</div>
+            <div>经典金色</div>
+            <div style="background:#ddd; border:solid 1px red; width:120px;">32GB</div>
+        </div>
+    </div>
+    <!--详情/参数/评价-->
+    <!--<div class="container">-->
+    <div class="sdh">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active col-xs-4"><a href="#xq" aria-controls="xq" role="tab" data-toggle="tab">详情</a></li>
+            <li role="presentation" class="col-xs-4"><a href="#cs" aria-controls="cs" role="tab" data-toggle="tab">参数</a></li>
+            <li role="presentation" class="col-xs-4"><a href="#pj" aria-controls="pj" role="tab" data-toggle="tab">评价</a></li>
+
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!--详情-->
+            <div role="tabpane" class="tab-pane active" id="xq">
+
+                <img src="images/0.jpg" alt="">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/3.jpg" alt="">
+                <img src="images/4.jpg" alt="">
+                <img src="images/5.jpg" alt="">
+                <img src="images/6.jpg" alt="">
+                <img src="images/7.jpg" alt="">
+                <img src="images/8.jpg" alt="">
+                <img src="images/9.jpg" alt="">
+                <img src="images/11.jpg" alt="">
+                <img src="images/12.jpg" alt="">
+
+            </div>
+            <!--参数-->
+            <div role="tabpane" class="tab-pane" id="cs">
+
+                <img src="images/c1.jpg" alt="">
+                <img src="images/c2.jpg" alt="">
+                <img src="images/c4.jpg" alt="">
+                <img src="images/c6.jpg" alt="">
+                <img src="images/c7.jpg" alt="">
+                <img src="images/c8.jpg" alt="">
+                <img src="images/c9.jpg" alt="">
+                <img src="images/c11.jpg" alt="">
+
+            </div>
+            <!--评价-->
+            <div role="tabpane" class="tab-pane" id="pj">
+                <div class="pjdaohang" style="font-size:24px;">
+                    <a href="#pj"><span class="glyphicon glyphicon-arrow-left">我的评价</span></a>
+                    <span>反馈</span>
+                </div>
+                <div class="pjtx">
+                    <section>
+                        <img src="images/tx.png" alt="">
+                        <h3>亲，当前评价累计为95 <br>
+                            <span class="glyphicon glyphicon-heart" style="color:red"></span>
+                            <span class="glyphicon glyphicon-heart" style="color:red"></span>
+                            <span class="glyphicon glyphicon-heart" style="color:red"></span>
+                            <span class="glyphicon glyphicon-heart" style="color:red"></span>
+                        </h3>
+                    </section>
+                    <span><button class="btn btn-default">写评价</button></span>
+                </div>
+
+                <div class="yhpj">
+                    <img src="images/红米3.png" alt="">
+                    <p>手机挺好用的，屏幕尺寸很好，像素很好</p>
+                </div>
+                <div class="yhpj">
+                    <img src="images/红米pro.png" alt="">
+                    <p>手机挺好用的，屏幕尺寸很好，像素很好</p>
+                </div>
+                <div class="yhpj">
+                    <img src="images/红米3x.png" alt="">
+                     <p>手机挺好用的，屏幕尺寸很好，像素很好</p>
+                </div>
+                <div class="yhpj">
+                    <img src="images/小米max5.png" alt="">
+                  <p>手机挺好用的，屏幕尺寸很好，像素很好</p>
+                </div>
+
+            </div>
+        </div>
+        <!--</div>-->
+
+        <footer>
+            <div class="navbar navbar-fixed-bottom">
+                <a href="主页.html" class="glyphicon glyphicon-home"></a>
+                <a href="小米账号登录.html"><button class="btn btn-warning btn-lg" style="background-color:orangered">立即购买</button></a>
+                <a href="购物车.html" class="glyphicon glyphicon-shopping-cart" style="text-align:right;"></a>
+
+            </div>
+            <a href="#" class="back"><img src="images/top.png" alt=""></a>
+        </footer>
+</body>
+
+</html>

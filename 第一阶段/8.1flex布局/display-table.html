@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>display-table</title>
+    <style>
+        main {
+            display: table;
+            width: 500px;
+            height: 300px;
+            border: 5px solid seagreen;
+            border-collapse: collapse;
+        }
+        
+        .tr {
+            display: table-row;
+        }
+        .td{
+            display: table-cell;
+            border: 2px solid deeppink;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .caption{
+            display: table-caption;
+            text-align: center;
+        }
+        /*
+        表格相关的属性
+        table 最外层表格
+        table-row 表格的行
+        table-cell 表格的单元格
+        table-caption 表格的标题
+        */
+    </style>
+</head>
+
+<body>
+    <!--main>(section>div{simple content}*2)*3-->
+    <main>
+        <section class="caption">表格的标题</section>
+        <section class="tr">
+            <div class="td">simple centent</div>
+            <div class="td">simple centent</div>
+        </section>
+        <section class="tr">
+            <div class="td">simple centent</div>
+            <div class="td">simple centent</div>
+        </section>
+        <section class="tr">
+            <div class="td">simple centent</div>
+            <div class="td">simple centent</div>
+        </section>
+
+    </main>
+</body>
+<html>

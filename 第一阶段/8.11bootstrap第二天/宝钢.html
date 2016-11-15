@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minmum-scale=1.0,mixmum-scale=1.0,user-scalable=no">
+    <title>宝钢</title>
+    <style>
+        .navbar {
+            background-image: url(images/nav-bg.png);
+        }
+        
+        .navbar-brand {
+            margin-top: -15px;
+        }
+        
+        .row {
+            margin: -30px 0 0 0;
+        }
+        
+        .col-xs-4 {
+            padding: 0 10px;
+        }
+        
+        .title1,
+        .title3 {
+            background-image: url(images/blue-bg.png);
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            font-size: 20px;
+            padding: 0 5px 0 5px;
+        }
+        
+        .title2 {
+            background-image: url(images/black-bg.png);
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            font-size: 20px;
+            padding: 0 5px 0 5px;
+        }
+        
+        .sdh_p {
+            color: #333;
+            font-size: 14px;
+            background-color: #eee;
+            height: 240px;
+            padding: 0 5px 0 5px;
+        }
+        
+        .sdh_p2>img {
+            width: 100%;
+        }
+        
+        @media screen and(min-width:1200px) {
+            .navbar-nav {
+                background-color: transparent;
+            }
+        }
+        
+        @media screen and (min-width:992px) and(max-width:1200px) {
+            .navbar-nav {
+                background-color: transparent;
+            }
+        }
+        
+        @media screen and (max-width:992px) and (min-width:768px) {
+            .navbar-nav {
+                background-color: transparent;
+            }
+        }
+        
+        @media screen and (max-width:768px) {
+            .navbar-nav {
+                background-color: black;
+            }
+        }
+        
+        .sdh_p2 {
+            text-align: center;
+        }
+        
+        .sdh_p2>a {
+            background-color: #666;
+        }
+        
+        .dotted {
+            height: 1px;
+            width: 100%;
+            background-color: #666;
+            margin: 10px 0;
+        }
+        
+        .span_duanluo {
+            float: left;
+            font-size: 12px;
+            padding: 0;
+        }
+        
+        .span_riqi {
+            float: right;
+            font-size: 10px;
+        }
+        
+        .mark0 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        
+        .s1 {
+            height: 20px;
+            width: 45%;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            background-color: #666;
+            text-align: left;
+        }
+        
+        .mark2 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        
+        .s2 {
+            height: 20px;
+            width: 45%;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 5px;
+            background-color: #666;
+            text-align: left;
+        }
+       .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 46px;
+            background-color: white;
+            border-top: 1px solid lightgray;
+        }
+        .footer span {
+            display: block;
+            padding: 12px 0 0 5px;
+            color: #999;
+        }
+        
+        .footer nav {
+            text-align: right;
+            padding: 12px 0 0 0;
+        }
+        
+        .footer a {
+            color: #999;
+            margin-left: 20px;
+        }
+    
+        
+        @media (max-width:767px) {
+            .footer {
+                position: static;
+                width: 100%;
+                height: auto;
+                background-color: white;
+                border-top: 1px solid lightgray;
+                margin-top: 15px;
+            }
+            .footer nav a {
+                display: block;
+                text-align: center;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar  navbar-inverse  navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target="#sdh" data-toggle="collapse">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                </button>
+                <a href="" class="navbar-brand"><img src="images/logo.png" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="sdh">
+                <ul class="nav  navbar-nav">
+                    <li class="li"><a href="#">首页</a></li>
+                    <li><a href="#">媒体中心</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">业务模块</a></li>
+                    <li><a href="#">产品服务</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div>
+
+        <img src="images/banner.png" alt="">
+
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-12 col-xs-12"><img src="images/" alt="">
+                <div class="title1"> 公司动态 </div>
+                <div class="sdh_p"><img src="images/1.jpg" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eaque
+                    optio facere omnis? Magnam hic suscipit facilis nulla, consectetur dolorem quasi, ea eaque eius architecto
+                    et Ex!
+                    <div class="dotted"></div>
+                    <span class="span_duanluo">人心就像一个容器，装的快乐多了，烦恼自然就少</span> <span class="span_riqi">2016/08/12</span><br>
+
+                    <span class="span_duanluo">人心就像一个容器，装的快乐多了，烦恼自然就少</span> <span class="span_riqi">2016/08/12</span><br>
+
+                    <span class="span_duanluo">人心就像一个容器，装的快乐多了，烦恼自然就少</span> <span class="span_riqi">2016/08/12</span><br>
+
+
+
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="title2"> 研究与观点</div>
+                <div class="sdh_p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eaque optio facere omnis? Magnam hic
+                    suscipit facilis nulla, consectetur dolorem quasi, ea eaque eius architecto et ullam a voluptates. Ex!</div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="title3">产品与服务</div>
+
+                <div class="sdh_p  sdh_p2"><img src="images/2.jpg" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati fugiat
+                    ut maiores quam similique magni, velit.
+
+                    <div class="mark0">
+                        <span class="s1">>>酒干倘卖无</span>
+                        <span class="s1">>>酒干倘卖无</span>
+                    </div>
+                    <div class="mark2">
+                        <span class="s2">>>酒干倘卖无</span>
+                        <span class="s2">>>酒干倘卖无</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <div class="container">
+                <span class="col-md-6 visible-md-block visible-lg-block">Copyright 2004-2012, Seethru Co., Ltd. All right reserved</span>
+                <nav class="col-md-6 ">
+                    <a href="#">网站地图</a>
+                    <a href="#">关于宝钢</a>
+                    <a href="#">工作机会</a>
+                    <a href="#">法律声明</a>
+                    <a href="#">友情链接</a>
+                </nav>
+            </div>
+        </div>
+</body>
+<html>

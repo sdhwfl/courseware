@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>练习</title>
+	</head>
+
+	<body>
+		<ul>
+			<li>第1个列表子项</li>
+			<li>第2个列表子项</li>
+			<li>第3个列表子项</li>
+			<li>第4个列表子项</li>
+			<li>第5个列表子项</li>
+		</ul>
+
+		<ol>
+			<li>第1个有序列表子项</li>
+			<li>第2个有序列表子项</li>
+			<li>第3个有序列表子项</li>
+			<li>第4个有序列表子项</li>
+			<li>第5个有序列表子项</li>
+		</ol>
+
+		<ol>
+			<li>第2个列表子项</li>
+		</ol>
+
+		<script type="text/javascript">
+		var myul = document.getElementsByTagName('ul')[0]
+//				//			console.log(myul);
+//				//			
+//			var myol = document.getElementsByTagName('ol')[1]
+				//			console.log(myol);
+
+			//			var licount = myul.childElementCount;
+			//			console.log("子节点的个数是" + licount);
+			//    var olcount=myol.childElementCount;
+			//    console.log("子节点的数量是"+olcount);
+			//    var lilist=myul.children.length;
+			//    console.log("子节点列表的长度是"+lilist)
+
+			//      console.log("ol的节点名是："+myol.nodeName);
+			//      console.log("ol的节点类型是："+myol.nodeType);
+			//      console.log("ol的节点值是："+myol.nodeValue);
+			//      
+			//      console.log("ul的节点值是："+myul.childNodes[1].nodeValue);
+			
+//		 创建一个元素节点
+      var mynewli =document.createElement('li')
+      mynewli.innerHTML="我是通过js添加的列表子项"
+      mynewli.style.color='red'
+      var myol1=document.getElementsByTagName('ol')[1];
+      myol1.appendChild(mynewli);
+       
+       
+
+       myul.insertBefore(mynewli,myul.children[2])
+      
+   
+       var myreplaceli=document.createElement('li')
+       myreplaceli.style.color='purple'
+       myreplaceli.innerHTML="我把老三顶替了，啦啦啦"
+       myul.replaceChild(myreplaceli,myul.children[3])
+       
+     var myol=document.getElementsByTagName('ol')[0]
+     myol.children[0].style.color='green'
+     var addmyol=document.createElement('li')
+     addmyol.innerHTML="我是新成员 。。。。"
+     addmyol.style.color='hotpink'
+     myol.appendChild(addmyol);
+     
+     var insertli=document.createElement('li')
+     insertli.innerHTML='我是入侵者'
+     insertli.style.color='orange'
+     
+     myol.insertBefore(insertli,myol.children[2])
+     
+     myol.removeChild(myol.children[4]);
+     
+    
+     
+       
+  
+      
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,18 @@
+
+<%- include public/header %>
+<h1>我是首页</h1>
+
+<div><%= list.name %></div>
+<div><%= list.age %></div>
+<div><%= list.add %></div>
+<% if(isLogin == true){ %>
+<div class="login">
+    <p style="color: green">欢迎您，您已经登录成功！</p>
+</div>
+<% } else{ %>
+<div class="login">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+</div>
+<% } %>
+<%- include public/footer %>

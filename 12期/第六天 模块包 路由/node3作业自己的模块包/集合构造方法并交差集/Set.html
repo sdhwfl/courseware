@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>set集合的构造方法</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript" src="Set.js"></script>
+<script type="text/javascript" src="Set-test.js"></script>
+<script type="text/javascript">
+	function sum(){
+		var result = Array.from(arguments).reduce(function(pre,cur,ind){
+			return pre + cur;
+		})
+		console.log(result)
+		// console.log(arguments[0] +arguments[1] + arguments[2])
+	}
+	sum(1,2,3,57,98);
+	// 输出方式提示错误的方式
+	console.assert(true,"这里内容不会在控制台输出")
+	console.assert(false,"这里内容会在控制台输出")
+
+</script>
+</html>

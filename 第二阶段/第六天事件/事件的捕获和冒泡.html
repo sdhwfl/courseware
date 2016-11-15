@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>事件的捕获和冒泡</title>
+	</head>
+
+	<body>
+		<div id="div1">
+			<img src="qbl/q1.gif" />
+			<div id="div2">
+				<img src="qbl/q2.gif" />
+				<div id="div3">
+					<img src="qbl/q3.gif" />
+					<div id="box" style="width:200px;height:200px;background:pink;margin:0 auto">
+						<img src="qbl/q4.gif" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			document.querySelector('#div1').addEventListener('click', function() {
+				alert(this.id + '捕获');
+			}, true);
+			document.querySelector('#div1').addEventListener('click', function() {
+				alert(this.id + '冒泡');
+			}, false);
+			document.querySelector('#div2').addEventListener('click', function() {
+				alert(this.id + '捕获');
+			}, true);
+			document.querySelector('#div2').addEventListener('click', function() {
+				alert(this.id + '冒泡');
+			}, false);
+			document.querySelector('#div3').addEventListener('click', function() {
+				alert(this.id + '捕获');
+			}, true);
+			document.querySelector('#div3').addEventListener('click', function() {
+				alert(this.id + '冒泡');
+			}, false);
+			document.querySelector('#box').addEventListener('click', function(e) {
+				alert(this.id + '冒泡');
+			}, false);
+			document.querySelector('#box').addEventListener('click', function(e) {
+				//阻止向父元素进行事件传播
+				//e.stopPropagation();
+				//立即阻止事件传播
+				//e.stopImmediatePropagation();
+				alert(this.id + '捕获');
+
+			}, true);
+			document.body.addEventListener('click', function() {
+				alert('body捕获');
+			}, true)
+			document.body.addEventListener('click', function() {
+				alert('body冒泡');
+			}, false);
+		</script>
+	</body>
+
+</html>

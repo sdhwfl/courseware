@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>添加 删除元素</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			.tianjia{
+				height:100px;
+				width:100px;
+				background-color:pink;
+				margin-top: 5px;
+			}
+			.totianjia{
+				height: 30px;
+			/*	width: 200px;*/
+				margin-top: 5px;
+				background-color: lightblue;
+			}
+			.p1{
+				border:solid 1px darkred;
+			}
+			.p11{
+				color: red;
+			}
+			.p2{
+				border: solid 1px deepskyblue;
+			}
+			.p22{
+				color: blue;
+			}
+			.adli{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn1">append添加元素 </button>
+		<button id="btn2">appendto添加元素</button>
+		<button id="btn3">before</button>
+		<button id="btn4">afert</button>
+		<div class="content"></div>
+		<p class="p1">我是p1</p>
+		<p class="p2">我是 p2</p>
+		<ul>
+			<li>龙猫</li>
+			<li>天空之城</li>
+			<li>红猪</li>
+			<li>起风了</li>
+		</ul>
+		<script type="text/javascript">
+             $('#btn1').on('click',function(){
+             	$('.content').append('<div>通过append添加元素 ,将要添加的元素在append后面</div>');
+             });
+			 $('#btn2').on('click',function(){
+			 	$('<div class="totianjia">通过appendto方法添加元素，将要被添加的元素在appendto前面</div>').appendTo($('.content'));
+			 })
+           $('#btn3').on('click',function(){
+           	   $('.p1').before('<p class="p11">在p1之前添加元素</p>');
+           })
+      
+		$('#btn4').on('click',function(){
+			$('.p2').after('<p class="p22">在p2之后添加元素</p>');
+		})
+		
+		$('ul').prepend($('<li class="adli">风之谷</li>'));
+		$('<li class="adli">千与千寻</li>').prependTo($('ul'));
+ </script>
+	</body>
+</html>
+

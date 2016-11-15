@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>json和xml</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//XML:可扩展标记语言 extensible  markup language 
+			//HTML(hyper text  markup language)超文本标记语言 和Xml一样，都是用标签去标记对象的
+			/*
+			 属性：
+			姓名 剑圣
+			生命值 1000
+			魔法值 800
+			速度  100
+			护甲   50
+			
+			方法：
+			α突袭
+			冥想	
+			 */
+			//			<?xml version="1.0" encoding="ISO-8859-1"?>
+			//			 <hero>
+			//			 <name>剑圣</name>
+			//			 <blood>1000</blood>
+			//			 <magic>800</magic>
+			//			 <skill>
+			//			   <alphatuxi>balabala</alphatuxi>
+			//			   <mingxiang>颤抖吧敌人，我要满血复活了</mingxiang>
+			//			 </skill>
+			//
+			//		   </hero>
+			
+			//上面用xml简单封装了一个英雄的基本数据
+			//1.xml的标签都是自己定义的，给html不一样
+			//2.标签必须符合嵌套规则 有头有尾 成双成对
+			//使用xml数据的时候一般都是从单个数据的最外层标签开始定位，然后依次向内部开始定位，直至找到目标标签
+			// 劣势：1、xml构建数据时代码量比较多 2、xml解析的时候，需要大量代码 ，而且可能嵌套层次太多，导致解析结构复杂
+			//json javascript object notation js对象标记、表示法
+			//var heroinfo = {
+			//		'name': 'jiansheng',
+			//		'magic': 1200,
+			//		'skill': {
+			//			'tuxi': 'balabala',
+			//			'mingxiang': '颤抖吧敌人，我要满血复活了'
+			//		}
+			//	}
+			//上面就是使用JSON封装的数据
+			//console.log(heroinfo);
+			//console.log('英雄的魔法值为：'+heroinfo.magic);
+			//console.log('英雄的技能之一α突袭：'+heroinfo.skill.tuxi);
+			//json数据输出的时候，默认会把大括号内部的内容当做一个对象输出
+			//将js值转换为字符串 ,序列化
+			//var mystr = JSON.stringify(heroinfo);
+			//console.log(mystr);
+			//转换为字符串之前 json数据是有层次的 
+			//将json字符串转化为js对象  反序列化
+			//var myjsonobj = JSON.parse(mystr);
+			//console.log(myjsonobj);
+			//如何找到对象中的数据 可以直接对象.属性得到相关的值
+			//console.log(heroinfo.skill.mingxiang);
+			//通过js对象，按照json的层次结构，从最外层依次像内部找
+			
+			
+		
+		</script>
+	</body>
+
+</html>

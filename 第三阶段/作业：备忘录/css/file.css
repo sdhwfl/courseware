@@ -1,0 +1,120 @@
+   * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: #f2f2f2;
+            font-family: "微软雅黑";
+          
+        }
+        
+        .folder {
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        
+        .folder .files {
+            text-align: center;
+            font-size: 17px;
+        }
+        
+        .folder .files .file {
+            color: #000000;
+            margin-top: 33px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        
+        .folder .files .edit {
+            color: #dcdcdc;
+            text-shadow: 1px 1px 0 #858585;
+            float: right;
+            padding-right: 10px;
+        }
+        
+        .folder .icloud {
+            height: 39px;
+            font-size: 14px;
+            border-top: solid 1px #c8c7cc;
+            border-bottom: solid 1px #c8c7cc;
+            margin-top: 15px;
+            line-height: 39px;
+        }
+        
+        .folder .icloud span {
+            margin-left: 16px;
+            color: #5a5a5f;
+        }
+        
+        .folder .memos {
+            height: 45px;
+            line-height: 45px;
+            margin-left: 18px;
+            border-bottom: solid 1px #c8c7cc;
+            color: #454545;
+        }
+        
+        .folder .memos .text {
+            font-size: 16px;
+        }
+        
+        .folder .memos .number {
+            float: right;
+            margin-right: 40px;
+            font-size: 14px;
+        }
+        
+        .folder .memos .tag {
+            float: right;
+            margin-right: -40px;
+        }
+        
+        .folder .memos .tag img {
+            height: 13px;
+        }
+        
+        .folder .newDel {
+            height: 45px;
+            line-height: 45px;
+            width: 100%;
+            border-bottom: solid 1px #c8c7cc;
+            font-size: 20px;
+            color: #454545;
+        }
+        
+        .folder .newDel .text {
+            margin-left: 18px;
+            font-size: 16px;
+        }
+        
+        .folder .newDel .number {
+            float: right;
+            margin-right: 40px;
+            font-size: 14px;
+        }
+        
+        .folder .newDel .tag {
+            float: right;
+            margin-right: -40px;
+        }
+        
+        .folder .newDel .tag img {
+            height: 13px;
+        }
+         
+        footer {
+            height: 44px;
+            line-height: 44px;
+            width: 100%;
+            border-top: solid 1px #cacaca;
+            position: fixed;
+            bottom: 0px;
+        }
+        
+        footer span {
+            font-size: 17px;
+            float: right;
+            margin-right: 9px;
+            color: #e2aa00;
+        }

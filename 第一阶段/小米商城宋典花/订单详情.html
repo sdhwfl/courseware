@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>订单详情</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+        
+        header {
+            height: 100px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            color: #999;
+            padding: 10px;
+            font-size: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        
+        header>div {
+            height: 60px;
+            width: 60%;
+        }
+        
+        .a1,
+        .a2 {
+            height: 60px;
+            width: 20%;
+            color: #999;
+        }
+        
+        .ydh {
+            height: 100px;
+            width: 100%;
+            padding: 10px 30px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        /*main{
+           background-color: #fff;
+           height: 100%;
+           width: 100%;
+           padding: 20px 0;
+       }*/
+        
+        .jy {
+            height: 100px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 30px;
+            /*flex-wrap: wrap;*/
+        }
+        
+        .jy>div {
+            height: 60px;
+            width: 20%;
+            background-color: green;
+            padding: 0 5px;
+            font-size: 28px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .jytime {
+            padding: 0 30px;
+            height: 100px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .jytime>div {
+            height: 60px;
+            width: 20%;
+            /*background-color: pink;*/
+            padding: 0 5px;
+            font-size: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .xx {
+            margin-top: -20px;
+            height: 40px;
+            width: 100%;
+            background-color: #fff;
+            padding: 0 30px;
+            border-top: solid 1px #ddd;
+        }
+        
+        .tupian {
+            height: 160px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+        
+        .tupian>div {
+            height: 160px;
+            width: 240px;
+            /*background-color: pink;*/
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .tupian>h3:nth-of-type(2) {
+            float: right;
+            color: red;
+        }
+        
+        .xddate {
+            margin-top: 20px;
+            height: 300px;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 30px;
+        }
+        
+        .xddate>h4 {
+            width: 100%;
+            font-size: 20px;
+            padding: 5px 0;
+        }
+        
+        .price {
+            margin-top: 20px;
+            height: 200px;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 30px;
+        }
+        
+        .price>h4 {
+            width: 100%;
+            font-size: 20px;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="我的订单.html" class="a1">
+            <div class="glyphicon glyphicon-menu-left"></div>
+        </a>
+        <div style=" text-align: center;">订单详情</div>
+        <a href="搜索.html" class="a2" style="text-align: right;">
+            <div class="glyphicon glyphicon-search"></div>
+        </a>
+    </header>
+
+    <section class="ydh">
+        <h4>订单编号：12301234565411552</h4>
+        <h4>订单状态：已收货</h4>
+    </section>
+
+    <section class="jy">
+        <div>下单</div>
+        <div>付款</div>
+        <div>配货</div>
+        <div>出库</div>
+        <div>交易成功</div>
+
+    </section>
+
+    <section class="jytime">
+        <div>2016/08/24 14:25</div>
+        <div>2016/08/24 14:25</div>
+        <div>2016/08/24 14:25</div>
+        <div>2016/08/24 14:25</div>
+        <div>2016/08/24 14:25</div>
+
+    </section>
+    <section class="xx">
+        <h4>物流信息：申通快递(上海) 2014521</h4>
+    </section>
+    <div class="tupian">
+        <div>
+            <img src="images/红米3s.png" alt="">
+            <h3>红米3s</h3>
+        </div>
+        <h3 style="color：red; ">799元</h3>
+    </div>
+    <section class="xddate">
+        <h4>下单日期：2016/08/24 14：25</h4>
+        <h4>收货地址：XXXXXXXXXXXXXXXX</h4>
+        <h4>收货人：sdh</h4>
+        <h4>收货时间：不限</h4>
+        <h4>发票类型：个人纸质发票</h4>
+        <h4>发票抬头：普通发票</h4>
+
+    </section>
+    <section class="price">
+        <h4>商品价格：799元</h4>
+        <h4>配送费：15元</h4>
+        <h4>应付总额：814元</h4>
+    </section>
+</body>
+
+</html>

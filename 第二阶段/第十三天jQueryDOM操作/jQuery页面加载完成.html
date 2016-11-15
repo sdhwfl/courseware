@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery页面加载完成</title>
+	<script type="text/javascript" src="jQuery-2.0.3.js"></script>
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		window.onload = function(){
+            //页面加载完成之后需要执行的操作
+            alert('test1');
+        }
+		window.onload = function(){
+			alert('test2');
+		}
+		// 结果：只有test2会输出，不能 同时编写多个
+		// window.onload执行时机：必须等待网页中所有的内容加载完毕后才能执行（包括图片）。
+		$(document).ready(function(){
+			alert("hello");
+		});
+		$(document).ready(function(){
+			alert("hello again");
+		});
+		// 结果：先输出hello，再输出hello again，能够同时编写多个
+		// $(document).ready()执行时机：网页中所有DOM结构绘制完毕后就执行，可能DOM元素关联的东西并没有加载完
+		//有简化写法
+		$(document).ready(function(){
+         //在页面加载完成之后再执行的操作
+            console.log('页面加载完成了');
+		});
+		// 可以简写成：
+		$(function(){
+            console.log('页面加载完成了......');
+		});
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

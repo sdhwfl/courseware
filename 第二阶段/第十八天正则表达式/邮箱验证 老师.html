@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>邮箱验证</title>
+		<script src="jquery-2.0.3.js"></script>
+	</head>
+     
+	<body>
+		<textarea name="" id="" cols="30" rows="10"></textarea><br><button>验证</button>
+		<div  id="myDiv"></div>
+
+		<script>
+			//第一步
+			//1594996575@qq.com    yin@126.com  aaa@sina.com \r\n    sdh.wfl@163.com  wfl_sdh@qq.com
+
+			//var str = '1594996575@qq.com,yin@126.com aaa@sina.com.cn，www@_sdh sdh.wfl@163.com wflsdh@qq.com,ddd@tieba.baidu.com';
+			var str4 = ''
+			$('button').click(function() {
+
+				var reg1 = /^[a-zA-Z\d\.]+@([a-zA-Z\d\-]+\.)+([a-zA-Z]+\.)?[a-zA-Z\u4E00-\u9FFF]+$/
+				var str = $('textarea').val()
+					//拆分的正则
+				var reg2 = /,|，|;|\s|\r|\n |\?/
+				var str3 = (str + ';').split(reg2);
+				//去掉最后一个元素
+				str3.pop();
+				//console.log(str3);
+
+				$('#myDiv').innerHTML = str4;
+				str3.forEach(function(ele, ind) {
+					//console.log(reg1.test(ele));
+
+					if(reg1.test(ele)) {
+						str4 +='<p style="color:green">'+ ele+ '验证通过！'+'</p>';
+                        
+					} else {
+						str4 +='<p style="color:red">'+ ele+ '验证失败！'+'</p>';
+					}
+                
+				})
+                 document.write(str4);
+			})
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>显示和隐藏的弹窗</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+  <script src='js/index.js'></script>
+</head>
+
+<body>
+  <!-- popup弹出层 -->
+  <div class="popup popup01">
+    <div class="pop-close">x</div>
+    <div class="pop-title">提示信息</div>
+    <div class="pop-content">注册成功</div>
+    <div class="btn"><button >确定退出</button></div>
+  </div>
+  <!-- popup弹出层 -->
+  <div class="popup popup02">
+    <div class="pop-close">x</div>
+    <div class="pop-title">提示信息</div>
+    <div class="pop-content">登陆成功</div>
+    <div class="btn"><button >确定退出</button></div>
+  </div>
+  <!-- popup弹出层 -->
+  <div class="popup popup03">
+    <div class="pop-close">x</div>
+    <div class="pop-title">提示信息</div>
+    <div class="pop-content">出现错误</div>
+    <div class="btn"><button >确定退出</button></div>
+  </div>
+  <!-- mask遮罩层 -->
+<!--  <div class="mask"></div>-->
+  <div class="mask"></div>
+  <a class="button1" href="javascript:;">注册成功</a>
+  <a class="button1" href="javascript:;">登陆成功</a>
+  <a class="button1" href="javascript:;">注册失败</a>
+</body>
+<script type="text/javascript">
+$(function() {
+  // 自定义插件 首页引入才能使用
+  $.fn.extend({
+    popup: function() {
+      // 关掉弹窗和遮罩层
+      $(".popup").fadeOut("fast")
+      $(".mask").fadeOut("fast")
+        // 显示出来
+      this.fadeIn();
+      $(".mask").fadeIn();
+      // 点击关闭再关掉
+      $("body").on("click", ".pop-close", function() {
+        $(this).parents(".popup").fadeOut("fast");
+        $(".mask").fadeOut("fast")
+      })
+       $("body").on("click", ".btn", function() {
+        $(this).parents(".popup").fadeOut("fast");
+        $(".mask").fadeOut("fast")
+      })
+    }
+  })
+
+  // 隐藏所有间窗
+  $(".popup").hide();
+  $(".mask").hide();
+  $(".popup01").popup();
+  // 插件的调用
+  $(".button1:eq(0)").click(function(event) {
+    // console.log(111)
+    $(".popup01").find(".pop-content").html($(this).html())
+    $(".popup01").popup();
+  });
+  $(".button1:eq(1)").click(function(event) {
+    $(".popup02").find(".pop-content").html($(this).html())
+    $(".popup02").popup();
+  });
+  $(".button1:eq(2)").click(function(event) {
+    $(".popup03").find(".pop-content").html($(this).html())
+    $(".popup03").popup();
+  });
+
+
+});
+</script>
+
+</html>

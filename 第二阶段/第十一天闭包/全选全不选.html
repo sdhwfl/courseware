@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>全选全不选</title>
+	</head>
+
+	<body>
+
+		<input type="checkbox" class="myinput2" /><label for="">清华</label>
+		<input type="checkbox" class="myinput2" /><label for="">北大</label>
+		<input type="checkbox" class="myinput2" /><label for="">复旦</label>
+		<input type="checkbox" class="myinput2" /> <label for="">浙大</label>
+		<input type="checkbox" class="myinput2" /><label for="">郑大</label>
+		<input type="checkbox" class="myinput2" /><label for="">黄坑大</label><br>
+		<p>请选择你喜欢的学校</p>
+		<button onclick="checkAll()">全选</button>
+		<button onclick="clearAll()">全不选</button><br>
+
+		<input type="" name="" id="myinput3" value="" placeholder="请输入1到6之间的数字" />
+		<button onclick="checkOne()">确定</button>
+		<script type="text/javascript">
+			//全选
+			function checkAll() {
+				var myinput = document.getElementsByTagName("input");
+				for(var i = 0; i < myinput.length; i++) {
+					myinput[i].checked = true;
+				}
+			}
+			//全不选
+			function clearAll() {
+				var myinput2 = document.getElementsByClassName("myinput2");
+				for(var i = 0; i < myinput2.length; i++) {
+					myinput2[i].checked = false;
+				}
+			}
+			//选一个
+			function checkOne() {
+				var myinput3 = document.getElementById('myinput3').value;
+				if(	Number(myinput3) > 6 || Number(myinput3) < 1) {
+					alert("请输入1-6之间的数字");
+				}
+			  var myinput = document.getElementsByTagName("input");
+				myinput[Number(myinput3) - 1].checked = true;
+			}
+		</script>
+	</body>
+
+</html>

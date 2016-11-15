@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="宋典花">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+
+		<title>客户资料</title>
+		<style>
+			.userinfo {
+				margin-top: 7.5px;
+				float: right;
+				padding: 5px 10px 5px 10px;
+				border: 1px solid orange;
+				border-radius: 5px;
+			}
+			
+			.userinfo>a {
+				color: #fff;
+			}
+			
+			.dropdown-menu li {
+				margin-left: 15px;
+			}
+			
+			.csinfo {
+				margin-top: 50px;
+				height: 60px;
+				width: 100%;
+				background-color: #ddd;
+			}
+			
+			.customer {
+				margin-top: 20px;
+			}
+			
+			.cstable {
+				margin-top: 20px;
+			}
+			
+			#sdh {
+				border: 1px solid #333;
+				padding: 20px;
+			}
+			
+			.lasttd {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--导航栏-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="dropdown userinfo ">
+					<a href="#" data-toggle="dropdown"> <span class="glyphicon glyphicon-user "></span></a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li>用户管理</li>
+						<li>修改密码</li>
+						<li>安全退出</li>
+					</ul>
+				</div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+					<a class="navbar-brand" href="#">首页</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">个人中心</a>
+						</li>
+						<li class="active">
+							<a href="#">客户</a>
+						</li>
+						<li>
+							<a href="#">宝贝</a>
+						</li>
+						<li>
+							<a href="#">宝妈</a>
+						</li>
+						<li>
+							<a href="#">会员卡</a>
+						</li>
+						<li>
+							<a href="#">订单</a>
+						</li>
+						<li>
+							<a href="#">预约</a>
+						</li>
+						<li>
+							<a href="#">产品</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="csinfo">
+			<div class="container">
+				<h3> 客户资料及其查询</h3>
+			</div>
+		</div>
+		<!--添加客户按钮-->
+		<div class="container customer">
+			<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#addcs">
+ 添加客户
+</button>
+
+			<!--添加客户modal -->
+			<div class="modal fade " id="addcs">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">添加客户</h4>
+						</div>
+						<div class="modal-body">
+
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label"><b>客户姓名：</b></label>
+									<div class="col-sm-6">
+										<input id="cname" type="text" class="form-control" placeholder="客户姓名">
+									</div>
+								</div>
+
+								<div class="form-group">
+
+									<lable for="sex">&#x3000&#x3000&#x3000&#x3000 <b>客户性别：</b>&#x3000&#x3000</lable>
+									<input class="csex" type="radio" name="sex" value="男士"><label for="">男士 </label>&#x3000&#x3000&#x3000&#x3000
+									<input class="csex" type="radio" name="sex" value="女士"><label for="">女士</label>
+
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label"><b>QQ号：</b></label>
+									<div class="col-sm-6">
+										<input id="cqq" class="form-control" placeholder="QQ号">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label"><b>手机号：</b></label>
+									<div class="col-sm-6">
+										<input id="ctel" class="form-control" placeholder="手机号码">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label"><b><big>客户经理：</big></b></label>
+									<div class="col-sm-6">
+										<input id="cmg" class="form-control" placeholder="经理姓名" id="mgname">
+									</div>
+								</div>
+								<div class="form-group ">
+
+									<button id="btn2" type="button" class="btn btn-primary btn-lg col-sm-3 col-sm-offset-4">保存</button>
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!--客户联系方式-->
+			<table class="table table-bordered  table-striped cstable">
+				<tr>
+					<td>添加时间</td>
+					<td>姓名</td>
+					<td>性别</td>
+					<td>QQ</td>
+					<td>手机</td>
+					<td>客户经理</td>
+					<td style=" text-align: center;">详情</td>
+				</tr>
+				<tr>
+					<td>2016-08-16 15：00：12</td>
+					<td>黄大丫</td>
+					<td>女士</td>
+					<td>1594996575</td>
+					<td>15738395048</td>
+					<td>白骨精</td>
+					<td class="lasttd"><span class="glyphicon glyphicon-edit"></span></td>
+				</tr>
+				<tr>
+					<td>2016-08-16 15：00：28</td>
+					<td>胡大白</td>
+					<td>女士</td>
+					<td>2098054167</td>
+					<td>15836234120</td>
+					<td>阿狸</td>
+					<td class="lasttd"><span class="glyphicon glyphicon-edit"></span></td>
+				</tr>
+				<tr>
+					<td>2016-08-16 15：18：34</td>
+					<td>杨雪梅</td>
+					<td>女士</td>
+					<td>123063698</td>
+					<td>18796663211</td>
+					<td>邱比龙</td>
+					<td class="lasttd" id="td1"><span class="glyphicon glyphicon-edit"></span></td>
+				</tr>
+			</table>
+		</div>
+		
+		</div>
+		<script type="text/javascript">
+			
+			$(function() {
+				$('#btn2').click(function() {
+					var $cname = $('#cname');
+					var $csex = $('.csex');
+					var $cqq = $('#cqq');
+					var $ctel = $('#ctel');
+					var $cmg = $('#cmg');
+
+					var now = new Date();
+					var year = now.getFullYear();
+					var month = now.getMonth() + 1;
+					var date = now.getDate();
+					var hours = now.getHours();
+					var minutes = now.getMinutes();
+					var seconds = now.getSeconds();
+
+					hours = hours < 10 ? '0' + hours : hours;
+					minutes = minutes < 10 ? '0' + minutes : minutes;
+					seconds = seconds < 10 ? '0' + seconds : seconds;
+					var $riqi2 = year + '-' + month + '-' + date + ' ' + hours + "：" + minutes + "：" + seconds;
+					//alert($riqi);
+					
+					 if($cname.val()==''){
+					 alert('请输入姓名！');
+					 }
+					 
+					  else if($cqq.val()==''){
+					 alert('请填写qq！');
+					 }
+					 
+					 else if($ctel.val()==''){
+					 alert('请输入电话号码！');
+					 }
+					 else if($cmg.val()==''){
+					 alert('请输入客户经理姓名！');
+					 }
+					 else{
+					 alert('保存成功！');
+					 }
+					$('<tr></tr>').append('<td>' + $riqi2 + '</td>').append('<td>' + $cname.val() + '</td>').append('<td>' + $csex.val() + '</td>').append('<td>' + $cqq.val() + '</td>').append('<td>' + $ctel.val() + '</td>').append('<td>' + $cmg.val() + '</td>').append('<td style="text-align: center;"><span  class="glyphicon glyphicon-edit"></span></td>').appendTo('table tbody');
+
+				})
+			})
+		</script>
+	</body>
+
+</html>

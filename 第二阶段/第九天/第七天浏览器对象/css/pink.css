@@ -1,0 +1,7 @@
+body{
+    background:pink;
+}
+#mysection2>div{
+    background:deeppink;
+    border-color:hotpink;
+}

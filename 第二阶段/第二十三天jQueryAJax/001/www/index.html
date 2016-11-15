@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<meta charset='UTF-8'>
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+		<style>
+		 
+		</style>
+	</head>
+
+	<body>
+		<label for="">姓名：</label><input type="text" name="name" id="" value="" /><br>
+		<label for="">年龄：</label><input type="text" name="age" id="" value="" /><br>
+		<button id="btn1">multer请求</button>
+		<div id="">	</div>
+			
+	
+	 <script type="text/javascript">
+	 	$('#btn1').click(function(){
+	 		//创建一个formdata对象 
+	 		//只能用来发给服务器 本身是输出不了
+	 		var data=new FormData();
+	 		//创建一个XMLHttpRequest对象
+	 		var xhr=new XMLHttpRequest();
+	 		xhr.open('POST','/multer',true);
+	 		
+	 		xhr.onreadystatechange=function(){
+	 			//服务器正确响应了内容
+	 			if(xhr.readyState==4){
+	 				if(xhr.status==200){
+	 					//内容
+
+ 					   $('div').html(xhr.responseText);
+	 					//获取的是响应头里面的内容
+	 					console.log(xhr.getAllResponseHeaders())
+	 					console.log(xhr.getResponseHeader(name));
+	 				}
+	 			}
+	 		};
+	 		//添加请求头   应该在open()之后 send()之前
+	 		xhr.setRequestHeader('name','sdh')
+	 		xhr.setRequestHeader('x-name','sdh')
+	 		xhr.setRequestHeader('x-sex','woman')
+	        //xhr.send(data);
+	 		data.append('name','sdh');
+	 		data.append('age',23);
+	 		data.append('phone',18037304079);
+	 		xhr.send(data);
+	 		
+	 	})
+	 </script>
+	</body>
+
+</html>

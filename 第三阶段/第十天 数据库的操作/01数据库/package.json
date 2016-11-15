@@ -1,0 +1,17 @@
+{
+  "name": "mymongo",
+  "version": "1.0.0",
+  "description": "数据库",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoDB数据库"
+  ],
+  "author": "宋典花",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.6.4"
+  }
+}

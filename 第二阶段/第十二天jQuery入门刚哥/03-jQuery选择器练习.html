@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery练习</title>
+	<script src="jquery-2.0.3.js">
+		
+	</script>
+</head>
+<body>
+	<!-- HTML结构 -->
+	<div id="test-jquery">
+	    <p id="para-1" class="color-red">JavaScript</p>
+	    <p id="para-2" class="color-green">Haskell</p>
+	    <p class="color-red color-green">Erlang</p>
+	    <p name="name" class="color-black text">Python</p>
+	    <form class="test-form" target="_blank" action="#0" onsubmit="return false;">
+	        <legend>注册新用户</legend>
+	        <fieldset>
+	            <p><label>名字: <input name="name"></label></p>
+	            <p><label>邮件: <input name="email"></label></p>
+	            <p><label>口令: <input name="password" type="password" class="text"></label></p>
+	            <p><button type="submit">注册</button></p>
+	        </fieldset>
+	    </form>
+	</div>
+	<script type="text/javascript">
+		/*练习:使用jQuery选择器分别选出指定元素:
+		    仅选择JavaScript
+		    仅选择Erlang
+		    选择JavaScript和Erlang
+		    选择所有编程语言--all p
+		    选择名字input
+		    选择邮件和名字input
+		*/ 
+		var jsObj = $('#para-1');
+		console.log(jsObj);
+		var erlangObj = $('.color-red.color-green');
+		console.log(erlangObj);
+		var jserlangObj = $('.color-red');
+		console.log(jserlangObj);
+		// var alllangObj = $('p');
+		// console.log(alllangObj);
+		// 找到属性class的值以color开头的所有元素
+		var alllangObj = $('[class^=color]');
+		console.log(alllangObj);
+
+		// 找到属性name=name的所有input标签
+		var nameObj = $('input[name=name]');
+		console.log(nameObj);
+		// 组合选择（查找），将一些简单的规则组合起来使用
+
+		var textObj = $('input.text');
+		console.log(textObj);
+
+		// 选择所有name=name，name=email的input标签
+		var nameemailObj = jQuery('input[name=name],input[name=email]');
+		console.log(nameemailObj);
+		// 多项选择查找，就是把多个选择器用“，”组合起来
+	</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>jQuery层级选择器</title>
+        <style>
+            ul>li:nth-child(odd){
+                background-color: green;
+            }
+            ul>li:nth-child(even){
+                background-color: orange;
+            }
+        </style>
+        <script src="jquery-2.0.3.js"></script>
+    </head>
+    <body>
+        <div>
+            <ul class="web">
+                <li class="html">HTML5</li>
+                <li class="css">CSS3</li>
+                <li class="JavaScript">JavaScript</li>
+                <li class="jQuery">jQuery</li>
+            </ul>
+        </div>
+        <div>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <form action="">
+                <div>
+                    <textarea rows="6" cols="20"></textarea>
+                    <p>4</p>
+                    <p>5</p>
+                    <textarea rows="6" cols="20"></textarea>
+                    <p>6</p>
+                </div>
+            </form>
+        </div>
+        <form id="bankForm">
+            <input type="text">username
+            <input type="text">password
+            <select>1</select>
+            <select>2</select>
+            <select>3</select>
+            <input type="radio" name="sex">male
+            <input type="radio" name="sex">female
+            <input type="checkbox">鱼香肉丝
+            <input type="checkbox">木耳肉丝
+            <input type="checkbox">青椒肉丝
+            <input type="checkbox">蒜苔肉丝
+            <input type="checkbox">土豆肉丝
+            
+            <textarea rows="6" cols="20"></textarea>
+            <button type="submit">submit</button>
+        </form>
+        <div onclick="chaxun()">clicked</div>
+        
+        <!--DOM节点树的结构，是层级结构，所以，很多时候我们需要对层级结构分析，查找目标元素。层级选择器的出现，让jQuery的元素定位功能更加强大。-->
+        <script>
+            // 1、层级选择器：如果DOM结构存在层级关系的话，可以使用层级选择器，语法：$('祖先  子孙'),祖先在前，子孙在后，层级之间用空格隔开。$('ancestor descendant')  ancestor祖先   descendant后代
+            // var jsObj = $('ul.web li.JavaScript');
+            // console.log(jsObj);
+            // var jsObj2 = $('div li.JavaScript');
+            // console.log(jsObj2);
+            // 因为div和ul，都是li的祖先
+            // 层级选择器相比较于单个选择器来讲，能够缩小选择范围,避免选择不相干的元素。
+
+            // 选择所有属于表单的段落元素
+            // var allFormP = $('form p');
+            // console.log(allFormP);
+
+            // 2、子集选择器:用于比较明确的父子关系结构，语法:$('parent>child')
+            // var allP = $('div>p');//6
+            // var allP = $('form>div>p');//3
+            // console.log(allP);
+
+            // 3、过滤选择器:过滤出指定位置的元素，比如第一项、最后一项、奇数项、偶数项、指定位置项
+            // var lastP = $('form>div p:last-child');//过滤出最后一个元素
+            // console.log(lastP);
+            // var firstP = $('form>div p:first-child');//过滤出第一个元素
+            // console.log(firstP);
+            // var zhidingP = $('form>div p:nth-child(2)');//选出指定元素，第N个元素，N从1开始
+            // console.log(zhidingP);
+
+            // 选中无序列表中第三个列表子项
+            // var thirdLi = $('ul>li:nth-child(3)');
+            // console.log(thirdLi);
+            // // 找到列表中的奇数列表子项
+            // var oddLis = $('ul>li:nth-child(odd)');
+            // console.log(oddLis);
+            // // 找到列表中的偶数列表子项
+            // var evenLis = $('ul>li:nth-child(even)');
+            // console.log(evenLis);
+
+            // 4、表单选择器：对一些表单元素，jQuery进行的特殊支持
+            /*
+            :input :选择页面中所有的表单元素，如：<input>、<textarea>、<select>、<button>
+            :radio :查找单选框，跟input[type=radio]一样
+            :checkbox ：查找复选框，跟input[type=checkbox]一样
+            :focus :处于当前输入焦点的元素，类似于通过$('input:focus')获取到的元素
+            :checked :获取目前已经被勾选上的单选框和复选框，类似于通过$('input[type=radio]:checked')
+            */
+            // var elements = $(":input");
+            // console.log(elements);
+            // 查询页面中被选中的单选框和复选框
+            function chaxun(){
+                console.log('clicked');
+                var selected = $(':checked');
+                console.log(selected);
+            }
+        </script>
+    </body>
+</html>

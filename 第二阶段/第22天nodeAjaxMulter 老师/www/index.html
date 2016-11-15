@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ajax Javascript版</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+  <script src='js/index.js'></script>
+</head>
+
+<body>
+  姓名：
+  <input type="text" name="name" required> 年龄：
+  <input type="text" name="age" required>
+  <button class="button-one">按钮</button>
+  <div></div>
+</body>
+<script type="text/javascript">
+// 点击事件
+$('.button-one').click(function() {
+  // 创建formData对象  只能用来发给服务器 本身是输出不了
+  var data = new FormData();
+  data.append('name', 'yinxuejiang');
+  data.append('age', 31);
+  data.append('phone', 15738361415);
+
+  // 创建 一个XMLHttpRequest对象
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    // 服务器正确响了内容
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        // 获取响应头的内容
+        console.log(xhr.getAllResponseHeaders())
+        console.log(xhr.getResponseHeader('name'))
+        // 内容
+        $('div').html(xhr.responseText);
+      }
+    }
+  };
+
+  xhr.open('POST', '/multer', true);
+  // 添加请求头  应该在open()之后 send()之前
+  xhr.setRequestHeader("Accept-Encoding-name", "testAE");
+  xhr.send(data);
+
+});
+</script>
+
+</html>

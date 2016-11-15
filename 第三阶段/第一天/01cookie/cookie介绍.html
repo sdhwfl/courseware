@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>cookie简介</title>
+		<meta charset="utf-8">
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//cookie也叫http cookie 客户端与服务端进行会话使用的 目的：就是让网页的各个页面有一定的联系
+			//name=value 设置一个值 在客户的浏览器端保存的值
+			//[expires=date] []可选值 expires 过期时间(如果没有这个事件浏览器关闭   cookie会删除，也叫会话cookie)
+
+			//第一种
+			document.cookie = "user=sdh";
+			var time = new Date();
+			time.setDate(time.getDate() + 1)
+
+			//第二种
+			var time2 = new Date();
+			time2.setDate(time2.getDate() + 2)
+			document.cookie = "age=23;expires=" + time2;
+			//第三种 [domain=baidu.com]  域名 一般不加 自己会判断
+			document.cookie = "phone=15949965755;expires=" + time;
+			//document.cookie = "phone=15949965755;expires=" + time + ";domain='/127.0.0.1'";
+			//第四种 是不是加密的   https:// 要[secure] 安全通讯连接需要配置的
+			//[secure]
+			//获取cookie
+			//console.log(document.cookie);
+
+			//完整的cookie
+			//name=value;[expires=time][domain=baidu.com][secure]
+
+			function getCookie(val) {
+				var str = document.cookie;
+				var cookiesArr = str.split("; ")
+				//console.log(cookiesArr);
+				var obj = {};
+				cookiesArr.forEach(function(ele, ind) {
+					var cookiearr = ele.split('=');
+					obj[cookiearr[0]] = cookiearr[1];
+
+				})
+				if(val) {
+					return obj[val];
+				} else {
+					return obj;
+				}
+
+			}
+			var cookies = getCookie();
+			console.log(cookies.user);
+			console.log(cookies.age);
+			console.log(cookies.phone);
+             
+			console.log(getCookie('user'))
+		</script>
+	</body>
+ 
+</html>

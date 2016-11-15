@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery之DOM节点操作</title>
+    <script src="jquery-2.0.3.js"></script>
+</head>
+<body>
+<p>你最喜欢的学校是？</p>
+<ul>
+    <li>清华</li>
+    <li>北大</li>
+    <li>黄坑大 <i>灰常坑</i></li>
+</ul>
+<script>
+//寻找DOM节点
+ var sdh=$('ul>li:nth-child(2)');
+    console.log(sdh);
+//加载完成之后需要做什么事情
+  $(function(){
+//      查找dom节点
+      console.log($('ul li:nth-child(2)'));
+//      2.新建dom节点（元素节点/文本节点/属性节点）
+    var  $li_1=  $('<li></li>');//为了区分jQuery和dom对象，在jQuery对象前面加一个$符号
+      console.log($li_1);//元素节点
+      var  $li_2=  $('<li>复旦</li>');
+      console.log($li_2);//文本节点
+
+      var  $li_3=  $('<li title="this is a school">复旦</li>');
+      console.log($li_3);//属性节点
+//      3.添加dom节点
+
+      var $ul=$('ul');
+      $ul.append($li_3);
+     // $li_3.appendTo($ul);
+     // prepend和prependto向前添加
+      $ul.prepend($li_3);
+      $li_3.prependTo($ul);
+      //$li_3.insertBefore($('ul li:nth-child(2)'));
+      //$li_3.insertAfter($('ul li:nth-child(2)'));
+//      4.删除dom节点
+      //$('ul li:nth-child(3)').remove();//全部删除
+     // $('ul li:nth-child(3)').empty();//只删除元素内部的文本节点
+      $('ul li:nth-child(3)').click(function(){
+          alert('太坑了，赶快走吧！');
+      });
+//      先删除 再添加 查看事件的响应
+//    var $hhstu=$('ul li:nth-child(3)')
+//   // $hhstu.remove();
+//    $hhstu.detach();//删除元素后 元素原来绑定的事件都还在
+//    $ul.append($hhstu);
+//})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作样式</title>
+    <style>
+        .style0{
+            width: 200px;
+            height:180px;
+            background-color: aqua;
+        }
+        .style1{
+            font-size:30px;
+            color: red;
+        }
+        .style2{
+            /*display: none;*/
+            visibility: hidden;
+        }
+    </style>
+    <script src="jquery-2.0.3.js"></script>
+    <script>
+        $(function(){
+            //得到div
+            var $myDiv = $('#testdiv');
+            $myDiv.attr('class','style0 style1');//前提,div已经有class属性
+
+            var showOrHide = true;
+            $('button').click(
+                    function(){
+                        //修改div样式
+                        //1.addClass()方法
+                        //$myDiv.addClass('style0 style1');
+                        //addClass(),有class属性的话,直接添加class名,没有的话就创建;
+                        //假如需要添加多个类名,可以直接拼接,类名之间用空格隔开
+                        //$myDiv.addClass('style0').addClass('style1');
+                        //var $div1 = $myDiv.addClass('style0');//返回的是一个jQuery对象
+                        //var $div2 = $div1.addClass('style1');
+                        //通过多次调用addClass()方法,多次添加类名,实质上还是jQuery对象调用方法
+                        //2.removeClass()
+                        //$myDiv.removeClass('style1');//参数直接写需要删除的类名
+
+                        //3.CSS(),直接对style属性进行操作,操作结果会在行内体现
+                        //第一个参数:要修改的样式属性;第二个参数:对应的属性值
+                        //$myDiv.css('color','green').css('width','300px');
+                        //js原生语法操作dom
+                        //$myDiv.get(0).style.fontSize = '50px';
+                        //$myDiv[0].style.height = '400px';
+
+                        //4.toggleClass()直接对类名进行"删除-添加-删除..."反复的操作
+                        //0 1 2
+                        //$myDiv.toggleClass('style2');
+
+                        //5.hide()
+                        //$myDiv.hide();
+                        //$myDiv.show();
+                        //检测元素是否隐藏
+                        if(showOrHide)
+                        {
+                            $myDiv.hide();
+                            showOrHide = false;
+                        }
+                        else {
+                            $myDiv.show();
+                            showOrHide = true;
+                        }
+                        console.log($myDiv.html());//innerHTML
+                        console.log($myDiv.text());//innerText
+                        console.log($('input').val());
+                        console.log($('input').attr('value'));
+                    }
+            );
+        });
+    </script>
+</head>
+<body>
+    <!--
+        1.通过attr()方法,修改class属性值,间接修改样式
+        2.通过addClass()方法,修改class属性值,间接修改样式
+        3.通过removeClass()方法,修改class属性值,间接修改样式
+        4.通过css()方法,直接操作style,比如:css('color','green');直接修改样式
+        5.hide()和show()代替了display的none和block,实现隐藏和显示元素
+        6.toggle()方法,修改class属性值,间接修改样式
+    -->
+<div id="testdiv">这就是一个空的div<strong>强调的文本</strong></div>
+<button>addclass</button>
+    <input type="text" value="这是输入框的value值">
+</body>
+</html>

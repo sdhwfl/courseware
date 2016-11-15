@@ -1,0 +1,9 @@
+1、cookie-parser安装命令
+npm install cookie-parser
+2、使用
+const cookieParser = require('cookie-parser'); 
+//使用cookieParser
+app.use(cookieParser())
+
+3、怎么获取cookie的值
+req.cookies

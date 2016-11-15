@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百度 搜狗</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			html {
+				height: 100%;
+			}
+			
+			body {
+				height: 100%;
+			}
+			
+			#baidu {
+				height: 100px;
+				width: 100px;
+				margin: auto;
+				line-height: 100px;
+				text-align: center;
+				font-size: 30px;
+				border: 2px solid hotpink;
+				display: none;
+			}
+			
+			section {
+				margin: auto;
+			}
+			
+			main {
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#" type="button" id="bd">百度</a>
+		<a href="#" type="button" id="sg">搜狗</a>
+		<span id="">
+			我是说明文字
+		</span>
+		<section>
+			<div id="baidu"></div>
+		</section>
+		<main class="main"></main>
+		<script type="text/javascript">
+			$(function() {
+				var $baidu = $('#baidu');
+				var $bd = $('#bd');
+				var $sg = $('#sg');
+                var $main=$('.main')
+				$bd.click(function() {
+					$baidu.show();
+					$baidu.text('百度');
+				})
+				$sg.click(function() {
+					$baidu.show();
+					$baidu.text('搜狗');
+				})
+				$main.click(function(){
+				 $baidu.hide();	
+				})
+
+			});
+		</script>
+	</body>
+
+</html>

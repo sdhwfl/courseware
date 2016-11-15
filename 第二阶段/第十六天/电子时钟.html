@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>电子时钟</title>
+	</head>
+
+	<body>
+		<div id="div1"></div>
+		<div id=""></div>
+			
+		
+		<script type="text/javascript">
+//			function shijian() {
+//				var now = new Date();
+//				var hours = now.getHours();
+//				var minutes = now.getMinutes();
+//				var seconds = now.getSeconds();
+//				hours = hours < 10 ? '0' + hours : hours;
+//				minutes = minutes < 10 ? '0' + minutes : minutes;
+//				seconds = seconds < 10 ? '0' + seconds : seconds;
+//				var div1 = document.getElementById('div1');
+//				div1.innerHTML = hours + ":" + minutes + ":" + seconds;
+//				setTimeout(shijian, 1000);
+//			}
+//			shijian();
+			//通过选择器找到第一个div标签
+			var div = document.querySelector('div');
+			//选择全部的div标签
+			var div1 = document.querySelectorAll('div')[0];
+			//声明一个函数
+			function inserttime() {
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds();
+				
+				hours = hours < 10 ? '0' + hours : hours;
+				minutes = minutes < 10 ? '0' + minutes : minutes;
+				seconds = seconds < 10 ? '0' + seconds : seconds;
+				
+				var str=hours + ":" + minutes + ":" + seconds;
+				div.innerHTML=str;
+			}
+			inserttime();
+			setInterval(inserttime,1000)
+		</script>
+
+	</body>
+
+</html>

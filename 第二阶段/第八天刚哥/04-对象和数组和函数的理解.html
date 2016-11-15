@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>对象数组和函数的理解</title>
+	</head>
+
+	<body>
+		函数是一段代码,封闭的代码集合 函数的好处: 1.将重复的代码放入函数内，在调用的时候只需要考虑调用的位置即可. 2.将相同功能的代码写成函数，根据参数的不同，执行结果也不同,例如求和、求平方... 在什么情况下使用函数: 1.需要多次调用的代码 2.具有相同功能的代码 函数的特点: 1.先声明后调用 2.声明的位置不重要,可以在内部也可以外部，调用的位置决定了它的执行时间吧 数组是连续存储的数据集合 数组的好处: 1.减少了内存的开销，代码顺序存放在一起 2.查找速度更快 在什么情况下使用数组: 1.数据较多的情况下 2.顺序比较重要的情况下 一堆数据和对数据进行操作的相关方法的一个集合,叫做对象 对象的好处: 1.数据和方法封装在了一起，便于操作 2.数据和方法之间的联系更加的紧密 在什么情况下用对象: 1.又有数据又有操作数据的方法的时候 2.顺序不重要的情况下
+
+	</body>
+
+</html>
+<script>
+	var a = 10;
+	var b = 20;
+	var c = 30;
+	var d = 40;
+
+	//不用函数的情况下
+	var a = a + 1;
+	var b = b + 1;
+	var c = c + 1;
+	var d = d + 1;
+	//重复代码
+	var a = a + 1;
+	var b = b + 1;
+	var c = c + 1;
+	var d = d + 1;
+
+	//使用函数的情况
+	function add() {
+		//重复的内容放入函数内,方便随时进行调用
+		var a = a + 1;
+		var b = b + 1;
+		var c = c + 1;
+		var d = d + 1;
+	}
+	//调用两次函数
+	add();
+	add();
+
+	//设计一个需求，要得到两个数相加结果
+	var result1 = a + b;
+	var result2 = b + c;
+	var result3 = c + d;
+
+	function add(a, b) {
+		return a + b;
+	}
+	add(a, b);
+	add(b, c);
+	add(c, d);
+
+	//设计一个需求，要得到两个数相乘结果
+	function cheng(a, b) {
+		return a * b;
+	}
+	cheng(a, b);
+	cheng(b, c);
+	cheng(c, d);
+
+	function chu() {}
+
+	function jian() {}
+
+	//设计个需求，得到某个数的平方
+	function pingfang(a) {
+		return a * a;
+	}
+
+	//计算机在给变量开辟空间的时候，是随机进行开辟的，哪儿有地方放哪儿，并且在事先
+	//不知道数据多大的情况下，会尽可能大的开辟空间,那么会造成资源的浪费,并且，在寻找
+	//变量的时候,会很费劲.
+	var num1 = 1;
+	var num2 = 2;
+	var num3 = 3;
+	var num4 = 4;
+	var num5 = 5;
+	//连续的内存空间，查找速度更快
+	var list = [1, 2, 3, 4, 5];
+
+	//不用对象的情况
+	var name = 'xiaoming';
+	var age = 18;
+
+	function getName() {
+		return name;
+	}
+
+	function getAge() {
+		return age;
+	}
+	//用对象的情况
+	var person = {
+		name: 'xiaoming',
+		age: 18,
+		getName: function() {
+			return this.name
+		},
+		getAge: function() {
+			return this.age
+		}
+	}
+	 console.log(person);
+</script>

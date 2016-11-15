@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选</title>
+		<script type="text/javascript" src="jquery-2.0.3.js">
+		</script>
+		<style type="text/css">
+			.after {
+				background-color: pink;
+			}
+			
+			div {
+				height: 100px;
+				width: 100px;
+				margin-top: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$('div:eq(0)').nextAll('div').addClass('after');
+                
+				$('div:eq(0)').nextUntil('.last').html('sdh');
+				//第三个div加所有span标签
+				$('div:eq(2)').add('span').css('font-size','30px');
+				//end 返回到被破坏最开始的选择器
+				$('div:eq(2)').add('span').add('div:eq(3)').end().css('height','40px');
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id=""></div>
+		<div id=""></div>
+		<div id=""></div>
+		<div id="" class="last"></div>
+
+	</body>
+
+</html>

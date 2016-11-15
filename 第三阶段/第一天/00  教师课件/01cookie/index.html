@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>cookie学习</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+  <script src='js/index.js'></script>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+// 什么叫cookie
+// cookie也叫http cookie客户与服务端进行会话使用的
+// 目的：就是让网页的多个页面有一定的联系
+
+// name=value; 设置一个值 在客户的浏览器端保存的值
+// [expires=date] []可选值  expires 过期时间（如果没有这个时间那么浏览器关闭，cookie也被删除，也叫会话cookie）
+// 一种
+document.cookie = "user=yinxuejiang;"
+
+// 二种
+var time = new Date();
+time.setDate(time.getDate() + 1);
+document.cookie = "age=30;expires=" + time;
+
+// 三种  域名，一般不加，自己会判断
+// [domain=baidu.com;]
+var time2 = new Date();
+time2.setDate(time.getDate() - 1); // 删除一个cookie方法 让他日期设置为过期
+document.cookie = "phone=157;expires=" + time + ";";
+
+// 四种  是不是加密的  https:// 要[secure] 安全通信链接需要配置
+// [secure]
+
+// 完整的 cookie
+// name=value;[expires=time;][domain=baidu.com;][secure]
+
+// 获取cookie
+console.log(document.cookie);
+
+// 获取cookie函数
+// document.cookie // user=yinxuejiang; phone=30; ...
+function getCookie(val) {
+  var str = document.cookie;
+  var arr = str.split("; ");
+  var obj = {};
+  arr.forEach(function(element) {
+    //element user=yinxuejiang
+    var arrValue = element.split("=");
+    obj[arrValue[0]] = arrValue[1];
+  });
+  if (val) {
+    return obj[val];
+  } else {
+    return obj;
+  }
+}
+// {
+// 	user:"yinxuejiang",
+// 	age:30,
+// 	phone:157
+// }
+var cookies = getCookie();
+console.log(cookies.user) // yinxuejing
+console.log(cookies.age) // 30
+console.log(cookies.phone) // 157
+
+console.log(getCookie('user')) // yinxuejiang
+</script>
+
+</html>

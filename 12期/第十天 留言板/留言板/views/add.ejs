@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="author" content="宋典花">
+    <title>添加留言</title>
+    <style>
+
+        #content{
+            border: solid 1px deepskyblue;
+        }
+        input{
+            height: 30px;
+            width: 60px;
+            border: solid 1px deepskyblue;
+            background-color: deepskyblue;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--添加留言的表单-->
+<form action="/add" method="POST">
+    <textarea name="content" id="content" cols="60" rows="10" placeholder="请添加留言的内容"></textarea><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
+<script>
+    //将表单的内容提交给服务器
+    document.forms[0].onsubmit = function (e) {
+        e.preventDefault();
+        var data = new FormData(this);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                //表单里面的内容已经发送成功了
+                var result = JSON.parse(xhr.responseText)
+                alert(result.message);
+                location.href = '/';
+            }
+        }
+        xhr.open('POST', '/add');
+        xhr.send(data);
+    }
+</script>

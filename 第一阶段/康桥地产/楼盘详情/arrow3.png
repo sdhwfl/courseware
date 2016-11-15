@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>页面走失了</title>
+	<style typee="text/css">
+		*{padding:0;margin:0;}
+		html,body{background-color:#F0F0F0;height:100%;}
+		.body{width:320px;height:100%;display:box;display:-webkit-box;-webkit-box-align:center;margin:0 auto;color:#333;text-align:center;background-color:#F0F0F0;min-height:416px;}
+		a{color:#34cca6;text-decoration:none;}
+		.content{padding-top:30px;line-height:28px;}
+		.content h3{font-size:16px;}
+		.content p{font-size:14px;}
+		.body-inner{margin:0 auto;width:320px;}
+		.powered {
+			margin-bottom: 6px;
+			font-size: 11px;
+			color: #aaa;
+			text-align: center;
+			width: 100%;
+			position:fixed;
+			bottom:5px;
+		}
+		.powered a{color:#aaa;}
+	</style>
+</head>
+<body>
+<div class="body">
+	<div class="body-inner">
+		<div class="pic">
+			<img src="/Public/myui_v1/images/itemContent_03.png" width=220 height=236/>
+		</div>
+		<div class="content">
+			<h3>页面走失了</h3>
+			<p>来自星星的攻城狮正玩命寻找中</p>
+			<p>客服QQ：<a href="mqq://im/chat_type=wpa&uin=4008333870&version=1&src_type=web">4008333870</a></p>
+		</div>
+	</div>
+</div>
+<div class="powered" id="powered">
+	Powered&nbsp;by&nbsp;&nbsp;<a href="http://m.myunke.com/">明源云客</a>
+</div>
+</body>
+</html>

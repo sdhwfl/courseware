@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="charles">
+		<title>jQuery初步认识</title>
+		<style>
+
+		</style>
+		<!--引入jQuery-->
+		<script src="jquery-2.0.3.js"></script>
+	</head>
+
+	<body>
+		<div id="myDiv">myDiv</div>
+		<!--
+        jQuery理念：Write Less，Do More，写尽量少的代码，完成尽量多的工作。
+
+        1、jQuery是众多js第三方库中的一个，但是使用比较广泛，主要功能包括:
+        提供给我们更简便的操作DOM元素的一种方法、
+        内部帮我们实现了一些代码，便于消除各个浏览器之间的差异，形成一种统一的实现、
+        更方便的实现动画、修改css样式
+
+        2、jQuery根据使用场景不同，分为压缩版(compressed)和未压缩版(uncompressed)。
+        压缩版主要在发布产品的时候使用，能够减少发布包的体积；未压缩版主要在开发的时候使用，便于查看源代码。
+
+        3、如何使用jQuery库？只需要在head引入js文件就行了。
+        -->
+		<script>
+			var div1 = document.getElementsByTagName('div')[0];
+			var div2 = document.getElementById('myDiv');
+			console.log(div1);
+			console.log(div2);
+			var div3 = $('#myDiv');
+			console.log(div3);
+
+			/*$符号在jQuery中是一个最常用的符号，jQuery将所有的功能都封装到一个全局变量jQuery中，$仅仅是另一个合法的变量名，在jQuery库中，作为jQuery这个变量的别名来使用*/
+			// jQuery 和 $ 的关系:jQuery才是本尊，$仅仅是jQuery的替身。
+			var div4 = jQuery('#myDiv');
+			console.log(div4);
+			console.log(window.jQuery);
+			console.log(window.$);
+			console.log($ == jQuery);
+			
+			//补充
+			//解除$符号与jQuery的关系
+			jQuery.noConflict();
+			console.log($);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,8 @@
+
+通过应用生成器工具 express 可以快速创建一个应用的骨架。
+安装命令
+ npm install express-generator -g
+ -h 选项可以列出所有可用的命令行选项：
+ express -h
+ 查看express-generator的位置路径(C:\Users\Administrator\AppData\Roaming\npm\node_modules)
+ 注意此处AppData是隐藏文件夹

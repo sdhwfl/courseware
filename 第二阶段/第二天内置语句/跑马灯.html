@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="宋典花">
+		<title>跑马灯</title>
+		<style>
+			div {
+				height: 60px;
+				width: 100%;
+				background-color: pink;
+			}
+			
+			p {
+				color: red;
+				font-family: '华文行楷';
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="">
+			<marquee direction=left scrollamount=4 onmouseover="this.stop()" onmouseout="this.start()">
+				<p>热烈欢迎学弟学妹的的到来，我的心在等待，永远在等待！</p>
+			</marquee>
+		</div>
+
+		<input type=button value=刷新 onclick="history.go(0)">
+	</body>
+
+</html>

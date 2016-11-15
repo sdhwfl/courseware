@@ -1,0 +1,204 @@
+1.cd ../跳转上一级
+
+2.cd c:\Mongo\bin  mongo
+3.显示所有数据库 show dbs
+4.创建数据库  如果有这个数据库 就会切换到此数据库 如果没有直接创建
+ use people
+ 5.删除数据库
+ db.dropDatabase();
+ 6.查看当前使用的数据库
+ db.get Name();
+ db
+ 7.显示当前数据库的状态
+ db.stats();
+8.当前数据库的版本
+db.version();
+9.查看当前数据库的地址
+db.getMongo();
+
+二、集合（表）
+1、创建一个集合
+db.createCollection("students")
+2、得到指定名称的集合
+db.getCollection("students")
+3、得到当前数据库的所有集合、
+db.getCollectionNames();
+
+
+三、添加数据
+ db.students.save({
+    name: "聂保恩",
+    sex: "男",age:21,
+    phone: 15738395366,
+    email: "347195213@qq.com",
+    info: "我是一名学生"
+  })
+  db.students.save({
+    name: "王泰星",
+    sex: "男",age:20,
+    phone: 15538719879,
+    email: "2362269471@qq.com",
+    "info": "我是一名html5学生"
+  })
+  db.students.save({
+    name: "宋典花",
+    sex: "女",age:23,
+    phone: 15738395076,
+    email: "1594996575 @qq.com",
+    info: "我是H5 - 11 期的一名学员 "
+  })
+  db.students.save({
+    name: "黄成宏",
+    sex: "男",age:21,
+    phone: 18135685228,
+    email: "1070655297 @qq.com",
+    info: "我是一名学生 "
+  })
+  db.students.save({
+    name: "张苒",
+    sex: "女",age:23,
+    phone: 15738961916,
+    email: "547519233 @qq.com",
+    info: "我是一名学生 "
+  })
+  db.students.save({
+    name: "邵要强",
+    sex: "男",age:21,
+    phone: 15738961917,
+    email: "1366115455 @qq.com",
+    info: "我是一名学生 "
+  })
+  db.students.save({
+    name: "杨帅",
+    sex: "男",age:22,
+    phone: 15738961939,
+    email: "1846181786 @qq.com",
+    info: "学生 "
+  })
+  db.students.save({
+    name: "王路坦",
+    sex: "女",age:20,
+    phone: 18837145628,
+    email: "1348773843@qq.com",
+    info: "我是一名总统"
+  })
+  })
+添加数据数据列，没有固定，根据添加的数据为准
+
+四、集合数据查询
+1、查询所有记录
+db.students.find();
+2.查询 age=21的记录
+db.students.find({age:21})
+
+2.查询age>22的记录
+db.students.find({age:{$gt:22}})
+
+3.查询age<16的记录
+db.students.find({age:{$lt:16}})
+
+4.查询age>=20的记录
+db.students.find({age:{$gte:20}})
+
+6.查询age>=22 &&age<40的记录
+db.students.find({age:{$gte:22,$lt:40}})
+db.students.find({age:{$lt:22}})
+7.查询name中包含张字的
+db.students.find({name:/宋/})
+
+
+8.查询姓张的
+db.students.find({name:/^张/})
+
+9.查询指定数据 只包括名字，年龄和id
+  db.students.find({},{name:1,age:1,id:-1})
+
+
+10.查询年龄大于22的 只包括名字，年龄和id
+db.students.find({age:{$gt:22}},{name:1,age:1,id:-1})
+
+
+11.按照年龄排序
+升序：db.students.find().sort({age:1})
+降序：db.students.find().sort({age:-1})
+
+12.查询name="",age="23",的数据
+db.students.find({name:"宋典花",age:23})
+
+13.查询前5条数据
+db.students.find().limit(5)
+
+14.查询5条以后的数据
+db.students.find().skip(5)
+
+15.查询5到7条之间的数据
+
+db.students.find().limit(5).skip(7)
+
+这个可以用来写分页
+16.or查询
+db.students.find({$or:[{age:23},{sex:"女"}]})
+
+17.查询第一条数据
+db.students.findone()
+
+18.查询某个结果有多少条
+db.students.find({age:{$gt:20}}).count()
+
+19.查询去掉当前数据中的重复数据
+db.students.distinct("name")
+db.students.remove({_id:db.students.find({name:"聂保恩"}).skip(1)[0]._id})
+
+五、数据的删除和修改
+1.删除数据
+db.students.save({name:"张三",age:"150",sex:"男"})
+
+db.students.remove({age:{$gt:100}})
+
+
+2.修改数据
+db.students.update({name:"宋典花"},{$set:{age:22}},false,true)
+
+db.students.update() 只更新第一条数据
+db.students.update({},false,true) 全更新了 `
+
+db.students.save({name:"李四",age:"10",sex:"男"})
+inc在原来的基础上面进行累加
+db.students.update({name:"李四"},{$inc:{age:20}},false,true)
+
+把所有人的年龄减5岁
+db.students.update({},{$inc:{age:-5}},false,true)
+
+把李四的姓名修改为李白
+db.students.update({name:"李四"},{$set:{name:"李白"}},false,true)
+db.students.update({name:"宋典花"},{$set:{name:"颂宋"}},false,true)
+删除张三 李四
+
+db.students.remove({$or:[{name:"张三"},{name:"李四"}]})
+
+数据库支持for循环和forEach循环
+for循环
+for(var i=1;i<10;i++){db.students.save({name:"王"+i,age:18+i,sex:i%2})}
+
+foreach循环
+db.students.find({name:"聂保恩"}).skip(1).forEach(function(x){db.students.remove({_id:x._id})})
+
+db.students.remove({name:/^王/})
+
+db.students.update({name:"颂宋"},{$set:{name:"宋典花"}},false,true)
+
+db.students.find({name:"宋典花"})
+
+
+
+
+
+
+
+
+
+
+
+
+
+

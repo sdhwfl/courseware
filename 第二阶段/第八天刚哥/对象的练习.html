@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>js对象的练习</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!--对象：游戏中的英雄-->
+        <!--英雄有什么
+        属性：
+        姓名 剑圣
+        生命值  1000
+        魔法值  800
+        速度   100
+        护甲   50
+
+        方法：
+        阿尔法突袭  易飞速穿越战场对4个敌人造成100/150/200/250/300(+1)魔法伤害对每个非英雄单位有20/30/40/50/60%几率造成400魔法伤害。
+
+        冥想   易大师开始念咒，在5秒内回复140/280/420/560/700(+1.65)生命值。念咒时，易大师的护甲和魔法抗性将提高100/150/200/250/300点。
+        -->
+        <script>
+            // 创建一个对象，充当属性和方法的容器
+            var hero = new Object();
+            // 设置属性
+            hero.cnname = '剑圣';
+            hero.enname = 'Blademaster';
+            hero.blood = 1000;//生命值
+            hero.magic = 800;//魔法值
+            hero.speed = 100;//速度
+            hero.armour = 50;//护甲
+            // 设置方法
+            hero.alphaTuxi = function(){
+                alert('易飞速穿越战场对4个敌人造成100/150/200/250/300(+1)魔法伤害对每个非英雄单位有20/30/40/50/60%几率造成400魔法伤害');
+            }
+            hero.meditation = function(){
+                // 生命值升高700
+                this.blood += 700;
+                // 护甲提升100
+                this.armour += 100;
+                alert('生命值'+this.blood + '护甲' + this.armour);
+            }
+
+            console.log(hero);
+            hero.meditation();
+
+            // 如何通过字面量的方式创建对象
+            // 大括号内部以键值对的形式构建数据,键值对以逗号隔开,键值以冒号连接
+            var myHero = {
+                'cnname':'剑圣',
+                'enname':'Blademaster',
+                'blood':1000,
+                'magic':800,
+                'speed':100,
+                'armour':50,
+                alphaTuxi:function(){
+                    alert('易飞速穿越战场对4个敌人造成100/150/200/250/300(+1)魔法伤害对每个非英雄单位有20/30/40/50/60%几率造成400魔法伤害');
+                },
+                meditation = function(){
+                    // 生命值升高700
+                    this.blood += 700;
+                    // 护甲提升100
+                    this.armour += 100;
+                    alert('生命值'+this.blood + '护甲' + this.armour);
+                }
+            };
+        </script>
+    </body>
+</html>

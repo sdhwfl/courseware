@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <script src="js/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<style>
+
+</style>
+<body>
+<form id="box" action="/index" method="POST">
+    <div id="top"><img src="images/0.png" alt=""><span id="TXspan">&nbsp;腾讯编程平台</span><span class="sp_1 sp_r">x</span><span class="sp_1 sp_l"><b>-</b></span></div>
+    <div id="content_box">
+        <input class="it input1" type="text" name="name" placeholder="请输入账号名称"><img class="img0 img1" src="images/1.png" alt=""><br>
+        <input class="it input2" type="password" name="password" placeholder="请输入密码"><img class="img0 img2" src="images/3.png" alt=""><br><br>
+        <input type="checkbox" class="it2"><span class="sp2">保存密码</span><input type="checkbox" class="it2"><span class="sp2">自动登录</span><br>
+        <input onclick="location.href='/user'" class="it000" type="submit" value="登录">
+        <p>电脑管家已为您开启账号保护</p>
+    </div>
+    <ul></ul>
+</form>
+<script>
+    //    将表单的内容提交给服务器
+    document.forms[0].onsubmit = function (e){
+        e.preventDefault();
+        var data = new FormData(this);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var result = JSON.parse(xhr.responseText);
+                alert('恭喜，登陆成功');
+                loacation.href = '/user';
+            }
+        }
+        xhr.open('POST','/index');
+        xhr.send(data);
+    }
+</script>
+</body>
+
+</html>

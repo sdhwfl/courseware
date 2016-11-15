@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标移入移出</title>
+	</head>
+
+	<body>
+		<div id="myDiv" onmouseover=" mouseover()" onmouseout="mouseout()">
+
+		</div>
+		<script type="text/javascript">
+			var myDiv = document.getElementById('myDiv');
+			myDiv.style.height = '300px'
+			myDiv.style.width = '300px'
+			myDiv.style.backgroundColor = 'lightskyblue'
+			myDiv.innerHTML = '我是花花'
+			myDiv.style.lineHeight = '300px'
+			myDiv.style.textAlign = 'center'
+
+			function mouseover() {
+				myDiv.style.height = '300px'
+				myDiv.style.width = '300px'
+				myDiv.style.backgroundColor = 'pink'
+				myDiv.innerHTML = '我是旺旺'
+				myDiv.style.lineHeight = '300px'
+				myDiv.style.textAlign = 'center'
+				myDiv.style.color='deeppink'
+			}
+
+			function mouseout() {
+				myDiv.style.height = '300px'
+				myDiv.style.width = '300px'
+				myDiv.style.backgroundColor = 'lightcyan'
+				myDiv.innerHTML = '我是花花'
+				myDiv.style.lineHeight = '300px'
+				myDiv.style.textAlign = 'center'
+				myDiv.style.color='deepskyblue'
+			}
+			
+		</script>
+
+	</body>
+
+</html>

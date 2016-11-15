@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>jQuery选择器</title>
+        <style>
+            
+        </style>
+        <!--引入jQuery-->
+        <script src="jquery-2.0.3.js"></script>
+    </head>
+    <body>
+        <div id="myDiv">id-div</div>
+        <div class="myDiv2">class-div</div>
+        <div class="nav big green">class-div</div>
+        <div class="nav big orange">class-div</div>
+        <input type="text" name="username">用户名
+        <article>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quae repellendus architecto, cupiditate obcaecati esse quasi aut ut repudiandae similique nisi commodi ea labore, atque odio ratione, hic excepturi temporibus?
+        </article>
+        <script>
+            /*
+            一、jQuery提供了强大的选择DOM元素的语法，在这套语法中，选择器是核心，以往在js原生代码中操作DOM元素，都是使用document.getElementById('id-name')等语法,但是，在jQuery中，我们使用类似$('#id-name')这样的语法，更便捷的快速定位元素。
+            */ 
+            // 原生js进行DOM元素操作
+            // 按照Id去获取元素
+            // document.getElementById('myDiv1');//id="myDiv"
+            // 按照Class去获取元素
+            // document.getElementsByClassName('myDiv2')[0];
+
+            // 二、jQuery中，不同的语法格式
+            // 1、按照Id去获取元素,$('#id-name')
+            // console.log($('#myDiv1'));
+            // 返回的对象是一个jQuery对象，类似于一个数组，假如数组中有内容，那么表示顺利找到了其中的DOM元素，假如没有内容，也不会报错，只会返回一个空数组。
+            // var jObj = $('#myDiv');//jQuery对象
+            // console.log(jObj);
+            // var div = jObj.get(0);//假如找到了标记ID为myDiv的div，那么就在jQuery对象中获取第一个DOM对象
+            // //此处的div就是一个DOM对象了。
+            // console.log(div);
+
+            // var div_jQuery = $(div);
+            // console.log(div_jQuery);
+            // console.log(div.innerText);//可以调用DOM的一些内置方法或者属性
+            // console.log(jObj.text());//text()，是jQuery中用于输出元素内容的一个方法
+            // console.log(jObj.innerText);//undefined
+            // jQuery对象和DOM对象之间不可以互相调用方法，假如有需要，可以将jQuery对象和DOM对象进行转换。
+            // jQuery转换成DOM: DOM对象 = jQuery对象.get(0)；
+            // DOM对象转换成jQuery对象: jQuery对象 = $(DOM对象);
+
+            // 2、根据tag标签找元素,$('tag名字');
+            // var tagObj = $('div');//找到所有tag ＝ article的元素
+            // console.log(tagObj.length);
+
+            // 3、根据class名找元素,$('.class名')
+            // var classObj = $('.myDiv2');
+            // console.log(classObj);
+            // 假如目标元素有多个类名，可以使用多类查询，类名之间不需要空格
+            // var classesObj = $('.nav.big');
+            // console.log(classesObj);
+
+            // 4、根据属性查找
+            var arrObj = $('[name=username]');//name = username
+            console.log(arrObj);
+            // console.log(arrObj.get(0).type);
+            // console.log(arrObj.get(0).name);
+
+            // 5、组合查找，将一些简单的规则组合起来使用
+
+            // 6、多项查找，就是把多个选择器用“，”组合起来
+            
+            //总结
+            //选择器属于jQuery中的核心函数
+        </script>
+    </body>
+</html>

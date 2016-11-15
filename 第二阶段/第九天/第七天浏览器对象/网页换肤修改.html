@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>网页换肤</title>
+		<style type="text/css">
+			html {
+				height: 100%;
+				width: 100%;
+			}
+			
+			body {
+				height: 100%;
+				width: 100%;
+				margin: 0;
+			}
+			
+			#mysection {
+				height: 100%;
+				width: 100%;
+				
+			}
+			
+			#mysection2 {
+				display: flex;
+				justify-content: center;
+				margin-top: 30px;
+			}
+			
+			#mysection2 >div{
+				height: 58px;
+				width: 100px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: solid 2px hotpink;
+				background-color: deeppink;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<section id="mysection">
+
+			<button id="pink" class="current" style="background-color:deeppink; height:30px">默认主题</button>
+			<button id="green" style="background-color: yellowgreen; height:30px">主题一</button>
+			<button id="orange" style="background-color: orangered; height:30px">主题二</button>
+			<button id="yellow" style="background-color: yellow; height:30px">主题三</button>
+
+			<section id="mysection2">
+				<div>要闻</div>
+				<div>娱乐</div>
+				<div>经济</div>
+				<div>体育</div>
+				<div>科技</div>
+			</section>
+
+		</section>
+
+		<link rel="stylesheet" type="text/css" href="css/pink.css" />
+		<script type="text/javascript">
+			window.onclick = function() {
+				var mylink = document.getElementsByTagName("link")[0];
+				var myskin = document.getElementById('mysection').getElementsByTagName('button');
+				for(var i = 0; i < myskin.length; i++) {
+					myskin[i].onclick = function() {
+						for(var a in myskin)
+							mylink['href'] = "css/" + this.id + ".css";
+					}
+
+				}
+
+			}
+		</script>
+
+	</body>
+
+</html>

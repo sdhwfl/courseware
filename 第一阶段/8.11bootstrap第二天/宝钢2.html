@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="charles">
+    <title>宝钢</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            padding: 50px 0 55px 0;
+        }
+        
+        .navbar {
+            background-image: url(images/logo.png);
+            background-repeat: no-repeat;
+          
+        }
+        
+        .navbar-nav {
+            margin-left: 60px;
+        }
+        
+        .navbar-nav>li>a {
+            height: 40px;
+            margin: 7px 5px 0 5px;
+            padding: 10px 10px 0 10px;
+            color: #333;
+        }
+        
+        .navbar-nav>li>a:hover {
+            background: none;
+            border-bottom: 3px solid #36f;
+            color: #36f;
+        }
+        
+        .navbar-nav>li.active a {
+            border-bottom: 3px solid blue;
+            color: blue;
+        }
+        
+        /*#navbar {
+            float: left;
+        }*/
+        
+        .search {
+            float: right;
+            position: relative;
+            top: 13px;
+        }
+        
+        .search input {
+            height: 28px;
+            width: 180px;
+            border-radius: 14px;
+            border: solid 1px lightgray;
+            padding: 0 10px;
+        }
+        
+        .banner {
+            height: 480px;
+            background-image: url(images/banner.png);
+            background-position: 50% 50%;
+        }
+        
+        #sections h2 {
+            font-size: 1.3rem;
+            background-image: url(images/blue-bg.png);
+            background-size: 28px auto;
+            color: white;
+            height: 28px;
+            padding: 6px 0 0 10px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            margin: 0;
+        }
+        /********************************中间三块儿小内容样式微调***********************************************/
+        /*设置三块儿内容内边距，使其保持一定距离*/
+        
+        #sections>div {
+            padding: 0 0 0 10px;
+        }
+        /*第一块内容内边距清除*/
+        
+        #sections>div:first-child {
+            padding: 0;
+        }
+        /*三块儿内容中第二块儿头部背景是黑色的，单独处理*/
+        
+        #sections>div:nth-child(2) h2 {
+            background-image: url(images/black-bg.png);
+        }
+        /*让中间三块儿内容向上偏移*/
+        
+        #sections {
+            margin-top: -28px;
+        }
+        
+        #sections>div>div {
+            border: 1px solid lightgray;
+            border-top: none;
+            /*padding: 8px 6px 6px 6px;*/
+        }
+        /*****************************************************************************************/
+        
+        article {
+            font-size: 1.2rem;
+        }
+        
+        article h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        #news,
+        #research,
+        #service {
+            height: 210px;
+            background-color: white;
+        }
+        
+        #news img {
+            width: 90px;
+            margin-bottom: 5px;
+        }
+        
+        #news section {
+            float: right;
+            width: calc(100% - 102px);
+        }
+        
+        #news p {
+            margin: 5px 0;
+            color: #444;
+        }
+        
+        #sections p.more {
+            /*color: #44c;*/
+            text-align: right;
+            font-size: 1.1rem;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .dotted-bottom {
+            border-bottom: 1px dotted gray;
+        }
+        
+        #news dl {
+            font-size: 1.2rem;
+            padding: 6px 0 3px 0;
+            color: #888;
+        }
+        
+        #news dt {
+            font-weight: normal;
+            font-size: 1.2rem;
+            float: left;
+            line-height: 2.6rem;
+        }
+        
+        #news dd {
+            float: right;
+            line-height: 2.3rem;
+        }
+        /*#news dt:nth-of-type(1){
+                color: #44c;
+            }*/
+        
+        #sections #research {
+            padding: 0px 10px;
+        }
+        
+        #research p {
+            margin: 5px 0;
+            color: #444;
+        }
+        
+        #research article {
+            padding-top: 8px;
+        }
+        /*#research h3{
+                color: #44c;
+            }*/
+        
+        #service header {
+            width: 100%;
+            height: 79px;
+            background-image: url(images/2.jpg);
+            /*background-position: 50% 50%;*/
+            margin-bottom: 3px;
+        }
+        
+        #service article {
+            text-align: center;
+            padding: 3px;
+        }
+        
+        #service a {
+            display: inline-block;
+            width: 46%;
+            height: 26px;
+            background-color: #ddd;
+            padding: 5px 15px 5px 30px;
+            margin: 6px 0;
+            font-size: 1.3rem;
+            color: #444;
+            text-align: left;
+        }
+        
+        #service section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 46px;
+            background-color: white;
+            border-top: 1px solid lightgray;
+        }
+        
+        .footer span {
+            display: block;
+            padding: 12px 0 0 5px;
+            color: #999;
+        }
+        
+        .footer nav {
+            text-align: right;
+            padding: 12px 0 0 0;
+        }
+        
+        .footer a {
+            color: #999;
+            margin-left: 20px;
+        }
+        
+        @media (max-width:1500px) {
+            .banner {
+                height: 450px;
+                background-position: 35% 50%;
+                background-size: auto 120%;
+            }
+        }
+        
+        @media (max-width:992px) {
+            .banner {
+                height: 350px;
+            }
+            #sections {
+                margin-top: 0;
+            }
+            #sections>div {
+                padding-left: 10px;
+                margin-top: 15px;
+            }
+            #sections>div:nth-child(2) {
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width:767px) {
+            body {
+                padding-bottom: 0;
+            }
+            #navbar {
+                background-image: none;
+                background-color: #333;
+                float: initial;
+            }
+            #navbar ul {
+                margin: 0;
+            }
+            #navbar a {
+                color: white;
+                border: none;
+                margin: 0;
+            }
+            #navbar a:focus {
+                background: none;
+            }
+            .navbar .navbar-toggle {
+                border-color: #666;
+                margin-top: 11px;
+            }
+            .navbar .navbar-toggle .icon-bar {
+                background-color: #666;
+            }
+            #sections>div {
+                padding: 0;
+            }
+            .footer {
+                position: static;
+                width: 100%;
+                height: auto;
+                background-color: white;
+                border-top: 1px solid lightgray;
+                margin-top: 15px;
+            }
+            .footer nav a {
+                display: block;
+                text-align: center;
+                height: 35px;
+            }
+            #service header {
+                background-size: auto 100%;
+            }
+        }
+        
+        @media (max-width:460px) {
+            .banner {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a href="#">
+                    <img src="image/logo.png" alt="">
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">媒体中心</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">业务板块</a></li>
+                    <li><a href="#">产品服务</a></li>
+                </ul>
+            </div>
+            <div class="search visible-md-block visible-lg-block">
+                <input type="text" placeholder="Search here...">
+            </div>
+        </div>
+    </nav>
+    <div class="banner"></div>
+    <div class="container" id="sections">
+        <div class="col-md-4">
+            <h2>公司动态</h2>
+            <div id="news">
+                <article>
+                    <img src="image/news.png" alt="">
+                    <section>
+                        <h3>政府部门参观研发中心</h3>
+                        <p>5月18日，一场盛大的创维酷开手机品牌启动暨新品发布经销动暨布经销商大会在深圳手石岩隆重召开...</p>
+                        <p class="more">READ MORE >>&nbsp;&nbsp;</p>
+                    </section>
+                    <div class="clear dotted-bottom"></div>
+                </article>
+                <dl>
+                    <dt>兰新高铁新疆段工程供应钢材逾七十万吨</dt>
+                    <dd>2012-12-20</dd>
+                    <div class="clear"></div>
+                    <dt>兰新高铁新疆段工程供应钢材逾七十万吨</dt>
+                    <dd>2012-12-20</dd>
+                    <div class="clear"></div>
+                    <dt>兰新高铁新疆段工程供应钢材逾七十万吨</dt>
+                    <dd>2012-12-20</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <h2>研究与观点</h2>
+            <div id="research">
+                <article>
+                    <h3>鲲鹏财富：地方政府经济发展金融服务</h3>
+                    <p>主做政府项目，只做浙江发达地区政府项目，只和信用良承诺。从2009年创业开始，鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富....</p>
+                    <p class="more">READ MORE >>&nbsp;&nbsp;</p>
+                </article>
+                <div class="dotted-bottom"></div>
+                <article>
+                    <h3>鲲鹏财富：地方政府经济发展金融服务</h3>
+                    <p>主做政府项目，只做浙江发达地区政府项目，只和信用良承诺。从2009年创业开始，鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富鲲鹏财富....</p>
+                    <p class="more">READ MORE >>&nbsp;&nbsp;</p>
+                </article>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <h2>产品与服务</h2>
+            <div id="service">
+                <article>
+                    <header></header>
+                    <section>
+                        <a href="#">&gt; 碳钢系列</a>
+                        <a href="#">&gt; 特钢系列</a>
+                        <a href="#">&gt; 不锈钢系列</a>
+                        <a href="#">&gt; 硅钢系列</a>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <span class="col-md-6 visible-md-block visible-lg-block">Copyright 2004-2012, Seethru Co., Ltd. All right reserved</span>
+            <nav class="col-md-6">
+                <a href="#">网站地图</a>
+                <a href="#">关于宝钢</a>
+                <a href="#">工作机会</a>
+                <a href="#">法律声明</a>
+                <a href="#">友情链接</a>
+            </nav>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

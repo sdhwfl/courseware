@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var value = 100;
+			console.log(Number(100) + 100);
+			console.log(typeof([]))
+			console.log(typeof(function() {}))
+
+			//alert( typeof(null) )
+			//alert( typeof(undefined) ) 
+			//alert( typeof(NaN) ) 
+			//alert( NaN == undefined ) 
+			//alert( NaN == NaN )  
+
+			//			var str = "123abc";
+			//			alert(typeof(str++))
+			//alert( typeof(str) )
+			//			var b1 = false;
+			//			var b2 = new Boolean(false);
+			//			console.log(b1);
+			//			console.log(b2);
+			//			var b2=false;
+			//			if(b2) {
+			//				alert('你好')
+			//			} else {
+			//				alert('hello')
+			//			}
+			//			var sum=0;
+			//			for(var i = 1; i < 100; i = i + 2) {
+			//				sum += i;	
+			//			}
+			//			console.log(sum); var div=document.createElement('div');
+			
+			var div = document.createElement('div');
+			div.style.height = '100px'
+			div.style.width = '100px'
+			div.style.backgroundColor = 'red';
+			document.body.appendChild(div);
+			div.onmouseover=function(){
+				div.style.backgroundColor='blue'
+			}
+			div.onmouseout=function(){
+				div.style.backgroundColor='red'
+			}
+		</script>
+
+	</body>
+
+</html>

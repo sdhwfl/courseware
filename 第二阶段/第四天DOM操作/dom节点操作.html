@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>dom 节点操作增删改</title>
+</head>
+
+<body>
+	<ul>
+		<li>第1个列表子项</li>
+		<li>第2个列表子项</li>
+		<li>第3个列表子项</li>
+	</ul>
+	<script type="text/javascript">
+		//1.创建一个元素节点
+			var mynewli = document.createElement('li');
+			                                                            
+			mynewli.style.color = 'deeppink';
+			mynewli.innerHTML = "这是我通过js添加的列表子项";                                                                                                                                                                                                                                                 
+			//2.添加到列表中
+						var myul = document.getElementsByTagName('ul')[0];
+			//			myul.appendChild(mynewli);
+			//          3.添加到第二个列表子项之前  
+			//insertBefore 接收两个参数，第一个参数：将要插如的节点 第二个：将要插入哪个节点前面
+			var secondli = myul.children[1];
+			myul.insertBefore(mynewli,secondli);
+			//replaceChild接收两个参数：第一个参数：将要替换的新节点  第二个参数：将要替换的旧节点
+			var thirdli =myul.children[2];
+			myul.replaceChild(mynewli,thirdli);
+			
+			
+			//removeChild只接受一个参数，将要被删除的元素节点名称
+			//删除第一个节点元素
+			var firstli =myul.children[0];
+			myul.removeChild(firstli);
+	</script>
+</body>
+
+</html>

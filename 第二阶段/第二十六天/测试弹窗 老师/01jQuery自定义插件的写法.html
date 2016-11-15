@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>插入和删除的弹窗</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+  <script src='js/index.js'></script>
+</head>
+
+<body>
+  <a class="button1" href="javascript:;">注册成功</a>
+  <a class="button1" href="javascript:;">登陆成功</a>
+  <a class="button1" href="javascript:;">注册失败</a>
+</body>
+<script type="text/javascript">
+$(function() {
+  // jQuery自定义插件 种类一
+  // 向jQuery对象增加方法
+  $.extend({
+    min: function(a, b) {
+      return a > b ? b : a;
+    }
+  });
+  console.log($.min(3, 5));
+
+  // jQuery自定义插件 种类二
+  // 选择器调用一个函数
+  // 方法1
+  $.fn.extend({
+    popup:function(){
+      // this 指向调用者的jQuery对象 集合
+      this.each(function() {
+        //alert($(this).html());
+      });      
+    }
+  });
+  // $("a:eq(2)").popup();
+  $("a").popup();
+  // 方法2
+  // $.fn.extend({
+  //   popup:function(){
+  //     // this 指向调用者的jQuery对象 集合
+  //     alert(this.html())   
+  //   }
+  // });
+  // //
+  // // $("a:eq(2)").popup();
+  // $("a").popup();
+
+
+
+
+});
+</script>
+
+</html>

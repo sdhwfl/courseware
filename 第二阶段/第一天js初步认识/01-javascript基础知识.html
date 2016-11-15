@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>javascript基础知识</title>
+    <!--第一种-->
+    <script>
+        //js相关脚本代码
+    </script>
+    <!--第二种-->
+    <!--<script src="脚本路径以及名称.js" type="text/javascript"></script>-->
+
+</head>
+
+<body>
+    <!--
+    html：主要负责页面内容的搭建
+    css：主要负责页面内容的布局和样式
+    javascript：主要负责页面元素的交互
+    
+    js的简介
+    JavaScript是一种脚本语言，可以嵌入到网页中。
+    目前几乎所有的浏览器都支持javascript。
+
+-->
+    <script>
+        // console 控制台打印函数 用于向控制台输出一些内容，便于我们了解程序的走向
+    console.log("hello world!");
+    console.log("how do you do!")
+    
+    // 一、语法
+    // js大量借鉴了其他的编程语言的语法，比如c c++
+    // 1. 变量名 函数名区分大小写
+    // 变量:计算机中用于存储数据的一块区域
+    // 函数：拥有某一个功能，比如调用了函数之后，打印一句话
+    // 2、标识符
+    //   标识符：之变量、函数、属性的名字或者函数所带的参数。遵循以下原则：第一个字符必须是字母、下划线_、美元符号$，其余字符可以使用字母、数字或者美元符号
+    // 例如 var 1sdh 是错误的 var $sdh是正确的
+
+    var myvalue =10;
+    console.log(myvalue);
+    
+    function mymethod(){
+        consloe.log("我是一个方法，我被调用了")
+        
+    }
+    mymethod();
+    
+    // 3.命名习惯
+    // 驼峰法命名，比如标识符是有多个单词构成的，此方法就是第一个单词的首字母小写，其余单词的首字母大写
+    //  myFirstJavascript 
+    // 4.关于注释
+    // 注释：就是写给开发人员看的，计算机部进行编译的部分 便于项目交接以及项目后期维护
+    // 如何写注释？
+    // 单行注释 //双斜杠
+         
+    /* 多行注释
+       多行注释
+       多行注释
+       多行注释
+    */
+    // 二、js语句
+    // 比如声明一个变量
+    // var myvalue = 666;
+    // js语句每一行尽量用分号结尾
+    // if(myvalue == 666)
+    // {
+    //     // 假如是属于一部分的话,就用括号括起来
+    // console.log("中奖了")；
+    // }
+    // 三、关键字，系统有特定用途的，不能用以标识符(也就是不能用来给变量或者函数起名)
+    // break do typeof case if else new var let finally 
+    // 等
+    // 保留字：目前没有特定用途的，将来可能作为关键字使用。也不能用于标识符
+    // int short public super char 等
+    // 四.变量
+    // 变量：计算机中用于存储数据的一个概念，比如定义一个热变量，就相当于在计算机中开辟了一块内存区域；给变量名赋值（通过赋值符号“=”，吧一个值给变量名）
+    // 就相当于在这块存储区域存放了内容
+    // 声明一个变量一般使用var关键字，如：var 变量名
+    // 例如：var myMessage; myMessage可以存储任何数据
+     message ="我的数据";
+       也可以在声明的时候同时定义变量
+     var myMessage2 = "我的第二条数据";
+     var myAge= 18;
+    //  var myName; 假如不写，myName即是空的，使用的时候会报错undefined（未定义）
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>空标签</title>
+    <style>
+        /*找到页面中所有的空标签 对其进行样式设置*/
+        /*通过：empty找到页面中所有的空标签*/
+        :empty {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        /*在空标签中添加内容*/
+        :empty:before{
+            content: "我是一个没人用的空标签 ~~~";
+        }
+         :empty:after{
+            content: "我是一个没人用的空标签";
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    
+    <div></div>
+    <br>
+    <div></div>
+    <div></div>
+    <br>
+    <setion></setion>
+    <br>
+    <setion></setion>
+    <section></section>
+</body>
+
+</html>

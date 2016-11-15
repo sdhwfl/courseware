@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>热身</title>
+</head>
+<body>
+  <p id="p1">我是第一段文字</p>
+  <p id="p2">我是第二段文字</p>
+  
+  <script type="text/javascript">
+  document.write("hello");    
+  document.getElementById("p1").style.color="blue"	
+  </script>
+ <style type="text/css">a{text-decoration:none}</style>  
+<div id="newsticker"><span id="tickertitle"></span><a id="typewriter" href="#"></a></div>  
+</body>  
+</html>  
+<script type="text/javascript">  
+// please keep these lines on when you copy the source   
+var current = 0  
+var x = 0  
+var speed = 100
+var speed2 = 2000  
+function initArray(n) {  
+  this.length = n;  
+  for (var i =1; i <= n; i++) {  
+    this[i] = ' '  
+  }  
+}  
+typ = new initArray(16);  
+typ[0]="406:hotpink:亲爱哒豆芽君，这是我第一次学习js,感觉挺好玩的,写给你看看，其实这个不是我自己写的是我在一个网站上面看到的。(206/08/28)";  
+
+function typewrite() {  
+  var m = typ[current];  
+  document.getElementById("typewriter").href = '/survey/report.html?rt=' + m.substring(0,m.indexOf(':'));  
+  m = m.substring(m.indexOf(':') + 1);  
+  document.getElementById("typewriter").style.color = m.substring(0,m.indexOf(':'));  
+  m = m.substring(m.indexOf(':') + 1);  
+  m = m.replace("&","and");  
+  document.getElementById("typewriter").innerHTML = m.substring(0, x++) + "_";  
+    
+  if (x == m.length + 1) {  
+    x = 0  
+    current++  
+    if (current > typ.length - 1) {  
+      current = 0  
+    }  
+    setTimeout("typewrite()", speed2)  
+    }  
+  else {  
+    setTimeout("typewrite()", speed)  
+  }  
+}  
+
+typewrite()  
+</script> 
+
+</body>
+</html>

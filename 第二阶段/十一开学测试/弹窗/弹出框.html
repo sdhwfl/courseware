@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出框</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style2.css"/>
+		<style type="text/css">
+		
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div id="div1">不想开学......	</div>
+		</main>
+		<button>点击弹出</button>
+		<script type="text/javascript">
+			$(function() {
+				$('button').click(function(event) {
+					event.preventDefault();
+					$('#div1').css('display','block');
+					$('body').css('background','#ddd')
+					event.stopPropagation();
+				})
+
+				$('html').click(function() {
+					$('#div1').css('display','none');
+					$('body').css('background','transparent')
+				})
+			})
+		</script>
+	</body>
+
+</html>

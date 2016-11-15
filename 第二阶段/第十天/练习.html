@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//使用 map创建类似数组的结构，通过map的get功能可以很快的查询到一个人的成绩
+			//			var stuscore=new Map([['sdh',89],['wfl',78],['bf',75],['zyf',90]]);
+			//			stuscore.get('sdh');
+			//			console.log(stuscore.get('sdh'));
+			//创建一个空的map并进行操作
+			//			var kongmap = new Map();
+			//			//插入一条数据
+			//			kongmap.set('red', 23);
+			//			kongmap.set('yellow', 34);
+			//			kongmap.set('green', 56);
+			//
+			//			//检测是否存在某条数据
+			//			kongmap.has('pink');
+			//			console.log(kongmap.has('pink'));
+			//			//删除一条数据
+			//			kongmap.delete('red');
+			//			console.log(kongmap);
+			//			//set
+			//			//创建一个set set会直接过滤掉相同的元素
+			//			var myset = new Set(['sdh', 'wfl', 'sdh']);
+			//			console.log(myset);
+			//			//set添加数据
+			//			myset.add('bff');
+			//			myset.add('nbe');
+			//			console.log(myset);
+			//			//set删除数据
+			//			myset.delete('bff');
+			//			console.log(myset);
+
+			//			var myarry = ['清华', '北大', '黄坑大'];
+			//			var mymap = new Map([
+			//				['清华', 0],
+			//				['北大', 1],
+			//				['黄坑大', 2]
+			//			]);
+			//			var myset = new Set(['清华', '北大', '黄坑大']);
+			//			console.log('--'.repeat(20));
+			//			// for of输出数组元素值
+			//			for(var xxx of myarry) {
+			//				console.log(xxx);
+			//
+			//			}
+			//			console.log('--'.repeat(20));
+			//			//for in输出数组索引值
+			//			for(var xxx in myarry) {
+			//				console.log(xxx);
+			//
+			//			}
+			//			//entries：输出键值对  输出数组的索引和键值
+			//			for(let item of myarry.entries()) {
+			//				console.log(item);
+			//			}
+			//			console.log('--'.repeat(20));
+			//
+			//			let set = new Set(['red', 'green', 'blue']);
+			//
+			//			for(let item of set.keys()) {
+			//				console.log(item);
+			//			}
+			//			// red
+			//			// green
+			//			// blue
+			//
+			//			for(let item of set.values()) {
+			//				console.log(item);
+			//			}
+			//			// red
+			//			// green
+			//			// blue
+			//			//由于set的索引值和键值一样  所以此处输出两边键值
+			//			for(let item of set.entries()) {
+			//				console.log(item);
+			//			}
+			//扩展运算符和Set结构相结合，就可以去除数组的重复成员。
+
+			//			var arr = [3, 5, 2, 2, 5, 5];
+			//			var unique = new Set(arr);
+			//			console.log(unique);
+			//			var set = new Set([1, 2, 3]);
+			//			set = new  Set.map(x => x * 2));
+			//			// 返回Set结构：{2, 4, 6}
+			//
+			//			var set = new Set([1, 2, 3, 4, 5]);
+			//			set = new Set.filter(x => (x % 2) == 0));
+			//作为构造函数，WeakSet可以接受一个数组或类似数组的对象作为参数。（实际上，任何具有iterable接口的对象，都可以作为WeakSet的参数。）该数组的所有成员，都会自动成为WeakSet实例对象的成员。
+
+			var a = [
+				[1, 2],
+				[3, 4]
+			];
+			var ws = new WeakSet(a);
+			console.log(ws);
+		</script>
+	</body>
+
+</html>

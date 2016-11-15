@@ -1,0 +1,21 @@
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+<circle cx="1000" cy="300" r="200" fill="yellow" />
+<circle cx="900" cy="240" r="50" fill="#fff"/>
+<circle cx="900" cy="240" r="30" />
+<circle cx="880" cy="360" r="50" fill="red" />
+<circle cx="1100" cy="240" r="50" fill="#fff"/>
+<circle cx="1100" cy="240" r="30" />
+<circle cx="1120" cy="360" r="50" fill="red" />
+<!--笑脸-->
+ <!--<path d="M950 360, C990 400, 1040 400, 1070 360" stroke="#000000" fill="red" style="stroke-width: 5px;"></path>-->
+ <!--哭脸-->
+ <path d="M950 400, C990 340, 1040 340, 1070 400" stroke="#000000" fill="none" style="stroke-width: 5px;"></path>
+  <!--五角星-->
+ <polygon points="100 100 300 100 130 240 200 30 260 240" stroke="purple" stroke-width="5" fill="none"></polygon>
+ <polyline points="50 30 100 250 300 350" stroke="green" fill="none"></polyline>
+
+  
+</svg>
+    

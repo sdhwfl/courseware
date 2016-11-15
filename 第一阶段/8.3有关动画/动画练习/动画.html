@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>动画</title>
+    <style>
+        /*声明一个动画*/
+        
+        @keyframes donghuaming {
+            /*动画过程还可以用百分比*/
+            /*动画起始状态*/
+            from {
+                /*transform: rotate(0deg);*/
+                left: 20px;
+            }
+            /*动画截止状态*/
+            to {
+                /*transform: rotate(360deg);*/
+                left: 300px;
+            }
+        }
+        /*如何使用定义好的动画*/
+        
+        img {
+            position: absolute;
+            animation-name: donghuaming;
+            /*动画执行时间*/
+            animation-duration: 3s;
+            /*动画延迟*/
+            /*animation-delay: 1.0s;*/
+            /*动画执行次数*/
+            animation-iteration-count: 2;
+            /*animation-iteration-count: infinite;*/
+            animation-timing-function: linear;
+            /*动画运行方向默认是从from到to变化，reverse反方向运行动画状态从to向from变化 alternate-reserve：先正常运行在反方向运行，然后持续运行 使用前提是动画无限循环*/
+            /*animation-direction: alternate-reserve;*/
+            /*设置动画状态，动还是不动，running动，paused停*/
+            animation-play-state: running;
+            /*forwards:向前看。保持当前状态*/
+            /*animation-fill-mode: forwards;*/
+            /*backwards:向后看，动画执行完之后恢复至原始状态*/
+            /*animation-fill-mode: backwards;*/
+        }
+        
+        img:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="fengche.png" alt="">
+    </section>
+</body>
+<html> 

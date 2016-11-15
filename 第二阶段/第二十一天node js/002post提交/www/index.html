@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>用户登录</title>
+		<meta charset='UTF-8'>
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		<form action="/user/landing" method="post">
+			<ul>
+				<li>
+					<label>用户名：</label>
+					<!--required必须填写的内容-->
+					<!--pattern-->
+					<input type="text" name="name" required  >
+				</li>
+				<li>
+					<label>密码：</label>
+					<input type="password" name="password" required >
+				</li>
+				
+				<li>
+					<input type="submit" value="登录">
+				</li>
+			</ul>
+		</form>
+	
+	
+	</body>
+
+</html>

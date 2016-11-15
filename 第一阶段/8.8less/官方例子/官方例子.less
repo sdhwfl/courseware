@@ -1,0 +1,51 @@
+// 如何创建一个变量
+// @变量名：变量值;
+// 字母，下划线，字母加数字组合成有意义的名字,名字不要跟关键字重复
+@mycolor:red;
+@basecolor:#00BFFF;
+@mywidth:300px;
+
+#header{
+    color: @basecolor;
+    color: @mycolor;
+    color: @basecolor+#00A;
+    width: @mywidth;
+    background-color: pink;
+}
+h2{
+    // 使用less变量
+    color: @basecolor;
+}
+// 简单的文本变量(字符串变量)
+@before_h2:"我是h2的前缀";
+h2::before{
+    content: @before_h2;
+    color: @mycolor;
+    font-size: 12px;
+}
+// 变量的主要应用场景：多处都使用了同一个数值，数值间存在某种计算关系
+
+// 2.混合，就是能够重用的属性封装成一个类，类的名字自己命名，尽量有意义，由于是类，前面要加“.";
+.common_h(@mywidth1){
+    background-color: cornflowerblue;
+    color: greenyellow;
+    width: @mywidth1;
+    height: @mywidth1 - 150px;
+}
+.common_h(){
+    // background-color: cornflowerblue;
+    color: greenyellow;
+    width: 300px;
+    height: 50px;
+}
+h1,h2,h3{
+    // 混合使用共有属性
+    .common_h(200px);
+  background-color: lightcoral;
+}
+h4,h5,h6{
+    .common_h(400px);
+    background-color: #00bfff;
+}
+// 混合使用场景，代码中存在大量重复性代码，此时可以讲重复性代码封装成一个类，然后，通过类名调用这些重复代码
+

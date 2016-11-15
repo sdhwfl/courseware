@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emmet初步认识</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!--1.子级  子孙>-->
+    <!--header>nav-->
+    
+    <header>
+        <nav><img src="" alt=""></nav>
+    </header>
+    <!--section>div>div>p>span>em  -->
+    <section>
+        <div>
+            <div>
+                <p>
+                    <span>
+                        <em>
+                        </em>
+                            
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--2.兄弟 同级 +-->
+    <!--header+section+section+footer-->
+    <header></header>
+    <section></section>
+    <section></section>
+    <footer></footer>
+    <!--header>nav>img+ul>li+li+li-->
+    <header>
+        <nav>
+            <img src="" alt="">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+    <!--3.括号（）表示一部分内容,通常会将属于一块的内容用括号包含起来，防止结构混乱-->
+    <!--header>nav>img+ul>(li+li+li)-->
+    <header>
+        <nav>
+            <img src="" alt="">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--4.父级（老爸）^-->
+    <!--(section>img)+section-->
+    <section><img src="" alt=""></section>
+    <section></section>
+
+    <!--section>img^sectioin-->
+    <section><img src="" alt=""></section>
+    <sectioin></sectioin>
+
+    <!--div+div>p>span>+em^^p-->
+    <div></div>
+    <div>
+        <p><span><em></em></span></p>
+        <p></p>
+    </div>
+    <!--5.乘号.快速扩充出多个相同符号-->
+    <!--ul>li*5-->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!--6.$ 类似于占位符-->
+    <!--{}用于表示元素的内容-->
+    ul>(li>a{第$个链接}*3)
+    <ul>
+        <li>
+            <a href="">第1个链接</a>
+            <a href="">第2个链接</a>
+            <a href="">第3个链接</a>
+        </li>
+    </ul>
+    <ul>
+        <ul>
+            <!--ul>(li>a{第$@3个链接}*3)-->
+            <!--@用于改变$占位符的起始值 比如@3，起始值就从3开始-->
+            <ul>
+                <li>
+                    <a href="">第3个链接</a>
+                    <a href="">第4个链接</a>
+                    <a href="">第5个链接</a>
+                </li>
+            </ul>
+            <!--@后面假如添加了负号，那么增值为负数，也就是会呈现递减的效果 负号后面的值为最终值-->
+            <!--ul>(li>a{第$@-1个链接}*3)-->
+            <ul>
+                <li>
+                    <a href="">第3个链接</a>
+                    <a href="">第2个链接</a>
+                    <a href="">第1个链接</a>
+                </li>
+            </ul>
+            <!--ul>(li>a{第$$@-1个链接}*3-->
+            <li>
+                <a href="">第03个链接</a>
+                <a href="">第02个链接</a>
+                <a href="">第01个链接</a>
+            </li>
+            <!--7>属性 []-->
+            <p title="hello world"></p>
+            <!--a[href="http://www.hhstu.edu.cn" target="_blank"]{黄河科技学院}-->
+            <a href="http://www.hhstu.edu.cn" target="_blank">黄河科技学院</a>
+            <!--8.class id-->
+            <!--section[ class="header"]-->
+            <section class="header"></section>
+            <!--.wodeclass-->
+            <div class="wodeclas"></div>
+            <!--#wodeid-->
+            <div id="wodeid"></div>
+            <div class="sdh"></div>
+            <div class="class1"></div>
+
+</body>
+
+</html>

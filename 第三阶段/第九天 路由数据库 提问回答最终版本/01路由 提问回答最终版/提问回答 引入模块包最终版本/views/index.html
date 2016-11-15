@@ -1,0 +1,42 @@
+{{include "share/header"}}
+
+<div class="h50"></div>
+<div id="nav">
+
+	<nav class="nav">
+		<!-- 用户下拉 -->
+		<div class="user-info" style="display: none">
+			<a href="javascript:;" class="user-mess">个人资料</a>
+			<a href="javascript:;" class="exit">退出</a>
+		</div>
+		<div class="logo">智游教育</div>
+		<div class="user">
+			<span class="glyphicon glyphicon-plus askquest"><span>提问</span></span>&#x3000;
+			<span class="user-name"><span class="glyphicon glyphicon-user">宋典花</span></span>
+		</div>
+
+	</nav>
+</div>
+
+<main>
+	<ul class="messages">
+		{{each data as ask}}
+		<li class="ask" data-time="{{ask.time}}">
+			<img src="uploads/{{ask.name}}.jpg" alt="" class="user-photo fl"  onerror="src='images/img01.jpg'"/>
+			<h4 class="h4-title">{{ask.name}}</h4>
+			<p class="ptext">{{ask.content}}</p>
+			<p class="ptime">{{ask.time | formatTime }}</p>
+		</li>
+		{{each ask.answer as answer}}
+		<li class="answer">
+			<img src="uploads/{{answer.name}}.jpg" alt="" class="user-photo fr"  onerror="src='images/img01.jpg'"/>
+			<h4 class="h4-title">{{answer.name}}</h4>
+			<p class="ptext">{{answer.content}}</p>
+			<p class="ptime">{{answer.time | formatTime  }}</p>
+		</li>
+		{{/each}} {{/each}}
+
+	</ul>
+</main>
+
+{{include "share/footer"}}

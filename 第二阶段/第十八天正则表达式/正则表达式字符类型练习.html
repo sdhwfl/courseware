@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>正则表达式字符类型练习</title>
+		<script src="jquery-2.0.3.js"></script>
+	</head>
+
+	<body>
+		<input type="text" /><button id="mybtn">点击验证</button>
+		<script>
+			$('#mybtn').on('click', function() {
+				var yz = /[\u2E80-\u9FFF]/
+				var yz1 = /[0-9]/
+				var yz2 = /[a-z]/
+				var yz3 = /[A-Z]/
+				var str = $('input').val();
+				if(yz.test(str) == true && yz1.test(str) == true) {
+					alert('输入的是汉字加数字')
+				}  
+				else if(yz2.test(str) == true && yz3.test(str) == true) {
+					alert('输入的为小写字母加大写字母')
+				}else if(yz1.test(str) == true) {
+					alert('输入的为纯数学')
+				} else if(yz.test(str) == true) {
+					alert('输入的为纯汉字')
+				} else if(yz2.test(str) == true) {
+					alert('输入的为小写字母');
+				} else if(yz3.test(str) == true) {
+					alert('输入的为大写字母');
+				} else {
+					alert('???')
+				}
+			})
+		</script>
+	</body>
+
+</html>

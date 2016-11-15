@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>自练习电子时钟</title>
+	</head>
+	<style type="text/css">
+		main {
+			height: 500px;
+			width: 500px;
+			border-radius: 50%;
+			border: dotted 5px red;
+			position: relative;
+			text-align: center;
+			  background-image: radial-gradient(ellipse,white,pink, plum, palevioletred);
+		}
+		
+		#shijian {
+			height: 100px;
+			width: 300px;
+			border: solid 1px blue;
+			position: absolute;
+			top: 120px;
+			left: 100px;
+			line-height: 100px;
+			font-size: 60px;
+			color: blue;
+		}
+		
+		#riqi {
+			height: 60px;
+			width: 300px;
+			border: solid 1px green;
+			position: absolute;
+			top: 240px;
+			left: 100px;
+			line-height: 60px;
+			font-size: 40px;
+			color: green; 
+		}
+		
+		#xingqi {
+			height: 60px;
+			width: 300px;
+			border: solid 1px deeppink;
+			position: absolute;
+			top: 320px;
+			left: 100px;
+			line-height: 60px;
+			font-size: 40px;
+			color: deeppink;
+		}
+	</style>
+	
+
+	<body>
+		<main>
+			<section id="shijian">10:46:33</section>
+			<section id="riqi">
+				<!--2016/08/30-->
+			</section>
+			<section id="xingqi">星期二</section>
+		</main>
+		<script type="text/javascript">
+			var shiJian = new Date();
+			document.getElementById('riqi').innerHTML =
+				shiJian.getFullYear() + "年" + (shiJian.getMonth() + 1) + "月" + shiJian.getDate() + "日";
+
+			document.getElementById('xingqi').innerHTML = "星期" + shiJian.getDay();
+
+			function shijian() {
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds();
+				
+				hours = hours < 10 ?   "0" + hours : hours;
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+				document.getElementById('shijian').innerHTML = hours + ':' + minutes + ':' + seconds;
+
+			}
+			shijian();
+			setInterval(shijian, 1000);
+		</script>
+	</body>
+
+</html>

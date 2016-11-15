@@ -1,0 +1,43 @@
+3. artTemplate 语法
+
+(1) 表达式
+默认：{{内容}} 符号包裹起来的语句则为模板的逻辑表达式
+
+(2) 输出一个内容
+{{content}}
+它会对内容进编码 防止数据中有html标签 字符串所引起的xss攻击
+{{#content}}
+取消对内容进行编码
+
+(3)条件表达式
+{{if isTrue}}
+标签内容
+{{else if Boolean}}
+标签内容
+{{else}}
+标签内容
+{{/if}}
+
+(4)遍历表达式
+写法1
+list是一个数组 as ele数组中的每一个元素  ind是序号
+{{each listArr as ele ind}}
+标签内容
+{{/each}}
+
+写法2
+{{$index}}序号  {{$value}}数组中的每一个元素
+{{each listArr}}
+{{$index}} {{$value}}
+{{/each}}
+
+(5)用于嵌入子模板
+template_name 引入模板的名字
+{{include "template_name"}}
+子模板默认共享当前数据，也可以指定数据：
+{{include "template_name" data}}
+
+
+
+
+

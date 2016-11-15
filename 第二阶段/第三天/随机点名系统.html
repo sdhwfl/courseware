@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>随机点名系统</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function show() {
+				var nameArray = ['张清真', '白芳芳', '宋典花', '张亚风', '刘强', '刘依依', '张亚林', '冯文秀'];
+				//console.log(nameArray);
+				var i = Math.floor(Math.random() * 8);
+				alert(nameArray[i]);
+			
+			}
+			show();
+		</script>
+		<input name="button" type="button" onClick="show()" value="开始点名！" />
+	</body>
+
+</html>

@@ -1,0 +1,7 @@
+随时随地将你的当前目录变成一个静态文件服务器的根目录。
+安装命令 -g全局安装
+npm install anywhere -g  
+所在地址
+C:\Users\Administrator\AppData\Roaming\npm\node_modules
+
+$anywhere -p 8000

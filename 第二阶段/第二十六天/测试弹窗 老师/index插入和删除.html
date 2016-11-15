@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>插入和删除的弹窗</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+  <script src='js/index.js'></script>
+</head>
+
+<body>
+<a  class="button1" href="javascript:;">注册成功</a>
+<a  class="button1" href="javascript:;">登陆成功</a>
+<a  class="button1" href="javascript:;">注册失败</a>
+</body>
+<script type="text/javascript">
+$(function() {
+
+  // 点击事件
+  $(".button1").click(function(){
+    // 声明变量插入内容
+    var html = "<div class=\"popup popup01\">"
+            +"  <div class=\"pop-close\">x</div>"
+            +"  <div class=\"pop-title\">提示信息</div>"
+            +"  <div class=\"pop-content\">注册成功</div>"
+            +"</div>"
+            +"<div class=\"mask\"></div>";
+    $("body").append(html);
+    $(".pop-content").html( $(this).html() );
+    $(".popup, .mask").hide();
+    $(".popup, .mask:eq(0)").fadeIn();
+  });
+  $("body").on("click",".pop-close",function(){
+    $(this).parents(".popup").fadeOut('fast', function() {
+      this.remove();
+    });
+    $(".mask").fadeOut('fast', function() {
+      this.remove();
+    });
+  })
+
+
+});
+</script>
+
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/png">
+    <script src="js/jquery-2.0.3.js"></script>
+    <title>小米账号-注册</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: "微软雅黑";
+            height: 100%;
+        }
+
+        .container {
+            max-width: 854px;
+            background-color: #ffffff;
+            margin: 177px auto;
+            border: solid 1px #fff;
+            text-align: center;
+        }
+
+        .container .register {
+            font-size: 30px;
+            margin: 40px 0px;
+            color: #333333;
+        }
+
+        .container .btn-select {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            width: 330px;
+            border: solid 1px #e8e8e8;
+            text-align: left;
+            text-indent: 1em;
+            position: relative;
+        }
+
+        .container .btn-select .correct {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            border-left: solid 1px #e8e8e8;
+            float: right;
+        }
+
+        .container .btn-select .correct img {
+            margin-left: -5px;
+        }
+
+        .container .btn-select .add {
+            font-size: 12px;
+            color: #555555;
+        }
+
+        .container .phone-list {
+            margin: 0 auto;
+            height: 271px;
+            width: 330px;
+            overflow: auto;
+            border: solid 1px #e6e6e6;
+            font-size: 12px;
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: calc(50% - 165px);
+            background-color: #fff;
+        }
+
+        .container .phone-list div {
+            height: 37px;
+            line-height: 37px;
+            border: solid 1px #ebebeb;
+        }
+
+        .container .phone-list div:first-child {
+            height: 30px;
+            line-height: 30px;
+            color: #ef5b00;
+            background-color: #fcdecc;
+            border: none;
+            margin-bottom: 8px;
+        }
+
+        .container .phone-list div:nth-of-type(2) {
+            border-top: none;
+        }
+
+        .container .phone-list div span:first-child {
+            float: left;
+            padding-left: 14px;
+        }
+
+        .container .phone-list div span:last-child {
+            float: right;
+            padding-right: 14px;
+            color: #9d9d9d;
+        }
+
+        .container .phoneNumber {
+            height: 39px;
+            line-height: 39px;
+            margin-top: 15px;
+            width: 330px;
+            text-indent: 1em;
+            font-size: 12px;
+            color: #969696;
+            border: solid 1px #ebebeb;
+        }
+
+        .container .authCode {
+            height: 39px;
+            width: 330px;
+            margin: 15px auto;
+        }
+
+        .container .authCode .imgCode {
+            height: 39px;
+            width: 190px;
+            border: solid 1px #EBEBEB;
+            float: left;
+            font-size: 12px;
+            color: #969696;
+            text-indent: 1em;
+        }
+
+        .container .authCode span {
+            display: inline-block;
+            height: 40px;
+            width: 114px;
+            float: right;
+            color: #5a4360;
+            background-image: url("images/二维码.png");
+        }
+
+        .container .loginRight {
+            height: 42px;
+            width: 330px;
+            border: none;
+            background-color: #ff6700;
+            color: #fff;
+        }
+
+        #loginRight {
+            margin: 14px auto;
+            width: 330px;
+            text-align: left;
+        }
+
+        #loginRight span:nth-child(2n-1) {
+            color: #9d9d9d;
+            font-size: 11px;
+        }
+
+        #loginRight span:nth-child(2n) {
+            color: #333333;
+            font-size: 11px;
+            margin-bottom: 63px;
+        }
+
+        .fontStyle {
+            width: 854px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+
+        .fontStyle .line {
+            color: #7c7c7c;
+            padding: 0 7px;
+        }
+
+        .fontStyle span:nth-child(2n+1) {
+            color: #787677;
+        }
+
+        .fontStyle span:nth-child(2n+1):hover {
+            color: #302f2d;
+            cursor: pointer;
+        }
+
+        .allRights {
+            text-align: center;
+            margin-top: 16px;
+            margin-left: 14px;
+            margin-bottom: 16px;
+        }
+
+        .allRights span {
+            color: #9d9d9d;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="logo"><img src="images/logo.png" alt=""></div>
+    <div class="register">注册小米账号</div>
+    <div class="btn-select">
+        <span class="add">中国(+86)</span>
+        <span class="correct"><img src="images/correct.png" alt=""></span>
+    </div>
+    <br>
+    <section class="phone-list">
+        <div class="first">
+            <span>常用</span>
+            <span></span>
+        </div>
+        <div>
+            <span>中国</span>
+            <span>+86</span>
+        </div>
+        <div>
+            <span>中国台湾</span>
+            <span>+886</span>
+        </div>
+        <div>
+            <span>中国香港</span>
+            <span>+852</span>
+        </div>
+        <div>
+            <span>中国</span>
+            <span>+86</span>
+        </div>
+        <div>
+            <span>中国台湾</span>
+            <span>+886</span>
+        </div>
+        <div>
+            <span>中国香港</span>
+            <span>+852</span>
+        </div>
+        <div>
+            <span>中国台湾</span>
+            <span>+886</span>
+        </div>
+        <div>
+            <span>中国香港</span>
+            <span>+852</span>
+        </div>
+        <div>
+            <span>中国</span>
+            <span>+86</span>
+        </div>
+        <div>
+            <span>中国台湾</span>
+            <span>+886</span>
+        </div>
+        <div>
+            <span>中国香港</span>
+            <span>+852</span>
+        </div>
+    </section>
+
+    <input type="" name="" id="" value="" placeholder="请输入手机号" class="phoneNumber"/>
+    <section class="authCode">
+        <input type="" name="" class="imgCode" value="" placeholder="图片验证码"/>
+        <span></span>
+    </section>
+    <button class="loginRight">立即登录</button>
+    <br>
+    <section id="loginRight">
+        <span>点击“立即注册”，即表示您同意并愿意遵守小米</span>
+        <span>用户协议</span>
+        <span>和</span>
+        <span>隐私声明</span>
+    </section>
+    <div style="height: 49px;"></div>
+
+</div>
+<section class="fontStyle">
+    <span style=" color: #302f2d;">简体</span>
+    <span class="line">|</span>
+    <span>繁体</span>
+    <span class="line">|</span>
+    <span>English</span>
+    <span class="line">|</span>
+    <span>常见问题</span>
+
+</section>
+<section class="allRights">
+    <span>小米公司版权所有-京ICP备10046444-</span>
+    <span><img src="images/ghs.png" alt=""></span>
+    <span>京公网安备11010802020134号-京ICP证110507号</span>
+
+</section>
+<script type="text/javascript">
+    $(function () {
+//      电话号码格式 鼠标移入移出事件
+        $('.btn-select').click(function (event) {
+            event.stopPropagation();
+            $('.phone-list').show();
+            $(this).css('cursor', 'pointer');
+        })
+        $('body').click(function () {
+            $('.phone-list').hide();
+        });
+
+        $('.phone-list div').not('.phone-list .first').hover(function () {
+            $(this).css('background-color', '#eaeaea').siblings().not('.phone-list .first').css('background-color', '#fff');
+        })
+
+    });
+</script>
+</body>
+
+</html>

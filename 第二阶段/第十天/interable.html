@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>迭代</title>
+	</head>
+
+	<body>
+		<!--迭代算法是用计算机解决问题的一种基本方法。它利用计算机运算速度快、适合做重复性操作的特点，让计算机对一组指令（或一定步骤）进行重复执行，在每次执行这组指令（或这些步骤）时，都从变量的原值推出它的一个新值。-->
+
+		<script type="text/javascript">
+			//			//检测浏览器是否支持ES6中for of
+			//			var testArray = ['sdh', 'wfl', 'sdm'];
+			//			for(var item  of testArray) {
+			//				console.log(item);
+			//				//此处的x代表的是数组元素
+			//			}
+			//			//for in得到的是属性 默认索引值是属性输出
+			//			for(var index in testArray) {
+			//				console.log(index);
+			//				//此处的xxx是元素在数组中的索引
+			//			}
+			//			for(var ini=0;ini<testArray.length;ini++){
+			//				console.log(testArray[ini]);
+			//			}
+			//2.对array map和set进行遍历
+			//			var myarry=['清华','北大','黄坑大'];
+			//			var mymap=new Map([['清华',0],['北大',1],['黄坑大',2]]);
+			//			var myset=new Set(myarry);
+			//			//var myset=new Set(['清华','北大','黄坑大']);
+			//			console.log('--'.repeat(20));
+			//			for(var xxx of myarry){
+			//				console.log(xxx);
+			//				
+			//			}
+			//			console.log('--'.repeat(20));
+			//			for(var xxx of mymap){
+			//				console.log(xxx);
+			//				//输出的是单个元素，以数组的形式呈现
+			//				console.log(xxx[0]);
+			//				//0输出的是索引
+			//				console.log(xxx[1]);
+			//				//1代表的是元素
+			//			}
+			//			console.log('--'.repeat(20));
+			//			for(var xxx of myset){
+			//				console.log(xxx)
+			//			}
+			//			console.log('--'.repeat(20));
+			//			//for in假如对数组进行处理，添加了一个属性
+			//			var forinarr=['sdh','gg','nxh'];
+			//			//向数组中添加属性
+			//			forinarr.name='forinarr';
+			//			for(var xxx in forinarr){
+			//				//for in输出的数组的属性
+			//				console.log(xxx);
+			//			}
+			//console.log('--'.repeat(20));
+			//4.假如觉得使用for of对map进行遍历不好用 可以用interable类型内置的forEach方法
+			//			console.log('---'.repeat(20));
+			//			//foreach Array()
+			//						var foreacharr = ['45','59', '78', '100'];
+			//						var newarr = new Array();
+			//						foreacharr.forEach(function(element, index, array) {
+			//							//第一个参数是元素值，第二个参数是元素对应的索引值 第三个参数是元素所在的数组
+			//							//console.log(element);//输出元素值
+			//							//console.log(index);//输出索引
+			//							console.log(array);//输出数组
+			//							//将元素装到新的数组中
+			//							if(element >= 60) {
+			//								newarr.push(element);
+			//							}
+			//			
+			//							console.log('---'.repeat(20));
+			//						});
+			//						console.log(newarr);
+			//foreach set()
+			//			var foreachSet = new Set(['q', 'w', 'e']);
+			//			foreachSet.forEach(function(element, sameElement, set) {
+			//				console.log(element);//输出元素值
+			//				console.log(sameElement);//输出和element相同的元素值
+			//				console.log(set);//输出数组
+			//			});
+			//			console.log('---'.repeat(20));
+
+			//foreach  map()
+			// Map的回调函数参数依次是value、key和Map本身
+			//						var foreachMap = new Map([
+			//							[1, 'z'],
+			//							[2, 'x'],
+			//							[3, 'c']
+			//						]);
+			//						foreachMap.forEach(function(value, key, map) {
+			//			
+			//							console.log('map的value值为：'+value);//输出元素值
+			//							console.log('map的key值为：'+key);//输出索引
+			//							console.log('map的map值为：'+map);//输出object map 
+			//						});
+			//						console.log('---'.repeat(20));
+			//						// 注意：如果某些参数不需要，可以忽略它们。例如
+			//						var test1 = ['r', 't', 'y'];
+			//						//element:输出元素 map：输出索引  value：输出三个数组
+			//						test1.forEach(function(element,map,value) {
+			//							console.log('Array的value值为：'+value);
+			//							console.log('Array的map为：'+map);
+			//							console.log('Array的element为：'+element);
+			//							
+			//						})
+			//						console.log('---'.repeat(20));
+			//forEach方法还可以接受第二个参数， 用来绑定this。
+
+//			var reporter = {
+//				report: function(key, value) {
+//					console.log("Key: %s, Value: %s", key, value);
+//				}
+//			};
+//
+//			map.forEach(function(value, key, map) {
+//				this.report(key, value);
+//			}, reporter);
+
+			//前面已经提过，Map转为数组最方便的方法，就是使用扩展运算符（...）。
+
+			let myMap = new Map().set(true, 7);
+			console.log(myMap);
+			document.getElementsByTagName()
+		</script>
+	</body>
+
+</html>

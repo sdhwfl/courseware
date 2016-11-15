@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-AU-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="晏敬文">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        
+        lable{
+            text-align: left;
+        }
+        
+        
+        .submit{
+            width: 240px;
+            height: 40px;
+            color: white;
+            background-color: #2965a8;
+            border-style: none;
+            border-radius: 5px;
+            margin-left: 180px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <div class="container">
+            <p class="lead">添加客户</p>
+        </div>
+    </div>
+    <div class="container">
+        <form action="">
+            <div class="content">
+                <lable>客户姓名：</lable>
+                <input type="text" placeholder="客户姓名">
+            </div>
+            <div class="content">
+                <lable>客户性别：</lable>
+                <input type="radio" name="gender" value="madam"><span>女士</span>
+                <input type="radio" name="gender" value="sir"><span>先生</span>
+            </div>
+            <div class="content">
+                <lable>QQ号：</lable>
+                <input type="text" placeholder="QQ号">
+            </div>
+            <div class="content">
+                <lable>手机号：</lable>
+                <input type="text" placeholder="手机号">
+            </div>
+            <div class="content">
+                <lable>固定电话：</lable>
+                <input type="text" placeholder="固定电话">
+            </div>
+            <div class="content">
+                <lable>身份证号：</lable>
+                <input type="text" placeholder="身份证号">
+            </div>
+            <div class="content">
+                <lable>家庭住址：</lable>
+                <input type="text" placeholder="家庭住址">
+            </div>
+            <div class="content">
+                <lable>客户渠道：</lable>
+                <select name="" id="">
+                    <option value="">自然讲店</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="content">
+                <lable>客户经理：</lable>
+                <input type="text" placeholder="客户经理">
+            </div>
+            <lable>备注：</lable>
+            <textarea name="" id="" cols="50" rows="4" placeholder="备注信息"></textarea>
+    </div>
+    <input type="submit" value="保存" class="submit">
+    </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

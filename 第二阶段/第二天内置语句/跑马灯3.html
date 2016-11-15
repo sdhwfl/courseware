@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--定义文字区域-->
+		<h3 id="myh3">你是不是傻，是不是傻！！！</h3>
+		<script type="text/javascript">
+			
+			
+			
+			function show(){
+				//定时器函数，定时调用截取字符串这部分逻辑
+				//第一个参数：需要定时执行的函数；第二个参数：间隔时间，单位是毫秒
+				//获取页面上的标签内部文字
+			var myTitle=document.getElementById('myh3').innerHTML;
+//			console.log(myTitle);
+
+			//利用字符创截取函数 处理字符串
+			//第一个索引对应的索引是0
+			var myNewH3 =myTitle.substr(1,(myTitle.length-1))+myTitle.substr(0,1);
+//			console.log(myNewH3);
+			
+			document.getElementById('myh3').innerHTML= myNewH3;
+			
+			}
+//			show();
+			setInterval(show,500);
+		</script>
+	</body>
+</html>

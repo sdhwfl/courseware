@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/globe.css">
+    <link rel="stylesheet" href="css/unusual.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <title>小米账号-登录</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .container {
+            width: 855px;
+            margin: 110px auto;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .container .code {
+            height: 60px;
+            width: 60px;
+            background-image: url("images/sprite_login.gif");
+            float: right;
+            margin-right: 8px;
+            opacity: 0.3;
+        }
+
+        .container .code:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .container .logo {
+            margin-top: 50px;
+            margin-left: 60px;
+        }
+
+        .container h2 {
+            font-size: 30px;
+            color: #424242;
+            font-weight: 400;
+            margin-top: 30px;
+            padding-bottom: 48px;
+        }
+
+        .container .account, .container .password {
+            height: 48px;
+            width: 356px;
+            border: solid 1px #e0e0e0;
+            text-indent: 1em;
+
+        }
+
+        .container .password {
+            margin-top: 14px;
+        }
+
+        .container .btn-login {
+            height: 50px;
+            width: 356px;
+            background-color: #ef5b00;
+            color: #ffffff;
+            margin-top: 38px;
+        }
+
+        .container .line {
+            display: inline-block;
+            height: 38px;
+            width: 131px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .container .otherLogin {
+            display: inline-block;
+            height: 38px;
+            width: 88px;
+            color: #b0b0b0;
+            font-size: 14px;
+            margin-top: 7px;
+        }
+
+        #otherLogin {
+            height: 31px;
+            width: 144px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #otherLogin div {
+            height: 31px;
+            line-height: 31px;
+            text-align: center;
+            width: 31px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #949494;
+        }
+        #otherLogin div span{
+            display: inline-block;
+            height: 18px;
+            width: 18px;
+            line-height: 18px;
+        }
+        #otherLogin .qq span  {
+
+            background-image: url("images/icons_type.png");
+            background-position: -18px -2px;
+            background-repeat: no-repeat;
+
+        }
+        #otherLogin .qq:hover{
+            background-color: #0289d1;
+        }
+
+        #otherLogin .webio span{
+            background-image: url("images/icons_type.png");
+            background-position: -38px 0;
+        }
+
+        #otherLogin .webio {
+             margin:  0 26px;
+        }
+
+        #otherLogin .webio:hover {
+          background-color: #d32e2e;
+        }
+
+        #otherLogin .alipay  span{
+            width: 26px;
+            background-image: url("images/icons_type.png");
+            background-position: -57px 0;
+        }
+
+        #otherLogin .alipay:hover {
+           background-color: #00abef;
+        }
+
+        .container .acc-pass {
+            width: 855px;
+            height: 20px;
+            text-align: center;
+            margin-top: 57px;
+            padding-bottom: 57px;
+        }
+
+        .container .acc-pass .acc, .container .pass {
+            font-size: 13px;
+            color: #757575;
+        }
+
+        .container .acc-pass .line2 {
+            color: #e9e0e9;
+            font-size: 11px;
+            padding: 0 9px;
+        }
+
+        footer {
+            margin-top: 125px;
+            text-align: center;
+        }
+
+        footer .span {
+            color: #757575;
+            padding: 0 4px;
+            font-size: 12px;
+        }
+
+        footer .span:nth-child(2n-1):hover {
+            color: #333333;
+            cursor: pointer;
+        }
+
+        footer .focus {
+            color: #333;
+        }
+
+        footer .allRight {
+            margin: 0 auto;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #757575;
+        }
+
+        footer .allRight img {
+            margin-top: -14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="code"></div>
+    <img src="images/logo.png" alt="" class="logo">
+    <h2>小米帐号登录</h2>
+    <input type="text" class="account" placeholder="邮箱/手机号码/小米账号"><br>
+    <input type="password" class="password" placeholder="密码"><br>
+    <button class="btn-login">立即登录</button>
+    <br>
+    <span class="line"></span>
+    <span class="otherLogin">其他方式登录</span>
+    <span class="line"></span>
+    <div id="otherLogin">
+        <div class="qq"><span></span></div>
+        <div class="webio"><span></span></div>
+        <div class="alipay"><span></span></div>
+    </div>
+    <div class="acc-pass">
+        <span class="acc">注册小米账号</span>
+        <span class="line2">|</span>
+        <span class="pass">忘记密码</span>
+    </div>
+</div>
+
+<footer>
+    <span class="span focus">简体</span>
+    <span class="span">|</span>
+    <span class="span">繁体</span>
+    <span class="span">|</span>
+    <span class="span">English</span>
+    <span class="span">|</span>
+    <span class="span">常见问题</span>
+    <div class="allRight">
+        <span>小米公司版权所有-京ICP备10046444-</span>
+        <img src="images/ghs.png" alt="">
+        <span>京公网安备11010802020134号-京ICP证110507号</span>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="Keywords " content="$SiteKeywords " />
+	<meta name="Description " content="$SiteDescription " />
+	<link rel="stylesheet " type="text/css " href="css/globle.css " />
+	<link rel="stylesheet " type="text/css " href="css/style.css " />
+	<script src='js/jquery-2.0.3.js'></script>
+	<style>
+
+	</style>
+</head>
+
+<body>
+
+	<main class="main">
+		<!-- clearfix清除浮动-->
+		<ul class="students-list  clearfix">
+			<!--<li class="active">姓名1</li>
+				<li>姓名2</li>
+				<li>姓名3</li>
+				<li>姓名4</li>
+				<li>姓名5</li>-->
+		</ul>
+		<ul class="student-info">
+			<li><img src="images/a1.jpg" width="200" height="200" /></li>
+			<li>姓名：sdh</li>
+			<li>性别：女</li>
+			<li>手机：15039422014</li>
+			<li>邮箱：1594996575@qq.com</li>
+			<li>简介：我是H5-11的一名学员</li>
+		</ul>
+	</main>
+
+	<script type="text/javascript">
+		$(function(){
+			//自动加载姓名
+			(function() {
+					$.get('/list',function(response,statusText,xhr){
+						var nameArr=JSON.parse(xhr.responseText);
+						nameArr.forEach(function(element,index){
+							$(".students-list").append("<li>" + element + "</li>");
+						})
+						res.ststus(200).send(nameArr)
+					})
+				})();
+			//一个学生的信息
+			$('.students-list').on('click','li',function(){
+					$(this).addClass('active').siblings('li').removeClass('active')
+					var studentName = $(this).html();
+				 $.get( '/info?name=' + studentName,function(response,statusText,xhr){
+					var studentObj=JSON.parse(xhr.responseText);
+					var random = Math.floor(Math.random() * 7) + 1;
+					//随机插入一张图片 并且清空后里面的内容
+					$('.student-info').html('<li><img src="images/a' + random + '.jpg" width="200" height="200"></li>')
+				   var studentobj = JSON.parse(xhr.responseText)
+				for(var one in studentobj) {
+				 var oneAttr =(one=="name"?'姓名：':'')+(one=="sex"?'性别：':'')+(one=="phone"?'手机：':'')+(one=="email"?'邮箱：':'')+(one=="info"?'简介：':'')+studentobj[one];
+				
+				  if(oneAttr==''){
+				 	
+				  }
+					else{
+						 $('.student-info').append('<li>'+oneAttr+'</li>');
+					}
+				  }
+				
+				})
+			})
+			
+				
+		});
+	</script>
+</body>
+
+</html>

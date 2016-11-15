@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>我的手机</title>
+    <style>
+        html {
+            height: 100vh;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+        
+        main {
+            height: 100vh;
+            width: 100vw;
+            margin: 0 auto;
+            /*background-image: url(images/f2.jpg);*/
+        }
+        
+        #nav {
+            height: 10vh;
+            width: 100vw;
+            background-color: deepskyblue;
+            position: relative;
+        }
+        
+        #nav>span {
+            color: white;
+            font-size: 4vw;
+        }
+        
+        #nav>span:nth-of-type(1) {
+            position: absolute;
+            left: 45vw;
+            top: 6vh;
+        }
+        
+        #nav>span:nth-of-type(2) {
+            position: absolute;
+            top: 6vh;
+            right: 10vw;
+        }
+        
+        #nav>img {
+            height: 5vh;
+            width: 100vw;
+        }
+        
+        #touxiang {
+            height: 120px;
+            width: 120px;
+            margin: 5vh auto;
+            background-image: url(images/tx.png);
+            background-size: 100% 100%;
+            border-radius: 50%;
+        }
+        
+        #qqmima {
+            height: 12vh;
+            width: 100vw;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px black;
+            box-shadow: 1px 1px 1px black;
+        }
+        
+        #qqmima>span {
+            color: #999;
+            font-size: 3vw;
+            line-height: 5vh;
+            margin: 0 0 0 5vw;
+        }
+        
+        #qqmima>hr {
+            color: #999;
+        }
+        
+        #denglu {
+            height: 4vh;
+            width: 90vw;
+            background-color: deepskyblue;
+            margin: 2vh auto;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: center;
+            font-size: 3vw;
+            color: white;
+            position: relative;
+        }
+        
+        #denglu>p {
+            position: absolute;
+            top: -1vh;
+            left: 45vw;
+        }
+        
+        #wenti {
+            height: 5vh;
+            width: 90vw;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 2.5vw;
+            color: deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="nav">
+            <img src="images/nav.png" alt="">
+            <span>添加账号</span>
+            <span>取消</span>
+        </section>
+
+        <section id="touxiang"></section>
+        <section id="qqmima">
+            <span>QQ号/手机号/邮箱</span>
+            <hr>
+            <br>
+            <span>密码</span>
+        </section>
+        <section id="denglu">
+            <p>登录</p>
+        </section>
+
+        <section id="wenti">
+            <span>无法登陆？</span>
+            <span>新用户注册</span>
+        </section>
+    </main>
+
+
+
+</body>
+<html>

@@ -1,0 +1,23 @@
+@charset "utf-8";
+ul {
+    width: 1000px;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+ul li {
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+ul li label {
+    float: left;
+    display: inline-block;
+    width: 60px;
+    text-align: right
+}
+ul li input{
+	border: 1px solid #ccc;
+	height: 20px;
+	border-radius: 3px;
+}

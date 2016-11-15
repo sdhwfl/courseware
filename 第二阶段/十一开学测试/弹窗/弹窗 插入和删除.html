@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>插入和删除弹窗</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<style type="text/css">
+		
+		</style>
+	</head>
+
+	<body>
+		<a href="javascript:;" class="btn1">注册成功</a>
+		<a href="javascript:;"  class="btn1">登录成功</a>
+		<a href="javascript:;"  class="btn1">出现错误</a>
+		<script type="text/javascript">
+			$(function() {
+				//声明变量插入内容
+
+				$('.btn1').click(function() {
+                    
+				var html = "<div class=\"popup popup1\">" +
+					"<div class=\"pop-close\">×</div>" +
+					"<div class=\"pop-title\">提示信息</div>" +
+					"<div class=\"pop-content\">注册成功</div>" +
+					"</div>" +
+					"<div class=\"mask\"></div>"
+
+					$('body').append(html);
+					$('.pop-content').html($(this).html())
+					$('.popup').hide();
+					$('.popup,.mask:eq(0)').fadeIn();
+
+				})
+  
+				$('body').on('click', '.pop-close', function() {
+					$(this).parents('.popup').fadeOut('fast', function() {
+						this.remove();
+					})
+
+					$('.mask').fadeOut('fast', function() {
+						this.remove();
+					})
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

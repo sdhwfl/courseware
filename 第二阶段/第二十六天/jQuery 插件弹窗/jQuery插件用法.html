@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>弹窗插入和删除</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<a href="javascript:;" class="btn1">注册成功</a>
+		<a href="javascript:;" class="btn1">登录成功</a>
+		<a href="javascript:;" class="btn1">出现错误</a>
+		<script type="text/javascript">
+			$(function() {
+				//jQuery自定义插件 种类1
+				//向jQuery对象增加方法
+				$.extend({
+					//判定两个元素的大小
+					min: function(a, b) {
+						return a > b ? b : a;
+					},
+				});
+				$.min(3, 5);
+				console.log($.min(3, 5));
+
+				//jQuery自定义插件 种类2
+				//选择器调用一个函数  弹出三个对话框
+				$.fn.extend({
+					popup: function() {
+						//this 调用者的jQuery 对象
+						//each循环出a里面的所有内容
+						this.each(function() {
+							//alert($(this).html())
+						})
+
+					}
+				});
+				$('a').popup();
+
+				//jQuery自定义插件 种类2
+				//选择器调用一个函数  弹出一个对话框
+				$.fn.extend({
+					popup: function() {
+						//this 调用者的jQuery 对象
+						//each循环出a里面的所有内容
+
+						//alert(this.html())
+					}
+				});
+				$('a').popup();
+			})
+		</script>
+
+	</body>
+
+</html>

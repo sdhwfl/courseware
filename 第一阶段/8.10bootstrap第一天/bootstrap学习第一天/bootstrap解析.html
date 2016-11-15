@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动设备会读取viewport设置，并按照设置的要求渲染页面。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap解析</title>
+    <!--第一步导入核心bootstrap样式文件-->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <!--第二步导入依赖的jQuery脚本文件-->
+    <script src="js/jquery.js"></script>
+    <!--第三步导入核心bootstrap脚本文件-->
+    <script src="js/bootstrap.js"></script>
+
+    <style>
+        body {
+            padding-top: 60px;
+            /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+</head>
+
+<body>
+    <!--导航条部分-->
+    <!--navbar主要设置位置为相对，最小高度为50px，边框为1px透明的
+    navbar-inverse主要设置导航条背景颜色
+    navbar-fixed-top：主要设置背景位置是在顶部还是底部
+    -->
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+        <!--container：主要保证div与页面同宽 div内部的内容左右内边距为15px-->
+        <div class="container">
+            <!--内部第一块-->
+            <div class="navbar-header">
+                <!--nav-header:让列表ul中的链接浮动到左侧-->
+                <!--navbar-toggle：主要设置按钮的样式，如浮动到右侧-->
+                <!--collapse:折叠-->
+                <!--data-target：标记一个触发对象 让谁去做  例如让mynavbar_list->
+                <!--data-toggle：告诉脚本要做什么 例如让mynavbar_list折叠collapse-->
+                <button class="navbar-toggle" data-target="#mynavbar_list" data-toggle="collapse" aria-expanded="false" aria-controls="navbar">
+                    <!--icon-bar主要设置span为块级元素，设置宽高。以及圆角-->
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    
+                </button>
+                <!--navbar-brand：主要给元素设置浮动 浮动到left-->
+                <a href="#" class="navbar-brand">主站名或者图标</a>
+            </div>
+            <div id="mynavbar_list" class="collapse  navbar-collapse">
+                <!--collapse  navbar-collapse：主要是为了隐藏内容-->
+                <ul class="nav navbar-nav">
+                    <!--active：让元素处于激活状态-->
+                    <li class="active"><a href="#">Home</a> </li>
+                    <li> <a href="#about">About</a> </li>
+                    <li><a href="#contact">Contact</a> </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+        <h1>Bootstrap starter template</h1>
+        <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+
+    </div>
+    <!-- /container -->
+
+
+</body>
+</body>
+<html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>循环</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//			for循环 做一些重复的事情
+			//语法：(初始计数变量，一般设置为0：条件，一般设置成需要循环的次数;执行完之后累加/累减)
+			//执行100次大括号之内的语句 
+			//			for(var i=0; i<100; i++){
+			//				document.write('你是不是傻'+'<br>')
+			//			}
+			//			
+			//			for(i =0; i<2; i++){
+			//				console.log('你猜啊');
+			//			}
+			//			小练习：求所有的三位数水仙花数
+			//求余%
+			//			function shuixianhua() {
+			//				for(var number = 100; number < 1000; number++) {
+			//
+			//					var a =parseInt(number/100); 
+			//					var b =parseInt((number%100)/10);
+			//					var c =parseInt(number % 10);
+			////					 console.log('百位数是:'+a+'-十位数是:'+b +'-个位数是:'+c + '<br>'); 
+			//					//					定义一个变量用于存储三次幂之和
+			//					var result = a * a * a  +  b * b * b  +  c * c * c;
+			//					if(result == number) {
+			//						document.write(number + '<br>');
+			//					}
+			//				}
+			//			}
+			//			shuixianhua();
+			//			while当什么时候(满足什么条件的时候)，do干什么事情
+			//	do -while：先执行逻辑，然后判断条件 至少会执行一次逻辑
+			//			var count =10;
+			//			do {
+			//				document.write("hello world"+'<br>');
+			//				//执行完之后对count计数器做减1处理
+			//				count=count -1;
+			//			}
+			//			while (count>0);
+			//while do先判断再执行
+			//			var count =10;
+			//			while(count > 0) {
+			//				document.write("sdh"+'<br>');
+			//				count = count - 1;
+			//			}
+			//for 循环嵌套
+			for(var row = 1; row < 4; row++) {
+				for(var column = 1; column < 9; column++) {
+					document.write(row + '' + column + ' ');
+				}
+				document.write('<br>');
+			}
+		</script>
+	</body>
+
+</html>

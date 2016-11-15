@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>表单</title>
+    <style>
+        body {
+            /*模糊*/
+            /*filter:blur(5px);*/
+        }
+        
+        lable {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>甲方输入区</legend>
+            <!--表单内部嵌套表单元素-->
+            <lable for=“username”>用户昵称： <input type="text" value="你的名字" name="username"></lable>
+
+            <br> 注册邮箱： <input type="text" value="你的邮箱" name="useremail">
+            <br> 用户密码： <input type="password" value="123456" name="pw">
+            <!--单选框 type为radio-->
+            <br>男<input type="radio" name="sex" value="">
+            <br>女<input type="radio" name="sex" value="">
+            <br>苹果<input type="checkbox" name="aihao">
+            <br>橘子<input type="checkbox" name="aihao">
+            <br>香蕉<input type="checkbox" name="aihao">
+            <br>提子<input type="checkbox" name="aihao">
+            <br>提交<input type="submit" value="确定">
+
+            <select>
+            <option value="">1</option>
+            <optgroup>
+             <option value="">11</option>
+            <option value="">12</option>
+            <option value="">13</option>
+            <option value="">14</option>
+            <option value="">15</option>
+          </optgroup>
+             
+            <option value="">3</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            </select>
+
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>乙方输入区</legend>
+            <lable for=“username”>用户昵称： <input type="text" value="你的名字" name="username"></lable>
+
+            <br> 注册邮箱： <input type="text" value="你的邮箱" name="useremail">
+            <br> 用户密码： <input type="password" value="123456" name="pw">
+            <!--单选框 type为radio-->
+            <br>男<input type="radio" name="sex" value="">
+            <br>女<input type="radio" name="sex" value="">
+            <br>苹果<input type="checkbox" name="aihao">
+            <br>橘子<input type="checkbox" name="aihao">
+            <br>香蕉<input type="checkbox" name="aihao">
+            <br>提子<input type="checkbox" name="aihao">
+            <br>提交<input type="submit" value="确定">
+            <input type="button">
+        </fieldset>
+    </form>
+
+
+</body>
+<html>

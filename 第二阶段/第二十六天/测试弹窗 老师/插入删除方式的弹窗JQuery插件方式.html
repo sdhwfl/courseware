@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>插入和删除的弹窗</title>
+		<meta charset="utf-8">
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		<a class="button1" href="javascript:;">注册成功</a>
+		<a class="button1" href="javascript:;">登陆成功</a>
+		<a class="button1" href="javascript:;">注册失败</a>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			// 自定义插件 首页引入才能使用
+			$.fn.extend({
+				popup: function(value) {
+					// this.each(function() {
+
+					// });
+					$(".popup").fadeOut('fast', function() {
+						this.remove();
+					});
+					$(".mask").fadeOut('fast', function() {
+						this.remove();
+					});
+					// 声明变量插入内容
+					var html = "<div class=\"popup popup01\">" +
+						" <div class=\"pop-close\">x</div>" +
+						"<div class=\"pop-title\">提示信息</div>" +
+						"<div class=\"pop-content\">注册成功</div>" +
+						"<div class=\"btn\"><button >确定退出</button></div>" +
+						"</div>"
+					$("body").append(html);
+					$(".pop-content").html(value);
+					this.hide();
+					this.fadeIn();
+					$(".mask:eq(0)").fadeIn();
+					$("body").on("click", ".pop-close", function() {
+						$(this).parents(".popup").fadeOut('fast', function() {
+							this.remove();
+						});
+					
+						$(".mask").fadeOut('fast', function() {
+							this.remove();
+						});
+						
+						$("body").on("click", ".btn", function() {
+						$(this).parents(".popup").fadeOut('fast', function() {
+							this.remove();
+						});
+						})
+					})
+
+				}
+			})
+
+			$(".button1").click(function(event) {
+				$(".popup01").popup($(this).html());
+			});
+
+		});
+	</script>
+
+</html>

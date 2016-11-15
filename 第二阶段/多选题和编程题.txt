@@ -1,0 +1,50 @@
+多选
+1，以下关于javaScript的说法正确的是（BCD）
+A  javaScript是编译型语言。
+B  javaScript是解释型语言
+C  javaScript是弱类型语言
+D  javaScript基于对象的脚本语言
+
+
+2，以下哪些是js中合法的变量名？（D）
+A  3a
+B  var
+C  window
+D  _page
+
+3，以下语句中属于循环流程控制的语句是（AD）
+A  for
+B  if
+C  switch
+D  while
+
+4，在js中获取页面上id值为 a 的元素，正确的写法是（BD）
+A document.getElementById(a)
+B document.getElementById(“a”)
+C document.getElementById(“#a”)
+D document.querySelector(“#a”)
+querySelectorall（“ul li”）[0]选择全部的选择器
+5，弹出一个带有输入框的警告框使用哪个方法？（C）
+A  alert();
+B  confirm();
+C  prompt();
+D  console.log()
+
+
+编程题
+
+1. 请编写一下9 * 9 乘法表
+
+2. 编写一个树列表 有下拉效果 （效图如效果）                                                                                                                                                
+
+3. 弹出一个提示列表 点空白处删除 （ 点空白除删除 ）
+
+4. 请编写一个 JavaScript函数 parseQueryString, 它的用途是把 URL 参数解析为一个对象，如：
+var url= 'http://www.baobao.com/index.php?key0=0&key1=1&key2=2';
+var obj = parseQueryString(url);
+console.log(obj.key0)  // 输出0
+
+5. 一个电子表
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="宋典花">
+		<title>分支语句</title>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<input type="text" id="myinput">
+		<button onclick="clickBtn()">开始猜测</button>
+		<script>
+			//if-else 假如--否则--
+			//if-else-if
+			//if-else-if-else
+			//用于处理逻辑上可能存在很多个分支的情况
+			// var today = 1;
+			// if (today == 1 ){
+			//     // == 用于条件判断时候的“相等判断”，还有 > <
+			//     // 满足小括号内的条件后，所做的事情
+			//     alert("今天星期一！");
+			// }
+			// else{
+			//     // 不满足的情况下，做什么事情
+			//     alert("我也不知道今天周几！");
+			// }
+			// if( today ==1){
+			//      alert("今天星期一！");
+			// }
+			// else if(today ==2){
+			//      alert("今天星期二！");
+			// }
+			// 第二种分支语句
+			//switch - case
+			// var today=1;
+			// //小括号里面可以是变量或者表达式等。
+			// switch(today){
+			//     // case存放的是某一种结果，或者是某一种情况
+			//     case 1：
+			//     // 做什么事情
+			//  console.log("今天周一");
+			//     // 做完上面的事情之后停下来
+			//     break;
+
+			//        case 2：
+			//  console.log("今天周二");
+			//     break;
+
+			//       case 3：
+			//   console.log("今天周三");
+			//     break;
+
+			//      case 4：
+			//    console.log("今天周四");
+			//     break;
+			//     default:{
+			//         console.log("我也不知道今天周几");
+			//     }
+			// }
+			// 猜数字游戏
+			//取整数
+			//			var guessNumber = parseInt(Math.random() * 100);
+			//			console.log(guessNumber);
+
+			//			function clickBtn() {
+			//				// 用于存储得到的那个输入框
+			//				// 1、通过元素的Id值，找到元素
+			//				var guessNumber = 60;
+			//				var myInput = document.getElementById('myinput');
+			//				// 2、得到输入框中的数值
+			//				console.log(myInput.value);
+			//				// 3、将输入框中的数值跟正确数值进行对比
+			//				if(myInput.value > guessNumber) {
+			//					alert('你猜大了');
+			//				} else if(myInput.value < guessNumber) {
+			//					alert('你猜小了');
+			//				} else {
+			//					alert('恭喜你！终于猜对了');
+			//				}
+			//			}
+			var username = 'sdh';
+			var password = '1234567';
+			//关系运算符 与或非 && ||
+			if(username == 'sdh' && password == '1234567') {
+				alert('登陆成功')
+			} else {
+				alert('登录失败');
+			}
+		</script>
+
+	</body>
+
+</html>

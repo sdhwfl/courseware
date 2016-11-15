@@ -1,0 +1,107 @@
+服务器是什么?
+
+1、硬件服务器 
+   其实就是一台电脑  它的硬盘比较大  它的CPU比较大(运算能力强)  专门的网线(固定的ip)
+2、软件服务器
+  虚拟主机 一个空间(node.js服务器 ,php,.net,jsp,asp)
+
+服务器的作用是什么？
+1、存储(数据(文件，数据库)) 可以被外界访问
+2、数据计算 
+3、与外界通讯
+
+
+http协议
+1、不是一个对等的协议
+客户端只能发请求  服务器端可以进行响应  
+服务端不可以向客户端发送发送请求
+
+2、无状态的协议
+相当于没有记忆力 每一次访问都需要被判断
+可以通过cookies的方式，给它找回一部分记忆
+
+请求
+------------------------------------------------------------------
+1、请求行 
+a、请求方式：get请求  
+b、地址：http://www.zhiyou100.com
+c、IP地址 180.76.143.112 80
+d、版本 HTTP/1.0
+
+
+2、请求头
+a、主机名  host："zhiyou100.com"
+//兼容Mozilla/5.0  
+//win7系统 64 
+//浏览器内核
+//浏览器的版本
+b、User-Agent:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0"
+
+//请求文件的格式
+c、Accept:"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+//请求用户的语言优先级
+d、Accept-Language:"zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3"
+
+//请求的内容是否可以压缩  可以减少传输内容的大小
+e、Accept-Encoding:"gzip, deflate"
+//cookie内容  
+//用来多个页面 记录一些内容
+f、Cookie:"safedog-flow-item=802A3A7E21C8DB37EA81336C55DE386C; Hm_lvt_10d4132c5410d070151e0820888eb98a=1474872452,1474872480,1474872519; Hm_lpvt_10d4132c5410d070151e0820888eb98a=1474872834; LXB_REFER=www.baidu.com; 53gid2=10083431858013; visitor_type=old; 53gid0=10083431858013; 53gid1=10083431858013; 53revisit=1474872653181; 53kf_72138919_keyword=; kf_72138919_keyword_ok=1; 53uvid=1; onliner_zdfq72138919=0; my_acc_reauto_time=1474873158282; invite_53kf_totalnum_1=4; zhiyou100_com_=4"
+
+//保持连接的样式
+g、Connection:"keep-alive"
+//用来判断文件有没有被更改
+h、If-Modified-Since:"Mon, 26 Sep 2016 03:08:55 GMT"
+If-None-Match:""ff23ef50a317d21:0""
+Cache-Control:"max-age=0"
+3、请求体
+并不是所有的请求都有请求体 get请求没有请求体
+//上传流的请求头
+Content-Type:"application/x-www-form-urlencoded"
+a、urlencodedapplication/x-www-form-urlencoded
+b、multipart  multipart、form-data
+通过form表单 上传文件
+c、json application/json
+d、text text/plain
+e、二进制
+
+响应
+------------------------------------------------------------------
+1、响应行
+状态码 200k 0 304 not modified
+
+2、响应头
+//响应单位
+a、Accept-Ranges:"bytes"
+//响应体的长度  响应体（响应的内容）
+b、Content-Length:"36065"
+//响应体的格式
+c、Content-Type:"text/html"
+//服务器的文件生成时间
+d、Date:"Mon, 26 Sep 2016 07:44:18 GMT"
+//信息摘要
+e、Etag:""ff23ef50a317d21:0""
+//最后的修改时间
+f、Last-Modified:"Mon, 26 Sep 2016 03:08:55 GMT"
+//服务器
+g、Server:"IIS"
+//服务器加的
+h、x-powered-by:"WAF/2.0"
+
+3、响应体
+任何数据都可以作为响应 html、css、js、图片、视频、音频、压缩文件等等
+
+
+整个开发的时间和顺序
+
+1、准备好请求的参数(做一个什么的请求)
+2、准备发送
+3、服务器响应
+4、响应的结果呈献给浏览器
+
+可以看到：浏览器方面 先请求 后呈现结果
+
+服务器：
+请求和响应是同时存在的
+
+把请求里的数据和其他的数据进行再加工  加工之后返回给浏览器

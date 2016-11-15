@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>动态创建元素节点</title>
+		<script type="text/javascript" src="jquery-2.0.3.js">
+		</script>
+		<style type="text/css">
+			.right {
+				width: 300px;
+				height: 120px;
+				
+			}
+			
+			.neibu {
+				width: 100px;
+				height: 90px;
+				padding: 5px;
+				margin: 5px;
+				float: left;
+				border: 1px solid hotpink;
+				background: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button>动态创建元素节点</button>
+		<script type="text/javascript">
+			var $body = $('body');
+			$body.on('click', function() {
+				var div = $("<div class='right'><div class='neibu'>动态创建元素节点</div></div>")
+				$body.append(div);
+			})
+		</script>
+	</body>
+
+</html>

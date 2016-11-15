@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#box{
+    margin: 0px auto;
+    margin-top: 200px;
+    width: 500px;
+    height: 264px;
+    position: relative;
+    padding: 0 10px 0px 10px;
+    box-sizing: content-box;
+    background:  url(images/2.png);
+}
+#top{
+    width: 500px;
+    height: 30px;
+    display: inline-block;
+    color: white;
+}
+#top > img{
+    float: left;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    top: 5px;
+    position: relative;
+}
+#TXspan{
+    float: left;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 30px;
+}
+.sp_1{
+    float: right;
+    width: 30px;
+    height: 25px;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+/*content*/
+#content_box{
+    width: 500px;
+    height: 230px;
+    position: relative;
+}
+.it{
+    width: 180px;
+    height: 31px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    text-indent: 35px;
+    margin-top: 10px;
+    position: relative;
+    top: 10px;
+    left: 280px;
+}
+.it2{
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid lightgray;
+    margin-leftt: 20px;
+    position: relative;
+    left: 280px;
+    background-color: lightskyblue;
+}
+.img0{
+    width: 31px;
+    height: 31px;
+    position: absolute;
+}
+.img1{
+top:21px;
+left: 282px;
+}
+.img2{
+top:66px;
+left:282px;
+}
+.sp2{
+    position: relative;
+    color: lightgray;
+    left: 280px;
+    font-size: 14px;
+}
+.it000{
+    width: 160px;
+    height: 37px;
+    background: #2894ff;
+    border: 0.5px solid black;
+    border-radius: 2px;
+    color: white;
+    position: relative;
+    margin-top: 20px;
+    left: 280px;
+    font-size: 15px;
+}
+p{
+    font-size: 13px;
+    color: lightgray;
+    display: block;
+    position: absolute;
+    top: 190px;
+    left: 20px;
+}
+/*鼠标移动触发样式*/
+.sp_1,button:hover{
+cursor: pointer;
+}

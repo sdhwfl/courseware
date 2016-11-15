@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>坑大主页</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: antiquewhite;
+        }
+        
+        .header {
+            width: 100%;
+            height: 240px;
+            background-image: url(images/3.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .header h2 {
+            color: red;
+            text-shadow: 3px 0 0 #fff;
+            font-weight: bold;
+        }
+        
+        h4 {
+            font-size: 24px;
+            text-shadow: 3px 0 0 #fff;
+        }
+        
+        h4:nth-of-type(1) {
+            margin-left: 280px;
+        }
+        
+        h4:nth-of-type(2) {
+            margin-left: 500px;
+        }
+        
+        .navbar {
+            background-color: #0099ff;
+        }
+        
+        .navbar-brand {
+            color: white;
+            font-size: 22px;
+        }
+        
+        .navbar-nav>li>a {
+            height: 40px;
+            margin: 7px 0 0 30px;
+            padding: 10px 0px 0 10px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .navbar-nav>li>a:hover {
+            background: none;
+            border-bottom: 3px solid red;
+            color: red;
+        }
+        
+        .navbar-nav>li.active a {
+            border-bottom: 3px solid red;
+            color: red;
+        }
+        
+        @media (max-width:767px) {
+            #navbar {
+                background-image: none;
+                background-color: #000;
+                float: initial;
+            }
+            #navbar ul {
+                margin: 0;
+            }
+            #navbar a {
+                color: white;
+                border: none;
+                margin: 0;
+            }
+            #navbar a:focus {
+                background: none;
+            }
+            .navbar .navbar-toggle {
+                border-color: blue;
+                margin-top: 11px;
+            }
+            .navbar .navbar-toggle .icon-bar {
+                background-color: blue;
+            }
+        }
+        
+        .hkd {
+            margin-left: -25px;
+            margin-top: 10px;
+        }
+        
+        .youbian {
+            height: 300px;
+            width: 360px;
+            float: right;
+        }
+        
+        .youbian>section {
+            height: 90px;
+            width: 100%;
+            margin-top: -10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .youbian>section>span {
+            height: 40px;
+            width: 150px;
+            display: flex;
+            justify-content: space-around;
+            align-items: space-around;
+            background-color: #0066ff;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+        
+        .youbian>section>span a {
+            color: white;
+        }
+        
+        .col-md-4 {
+            padding: 5px;
+        }
+        
+        .xian {
+            border: solid 1px #333;
+            width: 100%;
+            float: right;
+        }
+        
+        .neirong {
+            background-color: deepskyblue;
+            height: 260px;
+        }
+        
+        .neirong >ul>li {
+            list-style: square;
+            font-size: 16px;
+        }
+        
+        h3 {
+            margin: 0px;
+            background-color: darkcyan;
+            color: white;
+        }
+        
+        .ldgh>p img {
+            float: left;
+        }
+        
+        .duan {
+            float: left;
+        }
+        
+        .riqi {
+            float: right;
+        }
+        
+        .mmt {
+            height: 170px;
+            width: 1165px;
+            background-image: url(images/8.jpg);
+            background-size: 100% 100%;
+            position: relative;
+            margin-top: 10px;
+            margin-left: -5px;
+        }
+        
+        .mmt h4 {
+            color: purple;
+        }
+        
+        .mmt h4:nth-of-type(1) {
+            margin-top: 40px;
+        }
+        
+        .xian2 {
+            border: solid 1px #333;
+            width: 100%;
+            margin-left: -15px;
+        }
+        
+        .col-xs-12 {
+            padding: 0 5px;
+        }
+        
+        .jyfw {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .jyfw>span {
+            font-size: 20px;
+        }
+        
+        .jyfw>span>a {
+            color: blue;
+        }
+        
+        .jyfw>img {
+            width: 100%;
+        }
+        
+        .sdh {
+            margin-top: 10px;
+        }
+        
+        .xrkd>p img {
+            float: left;
+        }
+        
+        .mlkd>section img {
+            width: 100%;
+            height: 50%;
+        }
+        
+        .yqlj {
+            margin-top: 10px;
+            margin-left: -30px;
+        }
+        
+        .yqlj {
+            font-size: 16px;
+        }
+        
+        footer {
+            height: 40px;
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel {
+            margin-left: 5px;
+        }
+        
+        .carousel-caption {
+            z-index: 10;
+        }
+        
+        .carousel .item {
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .carousel-inner > .item > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 300px;
+        }
+        
+        .featurette-divider {
+            margin: 80px 0;
+        }
+        
+        .featurette-heading {
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        
+        .carousel-control.left {
+            background-color: transparent;
+            background-image: none;
+        }
+        
+        .carousel-control.right {
+            background-color: transparent;
+            background-image: none;
+        }
+        
+        ol {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container container0">
+            <h2>黄河科技学院</h2>
+            <h2> www.hhstu.edu.cn</h2>
+            <h4>为国分忧，为民解愁</h4>
+            <h4>为社会主义现代化服务</h4>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#">hhstu</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">学校概况</a></li>
+                    <li><a href="#">机构设施</a></li>
+                    <li><a href="#">新闻中心</a></li>
+                    <li><a href="#">科学研究</a></li>
+                    <li><a href="#">教育教学</a></li>
+                    <li><a href="#">学生工作</a></li>
+                    <li><a href="#">招生就业</a></li>
+                    <li><a href="#">网络服务</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="images/1.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/11.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/3.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/4.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/5.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <aside class="youbian">
+                    <section>
+                        <span><a href="">校园风光</a></span>
+                        <span><a href="">领导关怀</a></span>
+                    </section>
+                    <section>
+                        <span><a href="">学子精英</a></span>
+                        <span><a href="">明星校园</a></span>
+                    </section>
+                    <section>
+                        <span><a href="">就业服务</a></span>
+                        <span><a href="">招生咨询</a></span>
+                    </section>
+                    <section>
+                        <span><a href="">学校餐厅</a></span>
+                        <span><a href="">校园概况</a></span>
+                    </section>
+                </aside>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row hkd">
+                <div class="col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="neirong  kdxw">
+                        <h3><img src="images/kd.png" alt="">坑大新闻<div class="xian"></div></h3>
+                        <ul>
+                            <li>邓紫棋来坑大</li>
+                            <li>邓紫棋来坑大</li>
+                            <li>邓紫棋来坑大</li>
+                            <li>邓紫棋来坑大</li>
+                            <li>邓紫棋来坑大</li>
+                            <li>邓紫棋来坑大</li>
+                            <li>邓紫棋来坑大</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="neirong ldgh">
+
+                        <h3><img src="images/kd.png" alt="">领导关怀<div class="xian"></div></h3>
+
+                        <p> <img src="images/ldgh.jpg" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            itaque, ut quaerat molestias non fugit voluptatibus, autem eaque adipisci nulla! Natus!</p>
+                        <span class="duan">轻轻地我走了，正如我轻轻地来</span><span class="riqi">2016-08-13</span><br>
+                        <span class="duan">我挥一挥衣袖，作别西边的云彩</span><span class="riqi">2016-08-13</span><br>
+                        <span class="duan">悄悄是别离的笙箫，沉默是今晚的康桥</span><span class="riqi">2016-08-13</span><br>
+                        <span class="duan">再见，再也不见</span><span class="riqi">2016-08-13</span><br>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="neirong  zszx">
+                        <h3><img src="images/kd.png" alt="">招生咨询<div class="xian"></div></h3>
+                        <ul>
+                            <li>招生咨询热线：0371-86522111</li>
+                            <li>招生咨询热线：0371-86522111</li>
+                            <li>招生咨询热线：0371-86522111</li>
+                            <li>招生咨询热线：0371-86522111</li>
+                            <li>招生咨询热线：0371-86522111</li>
+                            <li>招生咨询热线：0371-86522111</li>
+                            <li>招生咨询热线：0371-86522111</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mmt">
+            <div class="container">
+                <h4>厚德博学,砺志图强 </h4>
+                <h4>打硬仗 上台阶 创特色 争名牌 </h4>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12  col-sm-12 col-xs-12  ">
+                    <img src="images/kd.png" alt="">学校概况
+                    <div class="xian2"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row  ">
+            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12  ">
+                <div class="neirong jyfw">
+                    <img src="images/xxss.jpg" alt="">
+                    <span><a href="">师生互动</a></span>
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12  ">
+                <div class="neirong jyfw">
+                    <img src="images/cyh.jpg" alt="">
+                    <span><a href="">春运会</a></span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  ">
+                <div class="neirong jyfw">
+                    <img src="images/wyhy.jpg" alt="">
+                    <span><a href="">文艺汇演</a></span>
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12">
+                <div class="neirong jyfw">
+                    <img src="images/gyh.jpg" alt="">
+                    <span><a href="">歌友会</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row sdh">
+            <div class="col-md-3 col-sm-12 col-xs-12 ">
+                <div class="neirong ">
+                    <h3><img src="images/kd.png" alt="">创新创业<div class="xian"></div></h3>
+                    <ul>
+                        <li>我是可爱的邱比龙1</li>
+                        <li>我是可爱的邱比龙2</li>
+                        <li>我是可爱的邱比龙3</li>
+                        <li>我是可爱的邱比龙4</li>
+                        <li>我是可爱的邱比龙5</li>
+                        <li>我是可爱的邱比龙6</li>
+                        <li>我是可爱的邱比龙7</li>
+                        <li>我是可爱的邱比龙8</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 ">
+                <div class="neirong xrkd">
+                    <h3><img src="images/kd.png" alt="">昔日坑大<div class="xian"></div></h3>
+                    <p class="xrkd"> <img src="images/ldgh2.jpg" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
+                        nesciunt delectus dolore repellendus, quos necessitatibus at accusamus officia, velit, aspernatur
+                        aperiam qui unde veritatis deserunt libero pariatur. Amet, repellendus, aliquid.</p><br>
+                    <span class="duan">轻轻地我走了，正如我轻轻地来</span><span class="riqi">2016-08-13</span><br>
+                    <span class="duan">我挥一挥衣袖，作别西边的云彩</span><span class="riqi">2016-08-13</span><br>
+                    <span class="duan">悄悄是别离的笙箫，沉默是今晚的康桥</span><span class="riqi">2016-08-13</span><br>
+                    <span class="duan">再见，再也不见</span><span class="riqi">2016-08-13</span><br>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12 ">
+                <div class="neirong mlkd">
+                    <h3><img src="images/kd.png" alt="">魅力坑大<div class="xian"></div></h3>
+                    <section><img src="images/mlkd.png" alt=""></section>
+                    <ul>
+                        <li>我愿做康桥里的一颗水草</li>
+                        <li>我愿做康桥里的一颗水草</li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row yqlj">
+                <div class="col-xs-12">
+                    <table class="table table-bordered table-striped table-hover ">
+                        <tr class="waring">
+                            <td><a href="">友情链接</a></td>
+                        </tr>
+                        <tr class="success">
+                            <td><a href="">黄河科技学院图书馆&#x3000 黄科科技学院众创空间</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+                                                                                                                                                                                                                                                        
+        </div>
+        <footer>
+            <span>版权所有：黄科科技学院颂宋&#x3000&#x3000技术支持：郑州智游教育</span>
+        </footer>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+</body>
+</body>
+<html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		testbody
+		<div id="">
+			div
+		</div>
+		<script type="text/javascript">
+		//window是顶级的，一般this都指向window
+//			function testthis(){
+//				console.log(this);
+//			}
+//			testthis();
+//			//2.有绑定了子元素的时候，this指向触发事件的那个元素
+//			//给body添加点击事件
+//			document.body.onclick=function(){
+//				alert(this);
+//			}
+//			document.getElementsByTagName('div')[0].onclick=
+//			function()
+//			{
+//				alert(this);
+//			}
+			//3、在对象中
+//			var person={
+//				name:'sdh'
+//				age:'16'
+//				study:function(){
+//					alert(this)
+//					console.log(this)
+//					//此处的this是对象本身
+//				}
+//			}
+//			person.study();
+			//4、在构造函数中 this是指创建出来的新对象
+			//构造函数，其实就是创建对象的最初始的那个方法，你可以在方法中执行一些初始化操作
+			function People(){
+				this.age='男';
+				this.guoji='China';
+				alert(this);
+				console.log(this);
+			}
+			//使用构造函数 这个对象默认有两个属性age和guoji
+			var aPeople=new People();
+		</script>
+	</body>
+</html>

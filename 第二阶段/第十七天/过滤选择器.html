@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+			$('ul li:odd').css('background-color', 'pink');
+			$('ul li:even').css('background-color', 'lightblue');
+			$('ul li:eq(3)').css('background-color', 'yellow')
+			$('ul li:gt(5)').css('display', 'none');
+			$('ul li:lt(3)').css('font-size', '24px');
+			$('.btn1').click(function() {
+				if($(this).html() =='查看更多'){
+					$('ul li').css('display','block');
+					$(this).html('隐藏')
+				}
+				else{
+					$('ul li:gt(4)').css('display','none');
+					$(this).html('查看更多')
+				}
+			})
+		})
+	</script>
+
+	<body>
+		//even //odd //eq(index) //gt(index) //lt(index)
+     
+		<ul>
+			<li>第1个列表子项</li>
+			<li>第2个列表子项</li>
+			<li>第3个列表子项</li>
+			<li>第4个列表子项</li>
+			<li>第5个列表子项</li>
+			<li>第6个列表子项</li>
+			<li>第7个列表子项</li>
+			<li>第8个列表子项</li>
+			<li>第9个列表子项</li>
+			<li>第10个列表子项</li>
+			<li>第11个列表子项</li>
+			<li>第12个列表子项</li>
+			<li>第13个列表子项</li>
+			<li>第14个列表子项</li>
+			<li>第15个列表子项</li>
+			<li>第16个列表子项</li>
+			<li>第17个列表子项</li>
+			<li>第18个列表子项</li>
+			<li>第19个列表子项</li>
+			<li>第20个列表子项</li>
+		</ul>
+		<button class="btn1">查看更多</button>
+	</body>
+
+</html>

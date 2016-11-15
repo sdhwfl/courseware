@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>js对象的认识</title>
+	</head>
+
+	<body>
+		<!--javascript是拥有属性和方法的数据。js中所有的事物都可以理解为对象 字符串 、数值、数组、日期...这些都是内置对象  除了内置对象我们也可以自定义对象-->
+		<script type="text/javascript">
+			//var myarr=new Array();
+			//var myarr2=['sdh','wfl']
+			//字面量方式创建数组
+			//var mydate=new Date();
+			//如何自定义对象
+			//1.var myobject =new Object();
+			//2.var myobject2={'attr1'：'value1','attr2':'value2'}
+			//没有对象之前 保存数据很麻烦  
+			//保存一个学生的信息  ，比如姓名 性别 年龄 身高 体重
+			//var stuname,stusex,stuage,stuheight,stuweight;
+			//stuname='sdh';
+			//stusex=false;
+			//stuage=23;
+			//stuheight=162;
+			//stuweight=50;
+			//用变量或者是数组存储数据 只能提供数据的简单访问 并不能实现更高级的一些操作 比如：学生学习 学生吃饭等
+
+			//随着对象这个概念的出现，我们可以这样存储数据
+			//1.对象充当一个数据容器（存放属性以及属性值）将学生信息以属性的方式封装到对象student中
+			var student = new Object();
+			student.name = 'wfl';
+			//student.sex=true;
+			//student.age=23;
+			// console.log(student);
+			//数据封装之后可以通过对象调用属性的方式，取出对应的属性值 即属性值=对象.属性
+			// console.log(student.name);
+
+			//2.对象也可以充当方法的容器
+			//window对象除了有这些属性 还有这些方法 这些方法 是对象中的函数
+			//window.alert();
+			//window.open()
+			//window.prompt()
+			student.eat = function() {
+				window.alert('吃饭ing');
+			}
+			student.study = function() {
+					window.alert('学习ing');
+				}
+				//被点名功能 点到后，报上姓名
+			student.baoming = function() {
+					//此处一般不使用确定的对象名 而是使用this去替代  javascript中this通常指向的是我们正在执行的函数本身所属的对象
+					//所以当写到对象内部的时候，一般用this代表当前所属对象
+					window.alert('我叫：' + this.name);
+				}
+				//student.baoming();
+				//怎么去调用对象中的方法呢？
+				//student.eat();
+				//对象.方法();
+		</script>
+	</body>
+
+</html>

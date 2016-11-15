@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>练习图片精灵</title>
+    <style>
+        span {
+            background-image: url(images/bq.jpg);
+            /*background-repeat: no-repeat;*/
+            background-color: red;
+            display: inline-block;
+            width: 31px;
+            height: 31px;
+        }
+        
+        .s1 {
+            /*平移参考点图片的左上角*/
+            /*向左平移 向上平移 负值*/
+            /*向右平移 向下平移 正值*/
+            /*此处移动的是背景：不是标签*/
+            /*背景向右5个单位 向下6个单位*/
+            background-position: 155px 186px;
+        }
+        
+        .s2 {
+            /*背景向上移动一个单位*/
+            background-position: 0px -31px;
+        }
+        
+        .s3 {
+            /*背景向下移动6个单位*/
+            background-position:0px -155px;
+        }
+        .s4{
+            /*背景向左平移一个单位 向右平移一个单位*/
+            background-position: 31px 31px;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="s1"></span>
+    <span class="s2"></span>
+    <span class="s3"></span>
+    <span class="s4"></span>
+</body>
+
+</html>

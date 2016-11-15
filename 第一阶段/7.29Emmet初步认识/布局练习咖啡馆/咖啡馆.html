@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>咖啡馆</title>
+    <style>
+        body {
+            height: 100%;
+            background-image: url(images/bodybkg.gif);
+        }
+        
+        h1 {
+            font-size: 50px;
+            /*margin-top: 15px;*/
+            margin-bottom: 0px;
+            margin-left: 25%;
+            color: orange;
+            text-shadow: 1px 1px 1px black;
+        }
+        
+        #nav {
+            height: 45px;
+            width: 960px;
+            background-image: url(images/navbg.png);
+            margin-left: 25%;
+            position: relative;
+        }
+        
+        ul {
+            height: 20px;
+            width: 800px;
+            list-style: none;
+            margin: 0;
+            color: white;
+            position: absolute;
+            top: 12.5px;
+            left: 10px;
+        }
+        
+        li:nth-of-type(1) {
+            color: orange;
+        }
+        
+        li {
+            float: left;
+            width: 19%;
+            font-size: 18px;
+        }
+        
+        #intro {
+            height: 220px;
+            width: 960px;
+            background-image: url(images/introimage.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-left: 25%;
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        #intro>span {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        #intro_d {
+            height: 80px;
+            width: 340px;
+            position: absolute;
+            bottom: 60px;
+            left: 50px;
+            color: orange;
+            text-shadow: 0px 0px 1px white;
+            font-size: 15px;
+        }
+        
+        #intro>div>img {
+            height: 220px;
+            width: 330px;
+            position: absolute;
+            right: 0px;
+        }
+        
+        main {
+            height: 830px;
+            width: 960px;
+            background-color: white;
+            margin-left: 25%;
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        #s1 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 15px;
+            left: 25px;
+        }
+        
+        #s2 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 15px;
+            left: 255px;
+        }
+        
+        #s3 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 15px;
+            right: 255px;
+        }
+        
+        #s4 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+        }
+        
+        #s5 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 420px;
+            left: 25px;
+        }
+        
+        #s6 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 420px;
+            left: 255px;
+        }
+        
+        #s7 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 420px;
+            right: 255px;
+        }
+        
+        #s8 {
+            height: 395px;
+            width: 220px;
+            background-color: orange;
+            position: absolute;
+            top: 420px;
+            right: 25px;
+        }
+        
+        section>div>img {
+            border: solid 10px white;
+            margin-left: 10%;
+            margin-top: 20px;
+        }
+        
+        section>h2 {
+            margin-left: 10%;
+            color: white;
+            text-decoration: underline;
+            font-size: 24px;
+        }
+        
+        section>p {
+            margin-left: 7%;
+        }
+        
+        footer {
+            height: 210px;
+            width: 960px;
+            background-image: url(images/navbg.png);
+            margin-left: 25%;
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        table {
+            height: 140px;
+            width: 940px;
+            position: absolute;
+            top: 24px;
+            left: 10px;
+        }
+        
+        td {
+            color: white;
+        }
+        
+        tr:nth-of-type(1) {
+            font-size: 20px;
+        }
+        
+        a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CoffeeCols</h1>
+    <!--导航栏-->
+    <div id="nav">
+
+
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Products</li>
+            <li>Contact</li>
+            <li>Support</li>
+        </ul>
+    </div>
+    <!--简介-->
+    <div id="intro">
+        <span>Your Spiffy Tag Line Goes Here</span>
+        <div id="intro_d">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deleniti aut distinctio porro ullam, officia
+                deserunt sint repellendus laboriosam, nobis ipsum placeat aliquid.</p>
+        </div>
+        <!--<div><img src="images/cappuccino.jpg" alt=""></div>-->
+    </div>
+
+    <!--中间-->
+    <main>
+        <section id="s1">
+            <div><img src="images/1-thumb.jpg" alt=""></div>
+            <h2>coffee 101</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni vitae at, temporibus facere earum tempora velit
+                Iure ducimus, assumenda aliquam!
+            </p>
+        </section>
+
+        <section id="s2">
+            <div><img src="images/2-thumb.jpg" alt=""></div>
+            <h2>All About Beans</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, error molestiae vero. Quia dolor repellat, quos,
+                voluptate! Nemo, molestias?</p>
+        </section>
+
+        <section id="s3">
+            <div><img src="images/3-thumb.jpg" alt=""></div>
+            <h2>Comcapitle Foods</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio animi
+                minus ad!</p>
+        </section>
+
+        <section id="s4">
+            <div><img src="images/4-thumb.jpg" alt=""></div>
+            <h2>Coffee Sizzle</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio animi
+                minus ad!</p>
+        </section>
+
+        <section id="s5">
+            <div><img src="images/5-thumb.jpg" alt=""></div>
+            <h2>Tools Of The Trade</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio animi
+                minus ad!</p>
+        </section>
+
+        <section id="s6">
+            <div><img src="images/6-thumb.jpg" alt=""></div>
+            <h2>The Art of Making Coffee</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio animi
+                minus ad!</p>
+        </section>
+        <section id="s7">
+            <div><img src="images/7-thumb.jpg" alt=""></div>
+            <h2>Coffee Style</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio animi
+                minus ad!</p>
+        </section>
+        <section id="s8">
+            <div><img src="images/1-thumb.jpg" alt=""></div>
+            <h2>Happy Time</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio animi
+                minus ad!</p>
+        </section>
+    </main>
+
+    <footer>
+        <table>
+            <tr>
+                <td>Left Stuff</td>
+                <td>Center Stuff</td>
+                <td>Right Stuff</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio
+                        animi minus ad!</p>
+                    <P>The next line</P>
+                </td>
+                <td>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio
+                        animi minus ad!</p>
+
+                    <P>The next line</P>
+                </td>
+                <td>
+                    <p>&copy <a href="http://www.hhstu.edu.cn" target="_blank">黄河科技学院众创咖啡</a>&#x3000版权所有 </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo perspiciatis autem est distinctio
+                        animi minus ad!</p>
+                </td>
+            </tr>
+
+        </table>
+    </footer>
+</body>
+
+</html>

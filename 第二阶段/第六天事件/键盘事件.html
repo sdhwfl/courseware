@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>键盘事件</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.addEventListener('keypress',function(e){
+				console.log(e.code);
+				console.log(e.charCode);
+                console.log(e.keyCode);
+                
+                if(e.code=='68'&&e.shiftKey){
+                	console.log('您按下了D+shift键');
+                }
+			})
+
+		</script>
+	</body>
+</html>

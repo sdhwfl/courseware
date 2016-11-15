@@ -1,0 +1,79 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>jquery五星评价</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<style>
+			body,
+			ul,
+			li,
+			div {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style-type: none;
+			}
+			
+			ul {
+				width: 150px;
+				margin: 10px auto;
+				overflow: auto;
+			}
+			
+			li {
+				width: 27px;
+				height: 28px;
+				float: left;
+				background: url(img/star.gif) no-repeat 0 0;
+			}
+			
+			div {
+				font-size: 20px;
+				color: red;
+				position: absolute;
+				left: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="myul">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div id="myDiv"></div>
+		<script>
+			$(function() {
+				var lis = $('li');
+				var myDiv = $('#myDiv');
+				for(var i = 0; i < lis.length; i++) {
+					lis[i].index = i;
+					lis[i].onmouseover = function() {
+						$("li").css("background-position", '0 -29px');
+						$(this).nextAll().css("background-position", '0 0')
+
+					}
+
+					var arr = ['很差', '比较差', '一般', '比较好', '非常好'];
+                     //console.log(arr.length)
+					lis[i].onclick = function() {
+						$("li").css("background-position", '0 -29px');
+						$(this).nextAll().css("background-position", '0 0')
+                        //console.log($(this).index())
+                        $('#myDiv').html(arr[$(this).index()])
+					}
+
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

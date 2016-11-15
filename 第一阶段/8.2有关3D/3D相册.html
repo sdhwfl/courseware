@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>3D相册</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            background-image: radial-gradient(ellipse, white, pink, plum, palevioletred);
+        }
+        
+        main {
+            perspective: 50% 50%;
+            position: relative;
+        }
+        
+        h2 {
+            color: aqua;
+            text-shadow: 1px 1px black;
+            animation: s 20s linear infinite;
+        }
+        
+        @keyframes s {
+            from {
+                transform: translateX(0px);
+            }
+            to {
+                transform: translateX(1920px);
+            }
+        }
+        
+        table {
+            height: 150px;
+            width: 600px;
+            margin: 30px auto;
+            padding: 0;
+        }
+        
+        caption {
+            color: hotpink;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        img {
+            border: solid 5px white;
+        }
+        
+        .td1 {
+            background-image: url(images/zzh.jpg);
+            background-size: 96%;
+            background-repeat: no-repeat;
+            z-index: 4;
+            position: relative;
+        }
+        
+        #d1 {
+            position: absolute;
+            bottom: 20px;
+            left: 5px;
+        }
+        
+        td:hover {
+            transform: scale(3);
+        }
+        
+        .td2 {
+            background-image: url(images/lyt.jpg);
+            background-size: 95%;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 3;
+        }
+        
+        div {
+            height: 50px;
+            width: 50px;
+            font-size: 4px;
+            color: #999;
+        }
+        
+        #d2 {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .td3 {
+            background-image: url(images/mr.jpg);
+            background-size: 95%;
+            background-repeat: no-repeat;
+            z-index: 2;
+            position: relative;
+        }
+        
+        #d3 {
+            position: absolute;
+            bottom: 0px;
+            right: 10px;
+        }
+        
+        .td4 {
+            background-image: url(images/hrx.jpg);
+            background-size: 95%;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        #d4 {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+        }
+        
+        main>img:nth-of-type(1) {
+            height: 150px;
+            width: 150px;
+            transform: scale(0.25);
+            border-radius: 50% 50%;
+            position: absolute;
+            top: 300px;
+            left: 260px;
+            z-index: 1;
+        }
+        
+        main>img:nth-of-type(1):hover {
+            transform: rotate(0deg) scale(1) translateX(-150px);
+            border: none;
+        }
+        
+        main>img:nth-of-type(2) {
+            height: 160px;
+            width: 256x;
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+        
+        main>img:nth-of-type(2):hover {
+            transform: translate3d(-200px, -200px, 200px);
+        }
+        
+        main>img:nth-of-type(3) {
+            height: 100px;
+            width: 150px;
+            position: absolute;
+            top: 200px;
+            right: 300px;
+        }
+        
+        main>img:nth-of-type(3):hover {
+            transform: rotateZ(30deg) scale(2);
+        }
+        
+        main>img:nth-of-type(4) {
+            height: 150px;
+            width: 150px;
+            border-radius: 50% 50%;
+            position: absolute;
+            top: 500px;
+            left: 600px;
+        }
+        
+        main>img:nth-of-type(4):hover {
+            transform: rotate(60deg);
+        }
+        
+        main>img:nth-of-type(5) {
+            height: 70px;
+            width: 100px;
+            position: absolute;
+            top: 600px;
+            left: 300px;
+        }
+        
+        main>img:nth-of-type(5):hover {
+            transform: translateX(150px) rotate(45deg) scale(2);
+        }
+        
+        main>img:nth-of-type(6) {
+            height: 160px;
+            width: 116px;
+            position: absolute;
+            right: 100px;
+        }
+        
+        main>img:nth-of-type(6):hover {
+            transform: translateY(300px) translateX(-300PX);
+        }
+        
+        main>section {
+            height: 300px;
+            width: 200px;
+            /*background-color: blue;*/
+            perspective: 1050px;
+            perspective-origin: 30% 80%;
+            position: absolute;
+            right: 30%;
+            top: 400px;
+        }
+        
+        main>section>section {
+            width: 100%;
+            height: 100%;
+            /*变形原点。*/
+            transform-origin: 0% 0% 0px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        main>section>section>img {
+            height: 300px;
+            width: 200px;
+        }
+        
+        #s1 {
+            background-color: aquamarine;
+            transform: rotateY(-40deg);
+            animation: rotate 3s linear;
+        }
+        
+        #s2 {
+            background-color: blueviolet;
+            transform: rotateY(-32deg);
+            animation: rotate 5s linear;
+        }
+        
+        #s3 {
+            background-color: orange;
+            transform: rotateY(-17deg);
+            animation: rotate 7s linear;
+        }
+        
+        #s4 {
+            background-color: hotpink;
+            transform: rotateY(-2deg);
+            justify-content: center;
+            animation: rotate 9s linear;
+        }
+        
+        #s5 {
+            background-color: hotpink;
+            transform: rotateY(-1deg);
+            justify-content: center;
+            animation: rotate 11s linear;
+        }
+        
+        h6 {
+            position: absolute;
+            bottom: -28px;
+            right: 5px;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotateY(-180deg);
+            }
+            to {
+                transform: rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>半妖倾城</h2>
+        <table>
+            <caption>主演表</caption>
+            <tr>
+                <td class="td1">
+                    <div id="d1">
+                        <p>张哲瀚，1991年5月11日出生于江西新余，中国内地男演员，毕业于上海戏剧学院。2010年出演第一部电视剧《怎么会爱上你》夏誉希一角并参加东方卫视综艺节目《家有好男儿》获得第二期冠军；</p>
+                    </div>
+                </td>
+
+                <td class="td2">
+                    <div id="d2">
+                        <p>李一桐，1990年9月6日出生于山东济南，中国内地女演员，毕业于北京舞蹈学院 。2015年，因在试戏中表现突出，李一桐被于正钦点主演民国玄幻网络剧《半妖倾城》，并正式进入演艺圈。</p>
+                    </div>
+                </td>
+
+                <td class="td3">
+                    <div id="d3">
+                        <p>米热，1991年7月20日出生在新疆乌鲁木齐，中国内地演员，毕业于上海戏剧学院2010级表演系，于正工作室签约男演员。</p>
+                    </div>
+                </td>
+
+                <td class="td4">
+                    <div id="d4">
+                        <p>何瑞贤，出生于避暑之都的贵阳，1994年出生，毕业于北京电影学院2012级表演本科，从小学习舞蹈外貌身材十分出众，平时喜欢看书、跳舞和健身。</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <img src="images/0.jpg" alt="">
+        <img src="images/1.jpg" alt="">
+        <img src="images/brs.jpg" alt="">
+        <img src="images/12.jpg" alt="">
+        <img src="images/13.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+
+        <section>
+            <section id="s1">
+                <h6>4</h6>
+                <img src="images/4.jpg" alt="">
+            </section>
+            <section id="s2">
+                <h6>3</h6>
+                <img src="images/6.jpg" alt="">
+            </section>
+            <section id="s3">
+                <h6>2</h6>
+                <img src="images/20.jpg" alt=""></section>
+            <section id="s4">
+                <h6>1</h6>
+                <img src="images/ne.jpg" alt=""></section>
+
+            <section id="s5">
+                <h6>0</h6>
+                <img src="images/24.jpg" alt=""></section>
+        </section>
+        </section>
+
+    </main>
+</body>
+<html>

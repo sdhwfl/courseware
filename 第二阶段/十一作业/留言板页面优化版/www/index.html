@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>留言系统</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+</head>
+
+<body>
+  <main class="main">
+    <ul class="message-add clearfix">
+      <li>
+        <label>标题：</label>
+        <!-- required 必须填写内容-->
+        <!-- pattern -->
+        <input type="text" class="input-text" name="title" id="title" required>
+      </li>
+      <li>
+        <label>内容：</label>
+        <textarea class='textarea' name="content"></textarea>
+      </li>
+      <li>
+        <label>&nbsp;</label>
+        <input class="submit-btn" type="submit" value="提交留言">
+      </li>
+    </ul>
+    <ul class="message-list clearfix">
+      <li>
+        <h2>全球最大的中文搜索引擎、最大的中文网站</h2>
+        <p class="pinfo"><span class="span-ip">ip地址：192.168.3.185</span>
+          <span class="span-time">发布时间：2016-09-29</span></p>
+        <p class="pcontent">百度拥有</p>
+      </li>
+    </ul>
+  </main>
+  <script>
+    $(function(){
+     //加载留言
+     function jiazai(){
+       $.get('/load',"title="+title+"&content"+content,function(response,statusText,xhr){
+          var messobj=JSON.parse('['+response+']');
+          console.log(messobj);
+          $('.message-list').html('');
+ 
+//        var ip1 = "::ffff:192.168.3.241";
+//      //处理ip
+//      function formatIp(ip) {
+//        if (ip.slice(0, 7) == ("::ffff:")) {
+//          return ip.slice(7)
+//        }
+//        if (ip == "::1") {
+//          return '127.0.0.1';
+//         }
+//       }
+          messobj.forEach(function(ele,ind){
+          
+              var li = "<li>" + "  <h2>" + ele.title + "</h2>" + "  <p class=\"pinfo\"><span class=\"span-ip\">ip地址：" +formatIp( ele.ip) + "</span>" + "  <span class=\"span-time\">发布时间：" +  ele.time + "</span></p>" + "  <p class=\"pcontent\">" + ele.content + "</p>" + "</li>";
+             $('.message-list').append(li);
+          })
+       })
+     }
+     jiazai();
+     
+     //增加留言
+     $('.submit-btn').click(function(){
+       var title = $('#title').val();
+       var content = $('textarea').val();
+       
+      $.get('/add',"title="+title+"&content="+content,function(response,statusText,xhr){
+       if(statusText=='success'){
+         if(response='ok'){
+           jiazai();
+         }
+       }
+      })
+     })
+     
+     
+   })
+  </script>
+</body>
+
+</html>

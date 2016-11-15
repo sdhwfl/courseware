@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>样式继承</title>
+    <style>
+        body {
+            color: green;
+            /*body的color样式，应用到了body中的所有标签中*/
+            /*子元素会直接应用父元素的样式，这就是样式继承*/
+            width: 200px;
+            height: 200px;
+            /*并不是任何样式都可以继承给子元素*/
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: line-through;
+            font-family: "华文新魏";
+            margin: 30px auto;
+            line-height: 200%;
+            /*可以继承给子元素的样式：*/
+            /*结论：大多跟字体相关的属性（样式）是可以继承的，给盒模型相关的一般是不能继承的*/
+        }
+    </style>
+</head>
+
+<body>
+    <h3>三级标题</h3>
+    <address>
+            作者信息
+        </address>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente doloribus, fugit adipisci et est maxime repellat repellendus
+        quos, ullam non asperiores iure. Voluptates ex omnis dolor, eos laborum fuga blanditiis. Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Ad magnam tenetur, nihil nesciunt tempore dignissimos dolores, fugiat sapiente earum
+        inventore dolore architecto saepe vel laudantium aut iure illo ut non.
+    </p>
+    <section>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed fugit, veritatis perspiciatis, fuga voluptatum hic
+            vero asperiores nemo voluptatibus neque quod in sunt aut dolores, vitae ducimus dolorum incidunt, quas.</p>
+    </section>
+</body>
+
+</html>

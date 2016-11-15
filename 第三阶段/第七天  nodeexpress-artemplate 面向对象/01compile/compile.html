@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>compile语法</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<script src="js/template.js"></script>
+		<style type="text/css">
+			.tages span {
+				display: inline-block;
+				height: 24px;
+				line-height: 24px;
+				font-size: 14px;
+				padding: 0 8px;
+				background-color: pink;
+				margin-right: 15px;
+				margin-bottom: 20px;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="contain"></div>
+		
+		<script type="text/javascript">
+		var source='<div class="tages">' +'{{each tages as tage}}' +
+			'<span>'+'{{tage}}</span>{{/each}}' +'</div>';
+		
+			var data = {
+				tages: ["html", "css", "javascript", "jQuery"]
+			}
+			//template.compile(source) 返回一个渲染函数
+			//template.compile(source)
+			//把模板写在js文件中
+			var render = template.compile(source);
+			console.log(render)
+			//render(data);给渲染函数传一个数据
+             var html=render(data);
+			$(".contain").html(html);
+		</script>
+	</body>
+
+</html>

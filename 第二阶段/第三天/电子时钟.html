@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>电子时钟</title>
+	</head>
+	<style type="text/css">
+		main {
+			height: 300px;
+			width: 600px;
+			margin: 30px auto;
+			background-color: pink;
+			border: solid 3px red;
+			/*设置定位为相对定位，给于子元素当做参考*/
+			position: relative;
+			/*对齐方式*/
+			text-align: center;
+			background-image: url(0.jpg);
+			background-size: 100% 100%;
+		}
+		
+		#time {
+			width: 380px;
+			height: 250px;
+			position: absolute;
+			left: 10px;
+			top: 25px;
+			background-color: lightblue;
+			font-size: 80px;
+			/*设置行高等于内容高度，为了让内容居中 */
+			line-height: 250px;
+			color: red;
+		}
+		
+		#date {
+			width: 195px;
+			height: 100px;
+			position: absolute;
+			right: 10px;
+			top: 25px;
+			background-color: lightblue;
+			font-size: 24px;
+			line-height: 100px;
+			color: blue;
+		}
+		
+		#weather {
+			width: 195px;
+			height: 145px;
+			position: absolute;
+			right: 10px;
+			top: 130px;
+			background-color: lightblue;
+			font-size: 40px;
+			line-height: 145px;
+			color: yellow;
+		}
+	</style>
+
+	<body>
+		<main>
+			<!--//练习 通过日期事件对象获取当前日期和时间 ，并通过页面的形式显示出来-->
+			<div id="time">
+				<!--10:46:33-->
+			</div>
+			<div id="date">
+				<!--2016年8月31号-->
+			</div>
+			<div id="weather">
+				晴天
+			</div>
+		</main>
+		<script type="text/javascript">
+			//通过日期时间对象 获取正确的日期 以及时分秒
+			//对日期进行拼接，显示在日期区域
+
+			var myDate = new Date();
+			  document.getElementById('date').innerHTML =
+				myDate.getFullYear() + '年' + (myDate.getMonth() + 1) + '月' + myDate.getDate() + '日';
+
+			 function updatetime() {
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds();
+
+				//         三元运算符：通过一个条件进行判断，满足时，取问号后面的值，不满足的时候取冒号后面的值
+				//				hour = hour < 10 ? "0" + hour : hour;
+				//				minute = minute < 10 ? "0" + minute ://否则 minute;
+				//				second = second < 10 ? "0" + second : second;
+
+				if(seconds < 10) {
+					seconds = '0' + seconds;
+				} else {
+					seconds = seconds;
+				}
+				if(minutes < 10) {
+					minutes = '0' + minutes;
+				} else {
+					minutes = minutes;
+				}
+				if(hours < 10) {
+					hours = '0' + hours;
+				} else {
+					hours = hours;
+				}
+				document.getElementById('time').innerHTML = hours + ':' + minutes + ':' + seconds;
+
+			}
+			updatetime();
+			//更新时间
+			setInterval(updatetime, 1000);
+			//通过class名获取函数内部内容
+			//			document.getElementsByClassName('time')[0].innerHTML =date.getHours();
+			//			三元运算符
+			//判断15>10,是否为真，为真取15，假取10;
+			//			var value = (15 > 10) ? 15 : 10;
+			//			document.write(value);
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>flex容器属性</title>
+    <style>
+        section {
+            height: 400px;
+            width: 600px;
+            background-color: yellowgreen;
+            margin: 0 auto;
+            /*开启弹性布局*/
+            display: flex;
+            /*
+            1.flex-direction属性决定属性主轴的方向（也就是项目的排列方向）
+            默认值：主轴为水平方向，起点在左端
+            flex-direction: row;
+            主轴为水平方向，起点在右端
+            flex-direction: row-reverse;
+            主轴为垂直方向，起点在上沿
+            flex-direction: column;
+            主轴为垂直方向，起点在下沿
+            flex-direction: column-reverse;
+            */
+            /*
+           2. flex-wrap属性：换行
+            默认属性不换行
+            flex-wrap:nowrap;
+            换行，第一行在最上方
+            flex-wrap: wrap;
+            换行，第一行在下方
+            flex-wrap: wrap-reverse;
+            */
+            /*3.flex-flow：flex-wrap和flex-direction的缩写
+            默认值为row nowrap
+           元素纵向排列，换行
+            flex-flow: column wrap;
+             */
+        }
+        
+        span {
+            height: 100px;
+            width: 100px;
+            background-color: hotpink;
+            margin: 10px;
+        }
+        
+        section:nth-of-type(2) {
+            height: 400px;
+            width: 600px;
+            background-color: cadetblue;
+            margin: 20px auto;
+            /*开启弹性布局*/
+            display: flex;
+            /*4.justify-content定义了项目在主轴上的对齐方式
+            左对齐
+            justify-content: flex-start;
+            右对齐
+            justify-content: flex-end;
+            居中对齐
+            justify-content: center;
+            两端对齐 元素之间的间距相等
+            justify-content: space-between;
+            每个项目两侧的间隔相等，项目之间的间隔比项目与边框之间的间隔大两倍
+            justify-content: space-around;*/
+            /*5.align-items属性：定义项目在交叉轴上如何对齐
+            交叉轴的起点对齐
+            align-items: flex-start;
+            交叉轴的终点对齐
+            align-items: flex-end;
+            交叉轴的中间对齐
+            align-items: center;
+           默认值，如果元素为设置高度或者为auto，将占据整个容器的高度
+          align-items: stretch;
+          项目第一行文字的基线对齐
+          align-items: baseline; */
+            /*6.align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。*/
+           
+        }
+        
+        div {
+            /*height: 100px;*/
+            width: 100px;
+            background-color: burlywood;
+            margin: 10px;
+        }
+        
+        div:nth-of-type(1) {
+            height: 100px;
+        }
+        
+        div:nth-of-type(2) {
+            height: 150px;
+        }
+        
+        div:nth-of-type(3) {
+            height: 200px;
+            font-size: 50px;
+        }
+        
+        div:nth-of-type(4) {
+            height: 240px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!--<div>第1个div</div>
+            <div>第2个div</div>
+            <div>第3个div</div>-->
+        <span>第1个span</span>
+        <span>第2个span</span>
+        <span>第3个span</span>
+        <span>第4个span</span>
+        <span>第5个span</span>
+        <span>第6个span</span>
+    </section>
+    <section>
+        <div>第1个div</div>
+        <div>第2个div</div>
+        <div>第3个div</div>
+        <div>第4个div</div>
+
+
+    </section>
+</body>
+<html>

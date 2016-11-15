@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片精灵二次练习</title>
+    <style>
+        span {
+            background-image: url(images/bq.png);
+            /*background-repeat: no-repeat;*/
+            height: 31px;
+            width: 31px;
+            display: inline-block;
+        }
+        
+        .s1 {
+            background-position: -31px -31px;
+        }
+        
+        .s2 {
+            background-position: 0px 31px;
+        }
+        
+        .s3 {
+            /*background-position: -124px -124px;*/
+            background-position: 62px 62px;
+        }
+        
+        .s4 {
+            /*平移参考点图片的左上角*/
+            /*向左平移 向上平移 负值*/
+            /*向右平移 向下平移 正值*/
+            /*此处移动的是背景：不是标签*/
+            /*background-position: -432.855px -432.855px;*/
+            /*background-position: -155px -155px;*/
+            background-position: 31px 31px;
+        }
+        
+        .s5 {
+            background-position: -62px -62px;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="s1"></span>
+    <span class="s2"></span>
+    <span class="s3"></span>
+    <span class="s4"></span>
+    <span class="s5"></span>
+</body>
+
+</html>

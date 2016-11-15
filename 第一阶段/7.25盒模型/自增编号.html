@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自增编号</title>
+    <style>
+        /*count_reset count计数器，reset重置*/
+        /*当我们遇到body时对figure进行初始值设置*/
+        
+        body {
+            /*默认初始化为0*/
+            /*对figure进行初始值计数*/
+            counter-reset: figure;
+        }
+        /*count-increment increment增值*/
+        /*当遇到figure时进行计数*/
+        /*此处也可以对figcaption进行设置*/
+        
+        figure {
+            /*figure 被计数的对象 1每次增值的次数*/
+            /*没遇到figure一次 计数器加1*/
+            counter-increment: figure 1;
+        }
+        /*在标题前面添加内容*/
+        
+        figcaption:before {
+            content: '图片' counter(figure)':';
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <img src="images/1.jpg" alt="">
+        <figcaption>图片标题</figcaption>
+    </figure>
+    <figure>
+        <img src="images/2.jpg" alt="">
+        <figcaption>图片标题</figcaption>
+    </figure>
+    <figure>
+        <img src="images/3.jpg" alt="">
+        <figcaption>图片标题</figcaption>
+    </figure>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title></title>
+    <style>
+        body {
+            margin: 0 auto;
+            /*text-align: center;*/
+        }
+        
+        span,
+        a,
+        em {
+            width: 300px;
+            height: 200px;
+            /*这类元素会占据尽可能少的空间，并且会一个紧贴一个从左向右，从上到下排列*/
+            /*行元素：不受宽高的限制，只有在一行无法完全显示的时候，才会换行显示 对应的display属性是inline*/
+        }
+        
+        span {
+            display: block;
+            height: 60px;
+            width: 200px;
+            background-color: green;
+            border: 1px solid black;
+        }
+        
+        p,
+        div,
+        section {
+            height: 100px;
+            width: 200px;
+            background-color: pink;
+            border: 2px solid blue;
+            margin-top: 30px;
+            /*块元素：这种元素受宽高的影响，每个元素会默认占据一行，即使右侧有大量的空间，这种元素也不会去占据 对应的display属性值block*/
+        }
+        
+        div {
+            display: inline;
+        }
+        
+        img {
+            height: 400px;
+            width: 300px;
+            /*行内块元素，即受宽高的影响，又可以在一行内显示多个 对应的属性值：inline-block*/
+        }
+        /*元素默认都有一个属性，可以通过修改display属性，从而改变显示效果*/
+        
+        table {
+            height: 400px;
+            width: 300px;
+            background-color: yellow;
+            /*将表格属性显示为行内表格 ，让表格可以在同一行内显示多个*/
+            display: inline-table;
+            text-align: center;
+            vertical-align: top;
+        }
+        
+        td {
+            /*垂直方向对齐方式 top center bottom*/
+            vertical-align: bottom;
+        }
+        
+        section {
+            text-align: center;
+            /*1.设置行高等于元素内容高度*/
+            /*line-height: 100px;*/
+            /*2.使用box相关属性*/
+            /*display: -moz-box;*/
+            /*水平对齐*/
+            /*-moz-box-pack: center;*/
+            /*垂直对齐*/
+            /*-moz-box-align: center;*/
+        }
+        
+        article>i {
+            margin-left: 50px;
+            /*列表子项*/
+            display: list-item;
+            /*去除项目列表标志*/
+            /*list-style-type: none;*/
+            /*list-style-type: circle;
+            list-style-type: square;*/
+        }
+    </style>
+</head>
+
+<body>
+    <span>span标签</span>
+    <a href="">a标签</a>
+    <em>em标签</em>
+
+    <p>p标签</p>
+    <div>div标签</div>
+    <section>section标签</section>
+    <img src="images/0.jpg" alt="">
+    <img src="images/9.jpg" alt="">
+    <table border="1">
+        <!--(tr>td{内容}*3)*2-->
+        <tr>
+            <td>内容</td>
+            <td>内容</td>
+            <td>内容</td>
+        </tr>
+        <tr>
+            <td>内容</td>
+            <td>内容</td>
+            <td>内容</td>
+        </tr>
+        <img src="images/0.jpg" alt="">
+    </table>
+
+    <table border="1">
+        <!--(tr>td{内容}*3)*2-->
+        <tr>
+            <td>内容</td>
+            <td>内容</td>
+            <td>内容</td>
+        </tr>
+        <tr>
+            <td>内容</td>
+            <td>内容</td>
+            <td>内容</td>
+        </tr>
+        <img src="images/9.jpg" alt="">
+    </table>
+    <!--article>i{article中的i}*3-->
+    
+    <article>
+        <i>ariticle中的i</i>
+        <i>ariticle中的i</i>
+        <i>ariticle中的i</i>
+    </article>
+    
+</body>
+<html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>artTemplate语法</title>
+  <script src='jquery-2.0.3.js'></script>
+  <script src='template.js'></script>
+  <style type="text/css">
+  .tags span {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    padding: 0px 8px;
+    background-color: #aaa;
+    color: #000;
+    margin-right: 15px;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="contain"></div>
+  <!-- 模板是通过 script标签 并 type改 type="text/html" 写一个模板的-->
+  <!-- 即不是一个Javascript 语言不会报错  另外也不显示在页面中 -->
+  <script id="test" type="text/html">
+    <!-- 模板 -->
+    <h1>{{title}}</h1>
+    <div>{{#content}}</div>
+    <div>{{content}}</div>
+    {{if price ==0}}
+    <div style="color: red">免费</div>
+    {{else}}
+    <div>{{price}}元</div>
+    {{/if}}
+    <div class="tags">
+      {{each tags as ele ind}}
+      <span>{{ele}}</span> 
+      {{/each}}
+    </div>
+    <div class="links">
+      {{each links as link}}
+        {{if link.type == "img"}}
+          <a href="{{link.link}}"><img src="{{link.img}}" width="100" height="100"></a>
+        {{else}}
+          <a href="{{link.link}}">{{link.text}}</a> 
+        {{/if}}
+      {{/each}}
+    </div>
+    <div class="links">
+      {{each links as value index}}
+        {{if value.type == "img"}}
+          {{include "imglink" value}}
+        {{else}}
+          {{include "textlink" value}}
+        {{/if}}
+      {{/each}}
+    </div>
+  </script>
+  <!-- 图片友情链接模板 -->
+  <script id="imglink" type="text/html">
+    <a href="{{link}}"><img src="{{img}}" width="100" height="100"></a>
+  </script>
+  <!-- 文字友情链接模板 -->
+  <script id="textlink" type="text/html">
+    <a href="{{link}}">{{text}}</a>
+  </script>
+  <script type="text/javascript">
+  // 数据
+  var data = {
+      title: "我是一个标题",
+      content: "<div style='color:red'>我是一个内容</div>",
+      price: 0,
+      tags: ["html", "css", "javascript", "jQuery"],
+      links: [{
+        type: "text",
+        text: "百度",
+        link: "http://www.baidu.com"
+      }, {
+        type: "text",
+        text: "soso搜索",
+        link: "http://www.soso.com"
+      }, {
+        type: "img",
+        img: "./img02.jpg",
+        link: "http://www.sogo.com"
+      }, {
+        type: "img",
+        img: "./img01.jpg",
+        link: "http://www.baidu.com"
+      }]
+    }
+    // template("test",data)方法
+    // 第一个参数：模板的id名称 document.getElementById()
+    // 第二个参数：数据对象
+  var html = template("test", data);
+  // console.log(html);
+  $(".contain").html(html);
+  </script>
+</body>
+
+</html>

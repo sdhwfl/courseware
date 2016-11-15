@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>属性选择器</title>
+    <style>
+        /*1.[xxxx] 选择带有xxxx元素的所有元素*/
+        
+        [target] {
+            color: red;
+        }
+        /*2.[xxxx=mmmm选择xxxx=mmmm的所有元素]*/
+        
+        [title=duanluo1] {
+            color: blue;
+        }
+        /*3.~=*/
+        /*找到title属性值中包含duan的元素*/
+        
+        [title~="duan"] {
+            font-size: 30px;
+            color: deeppink;
+        }
+        /*|=以某个单词开头 ,此处针对以_连接的单词，如duan_luo*/
+        
+        [ title |="en"] {
+            text-decoration: line-through;
+        }
+        /*5.^=以某个值开头的元素*/
+        
+        address[title^=one] {
+            font-size: 50px;
+        }
+        /*6.$= 以某个值结尾的元素*/
+        
+        address[title$=ress] {
+            color: orange;
+        }
+        /*7.*=包含*/
+        address[title*=add]{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <address title="oneaddress">
+        address第一个
+    </address>
+    <address title="twoaddress">
+        address第二个
+  </address>
+    <p title="luo 3">燕子去了，有再来的时候；杨柳枯了，有再青的时候，桃花谢了，有再开的时候。但是，聪明的，你告诉我，我们的日子为什么一去不复返呢？——是有人偷了他们罢：那是谁？又藏在何处呢？是他们自己逃走了罢：现在又到了那里呢？
+    </p>
+    <p title="en-luo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quasi rem, iste vero pariatur! Deleniti Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Eaque magni, tenetur placeat? Nemo ratione sapiente quas libero nesciunt
+        est, delectus, accusantium illo dolorem adipisci esse ullam inventore praesentium officiis, suscipit?p ossimus vitae
+        est exercitationem reprehenderit inventore deserunt cum neque recusandae! Enim, temporibus nemo quo deleniti.</p>
+    <p title="duan luo 2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae voluptatem pariatur nobis nulla numquam natus itaque
+        iusto, sed commodi saepe dolorum aspernatur illum et adipisci laudantium debitis. Rem illum, unde?</p>
+
+</body>
+
+</html>

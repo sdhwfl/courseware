@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="author" content="宋典花">
+    <title>Get请求的示例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: beige;
+        }
+        .container {
+            height: 300px;
+            width: 600px;
+            margin: 30px auto;
+        }
+        .container h1{
+            color: hotpink;
+        }
+        .container form input {
+            margin-top: 20px;
+        }
+        .container form .submit{
+            border: none;
+            height: 30px;
+            width: 60px;
+            background-color: hotpink;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>个人表单的提交GET请求</h1>
+    <!--此处的method="get"可写可不写 默认的请求方式是get-->
+    <form action="/user" method="get">
+        <input type="text" name="username" placeholder="请输入姓名"><br>
+        <input type="text" name="age" placeholder="请输入年龄"><br>
+        <input type="submit" value="提交后台" class="submit">
+    </form>
+</div>
+
+</body>
+</html>

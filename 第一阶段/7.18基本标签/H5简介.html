@@ -1,0 +1,127 @@
+<!--DOCTYPE主要告诉浏览器，当前采用的是html第五个版本-->
+<!DOCTYPE html>
+<!--html是网页文件最外层标签对-->
+<html lang="en">
+<!--head网页的头-->
+
+<head>
+    <!--设置编码格式：防止出现乱码-->
+    <meta charset="UTF-8">
+    <!--title网页在浏览器标签页那个地方显示的内容-->
+    <title>H5简介</title>
+    <style>
+        /*将要设置样式的那个标签(元素){
+           将要设置的属性：属性值
+       }*/
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            height: 100%;
+            /*背景颜色*/
+            background-color: black;
+            /*字体颜色*/
+            color: red;
+            /*字体大小*/
+            font-size: 20px;
+            /*字体*/
+            font-family: "华文行楷";
+            /*加粗*/
+            font-weight: bold;
+            /*字体样式:倾斜*/
+            font-style: italic;
+            /*字体对齐方式：居中*/
+            text-align: center;
+        }
+        
+        h2 {
+            /*字体对齐方式：右对齐*/
+            text-align: right;
+            color: slateblue;
+        }
+        
+        h3 {
+            color: blue;
+        }
+        
+        h4 {
+            color: green;
+        }
+        
+        h5 {
+            color: lightcoral;
+        }
+        
+        h6 {
+            color: cyan;
+        }
+        
+        p {
+            color: deeppink;
+            font-size: 28px;
+            text-indent: 2em;
+            /*缩进两个字体的长度*/
+        }
+        
+        /*img {
+            animation: rotate 10s linear infinite;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0) translateY(0px) translateZ(0) scale(1);
+            }
+            to {
+                transform: rotate(360deg) translateY(500px)translateZ(500px) scale(0);
+            }
+        }*/
+        address{
+            font-style: nomal;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!--h1-h6文档的标题，1到6字体逐渐减小-->
+    <!--各级标题都与自己的字体大小，还带有默认的上下文间距和加粗效果。-->
+    <!--一般情况下：如果文章中只有一个标题，默认为一级-->
+    <h1>标签标题一级</h1>
+    <h2>标签标题二级</h2>
+    <h3>标签标题三级</h3>
+    <h4>标签标题四级</h4>
+    <h5>标签标题五级</h5>
+    <h6>标签标题六级</h6>
+    <address>2016-07-18 作者信息</address>
+    <address>默认字体是斜体 </address>
+    <!--&nbsp：non-breaking spance不换行的空格-->
+    <!--10&nbspkm，这两个永远不分开-->
+    <!--&nbsp：会出现字体错乱现象 
+    解决办法：使用#x3000;中文空格，解决对齐错乱的问题-->
+    <!--p文档的段落-->
+    <p>大家好！我是邱比龙</p>
+    <!--src:图片资源路径，一般采用相对路径 alt：图片未能正确显示的时候，给用户一个文字提示-->
+
+    <img src="q1.gif" alt="不好意思，邱比龙走丢了" title="这是图片的标题 小可爱邱比龙">
+    <!--几乎所有的标签都支持title属性-->
+    <!--超链接<a href=""></a>主要进行页面的跳转，默认在本窗口打开新标签界面-->
+    <!--target="_blank"在新窗口中打开页面-->
+    <!--国内喜欢新窗口打开新页面，国外喜欢老窗口打开界面，看完后直接返回到上一个界面-->
+    <!--原因有
+    1.用户习惯
+    2.商业考虑
+    3.硬件和网络环境不同
+    -->
+     <!--1.hr：显示横线
+    <br>
+    font-size:改边字体大小 line-height改变行高
+    time：标出时间-->
+  
+    
+</body>
+
+</html>

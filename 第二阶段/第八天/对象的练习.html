@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>对象的练习</title>
+	</head>
+
+	<body>
+		<!--游戏中的英雄-->
+		<!--英雄的属性：
+			属性：
+			姓名 剑圣
+			生命值 1000
+			魔法值 800
+			速度  100
+			护甲   50
+			
+			方法：
+			α突袭
+			冥想	
+		-->
+		<script type="text/javascript">
+			//创建一个对象，充当属性和方法的容器
+			//属性
+			var hero = new Object();
+			hero.cnname = '剑圣';
+			hero.enname = 'jiansheng';
+			hero.blood = 1000;
+			hero.magic = 800;
+			hero.armour = 50;
+            //方法
+			hero.alphatuxi = function() {
+				alert('杀伤力极强');
+			}
+			hero.meditation = function() {
+				this.blood += 700;
+				this.armour += 100;
+				alert('生命值：' + this.blood + '护甲：' + this.armour);
+			}
+			//hero.meditation();
+
+			//如何通过字面量的方式创建对象
+			//大括号内部以键值对的形式构建数据 键值对以逗号隔开，键值以冒号连接
+			var myhero = {
+				'cnname': '剑圣',
+				'enname': 'jiansheng',
+				'magic': 800,
+				'armour': 100,
+			}
+			console.log(myhero);
+			
+			
+		</script>
+
+	</body>
+
+</html>

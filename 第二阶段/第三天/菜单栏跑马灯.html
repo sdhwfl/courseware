@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>跑马灯3</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		var str="  菜单栏跑马灯      ";
+		
+		function check(){
+			str=str.substr(1)+str.substr(0,1);
+			document.title=str;
+			setTimeout('check()',500)
+		}
+		check();
+		</script>
+	</body>
+
+</html>

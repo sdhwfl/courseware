@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--以上代码告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面。 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动设备会读取viewport设置，并按照设置的要求渲染页面。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="宋典花">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>栅格布局初体验</title>
+
+
+    <style>
+        /*设置背景颜色*/
+        
+        .col-lg-4 {
+            background-color: hotpink;
+        }
+        /*给第二个div设置背景颜色*/
+        
+        .col-lg-4:nth-of-type(2) {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--创建一个行row-->
+        <div class="row">
+            <div class="col-lg-4   col-md-12  col-xs-12">
+             三级标题
+            </div>
+
+            <div class="col-lg-4  col-md-6  col-xs-12">
+                col-xs-4单元格
+            </div>
+            <div class="col-lg-4  col-md-6 col-xs-12">
+                col-xs-4单元格
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-lg-4   col-md-12  col-xs-12">
+                col-xs-4单元格
+            </div>
+
+            <div class="col-lg-4  col-md-6  col-xs-12">
+                col-xs-4单元格
+            </div>
+            <div class="col-lg-4  col-md-6 col-xs-12">
+                col-xs-4单元格
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!--xs：特小号 extra small 手机
+    sm：小号 small 平板电脑
+    md：中号 middle/medium 台式机 个人笔记本电脑
+    lg：大号 large 街头广告大屏显示仪 大型显示设备
+    offset 偏移量
+    -->
+</body>
+<html>

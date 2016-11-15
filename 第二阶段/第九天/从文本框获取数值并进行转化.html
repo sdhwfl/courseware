@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>从文本框获取数值并进行转化</title>
+	</head>
+
+	<body>
+		<input onchange="gaibian()" name="myinput" id="myinput" value="" /><br />
+		<script type="text/javascript">
+			
+            
+			function gaibian() {
+				var myinput = document.getElementById('myinput').value;
+				
+				var fudian = parseFloat(myinput);
+				document.write(fudian+ '<br>');
+				
+				var zhengxing = parseInt(myinput);
+				document.write(zhengxing );
+			}
+
+			//小数保留两位小数 用tofixed
+			var a = 3.1415926;
+			var b = 3.1415926;
+			var c = 3.1415926;
+			a1 = a.toFixed(2); //保留2位但结果为一个String类型
+			b1 = parseFloat(b); //将结果转换会float
+			//用一步的话如下
+			c1 = parseFloat(c.toFixed(2));
+			console.log(typeof(a1));
+			console.log(typeof(b1));
+			console.log(typeof(c1));
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+总结：
+	1. 使用XHR发起请求
+	请求行：
+	xhr.open('GET','url',true);
+	请求头：
+	注意：一定open()之后 send()之前
+	xhr.setRequestHead('name','value');
+	空格
+		不需要任何控制
+	请求体
+	xhr.send();  // 发送请求体
+
+	2. 在nodeJs服务器上就会接收到这个请求数据
+	请求行
+	获取请求行
+	请求头
+	获取请求头
+	req.headers 所有请求头
+	req.get('Content-Type')  获取一个请求头
+	请求体
+	get请求
+	req.query 获取请求体里的内容  （对象）
+	req.query.name 获取请求体里的一个内容 
+
+	post请求          body-parser中间插件
+	req.body 获取请求体里的内容  （对象）
+	req.body.name  获取请求体里一个内容
+
+	post请求 数据格式 如果 multipart/formdata  multer中间插件
+	req.body 获取请求体里的内容  （对象）
+	req.body.name  获取请求体里一个内容
+
+	3. 在nodeJs服务器上响应数据
+	响应行
+	res.status(200)  // 成功处理
+	响应头
+	res.set('name','value') 设置一个响应头
+	res.set({...}) 设置多个响应头
+	响应体
+	res.send(); 响应一个内容  一般情况字符串
+	res.json({}); 响应一个json数据
+
+	4. 在浏览器部分接收响应数据
+	设置onreadystatechange 回调函数
+	xhr.readystate == 4 成功返回
+	响应行接收
+	xhr.status == 200 成功
+	响应头接收
+	xhr.getResponseHeader('name') // 接收一个响应头
+	xhr.getAllResponseHeaders()// 接收所有响应头
+
+	响应体接收
+	xhr.responseText
+	xhr.responseXML
+	
+
+
+
+

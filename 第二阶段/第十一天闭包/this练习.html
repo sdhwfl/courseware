@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>this练习</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var name='wfl';
+			var age=18;
+			function test(){
+				console.log(this);//window
+				this.name='sdh';
+				this.age=16;
+				console.log(this);//window
+				//当成普通函数调用的时候，this指向window 当成构造函数调用的时候this指向新创建的对象
+			}
+			test();//普通的函数调用
+			var objc=new test();
+			
+			//总结：this指向的对象只有两个一个是window 一个是对象本身
+			//参考网站
+			//http://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/
+			//http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html
+			//https://segmentfault.com/a/1190000003046071
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>title</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			dl {
+				margin: 0 auto;
+				margin-top: 40px;
+				width: 150px;
+				padding: 10px 20px;
+				border: 1px solid #666;
+				border-radius: 8px;
+			}
+			
+			dl input {
+				margin-right: 5px;
+			}
+			
+			dl dd {
+				margin-top: 15px;
+			}
+			
+			dl dd p {
+				padding: 4px 0;
+			}
+		</style>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+			//全选点击效果
+			$('#checkAll').click(function() {
+					//当前点击后checkAll的状态
+					var ischecked = $(this).prop('checked');
+					//所有项目的状态都和checkall的状态一致
+					$('dd input').prop('checked', ischecked);
+				})
+				//反选点击效果
+			$('a').click(function() {
+					//项目的反选
+					$('dd input').each(function() {
+							//每一个项目的状态取反
+							$(this).prop('checked', !$(this).prop('checked'));
+						})
+						//全选按钮要不要选
+
+					if($('dd input').length == $('dd input:checked').length) {
+						//通过判断选中状态的和项目的总数来判定是不是全选
+						$('#checkAll').prop('checked', true);
+					} else {
+						$('#checkAll').prop('checked', false);
+					}
+
+				})
+				//项目点击效果
+			$('dd').on('click', 'input', function() {
+				if($('dd input').length == $('dd input:checked').length) {
+					//通过判断选中状态的和项目的总数来判定是不是全选
+					$('#checkAll').prop('checked', true)
+				} else {
+					$('#checkAll').prop('checked', false)
+				}
+			})
+			
+			$('button').on('click',function(){
+				var $val = $('<p><input type="checkbox"></input><label for="item1"></label></p>')
+				$val.find('label').html($('#txt').val())
+				$val.appendTo($('dd'))
+			})
+		})
+	</script>
+
+	<body>
+		<dl>
+			<dt>
+            <input type="checkbox" id="checkAll" value="">
+            <label for="checkAll">全选</label>
+            &nbsp;
+            <a href="javascript:;">反选</a>
+            <button>添加选项</button>
+            <input type="text" name="txt" id="txt" value="">
+        </dt>
+			<dd>
+				<p><input type="checkbox" id="item1"><label for="item1">选项1</label></p>
+				<p><input type="checkbox" id="item2"><label for="item2">选项2</label></p>
+				<p><input type="checkbox" id="item3"><label for="item3">选项3</label></p>
+				<p><input type="checkbox" id="item4"><label for="item4">选项4</label></p>
+				<p><input type="checkbox" id="item5"><label for="item5">选项5</label></p>
+			</dd>
+		</dl>
+	</body>
+
+</html>

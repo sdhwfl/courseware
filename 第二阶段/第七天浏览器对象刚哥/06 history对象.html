@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="author" content="charles">
+    <title></title>
+    <style>
+        progress{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+<h1>页面3</h1>
+<button onclick="goPage1()">后退到底</button>
+<button onclick="progress(25)">进度25%</button>
+<button onclick="progress(50)">进度50%</button>
+<button onclick="progress(75)">进度75%</button>
+<button onclick="progress(100)">进度100%</button>
+<a href="04%20history对象.html">跳转到页面1</a>
+<div>
+    <progress max="100" value="0"></progress>
+</div>
+<script>
+    function goPage1(){
+    	//0代表当前页面 ,-1代表上一个页面 ,1下一个页面
+        history.go(-2)
+        //前进或后退指定的步数
+    }
+
+
+    function progress(value) {
+        document.querySelector('progress').value = value
+        //通过history.pushstate将value的值记录下来
+        //history.pushstate(state,title,url)
+        //把当前的URL和state加入到hisTory中，并用新的state和URL替换当前的地址
+        history.pushState(value, '进度' + value, '#' + value)
+        document.title = '进度' + value
+    }
+
+    //每次后退的情况下，都会触发onpopstate事件
+    //
+    window.onpopstate = function(e){
+        var value = e.state
+        console.log(value)
+
+        document.querySelector('progress').value = value
+        document.title = '进度' + value
+    }
+</script>
+
+</body>
+</html>

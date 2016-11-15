@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>输入法选择</title>
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+			
+			#myDiv {
+				height: 120px;
+				width: 100px;
+				border: solid 1px dodgerblue;
+				margin: auto;
+				text-align: left;
+			}
+			
+			#myDiv>a {
+				display: block;
+				height: 40px;
+				width: 100px;
+				text-decoration: none;
+			}
+			
+			#myDiv>a:hover {
+				background-color: #eee;
+			}
+			
+			#myDiv>button {
+				height: 40px;
+				width: 100px;
+				border: none;
+				border-bottom: solid 1px dodgerblue;
+				text-align: left;
+				font-size: 14px;
+				background-color: #fff;
+			}
+			
+			#myDiv>a:nth-of-type(2) {
+				border-bottom: solid 1px dodgerblue;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<button onclick="hide()" ondblclick="appear()">输入法</button>
+		<div id="myDiv">
+			<a href="">手写</a>
+			<a href="">拼音</a>
+			<a href="#" onclick="hide()" id="a">关闭</a>
+		</div>
+		<script type="text/javascript">
+			var myDiv = document.getElementById('myDiv');
+			//var mybtn=document.getElementsByTagName('button')[0]
+			var mya = document.getElementById('a');
+
+			function hide() {
+				myDiv.style.display = 'none';
+			}
+
+			function appear() {
+				myDiv.style.display = 'block';
+
+			}
+		</script>
+
+	</body>
+
+</html>

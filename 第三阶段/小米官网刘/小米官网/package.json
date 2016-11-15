@@ -1,0 +1,17 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "小练习",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "练习"
+  ],
+  "author": "刘晓伟",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2"
+  }
+}

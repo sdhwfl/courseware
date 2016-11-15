@@ -1,0 +1,6 @@
+1.moongoose 安装 （nodejs 一个模块） (主要用来操作mongoDB数据库的)
+
+npm install mongoose [ --save]
+
+2.连接mongoose数据库
+

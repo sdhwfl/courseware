@@ -1,0 +1,7 @@
+body{
+    background: lightblue;
+}
+#mysection2>div{
+    background:lightgreen;
+    border-color:yellowgreen;
+}

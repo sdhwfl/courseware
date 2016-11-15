@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>{{title}}</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<script src="js/template.js"></script>
+		<style type="text/css">
+		.tags span {
+				display: inline-block;
+				height: 24px;
+				line-height: 24px;
+				font-size: 14px;
+				padding: 0 8px;
+				background-color: lightblue;
+				margin-right: 15px;
+				margin-bottom: 20px;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>{{hTitle}}</h1>
+		<div class="contain">{{content}}</div>
+		<div class="tags">
+			{{each tags}}
+			<span>{{$value}}</span>
+			{{/each}}
+		</div>
+		
+	</body>
+
+</html>

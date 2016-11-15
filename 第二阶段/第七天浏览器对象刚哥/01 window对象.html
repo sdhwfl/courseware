@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="author" content="charles">
+		<title>window对象的学习</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 14px;
+			}
+			
+			#wrapper {
+				border: 1px solid #ccc;
+				width: 800px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- <div id="wrapper">
+    我的所有内容
+    <a href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E7%8E%BB%E7%92%83%E9%92%A2%E5%9E%83%E5%9C%BE%E6%9C%BA%E5%99%A8&rsv_pq=b47b60c300045d00&rsv_t=6dd7uA28eTb9VETWeu9Z2niInEez2%2Fv0y3qhT3Jbf2ET2%2B0wuVPIDaqyElo&rsv_enter=1&rsv_sug3=4&rsv_sug1=1&rsv_sug7=100&rsv_sug2=0&inputT=3193&rsv_sug4=3193">百度</a>
+</div>
+ -->
+	</body>
+
+</html>
+<script>
+	// Window 对象表示浏览器中打开的窗口
+	//console.dir()输出对象的属性，方法等详细信息
+	console.dir(window);
+	//弹出框
+	//提示用户信息用的
+	// window.alert('我是一个弹出框吗？');
+	// window.alert('我也是一个弹出框');
+	// window.alert('我不是弹出框你信吗');
+	//确认取消框
+	//var result = window.confirm('您的URL地址不对，请重新输入');
+	//console.log(result);
+	//当点击确定的时候返回true 点击取消的时候返回false
+	//输入框
+	//第一个参数是提示文字，第二个参数是默认值
+	//var promptvalue=window.prompt('请输入一个数字');
+	//console.log(promptvalue);
+	//定义变量去接收输入框窗口返回值 确定返回输入框返回值 取消返回null
+	//研究：输入框中输入的数字
+	//打开一个窗口
+	//open接收三个参数，第一个参数是跳转的URL，第二个参数可以指定窗口名称
+	//研究：研究返回的boolean如何使用
+	//结论：定义一个变量接收返回值
+	//第三个参数width,height,top,left,location,menubar可以设置窗口属性
+	//window.open('http://www.hhstu.edu.cn','黄河科技学院','width=300,height=400,top=500,left=300,location=true,menubar=true');
+
+	//window这个前缀可以省略掉
+	//window.document.getElementsByName()
+	//window.document.getElementsByTagName()
+	//window.document.querySelector()
+
+	//执行一次setTimeout
+	//重复执行setInterval
+	// var timer = setTimeout(function(){
+	// alert('一秒后弹出');
+	// },1000)
+	// timer();
+	// clearTimeout(timer);
+
+	// var a = 0;
+	//  var timer = setInterval(function(){
+	//  ++a;
+	//  alert('每两秒弹出一次');
+	//  if(a == 3){
+	//  //清除重复执行
+	//  clearInterval(timer);
+	//  }
+	//  },2000);
+
+	//补充内容window对象下面需要注意的方法和属性
+	//所有的节点类型
+	//window.Node;
+	//查看当前浏览器number类型最大最小值和安全值
+	//window.Number;
+	//高清屏中的设备像素比
+	//alert(window.devicePixelRatio);
+	//eval早期用来解析JSON结构的命令，现在已经不推荐使用了
+	// window.eval;
+	// //存储
+	// window.localStorage;
+</script>

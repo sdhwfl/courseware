@@ -1,0 +1,21 @@
+header {
+  color: orange;
+  color: #ffc966;
+  color: #e69500;
+}
+header p {
+  font-size: 20px;
+}
+header p span {
+  color: yellow;
+}
+header a {
+  font-weight: bold;
+}
+header a:hover {
+  text-decoration: none;
+}
+header a:before {
+  content: "我是一个链接";
+  font-size: 12px;
+}

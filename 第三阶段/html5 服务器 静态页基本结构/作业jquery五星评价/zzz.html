@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>jquery五星评价</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<style>
+			body,
+			ul,
+			li,
+			div {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style-type: none;
+			}
+			
+			ul {
+				width: 150px;
+				margin: 10px auto;
+				overflow: auto;
+			}
+			
+			li {
+				width: 27px;
+				height: 28px;
+				float: left;
+				background: url(img/star.gif) no-repeat 0 0;
+			}
+			
+			div {
+				font-size: 20px;
+				color: red;
+				position: absolute;
+				left: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<img src="img/star.png" />
+			<img src="img/star.png" />
+			<img src="img/star.png" />
+			<img src="img/star.png" />
+			<img src="img/star.png" />
+			<span></span>
+		</div>
+		<script>
+			$('img').each(function(index) {
+				var star = 'img/star.png'; //普通灰色星星图片的存储路径
+				var starRed = 'img/star_red.png'; //红色星星图片存储路径
+				var prompt = ['很差', '比较差', '一般', '比较好', '非常好']; //评价提示语
+				this.id = index; //遍历img元素，设置单独的id
+				$(this).on("click", function() { //设置鼠标滑动和点击都会触发事件
+					$('img').attr('src', star); //当“回滚”、“改变主意”时，先复位所有图片为木有打星的图片颜色
+					$(this).attr('src', starRed); //设置鼠标当前所在图片为打星颜色图
+					$(this).prevAll().attr('src', starRed); //设置鼠标当前的前面星星图片为打星颜色图
+					$(this).siblings('span').text(prompt[this.id]); //根据id的索引值作为数组的索引值
+				});
+			});
+		</script>
+	</body>
+
+</html>

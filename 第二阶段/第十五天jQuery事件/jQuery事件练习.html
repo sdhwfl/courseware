@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			#div1 {
+				height: 200px;
+				width: 200px;
+				background-color: lightblue;
+			}
+			
+			span {
+				display: none;
+				color: green;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<button>click</button>
+		<button>dbclick</button>
+		<div id="div1">测试鼠标移入移出以及移动</div>
+		用户名： <input type="text" /><span id="">提示</span><br> 邮箱地址：
+		<input type="text" /><span id="">提示</span>
+
+		<script type="text/javascript">
+			$(function() {
+				//给第一个按钮添加事件:对象.事件
+				$('button:eq(0)').click(function() {
+					alert('我被点击了！')
+				});
+				$('button:eq(1)').dblclick(function() {
+					alert('我被双击了！')
+				});
+
+				$('#div1').mouseenter(function() {
+					console.log('鼠标移入事件');
+				});
+				$('#div1').mouseleave(function() {
+					console.log('鼠标离开了！')
+				});
+				$('#div1').mousemove(function() {
+					console.log('鼠标在div1内走来走去！')
+				});
+				//尝试制作商品展示时图片放大功能
+				//focus获取焦点的时候
+				$('input:eq(0)').focus(function() {
+					var $tishi1 = $('span:eq(0)');
+					$tishi1.text('请输入8到16位的数字或者字母')
+					$tishi1.show();
+				});
+				$('input:eq(1)').focus(function() {
+					var $tishi1 = $('span:eq(1)');
+					$tishi1.text('请输入邮箱')
+					$tishi1.show();
+				});
+				
+				//blur失去焦点，失去焦点的时候，检测输入内容
+				$('input:eq(0)').blur(function() {
+
+					var $tishi1 = $('span:eq(0)');
+					var input_text = $(this).val();
+					if(input_text.length > 8 || input_text.length < 16) {
+						$tishi1.show();
+						$tishi1.text('用户名不合法');
+						$tishi1.css('color','red');
+					}
+
+				});
+				$('input:eq(1)').blur(function() {
+
+					var $tishi1 = $('span:eq(1)');
+					var input_text = $(this).val();
+					if(input_text.length > 8 || input_text.length < 16) {
+						$tishi1.show();
+						$tishi1.text('邮箱不正确');
+						$tishi1.css('color','red');
+					}
+
+				});
+				// change事件
+				$('input:eq(1)').change(function(){
+					alert('输入框内容发生了改变！');
+				});
+			});
+		</script>
+	</body>
+
+</html>

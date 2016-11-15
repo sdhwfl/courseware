@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>树列表老师</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			/*reset格式*/
+			
+			html,
+			body,
+			main,
+			ul,
+			li,
+			a {
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+			
+			main {
+				width: 800px;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			.aside-nav {
+				counter-reset: layer1 ;
+			}
+			
+			.aside-nav .layer-one {
+				counter-increment: layer1;
+			}
+			
+			.aside-nav .layer-one::before {
+				content: counter(layer1);
+			}
+			
+			.sub {
+				counter-reset: layer2;
+				text-indent: 2em;
+			}
+			
+			.sub>li {
+				counter-increment: layer2;
+			}
+			
+			.sub>li::before {
+				content: counter(layer1)"."counter(layer2);
+			}
+			
+			.active {
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//加载完成之后再执行
+			$(function() {
+				//所有的一级标题加一个点击事件
+				$('.layer-one>a').click(function() {
+					//去除除了本身其他的一级标题的状态
+					$(this).parent().siblings('.layer-one').find('.sub').slideUp();
+                    //$(this).parent().siblings('.layer-one').find('a').removeClass('active');
+					//通过过滤
+					$('.layer-one>a').not($(this)).removeClass('active');
+					$(this).toggleClass("active");
+					//切换子列表显示隐藏  slideToggle():下拉显示 上升隐藏
+					$(this).siblings('.sub').slideToggle();
+				});
+				//隐藏所有的二级标题
+				$(".sub").hide();
+				//第一个标题下的二级标题下拉显示出来
+				$(".sub:eq(0)").slideDown();
+				$(".layer-one:eq(0)>a").addClass('active');
+			});
+		</script>
+		<main>
+			<ul class="aside-nav">
+				<li class="layer-one">
+					<a href="javascript:;">一级标题1</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题2</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题3</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题4</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题5</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题6</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题7</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题8</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题9</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+				<li class="layer-one">
+					<a href="javascript:;">一级标题10</a>
+					<ul class="sub">
+						<li>
+							<a href="javascript:;">二级标题1</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题2</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题3</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题4</a>
+						</li>
+						<li>
+							<a href="javascript:;">二级标题5</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</main>
+	</body>
+
+</html>

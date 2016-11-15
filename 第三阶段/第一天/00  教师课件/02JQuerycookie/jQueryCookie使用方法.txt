@@ -1,0 +1,24 @@
+JQueryCookie 是一个轻量级cookie插件 有读取、写入、删除cookie功能
+1. 新添加一个cookie 会话
+$.cookie("user","yinxuejiang");
+说明：当没有指明有效时间时，所创建cookie有效期到用户关闭浏览为止 （叫会话cookie）
+
+2. 创建一个cookie并设置有效时间 (默认是 天)
+$.cookie("age","30",{expires:7})
+说明：当设置了日期，所创建的cookie 叫“持久cookie”
+3. 创建一个cookie并设置有效时间 (默认是 天) ,并设置路径
+$.cookie("age","30",{expires:7,path="/"})
+说明：在默认情况，只有设置了cookie网页才能读取该cookie,如果想让其它页面也可以读取cookie，这样就设置路径。
+"/" 是根目录意思,如果设置了根目录，其它这个网站里网页就都可以访问到cookie
+4.读取cookie
+$.cookie("user") //cookie存在 等于cookie的值 不存在null
+5.删除cookie
+$.cookie("user",null) // 删除对应的cookie
+
+说明：
+1. scure:true
+scure:true 如果为true,cookie的传输使用的是安全协议(HTTPS)
+
+2. raw:true
+默认 raw:false
+默认情况写出cookie时会自动进行编码和解码（encodeURIComponent编码）;如果设置为true关闭了这个功能

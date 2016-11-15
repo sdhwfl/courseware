@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--<script src="jquery.js"></script>-->
+    <script src="js/jquery-2.0.3.js"></script>
+    <title>星级评分</title>
+    <style type="text/css">
+        body {
+            font: 12px/1.5 arial;
+        }
+
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #star {
+            width: 600px;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        #star ul {
+            list-style: none;
+            margin: 0 10px;
+            float: left;
+        }
+
+        #star span {
+            float: left;
+        }
+
+        #star li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            background-image: url(images/star.png);
+            background-repeat: no-repeat;
+        }
+
+        #star li.on {
+            background-position: 0 -28px;
+        }
+
+        #star p {
+            position: absolute;
+            top: 20px;
+            left: 72px;
+            width: 160px;
+            height: 60px;
+            padding: 10px;
+            /*background-color: lightblue;*/
+        }
+
+        #star em {
+            color: #f60;
+            font-style: normal;
+
+        }
+
+        #star p em {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="star">
+    <span>点击星星评分</span>
+    <ul>
+        <li>
+            <a href="javascript:;"></a>
+        </li>
+        <li>
+            <a href="javascript:;"></a>
+        </li>
+        <li>
+            <a href="javascript:;"></a>
+        </li>
+        <li>
+            <a href="javascript:;"></a>
+        </li>
+        <li>
+            <a href="javascript:;"></a>
+        </li>
+    </ul>
+
+    <!--用来显示最终评分的结果-->
+    <span></span>
+    <!--用来显示评分时当前的评语及分数-->
+    <p></p>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        // 用来记录鼠标点击了第几个星星
+        var isStar = 0;
+        var msg = [
+            '很不满意|卖家态度很差，还骂人、说脏话，简直不把顾客当回事',
+            '不满意|卖家有点不耐烦，承诺的服务也兑现不了',
+            '一般|卖家回复问题很慢，态度一般，谈不上沟通顺畅',
+            '满意|卖家服务挺好的，沟通挺顺畅的，总体满意',
+            '很满意|卖家的服务太棒了，考虑非常周到，完全超出期望值'
+        ];
+        // split()  根据指导的字符分割字符串，并返回一个数组
+        //console.dir(msg[0].split('|')[0]);
+
+
+        // each() 遍历每一个jQuery对象，让每一个匹配的元素执行一个函数
+        $('#star ul li').each(function (index, ele) {
+            // index 元素的索引值
+            console.log(index);
+            // elem 对应的DOM元素
+            // console.dir(ele);
+            // $(this) 当前执行方法的jQuery对象
+            // console.dir($(this));
+
+            $(this).mouseover(function () {
+                show(index + 1);
+                var left = $('#star ul').position().left + index * $(this).width();
+                // console.log(left);
+
+
+                var html = '<em><b>' + (index + 1) + '分</b> ' +//分数
+                        msg[index].split('|')[0] + '</em>' +// 满意程度
+                        msg[index].split('|')[1];//对卖家评语
+
+                // jQuery的链式调用
+                $('#star p').html(html).css('left', left);
+
+
+            });
+
+            $(this).click(function () {
+                // 记录所点击的第几个星星
+                isStar = index + 1;
+
+                var html = '<strong><em>' + isStar + '分</em></strong>(' +
+                        msg[index].split('|')[1] + ')';
+                $('#star span:last').html(html);
+
+            })
+
+            $(this).mouseout(function () {
+                show(isStar);
+
+                $('#star p').empty();
+            });
+
+            // num 表示所点击的第几个星星
+            function show(num) {
+                var length = $('#star ul li').length;
+                for (var i = 0; i < length; i++) {
+                    // num = 1、2、3、4、5
+                    // num = 0、1、2、3、4
+                    if (i < num) {
+                        $('#star ul li').get(i).className = 'on';
+                    } else {
+                        $('#star ul li').get(i).className = '';
+                    }
+
+                    // $('#star ul li').get(i).className = i<num ? 'on' : '';
+
+                }
+            };
+
+        });
+
+    });
+</script>
+</body>
+
+</html>

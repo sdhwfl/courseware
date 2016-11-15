@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>url解析</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//字符串  数组 对象的处理
+			//函数的写法
+			function parseQueryString(url) {
+				//获取"?"的位置 返回一个数字
+				var pos = url.indexOf('?');
+				//从"?"之后一直截至最后
+				var content = url.slice(pos + 1);
+				console.log(content);
+				var arr = content.split('&');
+				//拆分成数组
+				console.log(arr);
+				//声明一个空对象
+				var obj = {};
+				arr.forEach(function(element, index) {
+						//拆分数组每一个元素
+						var _arr = element.split('=');
+						//往对象里面添加值
+						obj[_arr[0]] = _arr[1];
+					})
+					//函数最终返回结果
+				return obj;
+
+			}
+
+			var url = 'http://www.baobao.com/index.php?name=0&age=1&sex=2';
+			var obj = parseQueryString(url);
+			console.log(obj);
+
+			var arr1 = [1, 2, 3, 4, 5];
+			//对数组中的每一个元素进行操作，没有返回值
+			//参数参数1 ele 指的是每次数组中的一个元素值
+			//参数参数2  ind 指的是每次数组中的一个索引
+			//参数参数3 arr 指的是当前数组
+			
+			var arr2=arr1.map(function(ele, ind, arr) {
+               console.log('ele'+ele *5);
+               console.log(arr[ind]*2);
+               return((arr[ind]*2));
+			})
+			console.log(arr2);
+		</script>
+	</body>
+
+</html>

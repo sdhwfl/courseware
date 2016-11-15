@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>console用法自练习</title>
+	</head>
+
+	<body>
+		<div id="">这是一个div标签</div>
+
+		<script type="text/javascript">
+			//			var age=23
+			//			var name ='sdh'
+			//			console.log('age:%d,name%s,小数:%.3f',age,name,age)
+			//支持格式字符串
+			//%d表示整数
+			//%s表示字符串
+			//%.nf表示小数,n保留小数的位数
+			//console.assert() 断言
+			//			var a=4;
+			//			var b=5;
+			//			//如果正确，则不输出，如果错误输出错误信息
+			//			console.assert(a+b==9,'对了吧，不好意思控制台不输出')
+			//			console.assert(a+b==6,'同学你数学体育老师教的吧')
+			//			//断言常用与自动化测试
+			//			function add(a,b){
+			//				return a+b;
+			//			}
+			//测试用例
+			//console.assert(add(3+5) ==8,'未能通过测试')
+			//console.assert(add('sdh','wfl') =='sdhwfl','未能通过字符串测试')
+			//console.assert(add(true,false) ==false,'未能通过字符串测试')
+			//console.assert(add(new Date(),1) == new Date(2016.9.15),'未能通过日期测试')
+			
+			var obj=new Object();
+			//创建一个对象
+			//为对象添加属性，或者可以理解为给属性赋值
+			obj.name='sdh';
+			console.log(obj.name);
+			obj.sex='woman';
+			console.log(obj.sex);
+			
+			//展示一个对象的详细信息
+			console.dir(obj);
+			//以下通过对象的方法创建对象
+			var newobj ={name:'wfl',age:23,iswomen:false}
+			console.dir(newobj)
+			
+			var me={
+				name：'sdh';
+				age:23;
+				isWomen:true;
+				course:{
+					name:'HTML5';
+					month:4.5;
+				}
+				
+			}
+			
+			var pName=me.name
+			var cName=me.course.name;
+			var cMonths=me.course.months
+			
+		</script>
+	</body>
+
+</html>

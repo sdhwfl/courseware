@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>动态添加单元格</title>
+		<script src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			table {
+				height: 30px;
+				width: 200px;
+				border-collapse: collapse;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="btn">添加</button>
+		<table border="" cellspacing="" cellpadding="">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+
+		<script type="text/javascript">
+			$(function() {
+				$("#btn").click(function () {
+					$('<tr></tr>').append('<td>1</td>').append('<td>2</td>').append('<td>3</td>').append('<td>4</td>').appendTo('table tbody')
+				});
+				
+			});
+		</script>
+	</body>
+
+</html>

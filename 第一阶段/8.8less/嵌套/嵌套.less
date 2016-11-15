@@ -1,0 +1,69 @@
+@color:pink;
+@mycolor:purple;
+@mywidth:600px;
+@bco:yellow;
+header{
+    height: @mywidth - 300px;
+    width:@mywidth;
+    background-color: @bco;
+    margin: 0 auto;
+    color:aquamarine;
+    // 颜色变浅
+    // color: lighten(aquamarine,20%);
+    // 颜色变深
+    // color: darken(aquamarine,50%);
+    // saturate：饱和度 
+    // desaturate:减小饱和度
+    // color:saturate(aquamarine,10%);
+    // color: desaturate(aquamarine,10%);
+    // spin:旋转，疾驰
+    // color: spin(aquamarine,-10);
+    // color: spin(aquamarine,10);
+    // fade:褪色，百分比越小，褪色越严重
+    //    color: fade(aquamarine,90%);
+    // mix:混合
+    // color: mix(red,blue);
+   
+       
+    p{
+        font-size: 20px;
+        @span-color:red;
+        span{
+    //    @span-color:pink;
+       color: @span-color;
+       }
+    }
+    // & 符号的使用—如果你想写串联选择器，而不是写后代选择器，就可以用到&了.例如a:nth-of-type a:hover等等
+    a{
+        font-weight: bold;
+        // 当鼠标覆盖连接
+        &:hover{
+            text-decoration: none;
+        }
+        &:before{
+            content: "我是一个链接的前端";
+            font-size: 12px;
+        }
+        &:nth-of-type(2){
+            color: blue;
+        }
+       
+    }
+}
+// LESS中的作用域跟其他编程语言非常类似，首先会从本地查找变量或者混合模块，如果没找到的话会去父级作用域中查找，直到找到为止. 
+
+  @span-color:green;
+ div{
+    // math:函数 ceil：向上取整   round：四舍五入  floor：向下取整 percentage 转化为相应的百分比
+    margin: 10px auto;
+    height: ceil(99.27px);
+    // width: round(99.53px);
+    width: floor(100.8px); 
+    // width: percentage(0.5);
+        background-color: @color;
+       color: @mycolor;
+   }
+      
+
+    
+ 

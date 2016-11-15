@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>获取DOM元素节点</title>
+        <style>
+            
+        </style>
+        <!--外链脚本-->
+        <!--<script src="myjs.js">
+        </script>
+        <script>
+            js脚本内容
+        </script>-->
+    </head>
+    <body>
+        <ul>
+            <li class="sameclassLi">标记了class的第一个列表子项</li>
+            <li id="secondLi">标记了ID的列表子项 <span>内部的span部分</span></li>
+            <li class="sameclassLi">标记了class的第二个列表子项</li>
+            <li name="xiaolizi">标记了name＝lizi的列表子项</li>
+            <li>没有做任何标记的列表子项</li>
+            <li name="xiaodengzi">标记了name＝dengzi的列表子项</li>
+        </ul>
+        <script>
+            //1、想要获取标记id ＝ secnondLi的元素
+            
+            var myIdLi = document.getElementById('secondLi');
+            // 节点属性：nodeType 获取节点类型
+            console.log(myIdLi.nodeType);
+            // firstChild 得到第一个子节点，nodeName 获取节点名称
+            var myInLIChild = myIdLi.firstChild.nodeValue; //得到第一个子节点：文本节点
+            console.log(myInLIChild);
+            var myChildNodes = myIdLi.childNodes; //得到li所有的子节点：文本节点、元素节点
+            console.log(myChildNodes);
+            console.log(myChildNodes.length);
+
+            console.log(myIdLi.innerHTML);
+            console.log(myIdLi.outerHTML);
+            console.log(myIdLi.innerText);
+            // innerHTML 输出元素内部的内容，包括内容中嵌套的标签对
+            // outerHTML 输出整个元素内容，包括元素的标签对，以及内部元素标签对和文本内容
+            // innerText 输出整个元素的文本内容，不包含元素的标签对
+            
+            //获取属性值 ：对象.属性名
+            var getStr = myIdLi.innerText;
+            //（设置属性值） 修改标记id的这个元素的内部内容
+            myIdLi.innerText = '哈哈，你被我修改了😄'; 
+            // 赋值符号是将右侧的值传递给左侧
+            // 总结：获取属性值，就是将属性值放在赋值符号的右侧；
+            // 设置属性值，就是将属性值放在赋值符号的左侧。
+
+            // 关于节点属性的应用：
+            // 首先，找到需要操作的元素，比如var myelement；
+            // 然后，元素加点调用属性，比如 myelement.firstChild；
+            console.log('---'.repeat(20));
+            // 2、获取第二个标记class＝sameclassLi的元素
+            // 得到一个列表
+            var myClassLis = document.getElementsByClassName('sameclassLi');
+            console.log(myClassLis);
+            // 从列表中获取指定索引的元素
+            var myClassLi1 = myClassLis[0];
+            console.log(myClassLi1.innerText);
+            var myClassLi2 = myClassLis[1];
+            console.log(myClassLi2.innerText);
+            console.log('---'.repeat(20));
+            // 3、找到标记name ＝ 小李子的元素
+            // 得到一个name＝“xxx”的所有元素组成的列表
+            var myNameLis = document.getElementsByName('xiaolizi');
+            console.log(myNameLis);
+            // 根据目标元素的索引值，在节点列表中找到这个元素
+            var myNameXiaolizi = myNameLis[0];
+            console.log(myNameXiaolizi);
+            console.log(myNameXiaolizi.innerText);
+
+            // 两步合成一步
+            var myNameLiXiaolizi = document.getElementsByName('xiaolizi')[0]; 
+            console.log(myNameLiXiaolizi.innerText);
+            console.log('---'.repeat(20));
+            // 4、找到tag值为li的所有元素
+            var myTagLis = document.getElementsByTagName('li');
+            console.log(myTagLis);
+
+            // 总结：
+            // 使用getElementById获取元素的时候，要么就是undefined，要么返回一个元素
+            // 使用剩余几个getElementsBy什么的这些方法获取元素的时候，要么就是undefined，要么返回的是一个节点列表或者是集合。返回列表的时候，我们配合使用索引，也就是：Nodelist[索引值] 这样的方式获取指定索引位置上的元素。
+            // 以下是几种辅助打印方法：
+            console.warn('警告消息');
+            console.error('错误消息');
+            console.info('消息');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+先建一个存放路由的文件夹
+router -->index.js 首页路由模块
+
+2、生成路由并导出路由
+var express =require("express")
+//生成路由
+var router =express.Router();
+router.get("/",function())

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>获取文档中的元素节点</title>
+	</head>
+
+	<body>
+		<ul><li class="sameclassli">标记了class的第一个列表子项</li><li id="secondli">标记了ID的列表子项<span>333</span><p>666</p></li>
+			<li class="sameclassli">标记了class的第二个列表子项</li>
+			<li name="sdh">宋典花</li>
+			<li>没有任何标记的</li>
+			<li name="wfl">豆芽君</li>
+		</ul>
+		<script type="text/javascript">
+			//想要获取标记id =secondli的元素  
+			//		  outerHtml 输出整个元素内容,包括元素的标签内容
+			//		  innerHTML 输出元素内部的内容 包括元素中嵌套的标签对 以及元素内部标签和内容
+			//var myli = document.getElementById('secondli');
+			//console.log(myli.innerHTML);
+			//console.log(myli.innerText);
+			//console.log(myli.outerHTML);
+			//nodetype获取节点的类型
+			//console.log(myli.nodeType);
+			//firstchild得到第一个子节点
+			var myLi = document.getElementsByTagName("ul")[0]
+            document.write(myLi.firstChild.innerHTML);
+			//var mylichild = myli.firstChild;
+			//console.log(mylichild.innerHTML);
+			
+			
+			//var mysecondli = document.getElementById('secondli');
+			//var mychildnodes = mysecondli.childNodes;
+			//console.log(mychildnodes); //得到li所有的子节点：文本节点、元素节点
+			//console.log("li的第二个子节点的节点长度为："+mychildnodes.length);
+			//获取属性值
+			//var getstr = myli.innerHTML;
+			//    (修改属性值)       修改标记id的这个元素的内部内容
+			//myli.innerHTML ='哈哈，你被我修改了'
+			//赋值符号就是将右侧的值传递给左侧
+			//总结:获取属性值,就是讲属性值放在赋值符号的右侧 
+			//设置属性值就是讲属性值放在赋值符号的左侧
+
+			//关于节点属性的应用
+			//首先找到要操作的元素，比如var myelement
+			//然后，元素加点调用属性，比如myelement.firstchild
+			//		2.获取第二个标记class =sameclassli的标签元素 
+
+			//得到一个列表
+			//			var myclassli =	document.getElementsByClassName('sameclassli')[1];
+			//从列表中获得指定索引的元素
+			//			console.log(myclassli);
+			//			console.log(myclassli.innerHTML);
+			//        3.标记name为sdh的元素
+			//得到一个name=xxx的所有元素
+			//			var myname = document.getElementsByName('sdh');
+			//      //根据目标元素的索引值，在节点列表中找到这个元素
+			//			console.log(myname);
+			//			var mynamesdh = myname[0];
+			//			console.log(mynamesdh.innerText);
+
+			//var mynamesdh = document.getEntriesByName('sdh')[0];
+			//console.log(mynamesdh.innerHTML);
+
+			//4.找到tag值为li的所有元素
+			//		var mytaglis =document.getElementsByTagName('li');
+			//		console.log(mytaglis);
+
+			//			使用getelementbyid获取元素的时候要么是undefined 要么返回一个值 
+			//使用剩余几个什么的这些方法获取元素的时候返回的是一个节点列表或者集合 要么是undefined 要么是一个集合 返回列表的时候配合使用索引，也就是nodelist[索引值]这样的方式获取指定索引位置上的元素
+			//以下是集中辅助打印消息
+			//			console.warn('警告消息');
+			//			console.info('消息');
+			//			console.error('错误消息');
+		</script>
+	</body>
+
+</html>

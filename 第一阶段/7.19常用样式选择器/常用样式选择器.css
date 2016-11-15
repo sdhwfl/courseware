@@ -1,0 +1,145 @@
+
+        /*样式选择器
+   主要是为了找到body中的元素，然后对其进行设置*/
+        /*样式设置*/
+        /*1:元素（标签）选择器：直接通过元素的标签名获取元素*/
+        /*选择器：主要就是选择需要进行设置的元素*/
+        
+        h1 {
+            /*设置文本对齐方式*/
+            text-align: center;
+            color: green !important;
+        }
+        
+        address {
+            text-align: center;
+            color: blue;
+            /*字体风格：斜体变正*/
+            font-style: normal;
+            font-family: "方正舒体";
+            font-size: 20px;
+        }
+        
+        p {
+            /*设置缩进*/
+            text-indent: 2em;
+        }
+        /*2.id选择器 （indentifier标识符）通过id名找到有唯一id标记的元素*/
+        /*#firstname 选择id="firstname"的所有元素*/
+        /*#id名{ }*/
+        
+        #special_p {
+            /*样式*/
+            color: lightseagreen;
+            font-family: "华文行楷";
+            font-size: 18px;
+            font-weight: bold;
+            /*字体风格斜体*/
+            font-style: italic;
+        }
+        
+        #special_span {
+            color: blue;
+        }
+        
+        a {
+            /*去掉连接默认自带的下划线*/
+            /*文本装饰*/
+            text-decoration: none;
+        }
+        /*小标题部分*/
+        /*#little_title {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }*/
+        /*3,class类选择器，主要是对一类元素（即需要设置相同样式的元素）进行标记*/
+        
+        .little_title1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: purple;
+            font-family: "楷体";
+            text-align: center;
+        }
+        
+        .little_title2 {
+            font-size: 26px;
+            font-style: italic;
+            color: orange;
+            font-family: "华文行楷";
+            text-align: center;
+        }
+        
+        .little_title3 {
+            font-size: 24px;
+            font-family: "华文新魏";
+            color: hotpink;
+            text-align: center;
+        }
+        
+        .little_title4 {
+            font-size: 22px;
+            font-family: "楷体";
+            color: yellowgreen;
+            text-align: center;
+        }
+        
+        .img_p {
+            text-align: center;
+        }
+        /*p:nth-child():选择属于p元素的子元素*/
+        
+        h3:nth-child(1) {
+            color: blue;
+        }
+        /*找到h3元素的第一个h3元素*/
+        
+        h3:nth-child(2) {
+            color: deeppink;
+        }
+        /*找到h3元素的第二个h3元素*/
+        
+        h3:nth-child(3) {
+            color: mediumpurple;
+        }
+        /*找到h3元素的第三个h3元素*/
+        /*:nth-child(n):n的值由标签在body中的排位决定*/
+        /*h1:nth-of-type(n):n的值可以由大到小排序,与标签在body中的位置无关*/
+        /*h1:nth-of-type(1):找到所有h1元素中的第一个元素*/
+        
+        h2:nth-of-type(1) {
+            color: yellow;
+            text-align: center;
+        }
+        /*找到所有h2元素中的第一个元素*/
+        
+        h2:nth-of-type(2) {
+            color: red;
+            text-align: center;
+        }
+        /*找到所有h2元素中的第二个元素*/
+        
+        h2:nth-of-type(3) {
+            color: green;
+            text-align: center
+        }
+        /*找到所有h2元素中的第三个元素*/
+        /*nth-child()与nth-of-type() 区别:
+        child索引是相对于子元素在父元素的绝对位置来说的;
+        type索引是相对于元素在本元素中的相对位置来说的;
+        */
+        
+        div {
+            /*设置宽高*/
+            width:331px;
+            height: 220px;
+            /*设置背景颜色*/
+            background-color: green;
+            margin: 0 auto;
+            /*automic:自动;*/
+            /*设置背景图片*/
+            background-image: url(p1.jpg);
+            /*让背景图片充满div标签*/
+            background-size: 100% 100%;
+        }

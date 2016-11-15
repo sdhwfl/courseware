@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>显示和隐藏jQuery插件弹窗</title>
+		<script src="js/jquery-2.0.3.js"></script>
+	    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+		
+		</style>
+	</head>
+
+	<body>
+		<!--弹出层-->
+		<div class="popup  popup1">
+			<div class="pop-close">×</div>
+			<div class="pop-title">提示信息</div>
+			<div class="pop-content">注册成功</div>
+		</div>
+
+		<!--弹出层2-->
+		<div class="popup popup2">
+			<div class="pop-close">×</div>
+			<div class="pop-title">提示信息</div>
+			<div class="pop-content">登陆成功</div>
+		</div>
+
+		<!--弹出层3-->
+		<div class="popup popup3">
+			<div class="pop-close">×</div>
+			<div class="pop-title">提示信息</div>
+			<div class="pop-content">登录失败</div>
+		</div>
+
+		<!--遮罩层-->
+		<!--<div class="mask"></div>-->
+		<div class="mask"></div>
+		<a href="javascript:;" class="btn1">弹出窗1</a>
+		<a href="javascript:;" class="btn1">弹出窗2</a>
+		<a href="javascript:;" class="btn1">弹出窗3</a>
+		<script type="text/javascript">
+			$.fn.extend({
+
+					popup: function() {
+						// 关掉弹窗和遮罩层
+						$(".popup").fadeOut("fast")
+						$(".mask").fadeOut("fast")
+							// 显示出来
+						this.fadeIn();
+						$(".mask").fadeIn();
+						// 点击关闭再关掉
+						$("body").on("click", ".pop-close", function() {
+							$(this).parents(".popup").fadeOut("fast");
+							$(".mask").fadeOut("fast")
+						})
+					}
+				})
+				//插件的调用
+				// 隐藏所有间窗
+			$(".popup").hide();
+			$(".mask").hide();
+			$(".popup1").popup();
+			// 插件的调用
+			$(".btn1:eq(0)").click(function(event) {
+				// console.log(111)
+				$(".popup1").find(".pop-content").html($(this).html())
+				$(".popup1").popup();
+			});
+			$(".btn1:eq(1)").click(function(event) {
+				$(".popup2").find(".pop-content").html($(this).html())
+				$(".popup2").popup();
+			});
+			$(".btn1:eq(2)").click(function(event) {
+				$(".popup3").find(".pop-content").html($(this).html())
+				$(".popup3").popup();
+			});
+		</script>
+	</body>
+
+</html>

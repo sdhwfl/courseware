@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>用户登录</title>
+		<meta charset='UTF-8'>
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		<button class="btn1">提交</button>
+		<div id=""></div>
+			
+		
+		<!--
+			一、ajax简介
+			ajax起源于2005年 全称 
+			asynchronous javascript xml简写
+			xml以前是数据 通信文件 现在被 json 取代
+			二、ajax技术核心 XMLhttpRequest(简称XHR) 
+			微软引进的一个特性 接下来其他浏览器也相继引用
+			
+			
+		-->
+	 <script type="text/javascript">
+	 	//创建一个XMLhttpRequest对象
+//	 	var xhr=new XMLHttpRequest();
+//	 	
+//	 	//参数一：请求的方法
+//	 	//参数二：请求的地址或路由
+//	 	//参数三：是否异步
+//	 	//open方法并不会真正发送一个请求 只是开启一个请求   通过send方法之后才可以发送
+//	 	xhr.open('GET','/user/landing',true)
+//	 	
+//	 	xhr.send(null) //发送的请求体
+//	 	
+//	 	//当请求发送到服务器端，收到请求后，服务器响应一个数据  这个数据会自动填充 XHR对象的属性
+//	 	//属性名1：responseText作为响应体 返回的文本
+//	 	//属性名2：status 响应的状态码
+//	 	//属性名3：statusText 响应状态的说明
+//	 	
+//	 	if(xhr.status==200){
+//	 		xhr.responseText
+//	 	}
+//	 	
+	 	
+	 	$('.btn1').click(function(){
+	 		//创建一个XMLHttpRequest对象
+	 		var xhr=new XMLHttpRequest();
+	 		var random=Math.floor(Math.random()*100);
+	 		xhr.open('GET','ajaxget?sdh=宋典花&random=20'+random,false);
+	 		xhr.send(null);
+	 		
+	 		if(xhr.status ==200){
+	 			console.log(xhr.responseText);
+	 		}else{
+	 			console.log('数据返回失败！状态码是'+xhr.status+'状态信息是：'+xhr.statusText);
+	 		}
+	 	});
+	 	
+	 </script>
+	
+	
+	</body>
+
+</html>

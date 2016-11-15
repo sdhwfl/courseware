@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>window事件</title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body,
+			table,
+			tr,
+			th,
+			td {
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			
+			table {
+				width: 800px;
+				border: 1px solid #ccc;
+			}
+			
+			caption {
+				width: 100%;
+				height: 30px;
+				background: green;
+				color: white;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			th {
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table>
+			<caption>windows事件总结</caption>
+			<thead>
+				<tr>
+					<th>window.onload事件</th>
+					<th>window.onDOMContentLoaded事件</th>
+					<th>window.onReayStateChange事件</th>
+					<th>window.onUnload事件</th>
+					<th>window.onBeforeUnLoad事件</th>
+					<th>window.onResize事件</th>
+					<th>window.onScroll事件</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<img src="qbl/q4.gif" />
+		<img src="qbl/q5.gif" />
+		<img src="qbl/q6.gif" />
+
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				alert('网站上所有的内容都被加载完毕了！');
+			});
+			document.body.addEventListener('load', function() {
+				alert('body被加载完毕了');
+			});
+			
+			document.documentElement.addEventListener('load',function(){
+				alert('HTML被加载完毕了！')
+			});
+			
+			var table=document.querySelector('table');
+			table.addEventListener('load',function(){
+				alert('table被加载完毕了！')
+			});
+			
+			var img=document.querySelector('img');
+			img.addEventListener('load',function(){
+				alert('图片被加载完毕了！')
+			});
+			//对于load事件来说，只有图片和window才会被触发
+			window.addEventListener('DOMContentLoaded',function(){
+				alert('只有DOM元素被加载完成了！');
+			});
+			window.addEventListener('readystatechange',function(event){
+				alert(1);
+			});
+			
+			window.onreadystatechange=function(e){
+				alert(2);
+			};
+			
+			window.onunload=function(){
+				alert('用户在离开！');
+			};
+			//在用户关闭窗口之前
+			//IE浏览器支持
+			window.onbeforeunload=function(){
+				alert('用户在离开之前！');
+			};
+			
+			window.addEventListener('beforeunload',function(event){
+				alert('用户在离开之前！');
+			});
+			
+			//当窗口大小发生变化的时候触发
+			window.addEventListener('resize',function(event){
+				console.log(window.innerWidth);
+			});
+			//当滚动条发生变化的时候触发
+			window.addEventListener('scroll',function(){
+				console.log(document.documentElement.scrollTop);
+			})
+		</script>
+	</body>
+
+</html>

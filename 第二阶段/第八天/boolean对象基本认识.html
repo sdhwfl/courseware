@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>布尔对象基本认识</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//如何定义一个布尔值
+			var ismale = true;
+			var isfamale = false;
+
+			//如何定义一个布尔对象
+			var boolobj = new Boolean(true);
+			//console.log(ismale);
+			//console.log(isfamale);
+			//console.log(boolobj);
+			//布尔变量返回的是一个值 布尔对象返回的是一个对象
+
+			//如何取布尔对象里面的值
+			//把布尔变量封装成对象 主要是为了拓展布尔类型的功能
+			//boolobj布尔对象就是一个包含了值的变量true的变量 我们可以把布尔对象当做一个箱子
+			//将值true放进boolobj这个对象的过程，称作装箱(boxing)
+			//将true从boolobj这个对象取出的时候，称作拆箱(unboxing)
+			//boolobj是一个布尔对象   true是一个布尔值
+			var value1 = Boolean('html')//true
+			console.log(value1);
+			var value2 =Boolean('666')//true
+			console.log(value2);
+			var value3 =Boolean(0)//false
+			console.log(value3);
+			var value4=Boolean(undefined);//false
+			console.log(value4);
+			
+			var valueobj5=new Boolean('sdh')//Boolean{}
+			console.log(valueobj5);
+			var valueobj6=new Boolean(0)//Boolean{}
+		     console.log(valueobj6);
+			//value1 value2 value3 value4这些返回的都是布尔值  但是使用new Boolean('html');这种方法返回的是一个对象
+			
+			//对布尔对象方法的使用
+			//console.log(valueobj5.toString());
+			//console.log(valueobj6.toString());
+			//console.log(valueobj6.valueOf());
+			//布尔对象尽量不要当做判断条件
+			//if(new Boolean(null)){
+			//	console.log('符合条件')
+			//}
+			//new Boolean（null）返回的是一个布尔对象 无论盒子中存放的什么，都会认为布尔对象是true 因为它是一个对象
+		</script>
+	</body>
+
+</html>

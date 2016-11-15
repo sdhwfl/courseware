@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>div嵌套实现双背景</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        section {
+            width: 600px;
+            height: 150px;
+            margin: 100px auto;
+            background-color: white;
+            border-radius: 20px;
+            /*给子元素设置参考时用的坐标系*/
+            position: relative;
+            /*对超出父元素的部分进行隐藏处理*/
+            overflow: hidden;
+        }
+        
+        #d1 {
+            /*margin: 0 auto;*/
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            position: absolute;
+            left: 200px;
+            bottom: 10px;
+        }
+        
+        #d2 {
+            /*margin: 0 auto;*/
+            background-color: yellow;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            /*脱离原本的文档流，显示新的位置*/
+            position: absolute;
+            right: 130px;
+            top: 30px;
+            /*如何看到被压部分内容*/
+            /*opacity: 设置透明度 取值0到1;*/
+            opacity:0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+        <div id="d1">
+
+        </div>
+        <div id="d2">
+
+        </div>
+
+    </section>
+</body>
+
+</html>

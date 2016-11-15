@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <title>控制台</title>
+</head>
+<body>
+<div>这是一个div标签</div>
+
+<script>
+    console.log('控制台输出日志')
+    //日志
+
+    console.error('控制台输出错误')
+    //错误
+
+    console.warn('控制台输出警告')
+    //警告
+
+    console.debug('控制台输出调试')
+    //调试
+
+    console.info('控制台输出信息')
+    //信息
+
+
+    var age = 3
+    var name = 'ChangWei'
+
+    console.log('age:%d, name:%s, 小数: %.3f', age, name, age)
+    //			支持格式字符串
+    //			%d 表示整数
+    //			%s 表示字符串
+    //			%.nf 表示小数，n保留小数的位数
+
+    //			console.assert() //断言
+
+    var a = 4
+    var b = 5
+    //如果正确，则不输出，如果错误的话会输出错误信息
+    console.assert(a + b == 9, '如果不对我给你100日元')
+    console.assert(Math.PI == 3.1415926, '如果不是3.1415926，那你比我精确')
+
+    //			alert(Math.PI)
+
+    //			断言通常用于自动化测试，如下测试：
+
+    function add(a, b) {
+        return a + b
+    }
+
+    //测试用例（测试用的例子）：
+    console.assert(add(3, 5) == 8, '未能通过整数测试')
+    console.assert(add('Chang', 'Wei') == 'ChangWei', '未能通过字符串测试')
+    console.assert(add(true, false) == false, '未能通过布尔测试')
+    console.assert(add(new Date(), 1) == new Date(2016, 4, 13), '未能通过日期测试')
+    //可以瞬间执行完所有测试用例
+
+    //			不使用断言时需要人工参与测试，非常耗时无趣
+    //			对于Math这样的类在开发时要做N多次测试
+    //			如果不使用自动化测试的方法是很难想像的
+    //			var a = 3, b = 5
+    //			alert(add(3, 5))
+    //			人工检查
+
+
+    var obj = new Object()
+    //创建一个对象
+    //为对象添加属性，或者可以理解为给属性赋值
+    obj.name = 'ChangWei'
+    obj.age = 3
+    obj.isMale = true
+
+    //			展示一个对象的详细信息
+    //			列出对象的属性、方法、类型等信息
+    console.dir(obj)
+
+    //			以下通过对象【字面量】的方法创建对象
+    var newObj = { name: "ChangWei2", age: 33, isMale: false }
+    console.dir(newObj)
+
+    //			字面量：值的直接表示法
+    //			var a = 3      3就是字面量
+    //			var b = true   true就是字面量
+    //
+    //			对象是比较复杂的，所以字面量格式也比较复杂
+
+    var me = {
+        name: 'ChangWei',
+        age: 3,
+        isMale: true,
+        course: {
+            name: 'HTML5',
+            months: 4.5
+        }
+    }
+
+    var pName = me.name
+    var cName = me.course.name
+    var cMonths = me.course.months
+
+    console.log('pName: %s, cName: %s, cMonths: %.1f', pName, cName, cMonths)
+
+    console.dir(me)
+
+    //			即使很复杂的对象也能搞定
+    console.dir(document)
+
+    var div = document.querySelector('div')
+    console.dirxml(div)
+    //			可以在控制台上选择指定标签，也可以通过点击图标直接定位到标签的HTML代码
+
+    //			性能测试
+    console.time('add')
+    add(3,5)
+    console.timeEnd('add')
+
+
+    console.time('querySelector')
+    var div = document.querySelector('div')
+    console.timeEnd('querySelector')
+
+
+    console.time('for')
+    var x = 1
+    for(var i = 0; i < 100000000; i++){
+        x += 1
+    }
+    console.timeEnd('for')
+    console.log('x的值：%d', x)
+
+
+    //分组
+    console.group('单元测试add方法')
+
+    console.assert(add(3, 5) == 8, '未能通过整数测试')
+    console.assert(add('Chang', 'Wei') == 'ChangWei', '未能通过字符串测试')
+    console.assert(add(true, false) == false, '未能通过布尔测试')
+    console.assert(add(new Date(), 1) == new Date(2016, 4, 13), '未能通过日期测试')
+
+    console.groupEnd()
+    console.log('分组已经结束')
+
+    //只有firefox支持
+    console.table(newObj)
+    console.table(me)
+
+</script>
+</body>
+</html>

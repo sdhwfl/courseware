@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>MDN map</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var mymap = new Map();
+			var keyobj = {},
+				keyfunc = function() {},
+				keystring = 'a string';
+			//添加键
+			mymap.set(keystring, "和键 'a string'关联的值");
+			mymap.set(keyobj, "和键keyobj关联的值");
+			mymap.set(keyfunc, "和键keyfunc关联的值");
+
+			console.log(mymap.size);
+			//读取值
+			mymap.get(keystring);
+			console.log(mymap.get(keystring));
+			mymap.get(keyobj);
+			console.log(mymap.get(keyobj));
+			mymap.get(keyfunc);
+			console.log(mymap.get(keyfunc));
+
+			console.log(mymap.get("a string"));
+			console.log(mymap.get({}));
+			console.log(mymap.get(function() {}));
+
+			var myMap = new Map();
+			myMap.set(0, "zero");
+			myMap.set(1, "one");
+			for(var [key, value] of myMap) {
+				console.log(key, value);
+			}
+
+			for(var key of myMap.keys()) {
+				console.log(key);
+			}
+
+			for(var [key, value] of myMap.entries()) {
+				console.log(key + " = " + value);
+			}
+
+			myMap.forEach(function(value, key) {
+				console.log(key, value);
+			});
+			//   例子：将数组中的单词转换成对应的复数形式.
+			//下面的代码将一个数组中的所有单词转换成对应的复数形式.
+			function fuzzyPlural(single) {
+				var result = single.replace(/o/g, 'e');
+				if(single === 'kangaroo') {
+					result += 'se';
+				}
+				return result;
+			}
+
+			var words = ["foot", "goose", "moose", "kangaroo"];
+			console.log(words.map(fuzzyPlural));
+			//下面的例子演示如在在一个 String  上使用 map 方法获取字符串中每个字符所对应的 ASCII 码组成的数组：
+			var map = Array.prototype.map
+			var a = map.call("Hello World", function(x) {
+				return x.charCodeAt(0);
+			})
+			console.log(a);
+		</script>
+	</body>
+
+</html>

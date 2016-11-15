@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>事件</title>
+	</head>
+
+	<body>
+		<!--事件：理解为一个动作 作用主要用于触发函数-->
+		<!--当执行一个动作的时候，页面该有什么样的反馈(该执行什么函数)-->
+		<!--当按钮发生单击事件的时候，该触发什么方法-->
+		<button onclick=""> 签到 </button><br>
+
+		<script type="text/javascript">
+			//function qiandao(){
+			//var date=new Date();
+			//var hours=date.getHours();
+			//var minutes=date.getMinutes();
+			//var seconds=date.getSeconds();
+			//var shijian=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+			//	alert('已签到'+shijian);
+			//					
+			//}
+
+			//第一种方式：创建匿名函数 ( 匿名函数就是没有函数名称的函数 )当元素发生点击事件的时候 调用右侧的函数
+			//	var mybtn  =   document.getElementsByTagName('button')[0];
+			//	mybtn.onclick=function(){
+			//			alert('恭喜你签到成功！');
+			//		}
+
+			//第二种方式：也可以定义一个函数,给这个函数赋值一个变量
+			//var mybtn2 =   document.getElementsByTagName('button')[0];
+			//var myfun =function(){
+			//			alert('已签到，谢谢！')
+			//}
+			//然后直接用这个变量来代替函数
+			//mybtn2.onclick = myfun;
+			//   第三种方式添加事件的方法：添加事件监听
+			//	接收两个参数 参数一，发生什么事件 参数二，发生事件的时候调用什么方法
+			//	给按钮添加点击事件的监听
+			// var mybtn3  =   document.getElementsByTagName('button')[0];
+			//var myfunction=function(){
+			//	alert('欢迎光临！')
+			//}
+			//给按钮添加点击事件的监听，当系统检测到mybtn被click了，后面的myfunction函数就会被调用
+			//mybtn3.addEventListener('click',myfunction);
+			//移除监听
+			//mybtn3.removeEventListener('click',myfunction);
+			//mybtn3.addEventListener('dblclick',function(){
+			//alert('我被双击了！本宝不开心')
+			// })
+			//mybtn3.addEventListener('mouseover',function(){
+			//alert('把鼠标放按钮上，我就会出现！我是mouseover')
+			// })
+			//关于鼠标事件 单击 双击 移入 移出 按下 松开
+			//作业要求 用监听事件练习汤姆猫
+			//搜索网上资源  查看event事件
+		</script>
+	</body>
+
+</html>

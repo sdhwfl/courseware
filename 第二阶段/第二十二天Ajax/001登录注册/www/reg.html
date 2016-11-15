@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta charset='UTF-8'>
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+	<body>
+		<form action="/reg" method="get">
+			<ul>
+				<li>
+					<label>用户名：</label>
+					<!--required必须填写的内容-->
+					<!--pattern-->
+					<input type="text" name="name" required>
+				</li>
+				<li>
+					<label>密码：</label>
+					<input type="password" name="password" required>
+				</li>
+				<li>
+					<label>手机：</label>
+					<input type="text" name="phone" required>
+				</li>
+				<li>
+					<label>邮箱：</label>
+					<input type="text" name="email" required>
+				</li>
+
+				<li>
+					<input type="submit" value="注册">
+				</li>
+			</ul>
+		</form>
+	</body>
+</html>

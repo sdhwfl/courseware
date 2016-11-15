@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>树列表练习</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			html,
+			body,
+			ul,
+			li,
+			a {
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+			
+			main {
+				width: 800px;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			
+			.outerul_li {
+				counter-increment: liebiao;
+			}
+			
+			.outerul_li::before {
+				content: counter(liebiao);
+			}
+			
+			.innerul>li {
+				counter-increment: liebiao2;
+			}
+			
+			.innerul>li:before {
+				content: counter(liebiao)"."counter(liebiao2);
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<ul class="outerul">
+				<li class="outerul_li">
+					<a href="javascript:;">一级标题</a>
+					<ul class="innerul">
+						<li>
+							<a href="javascript:;">第1个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第2个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第3个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第4个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第5个列表子项</a>
+						</li>
+					</ul>
+				</li>
+				<li class="outerul_li">
+					<a href="javascript:;">一级标题</a>
+					<ul class="innerul">
+						<li>
+							<a href="javascript:;">第1个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第2个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第3个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第4个列表子项</a>
+						</li>
+						<li>
+							<a href="javascript:;">第5个列表子项</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</main>
+		<script type="text/javascript">
+			$(function() {
+				$('.outerul_li>a').click(function() {
+					$('.outerul_li>a').parent().siblings('.outerul_li').find('.innerul').slideUp();
+					$(this).siblings('.innerul').slideToggle();
+				});
+				$('.innerul').hide();
+				$('.innerul:eq(0)').slideDown();
+			})
+		</script>
+	</body>
+
+</html>

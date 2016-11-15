@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>练习</title>
+
+	</head>
+
+	<body>
+		<div id="wfl"></div>
+		<script type="text/javascript">
+			//全局变量 一般把script写在head中
+			//			var value='sdh';
+			//		   console.log(value);
+			//		   if(true){
+			//		   	console.log(value +1);
+			//		   	if(true){
+			//		   		console.log(value+2);
+			//		   	}
+			//		   }
+			//js中没有作用域，只要在方法中声明的变量，在整个方法的范围内都可以使用
+			//			function fangfa(){
+			//				if(true){
+			//					var value=40;
+			//					console.log(value);
+			//				}
+			//				console.log(value+'value');
+			//			}
+			//			fangfa();
+			//			var date = new Date();
+			//			document.write(date);
+			//			console.log(date.getTimezoneOffset());
+			//			console.log(date.getMonth()+1);
+			//由于月份的索引是从0开始的所以此处获取的月份比实际月份少1
+			//			console.log(date.getDate());
+			//			console.log(date.getDay());
+			//			console.log(date.getMilliseconds());
+			//			console.log(date.getSeconds());
+			//			console.log(date.getFullYear());
+			//			console.log(date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate());
+			//			var date = new Date();
+			//			document.write(date + '<br>');
+			//			var xingqi = date.getDay();
+			//			document.write(xingqi);
+			//
+			//			var date=new Date();
+			//			xingQi=date.getDay();
+			//			document.write("今天是星期"+xingQi);
+			//			  
+			//			var week2 = document.getElementById('wfl').innerHTML;
+			//			document.write(week2);
+             //求一定范围内素数的个数，并输出素数
+						function setSuShu(max) {
+							if(max <= 3) {
+								alert('数字太小。\n有2和3两个素数！');
+							}
+							var isSuShu = true;
+							var shuliang=1;
+							shuliang++;
+							document.write( "素数的个数为："+shuliang);
+							for(var i = 2; i < max; i++) {
+								isSuShu = true;
+								
+								for(var j = 2; j <= Math.sqrt(i); j++) //素数只用对比到2到这个数的平方根这里就可以了
+								{
+									
+									if(i % j == 0) {
+										isSuShu = false;
+										break;
+									}
+								}
+								if(isSuShu) 
+								document.write(i + '<br/>');
+								
+							}
+						}
+						setSuShu(50); 
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+
+1、res.send
+向浏览器端发送最后一个处理数据
+2、请求处理管线
+get("/",fun……)
+ ……函数1……函数2……函数3……函数n
+ 
+ 3、获取客户端数据
+ 1、获取url中Querystring(?name="sdh" 通过get方法发送的)
+ req.query
+ 2、获取请求体中的数据(通过post发送的请求)
+  需要安装body-parser插件
+ req.body
+ 3、获取cookie数据
+ 需要安装cookie-parser
+ req.cookies
+ 4、获取请求头中的数据
+ req.get("name")
+ 5、url路径path中的数据
+ req.path
+ req.params(params参数)
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

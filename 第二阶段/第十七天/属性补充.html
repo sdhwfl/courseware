@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//可以打上勾 但是没有checked属性
+				//$('input').prop('checked',true);
+				//可以去掉对勾  但是没有checked属性
+				//$('input').prop('checked',false);
+				//第一次可以打上勾  也有checked属性
+				//$('input').attr('checked',true);
+				//第一次可以去掉对勾  也有checked属性
+				//$('input').attr('checked',false);
+				//手动点击的时候 打不打勾和checked没有关系 
+				//这样就不能判断有没有checked属性来判断打没打勾
+				//如果我们想获取 有没有打勾状态  我们可以通过如下来实现
+				//$('input').prop('checked');
+				$('input').click(function(){
+					if($(this).prop('checked')){
+						//alert('已经勾选了');
+					}
+					else{
+						//alert('没有勾选！');
+					}
+				})
+			})
+		</script>	
+		
+	</head>
+	<body>
+		<input type="checkbox" name="" id="" value="" />
+	</body>
+</html>

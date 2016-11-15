@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>flex项目属性</title>
+    <style>
+        section {
+            height: 500px;
+            width: 800px;
+            background-color: green;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            margin: 10px;
+        }
+        
+        div:nth-of-type(1) {
+            /*order: 4;*/
+            /*order: 排序，数值越小越靠前*/
+            /*flex-grow: 2;*/
+            /*flex-grow: 定义放大的比例，默认为0，即如果存在剩余空间，也不放大。*/
+            /*flex-shrink: 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+            默认值为1，当所有项目属性值都是1时，各项目都缩小，当有一个项目flex-shrink=0，空间不足时，该项目不缩小，其他项目缩小
+            */
+            /*flex-shrink: 0;*/
+            /*flex-basis: 200px;*/
+            /*flex-basis: 定义了再分配多余项目之前，项目占据的主轴空间。浏览器根据这个属性计算主轴是否有多余空间。
+            默认值为auto，即项目本来的大小
+            它可以设和height和width一样的值，则项目占据固定空间
+            */
+            /*flex: 属性是flex-grow flex-shrink flex-basis的简写，默认为0 1 auto;
+            该属性有两个快捷值auto（1 1 auto）和none（0 0 auto）；
+            flex: none;
+            flex: auto;
+            */
+            /*align-self: 此属性允许单个项目与其他项目不一样的对齐方式，可以覆盖align-iterms。
+            默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于strech。
+            该属性可能取6个值，除了auto，其他都与align-items属性完全一致
+            */
+            align-self: auto;
+        }
+        
+        div:nth-of-type(2) {
+            /*order: 3;*/
+            /*flex-shrink: 1;*/
+            /*flex-grow: 6;*/
+            /*flex: auto;*/
+        }
+        
+        div:nth-of-type(3) {
+            /*order: 2;*/
+            /*flex-shrink: 1;*/
+            /*flex: auto;*/
+        }
+        
+        div:nth-of-type(4) {
+            /*order: 1;*/
+            /*flex-shrink: 1;*/
+            /*flex: auto;*/
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>第1个div</div>
+        <div>第2个div</div>
+        <div>第3个div</div>
+        <div>第4个div</div>
+
+    </section>
+</body>
+<html>

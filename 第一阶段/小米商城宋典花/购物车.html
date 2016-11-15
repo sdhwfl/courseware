@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>购物车</title>
+    <style>
+      
+        header {
+            height: 100px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            color: #999;
+            padding: 10px;
+            font-size: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        
+        header>div {
+            height: 60px;
+            width: 60%;
+        }
+        
+        .a1,
+        .a2 {
+            height: 60px;
+            width: 20%;
+            color: #999;
+        }
+        /*底部*/
+        
+        .navbar {
+            height: 80px;
+            width: 100%;
+            border-top: solid 1px #aaa;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+        
+        .navbar>a {
+            color: #666;
+        }
+        
+        .navbar>a:hover {
+            color: orangered;
+        }
+        
+        .glyphicon {
+            margin-top: 5px;
+            font-size: 24px;
+        }
+        
+        .active {
+            color: orangered;
+        }
+        /*中间*/
+        
+        main {
+            height: 600px;
+            width: 100%;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        main>section:nth-of-type(1) {
+            height: 266px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        main>section:nth-of-type(1)>img {
+            height: 200px;
+            width:200px;
+        }
+        
+        main>section:nth-of-type(2) {
+            height: 100px;
+            width: 100%;
+            /*background-color: pink;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        main>section:nth-of-type(2)>a {
+            height: 80px;
+            width: 30%;
+            background-color: #ddd;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+        }
+        
+        main>section:nth-of-type(2)>a:hover {
+            text-decoration: none;
+            /*box-shadow:  1px 1px 0px #000;*/
+        }
+        
+        main>section:nth-of-type(2)>a:nth-of-type(2) {
+            background-color: orangered;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="主页.html" class="a1">
+            <div class="glyphicon glyphicon-menu-left"></div>
+        </a>
+        <div style=" text-align: center;">购物车</div>
+        <a href="搜索.html" class="a2" style="text-align: right;">
+            <div class="glyphicon glyphicon-search"></div>
+        </a>
+    </header>
+    <main>
+        <section>
+            <!--<span class="glyphicon glyphicon-cloud-upload" style="font-size: 40px; color:#999;"></span>-->
+            <img src="images/empty.png" alt="">
+        </section>
+        <section>
+            <a href="分类.html">全部商品</a>
+            <a href="精选商品.html">精选商品</a>
+        </section>
+
+    </main>
+
+    <footer class="navbar navbar-fixed-bottom">
+
+        <a href="主页.html"><span class="glyphicon glyphicon-piggy-bank "><br>商城</span></a>
+        <a href="分类.html"><span class="glyphicon glyphicon-filter "><br>分类</span></a>
+        <a href="购物车.html"><span class="glyphicon glyphicon-shopping-cart active"><br>购物车</span></a>
+        <a href="服务.html"><span class="glyphicon glyphicon-grain"><br>服务</span></a>
+
+    </footer>
+</body>
+
+</html>

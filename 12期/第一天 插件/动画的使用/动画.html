@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css动画</title>
+   <style>
+
+        .myDiv{
+            height:100px;
+            width: 100px;
+            transform: scale(1) rotate(0deg);
+            margin: 0 auto;
+            background-color: pink;
+           transition: all 0.5s ease-in;
+
+        }
+        .myDiv:hover{
+            transform: scale(2) rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+<div  class="myDiv">动画</div>
+</body>
+</html>

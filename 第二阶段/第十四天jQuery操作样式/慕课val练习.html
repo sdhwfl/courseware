@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>val练习</title>
+		<script src="jquery-2.0.3.js"></script>
+		<style>
+			p {
+				color: red;
+				margin: 4px;
+			}
+			
+			b {
+				color: blue;
+			}
+			
+			span {
+				color: deeppink;
+			}
+			
+			input {
+				color: deepskyblue;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h3>.val()</h3>
+
+		<select id="one">
+			<option>慕课网</option>
+			<option>博客园</option>
+
+		</select>
+		<select id="multiple" multiple="multiple">
+			<option selected="selected">imocc</option>
+			<option>慕课网</option>
+			<option selected="selected">博客园</option>
+		</select>
+		<input type="text" value="click a button" />
+		<p></p>
+		<span id=""></span>
+		<h3></h3>
+
+		<script type="text/javascript">
+			//单个select，返回第一个
+			$("p").text($("#one").val());
+
+			//alert($("#one").val());
+			//多个select被选择，返回["imocc", "博客园"]
+			$("span").text($("#multiple").val());
+			//选择一个表单，修改value的值
+			$("input[type='text']").val('修改表单的字段');
+		</script>
+
+	</body>
+
+</html>

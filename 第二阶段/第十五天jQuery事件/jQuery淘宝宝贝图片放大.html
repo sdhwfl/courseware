@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>淘宝宝贝图片放大</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			#yuantu {
+				height: 200px;
+				width: 200px;
+				position: relative;
+			}
+			
+			#yuantu>img {
+				height: 200px;
+				width: 200px;
+			}
+			
+			#movediv {
+				height: 100px;
+				width: 100px;
+				background-color: lightgoldenrodyellow;
+				position: absolute;
+				top: 0px;
+				opacity: 0.3;
+				cursor: move;
+				display: none;
+			}
+			
+			#datu {
+				height: 450px;
+				width: 450px;
+				position: absolute;
+				left: 300px;
+				top: 0px;
+				display: none;
+			}
+			
+			#datu>img {
+				height: 300px;
+				width: 300px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="yuantu">
+			<img src="1.jpg" alt="" />
+			<div id="movediv"> </div>
+		</div>
+		<div id="datu">
+			<img src="1.jpg" />
+		</div>
+		<script type="text/javascript">
+			var $movediv = $('#movediv');
+			var $yuantu = $('#yuantu');
+			var $datu = $('#datu');
+			var $bigimg = $('#datu>img');
+			var scale = 0;
+			$yuantu.mousemove(function(evt) {
+				var e = evt || window.event;
+				var x = e.clientX - $yuantu.offset().left - $movediv.width() / 2;
+				var y = e.clientY - $yuantu.offset().top - $movediv.height() / 2;
+				//alert(x);
+				//  	alert(y)
+				var maxx = $yuantu.width() - $movediv.width();
+				var maxy = $yuantu.height() - $movediv.height();
+				if(x < 0) {
+					x = 0;
+				}
+				if(x > maxx) {
+					x = maxx;
+				}
+				if(y < 0) {
+					y = 0;
+				}
+				if(y > maxy) {
+					y = maxy;
+				}
+				$movediv.css('left', x + "px").css('top', y + "px");
+				$datu.scrollLeft(200);
+				$datu.scrollTop(200);
+
+			});
+			$('#yuantu').mouseover(function() {
+				$movediv.css('display', 'block');
+				$datu.css('display', 'block');
+
+				scale = $datu[0].clientWidth / $yuantu[0].clientWidth;
+				//console.log(scale)
+			})
+
+			$('#yuantu').mouseout(function() {
+				$movediv.css('display', 'none');
+				$datu.css('display', 'none');
+			})
+		</script>
+	</body>
+
+</html>

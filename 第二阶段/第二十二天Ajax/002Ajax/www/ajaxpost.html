@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>ajaxpost</title>
+		<meta charset='UTF-8'>
+		<meta name="Keywords " content="$SiteKeywords " />
+		<meta name="Description " content="$SiteDescription " />
+		<link rel="stylesheet " type="text/css " href="css/globle.css " />
+		<link rel="stylesheet " type="text/css " href="css/style.css " />
+		<script src='js/jquery-2.0.3.js'></script>
+		<script src='js/index.js'></script>
+	</head>
+
+	<body>
+		姓名：<input type="text" name="name" /><br /> 年龄：
+		<input type="text" name="age" /><br />
+		<button class="btn1">post请求</button>
+		<div id=""></div>
+
+		<script type="text/javascript">
+			$('.btn1').click(function() {
+
+				var name = $('input:eq(0)').val();
+				var age = $('input:eq(1)').val();
+				//XHR对象
+				var xhr = new XMLHttpRequest();
+
+				xhr.onreadystatechange = function() {
+						if(xhr.readyState == 4) {
+							if(xhr.status == 200) {
+								$('div').html(xhr.responseText)
+//								setTimeout(function() {
+//									location.href = 'http://www.hhstu.edu.cn'
+//								}, 3000)
+
+							}
+						}
+					}
+					//提交方式get 地址/ajax/get 异步
+				xhr.open('POST', '/ajax/post', true);
+				//模拟表单形式来发送
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+					//post 参数在send里发送
+				xhr.send('name=' + name + '&age=' + age);
+			})
+		</script>
+
+	</body>
+
+</html>

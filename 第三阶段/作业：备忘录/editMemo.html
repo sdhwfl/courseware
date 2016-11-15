@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+    <title>文件夹编辑状态</title>
+    <link rel="stylesheet" href="css/editMemo.css">
+    <style>
+  
+    </style>
+</head>
+<body>
+    <div class="folder">
+        <div class="files">
+            <span class="file">已选定一项</span>
+            <span class="edit">完成</span>
+        </div>
+        <div class="icloud">
+            <span>ICLOUD</span>
+        </div>
+        <div class="allmemos">
+            <span class="text">所有iCloud</span>
+            <span class="number">10</span>
+            <span class="tag"><img src="images/right.png" alt=""></span>
+        </div>
+        <div class="memos">
+            <span class="text">备忘录</span>
+            <span class="number">10</span>
+            <span class="tag"><img src="images/right.png" alt=""></span>
+        </div>
+        <div class="studyNotes">
+            <span class="edit"><img src="images/edit.png" alt=""></span>
+            <span class="text">学习笔记</span>
+            <span class="number">9</span>
+        </div>
+        <div class="newDel">
+            <span class="text">最近删除</span>
+            <span class="number">10</span>
+            <span class="tag"><img src="images/right.png" alt=""></span>
+        </div>
+    </div>
+    
+     <!--弹出层-->
+    <div id="newfiles">
+        <div class="newfiles">
+            <h1>给文件夹重新命名</h1>
+            <span>请为此文件件输入新名称</span><br>
+            <input type="text" placeholder="请输入新名称">
+            <!--<img src="images/close.png" alt="" class="close">-->
+            <div class="cancelstore">
+                <span>取消</span>
+                <span>存储</span>
+            </div>
+        </div>
+    </div>
+
+    <!--遮罩层-->
+    <div class="mask"></div>
+    <footer>
+        <span>删除</span>
+    </footer>
+</body>
+</html>

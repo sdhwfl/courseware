@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>双背景</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        section {
+            width: 600px;
+            height: 150px;
+            background-color: white;
+            /*居中*/
+            margin: 0 auto;
+            /*设置圆角*/
+            border-radius: 20px;
+            background-image: url(images/huang.jpg), url(images/lan.jpg);
+            /*背景混合模式*/
+            background-blend-mode: multiply;
+            /*设置背景不重复*/
+            background-repeat: no-repeat;
+            /*设置背景图片开始显示的位置*/
+            /*同时设置多张背景图片的起始位置，每个位置用逗号隔开*/
+            background-position: 50% 50%,100% 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+    </section>
+</body>
+
+</html>

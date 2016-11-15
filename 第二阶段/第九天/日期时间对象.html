@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>日期时间对象</title>
+	</head>
+
+	<body>
+		<span id="time">15：30：45</span>
+		<script type="text/javascript">
+			var date = new Date();
+			console.log(date);
+			var year = date.getFullYear();
+			var month = date.getMonth();
+			var riqi = date.getDate();
+			var now = null;
+			now = year + '/' + month + '/' + riqi;
+			document.write('现在是：' + now +'<br>' );
+
+			function updatetime() {
+				var date = new Date();
+				var hours = date.getHours();
+				var minutes = date.getMinutes();
+				var seconds = date.getSeconds();
+			
+				document.getElementById('time').innerHTML = hours + ':' + minutes + ':' +  seconds;
+				
+			}
+			updatetime();
+			setInterval(updatetime,1000);
+		</script>
+		
+	</body>
+
+</html>

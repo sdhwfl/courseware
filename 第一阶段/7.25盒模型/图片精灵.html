@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片精灵</title>
+    <style>
+        span {
+            display: inline-block;
+            /*每一个图片精灵的宽 高*/
+            width: 144.285px;
+            height: 144.285px;
+            
+            background-color: pink;
+            background-image: url(images/bq.jpg);
+            /*background-repeat: no-repeat;*/
+            /*平移参考点图片的左上角*/
+            /*向左平移 向上平移 负值*/
+            /*向右平移 向下平移 正值*/
+            /*此处移动的是背景：不是标签*/
+            /*background-position: -432.855px -432.855px;*/
+        }
+        .s1{
+            background-position: -432.855px -432.855px;
+        }
+        .s2{
+            background-position: -144.285px -432.855px;
+        }
+        .s3{
+            background-position: -432.855px -144.285px;
+        }
+        .s4{
+            background-position: 0px  -432.285px;
+        }
+        .s5{
+            background-position: -865.71px -865.71px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <span class="s1"></span>
+    <span class="s2"></span>
+    <span class="s3"></span>
+    <span class="s4"></span>
+    <span class="s5"></span>
+</body>
+
+</html>

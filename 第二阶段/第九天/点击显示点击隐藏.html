@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>点击显示点击隐藏</title>
+		<style type="text/css">
+			#div1 {
+				height: 200px;
+				width: 200px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div1"></div>
+		<button onclick="appear()">点我div1出现</button>
+		<button onclick="hide()">点我div1隐藏</button>
+
+		<!--1.点击显示和隐藏怎么实现？-->
+		<script type="text/javascript">
+			var div1 = document.getElementById('div1');
+
+			function appear() {
+				div1.style.display = 'block';
+			}
+
+			function hide() {
+				div1.style.display = 'none';
+			}
+		</script>
+
+	</body>
+
+</html>

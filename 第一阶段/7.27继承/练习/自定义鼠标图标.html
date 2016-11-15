@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>自定义鼠标图标</title>
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            cursor: url(a.gif), auto;
+            /*cursor:pointer;*/
+        }
+        /*设置鼠标事件的图片可以是32*32px 64*64px 128*128px太大了压根不显示*/
+        /*设置鼠标事件的容器必须有一定的宽高，要不然不显示*/
+        div {
+            height: 300px;
+            width: 300px;
+            margin: 50px auto;
+            background-color: pink;
+            cursor: url(t.gif), auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

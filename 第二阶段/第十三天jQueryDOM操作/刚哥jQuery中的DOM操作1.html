@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery操作DOM</title>
+	<script type="text/javascript" src="jQuery-2.0.3.js"></script>
+	<script type="text/javascript">
+		// $(document).ready(function(){});
+		$(function(){
+			// jQuery作为JavaScript库，继承并发扬了JavaScript对DOM对象的操作的特性，是开发人员能够方便地操作DOM对象。
+			// 1、查找节点
+			// 使用jQuery选择器可以很方便的在文档树上查找节点
+			//查找元素节点->查找第二个li元素
+			var $li = $('ul li:nth-child(2)');//获取第二个li元素
+			var li_text = $li.text();//获取元素中的文本内容
+			console.log(li_text);//打印文本内容
+			console.log('---'.repeat(22));
+			//查找属性节点->获取元素中属性内容
+			//attr()方法获取元素属性值，参数是一个的时候代表需要查询的属性的名字；参数是两个的时候代表需要修改的属性以及属性值
+			var $paragraph = $('p');
+			var para_textAttr = $paragraph.attr('title');
+			// var para_textAttr = $paragraph.attr('title','我现在在敲代码');
+			console.log(para_textAttr);
+
+			console.log('---'.repeat(22));
+			// 2、创建节点
+			// 真正的DOM操作除了查找对象外，需要动态创建HTML内容，使文档在浏览器中的呈现效果发生变化，并且达到各种各样的人机交互目的。
+			// 创建元素节点：使用$(html标记字符串)创建一个DOM对象，并将DOM对象包装成一个jQuery对象返回
+			var $li_1 = $('<li></li>');
+			var $li_2 = $('<li></li>');
+			$('ul').append($li_1);//添加到ul节点中
+			$('ul').append($li_2);
+			// 创建文本节点，就是在创建元素节点的时候直接把文本内容写出来，然后使用append（）等方法添加到html文档中
+			var $li_1 = $('<li>香梨</li>');
+			var $li_2 = $('<li>哈密瓜</li>');
+			$('ul').append($li_1);//添加到ul节点中
+			$('ul').append($li_2);
+			// 创建属性节点，与创建文本节点类似，也是直接在创建元素节点时一起创建
+			var $li_1 = $("<li title='香梨'>香梨</li>");
+			var $li_2 = $("<li title='哈密瓜'>哈密瓜</li>");
+			$('ul').append($li_1);//添加到ul节点中
+			$('ul').append($li_2);
+			//可以通过调试工具在控制台查看变化
+			// 3、插入节点，动态创建完对象之后，还需要将新创建的元素插入到文档中。最简单的方法就是，让新建元素成为文档中某个节点的子节点。
+			/*
+			append（）：向每个匹配的元素内部追加内容；
+			appendTo（）：将所有匹配的元素追加到指定元素中；
+			prepend（）：向每个匹配的元素内部前置内容；
+			prependTO（）：将所有匹配的元素前置到指定元素中；
+			after（）：在每个匹配的元素内容之后插入内容;
+			insertAfter()：将所有匹配的元素插入到指定元素的后面；
+			before（）：在每个匹配的元素之前插入内容；
+			insertBefore（）：将所有匹配的元素插入到指定的元素的前面
+
+			//上面这几对方法实现效果差不多一样，只是调用方法的对象会颠倒，大家可以尝试一下。
+
+			*/
+			// 4、删除节点，可以将文档中多余的节点删除。jQuery提供三种删除节点的方法，有remove()、detach()和empty()
+			// remove（）方法，作用是从DOM中删除所有匹配的元素，传入的参数用于根据jQuery表达式来筛选元素
+			var $li_3 = $('ul li:nth-child(3)').remove();//删除第三个li
+			//注： 当某个节点被删除之后，该节点所包含的所有后代节点将同时被删除。这个方法的返回值是一个指向已被删除的节点的引用，因此，我们可以在以后继续使用被删除的这个元素。
+			var $li_3 = $('ul li:nth-child(3)').remove();
+			$li_3.appendTo('ul');
+			//另外，remove（）方法也可以通过传递参数来选择性地删除元素，如下
+			$('ul li').remove('li[title=哈密瓜]');//将li元素中title=哈密瓜的li删除
+
+			// detach（）方法和remove()一样，也是从DOM中去掉所有匹配的元素。但是与remove（）不同的是，所有绑定的事件、附加的数据都会保留下来
+			$('ul li').Click(function(){
+				alert($(this).html());//弹出元素的html内容
+			});
+			var $li_4 = $('ul li:nth-child(2)').detach();//删除元素
+			$li_4.appendTo('ul');//重新追加此元素，发现它之前绑定的事件还在。假如使用remove（）方法删除元素的话，那么它之前绑定的方法将会失效
+			
+			// empty（）方法，严格来讲，并不是删除节点，而是清空节点 ，它能清空元素中的所有后代节点
+			var $li_5 = $('ul li:nth-child(2)').empty();//清空元素内的内容，内部的文本节点被删除
+
+		});
+	</script>
+</head>
+<body>
+	<p title="你最喜欢的水果是？">你最喜欢的水果是</p>
+	<ul>
+		<li title="苹果">苹果</li>
+		<li title="香蕉">香蕉</li>
+		<li title="橘子">橘子</li>
+	</ul>
+</body>
+</html>

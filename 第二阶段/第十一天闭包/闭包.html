@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var number = 10;
+
+			function func1() {
+				//函数内部可以得到全局变量的值
+				console.log(number);
+			}
+			func1();
+			//2
+			function func2() {
+				//局部变量 出了作用域是不能使用的
+				var number1 = 100;
+				//不使用var关键字声明，全局变量
+				number2 = 1000;
+			}
+			func2();
+			console.log(number2);
+			//3、在函数外，使用函数内的局部变量的值
+			function func3() {
+				var number4 = 300;
+				//将内部的值通过return返回到外边
+				return number4;
+			}
+			var result = func3();
+			console.log(func3());
+
+			function func4() {
+				var str = 'sdh';
+				//func5将str作为返回值，传送到外边
+				function func5() {
+					return str;
+				}
+				//将方法作为结果，返回出去
+				return func5();
+			}
+			//说明：在func4函数外边无法直接获得函数内的str这个局部变量，但是可以通过内部的func5这个方式获得str这个局部变量，
+			//然后,将func5这个函数，当做结果返回到外边，就相当于间接得到strle
+			//func5就称为闭包
+			//闭包的理解
+			//有两个方法：外层方法 内层方法
+			//有一个变量：外层方法的局部变量
+			//有两个返回值:
+			//外层方法返回值、内层方法
+			//内层方法返回值 、局部变量
+			//关于闭包的使用场景
+			//1、把函数当做结果返回出去  将函数内部的值返回出去                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        v    
+			//求圆的面积
+			//			
+			//			function mianji(radius){
+			//				var mianji=Math.PI*radius*radius;
+			//				return mianji;
+			//			}
+			//			console.log(mianji(4));
+			//			function cmj(pi,r){
+			//				//计算面积，然后返回结果
+			//				return pi*r*r;
+			//			}
+			//			function jisuanmj(r){
+			//				return cmj(Math.PI,r)
+			//			}
+			//			//真正计算的时候
+			//			var result=jisuanmj(6.8);
+			//			console.log(result);
+
+			//简化之后
+
+//			function jisuanmj(pi) {
+//				function cmj(r) {
+//					return pi * r * r;
+//				}
+//				return cmj;
+//			}
+//			//调用外层方法，将返回值赋值给一个变量
+//			var value1 = jisuanmj(Math.PI);
+//			console.log(value1);
+//			//检测变量类型
+//			console.log(typeof(value1));
+//			//value1是一个方法
+//			var result2 = value1(6);
+//			console.log(result2);
+//			//更简洁
+//			function jisuanmj(pi) {
+//				return function(r) {
+//					return pi * r * r;
+//				}
+//
+//			}
+   eval("document.write('大家好！')");
+		</script>
+	</body>
+
+</html>

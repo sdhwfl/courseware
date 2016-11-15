@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery操作DOM-操作样式</title>
+	<script type="text/javascript" src="jQuery-2.0.3.js"></script>
+	<script type="text/javascript">
+		// $(document).ready(function(){});
+		$(function(){
+			// 样式操作
+			// 1、获取样式和设置样式，可以通过attr（）获取元素的class属性，或者通过attr（）修改元素的class属性达到目的。
+            var $p_class = $('p').attr('class');//获取p元素的class
+            $('p').attr('class','bold');//设置p元素的class属性值为bold
+            $('p').attr('class','bold highlight');//假如设置多个类，类名可以用空格隔开
+
+			// 2、追加样式,可以通过addClass（）方法实现
+            $('p').addClass('another');
+
+            //3、移除样式,可以通过removeClass（）方法实现
+//            $('p').removeClass('bold');
+            //如果要把元素的两个class删除，可以调用两次removeClass（）方法
+            //$('p').removeClass('bold').removeClass('another');
+            //或者,类名之间用空格隔开
+            //$('p').removeClass('bold another');
+            //注：假如说removeClass（）不带参数的时候，就会将class的值全部删除
+
+            //4、切换样式：jQuery提供了一个toggleClass（）方法来控制样式上的重复切换。如果类名存在就删除它，不存在就添加它
+            //当点击p的时候切换样式
+            $('p').click(function(){
+                $('p').toggleClass('another');
+            });
+
+            //5、判断是否含有某一个样式，使用hasClass（）来判断元素中是否存在某个class。如果存在，就返回true，否则就返回false。
+            $('p').hasClass('another');//等同于$('p').is('.another');
+
+            //6、除了可以使用class操作样式，也可以使用css（）方法。
+            var $div = $('#test_div');
+            $div.css('color'); // '#000033', 获取CSS属性
+            $div.css('color', '#336699'); // 设置CSS属性
+            //$div.css('color', ''); // 清除CSS属性
+            //css()方法作用于DOM节点的style属性，具有最高优先级
+
+            //7、显示和隐藏：鉴于我们经常需要隐藏一个元素，jQuery提供了两个比较方便的方法，show()和hide()方法
+            var $hideDiv = $('#hideOrShow');
+            $hideDiv.hide(); // 隐藏
+            $hideDiv.show(); // 显示
+            //注意，隐藏DOM节点并未改变DOM树的结构，它只影响DOM节点的显示。这和删除DOM节点是不同的。
+		});
+	</script>
+    <style>
+        .simple{
+            font-size:16px;
+        }
+        .bold{
+            font-size: 30px;
+        }
+        .highlight{
+            background-color: yellow;;
+        }
+        /*追加的样式*/
+        .another{
+            text-decoration: underline;
+        }
+        #test_div{
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+	<p title="你最喜欢的水果是？" class="simple">你最喜欢的水果是</p>
+	<ul>
+		<li title="苹果">苹果</li>
+		<li title="香蕉">香蕉</li>
+		<li title="橘子">橘子</li>
+	</ul>
+    <div id="test_div">div</div>
+    <div id="hideOrShow">测试hide（）和show（）方法</div>
+</body>
+</html>

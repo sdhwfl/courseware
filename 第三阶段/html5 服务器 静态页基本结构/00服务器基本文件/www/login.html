@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/png">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            font-family: "微软雅黑";
+            height: 100%;
+        }
+        
+        .container {
+            max-width: 854px;
+            /*height: 622px;*/
+            background-color: #ffffff;
+            margin: 0 auto;
+            border: solid 1px #fff;
+            text-align: center;
+        }
+        
+        @media screen and (max-width:830px) {
+            .container {
+                width: 500px;
+                margin-top: 60px;
+            }
+        }
+        
+        .container .logo {
+            margin-top: 50px;
+            width: 100%;
+        }
+        
+        .container .logo img {
+            height: 49px;
+            width: 49px;
+        }
+        
+        .container .login {
+            font-size: 26px;
+            margin-top: 16px;
+            color: #424242;
+        }
+        
+        .container .account {
+            margin-top: 31px;
+        }
+        
+        .container .account,
+        .container .password {
+            text-indent: 1em;
+            height: 49px;
+            width: 357px;
+        }
+        
+        .container .password {
+            margin-top: 16px;
+        }
+        
+        .container button {
+            margin-top: 40px;
+            height: 52px;
+            width: 357px;
+            border: none;
+            background-color: #ef5b00;
+            color: #ffffff;
+        }
+        
+        .container .otherlogin {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-top: 29px;
+        }
+        
+        .container #otherlogin {
+            height: 31px;
+            width: 147px;
+            text-align: center;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 17px;
+        }
+        
+        .container #otherlogin .qq,
+        .container #otherlogin .weibo,
+        .container #otherlogin .alipay {
+            height: 31px;
+            line-height: 31px;
+            width: 49px;
+        }
+        
+        .container #otherlogin .qq {
+            background: url(images/qq.png);
+            background-repeat: no-repeat;
+        }
+        
+        .container #otherlogin .qq:hover {
+            background: url(images/qq2.png);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        
+        .container #otherlogin .weibo {
+            background: url(images/weibo.png);
+            background-repeat: no-repeat;
+        }
+        
+        .container #otherlogin .weibo:hover {
+            background: url(images/weibo2.png);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        
+        .container #otherlogin .alipay {
+            background: url(images/alipay.png);
+            background-repeat: no-repeat;
+        }
+        
+        .container #otherlogin .alipay:hover {
+            background: url(images/alipay2.png);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        
+        .container .register {
+            color: #757575;
+            font-size: 16px;
+            padding: 60px 0;
+        }
+        
+        .container .register span:nth-child(2) {
+            color: #e9e0e9;
+            padding: 0 10px;
+        }
+        
+        .container .register .siginin:hover {
+            color: #ff7624;
+            cursor: pointer;
+        }
+        
+        .container .register .forget:hover {
+            color: #ff7624;
+            cursor: pointer;
+        }
+        
+        .fontStyle {
+            width: 854px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+        
+        .fontStyle .line {
+            color: #7c7c7c;
+            padding: 0 7px;
+        }
+        
+        .fontStyle span:nth-child(2n+1) {
+            color: #787677;
+        }
+        
+        .fontStyle span:nth-child(2n+1):hover {
+            color: #302f2d;
+            cursor: pointer;
+        }
+        
+        .allrights {
+            /*width: 100%;*/
+            text-align: center;
+            margin-top: 16px;
+            margin-left: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .allrights span {
+            color: #6d6c6a;
+            font-size: 13px;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <div class="login">小米账号登录</div>
+        <input type="text" class="account" placeholder="邮箱/手机号码/小米账号"><br>
+        <input type="password" class="password" placeholder="密码"><br>
+        <button>立即登录</button><br>
+        <div class="otherlogin">其他方式登录</div>
+        <section id="otherlogin">
+            <div class="qq"></div>
+            <div class="weibo"></div>
+            <div class="alipay"></div>
+        </section>
+        <section class="register">
+            <span class="siginin">注册小米账号</span>
+            <span>|</span>
+            <span class="forget">忘记密码?</span>
+        </section>
+
+    </div>
+
+    <section class="fontStyle">
+        <span style=" color: #302f2d;">简体</span>
+        <span class="line">|</span>
+        <span>繁体</span>
+        <span class="line">|</span>
+        <span>English</span>
+        <span class="line">|</span>
+        <span>常见问题</span>
+
+    </section>
+    <section class="allrights">
+        <span>小米公司版权所有-京ICP备10046444-</span>
+        <span><img src="images/ghs.png" alt=""></span>
+        <span>京公网安备11010802020134号-京ICP证110507号</span>
+
+    </section>
+</body>
+
+</html>

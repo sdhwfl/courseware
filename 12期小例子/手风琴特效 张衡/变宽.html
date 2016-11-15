@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<script src="jquery/jquery-3.1.1.js"></script>
+		<script src="tools.js"></script>
+		<title>变宽</title>
+		<style type="text/css">
+			#container {
+
+				padding: 0;
+				margin: 100px auto;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+			}
+			
+			#container img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			#container img:first-child {
+				width: 150px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<img src="image/1.jpg" alt="" />
+			<img src="image/2.jpg" alt="" />
+			<img src="image/3.jpg" alt="" />
+			<img src="image/4.jpg" alt="" />
+			<img src="image/5.jpg" alt="" />
+		</div>
+		
+		<script type="text/javascript">
+			$(function() {
+				//			 var n=0;
+				//		   $('#container img').hover(function(){
+				//		    	window.clearInterval(time);
+				//		   		$(this).lzyTab('animate');
+				//		   },function(){
+				//		             n = $(this).index();
+				//		    		time = setInterval(changeImg, 1000);
+				//
+				//		   });
+				//
+				//			function changeImg(){
+				//		 		if (n>4) {
+				//					n=0;
+				//				}
+				//				$('#container img').eq(n).lzyTab('animate1');
+				//		   		n++;
+				//		   		//console.log(n);
+				//			}
+
+				//var time = setInterval(changeImg, 1000);
+
+				//自动播放对象
+				var AutoPlay = function(id) {
+					this.initialize(id)
+				};
+				AutoPlay.prototype = {
+					initialize: function(id) {
+						var oThis = this;
+						this.img = $('#container img');
+						this.autoTimer = null;
+						this.iNow = 0;
+						this.number =0;
+						oThis.autoTimer = setInterval(function() {
+							oThis.next()
+						}, 1000);
+						for(var i = 0; i < this.img.length; i++) {
+							this.img[i].index = i; 
+							this.img[i].onmouseover = function() {
+								clearInterval(oThis.autoTimer);
+								$(this).stop().animate({
+										width: 150
+									}, 500)
+									.siblings().stop().animate({
+										width: 100
+									}, 500);
+							}
+							this.img[i].onmouseleave = function() {							
+								oThis.iNow = $(this).index();
+								oThis.autoTimer = setInterval(function() {
+									
+									oThis.next()
+									
+								}, 1000)
+							}
+						}
+
+					},
+					next: function() {
+						if(this.iNow >=5) {
+							this.iNow = 0;
+						}
+						this.img.eq(this.iNow).stop().animate({
+								width: 150
+							}, 500)
+							.siblings().stop().animate({
+								width: 100
+							}, 500);
+							
+						this.iNow++;
+
+					},
+				}
+				window.onload = function() {
+					new AutoPlay("container");
+					
+				};
+               
+			});
+		</script>
+	</body>
+
+</html>

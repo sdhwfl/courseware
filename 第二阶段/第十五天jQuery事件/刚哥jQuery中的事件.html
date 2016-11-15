@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.0.3.js"></script>
+    <script>
+        <!--DOM元素加载完之后执行什么操作-->
+        $(document).ready(function(){
+            //1、举个例子：用户点击了超链接时弹出提示框，我们用jQuery这样绑定一个click事件
+            var $a = $('a');
+            $a.click(function () {
+                alert('我被点击了');
+            });
+
+            //2、事件类型列举，自行组织练习
+
+            //3、事件参数：所有事件都会传入Event对象作为参数，可以从Event对象中获取更多信息，比如通过监听mouseover和keypress事件，可以获取鼠标位置和键盘按键的值。
+            $('#testMouseMoveDiv').mousemove(function (e) {
+                $('#testMouseMoveSpan').text('pageX = ' + e.pageX + ', pageY = ' + e.pageY);
+            });
+
+            //4、取消绑定事件:一个已被绑定的事件可以解除绑定，通过off('click', function)实现
+            function hello() {
+                alert('hello!');
+            }
+            $('span').click(hello); // 绑定事件
+
+            // 10秒钟后解除绑定:
+            setTimeout(function () {
+                $('span').off('click', hello);
+            }, 10000);
+
+            //5、浏览器安全限制，在浏览器中，有些JavaScript代码只有在用户触发下才能执行，例如，window.open()函数：
+            // 无法弹出新窗口，将被浏览器屏蔽:
+            window.open('http://cn.bing.com/');
+
+        });
+    </script>
+    <style>
+        #testMouseMoveDiv{
+            width: 300px;
+            height:200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<a href="#">点击我试一下</a>
+<div id="testMouseMoveDiv">测试mouseover事件的区域</div>
+<span id="testMouseMoveSpan"></span>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <title>服务</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+        
+        header {
+            height: 100px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            color: #999;
+            padding: 10px;
+            font-size: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        
+        header>div {
+            height: 60px;
+            width: 60%;
+        }
+        
+        .a1,
+        .a2 {
+            height: 60px;
+            width: 20%;
+            color: #999;
+        }
+        /*底部*/
+        
+        .navbar {
+            height: 80px;
+            width: 100%;
+            border-top: solid 1px #aaa;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+        
+        .navbar>a {
+            color: #666;
+        }
+        
+        .navbar>a:hover {
+            color: orangered;
+        }
+        
+        .glyphicon {
+            margin-top: 5px;
+            font-size: 24px;
+        }
+        
+        .active {
+            color: orangered;
+        }
+        /*中间*/
+        
+        .denglu {
+            height: 150px;
+            width: 100%;
+            background-color: orangered;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        
+        .a-plus:hover {
+            text-decoration: none;
+        }
+        
+        .plus {
+            display: flex;
+            justify-content: center;
+            margin-top: -60px;
+            /*background-color: #fff;*/
+        }
+        
+        .plus>div {
+            height: 120px;
+            width: 120px;
+            background-color: orange;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-top: -60px;
+        }
+        
+        .plus>div span {
+            color: #fff;
+            font-size: 48px;
+        }
+        
+        .col-xs-4 {
+            text-align: center;
+            border-right: 1px solid #999;
+            height: 150px;
+            /*background-color: #fff;*/
+            padding: 20px 0;
+        }
+        
+        .col-xs-4>a {
+            color: #333;
+        }
+        
+        .col-xs-4>a:hover {
+            text-decoration: none;
+        }
+        
+        .col-xs-4:nth-of-type(3) {
+            border-right: none;
+        }
+        
+        .hr1 {
+            border-top: 3px solid red;
+            width: 60px;
+        }
+        
+        .hr2 {
+            border-top: 3px solid lime;
+            width: 60px;
+        }
+        
+        .hr3 {
+            border-top: 3px solid orange;
+            width: 60px;
+        }
+        
+        .yh,
+        .f,
+        .fw,
+        .set {
+            height: 100px;
+            background-color: #fff;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fw,
+        .set {
+            margin-top: 20px;
+        }
+        .set{
+            margin-bottom: 100px;
+        }
+        .yh {
+            border-bottom: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        
+        .yh>h3,
+        .f>h3,
+        .fw>h3,
+        .set>h3 {
+            padding: 20px;
+        }
+        
+        main>a {
+            color: #333;
+        }
+        
+        main>a:hover {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="主页.html" class="a1">
+            <div class="glyphicon glyphicon-menu-left"></div>
+        </a>
+        <div style=" text-align: center;">个人中心</div>
+        <a href="搜索.html" class="a2" style="text-align: right;">
+            <div class="glyphicon glyphicon-search"></div>
+        </a>
+    </header>
+    <main>
+        <section class="denglu">
+            <h2 style="color：white;">立即登录</h2>
+        </section>
+        <a href="小米账号登录.html" class="a-plus">
+            <section class="plus">
+                <div>
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+            </section>
+        </a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href="我的订单.html">
+                        <span class="glyphicon glyphicon-th-list" style="font-size:40px;"></span>
+                        <h3>全部订单</h3>
+                        <hr class="hr1">
+                    </a>
+                </div>
+
+                <div class="col-xs-4">
+                    <a href="">
+                        <span class="glyphicon glyphicon-th-list" style="font-size:40px;"></span>
+                        <h3>待付款</h3>
+                        <hr class="hr2">
+                    </a>
+                </div>
+
+                <div class="col-xs-4">
+                    <a href="">
+                        <span class="glyphicon glyphicon-th-list" style="font-size:40px;"></span>
+                        <h3>待收货</h3>
+                        <hr class="hr3">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="">
+            <section class="yh">
+                <span class="glyphicon glyphicon-gift" style="font-size: 40px; "></span>
+                <h3>我的优惠</h3>
+
+            </section>
+        </a>
+        <a href="">
+            <section class="f">
+                <span class="glyphicon glyphicon-barcode" style="font-size: 40px; "></span>
+                <h3>F码通道</h3>
+
+            </section>
+        </a>
+        <a href="">
+            <section class="fw">
+                <span class="glyphicon glyphicon-leaf" style="font-size: 40px; "></span>
+                <h3>我的服务</h3>
+            </section>
+        </a>
+        <a href="">
+            <section class="set">
+                <span class="glyphicon glyphicon-cog" style="font-size: 40px; "></span>
+                <h3>设置</h3>
+
+            </section>
+        </a>
+    </main>
+    <footer class="navbar navbar-fixed-bottom">
+
+        <a href="主页.html"><span class="glyphicon glyphicon-piggy-bank "><br>商城</span></a>
+        <a href="分类.html"><span class="glyphicon glyphicon-filter "><br>分类</span></a>
+        <a href="购物车.html"><span class="glyphicon glyphicon-shopping-cart "><br>购物车</span></a>
+        <a href="服务.html"><span class="glyphicon glyphicon-grain active"><br>服务</span></a>
+
+    </footer>
+</body>
+
+</html>

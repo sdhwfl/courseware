@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>邮箱验证</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+	</head>
+
+	<body>
+	
+			<label for="">用户名：</label><input type="" name="" id="" value="" /><button id="btn1">点击验证</button><br/>
+			<label for="">密&#x3000码：</label><input type="" name="" id="" value="" /><button id="btn2">点击验证</button><br/>
+			<label for="">手机号：</label><input type="" name="" id="" value="" /><button id="btn3">点击验证</button><br />
+			<label for="">邮&#x3000箱：</label><input type="" name="" id="" value="" /><button id="btn4">点击验证</button><br/>
+
+		<script type="text/javascript">
+			$('#btn1').click(function() {
+            var reg=/^[a-zA-Z0-9-]{1,16}$/g
+            var str=$('input:eq(0)').val();
+             if(reg.test(str)==true){
+             	alert('用户名验证成功！')
+             	
+             }
+             else{
+             	alert('用户名验证失败！')
+             }
+           
+			});
+			$('#btn2').click(function(){
+				 
+             var reg1=/^\w{6,18}$/g;
+             var str1=$('input:eq(1)').val()
+             if(reg1.test(str1)==true){
+             	alert('密码验证通过！')
+             }
+             else{
+             	alert('密码验证失败')
+             }
+			})
+			
+			$('#btn3').on('click',function(){
+			 var reg=/^1[3578]\d{9}$/
+			 var str=$('input:eq(2)').val();
+			 if(reg.test(str)==true){
+			 alert('手机号验证通过！')
+			 }
+			 else{
+			 alert('手机号验证失败！')
+			 }
+			})
+		
+			$('#btn4').on('click',function(){
+			 var reg=	/^([a-z\d_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+			 var str=$('input:eq(3)').val();
+			 if(reg.test(str)==true){
+			 alert('邮箱验证通过！')
+			 }
+			 else{
+			 alert('邮箱验证失败！')
+			 }
+			})
+			
+		</script>
+	</body>
+
+</html>

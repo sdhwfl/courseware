@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Map和Set</title>
+</head>
+<body>
+	<!-- 
+Map
+
+	 -->
+	 <script type="text/javascript">
+	 	// 前提：JavaScript对象中，键必须是字符串 	
+	 	// Map
+	 	// Map是一组键值对的结构，具有极快的查找速度。
+		// 例如：假如要根据学生姓名查找对应的成绩，如果使用Array实现，需要两个数组
+		var names = ['jim','mike','osca'];
+		var scores = ['89','92','69'];
+		//通过给定的名字，查找名字对应的位置，再从scores中取出对应的成绩。Array越长，耗时越长。
+
+		// 如果使用Map实现，只需要一个“名字－成绩”对照表，直接根据名字查找成绩，无论这个表有多大，查找速度都不会变慢，例如：
+		var m = new Map([['jim',89],['mike',92],['osca',69]]);
+		m.get('osca');//96
+		alert(m.get('jim'));//89
+		// 上述初始化Map需要一个二维数组，也可以直接初始化一个空的Map
+		var emptyMap = new Map();
+		// Map具有以下方法
+		// 添加新的key－value
+		emptyMap.set('bob',66);
+		emptyMap.set('luo',86);
+		// 检测是否存在key
+		emptyMap.has('bob');//true
+		emptyMap.has('feng');//false
+		// 删除key
+		emptyMap.delete('bob');
+		// 得到key对应的value
+		emptyMap.get('mike');
+		emptyMap.get('bob');//undefined -已被删除
+
+		// 需要注意的是：一个key只能对应一个value，所以，多次对一个key赋值value，后面的值会将前面的值覆盖掉
+		var overrideMap = new Map();
+		overrideMap.set('kimi',16);
+		overrideMap.set('kimi',86);
+		overrideMap.get('kimi'); //86  ??  16 ??
+
+		console.log('---'.repeat(20));
+
+		/*-----------------------------------------*/ 
+		// 我们已经学习了存储键值对数据的不同方式了，假如只需要存储不重复的键呢？
+		// Set
+		// Set和Map类似，也是一组Key的组合，但是不存储value。由于key不能重复，所以，在Set中，没有重复的key。
+		// 要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set
+		var set1 = new Set(); //empty
+		var set2 = new Set([1,2,3]); //1,2,3
+
+		// 重复元素在Set中自动被过滤
+		var repeatSet = new Set([1,2,3,4,4,'5']);
+		console.log(repeatSet);//Set{1,2,3,4,'5'}
+		// 操作Set的方法
+		// 通过add(key)方法可以添加元素到Set中，可以重复添加，但是不会有效果
+		repeatSet.add(6);
+		console.log(repeatSet);//Set{1,2,3,4,'5',6}
+		repeatSet.add(3);
+		console.log(repeatSet);//Set{1,2,3,4,'5',6}
+		// 通过delete(key)方法可以删除元素
+		repeatSet.delete(4);
+		console.log(repeatSet);//Set{1,2,3,'5',6}
+
+		// 小结：Map和Set是ES6标准新增的数据类型
+
+	 </script>
+</body>
+</html>

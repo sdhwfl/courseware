@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>树列表</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			#span1 {
+				font-size: 24px;
+			}
+			
+			.a1,
+			.a2 {
+				color: red;
+				font-size: 24px;
+				display: block;
+			}
+			
+			ul {
+				list-style: none;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<a href="#" class="a1" type="button">一级标题1</a>
+
+		<ul id="myul1">
+			<li>
+				<span id="">1.1</span>&nbsp;
+				<a href="">第1个列表子项</a>
+			</li>
+			<li>
+				<span id="">1.2</span>&nbsp;
+				<a href="">第2个列表子项</a>
+			</li>
+			<li>
+				<span id="">1.3</span>&nbsp;
+				<a href="">第3个列表子项</a>
+			</li>
+			<li>
+				<span id="">1.4</span>&nbsp;
+				<a href="">第4个列表子项</a>
+			</li>
+		</ul>
+		
+		<a href="#" class="a2" type="button">一级标题2</a>
+
+		<ul id="myul2">
+			<li>
+				<span id="">2.1</span>&nbsp;
+				<a href="">第1个列表子项</a>
+			</li>
+			<li>
+				<span id="">2.2</span>&nbsp;
+				<a href="">第2个列表子项</a>
+			</li>
+			<li>
+				<span id="">2.3</span>&nbsp;
+				<a href="">第3个列表子项</a>
+			</li>
+			<li>
+				<span id="">2.4</span>&nbsp;
+				<a href="">第4个列表子项</a>
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var $a1 = $('.a1');
+			var $myul1 = $('#myul1');
+			var $a2 = $('.a2');
+			var $myul2 = $('#myul2');
+			$(function() {
+
+				$a1.click(function() {
+					$myul1.slideDown(500);
+				});
+				$a1.dblclick(function() {
+					$myul1.slideUp(500);
+				})
+
+				$a2.click(function() {
+					$myul2.slideDown(500);
+				});
+				$a2.dblclick(function() {
+					$myul2.slideUp(500);
+				})
+			})
+		</script>
+	</body>
+
+</html>

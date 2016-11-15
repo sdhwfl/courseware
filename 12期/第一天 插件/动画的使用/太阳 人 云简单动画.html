@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云朵 太阳 人 动画</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border:0;
+            box-sizing：border-box;
+        }
+        #animate{
+            height: 800px;
+            width: 800px;
+            border: solid 1px red;
+            margin:0 auto;
+            position: relative;
+        }
+        #sun{
+            position: absolute;
+            right:0;
+            top: 50px;
+            opacity: 0;
+            animation: sun 2s ease-in forwards 0.5s;
+        }
+       #cloud{
+            position: absolute;
+            left:0;
+            top: 50px;
+            opacity: 0;
+            animation:cloud ease-in forwards 2s;
+
+        }
+        #people{
+            position: absolute;
+            left:calc(50% - 150px);
+            top:calc(50% - 140px);
+            opacity: 0;
+            animation: people ease-in forwards 4s;
+
+        }
+       @keyframes sun {
+          100%{
+              opacity: 1;
+           }
+       }
+        @keyframes cloud {
+            100%{
+                opacity: 1;
+
+            }
+        }
+        @keyframes people {
+            100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--太阳先出现-->
+<div id="animate">
+    <img id="sun" src="images/sun.png" alt="">
+    <img id="cloud" src="images/yun.png" alt="">
+    <img id="people" src="images/ren.png" alt="">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

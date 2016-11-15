@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="author" content="charles">
+    <title>location对象的学习</title>
+</head>
+<body>
+<!--<a href="http：//www.hhstu.edu.cn" onclick="location.reload()">点我刷新</a>-->
+
+<button onclick="location.replace('http://www.zhiyou100.com')">点我替换网页</button>
+</body>
+</html>
+<script>
+    // Location 对象包含有关当前 URL 的信息,是 window 对象的一部分，可通过 window.Location 属性对其进行访问
+    //window对象下面的location和document下面的location是一个东西
+    //alert(window.location == window.document.location);
+    //获取当前地址
+     console.log(location.href);
+    //修改当前地址
+    //location.href='http://www.baidu.com';
+
+    //刷新当前页面
+    //location.reload();
+    // replace()   用新的文档替换当前文档
+    // assign()    载入一个新的文档
+    //类似于href,其实直接写href最方便了
+    //document.location.assign('https://developer.mozilla.org/en-US/docs/Web/API/Location.reload');
+</script>

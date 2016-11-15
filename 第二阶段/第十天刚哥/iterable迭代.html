@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>iterable 迭代</title>
+</head>
+<body>
+<script type="text/javascript">
+	//ES6:ECMAScript6
+	// 欧洲计算机制造联合会外文名European Computer Manufactures Association 
+	// ECMAScript和JavaScript的关系是，前者是后者的规格，后者是前者的一种实现 
+	/*遍历Array可以采用下标循环，遍历Map和Set就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。
+	属于iterable类型的集合都可以通过新的for...of循环来遍历，这是ES6新引入的语法
+	*/ 
+	/*---------------------------------------*/ 
+	//1、 检测浏览器是否支持ES6最新的for...of语法
+	var testArray = ['sdh','wfl','sdm'];
+	// 传统的for循环
+	for (var i = 0; i < testArray.length; i++) {
+		console.log(testArray[i]);
+	}
+	// for－in循环：遍历的实际上是对象的属性名称。一个Array数组实际上是也是一个对象，它的每一个元素的索引被视为一个属性。
+	for(var x in testArray){
+		console.log(x);
+	}
+	// 检测方法
+	for(var x of testArray){
+		console.log(x);
+	}
+	console.log('---'.repeat(20));
+	/*---------------------------------------*/
+	// 2、for－in循环的工作流程
+	var forinArray = ['2','1','3'];
+	for(var x in forinArray){
+		console.log(forinArray[x]);//2,1,3
+		console.log(x);//0,1,2
+	}
+	console.log('---'.repeat(20));
+	// 给Array对象手动添加额外属性后
+	forinArray.name = 'forinarray';
+	for(var x in forinArray){
+		console.log(forinArray[x]);//2,1,3,forinarray
+		console.log(x);//0,1,2,name
+	}
+	console.log('---'.repeat(20));
+	// for-in循环把name包括在内，但是数组其它的属性却没被包含
+	// 但是for－of循环能过修复这个问题，它只循环集合本身的元素
+	for(var x of forinArray){
+		console.log(x);//2,1,3
+	}
+	console.log('---'.repeat(20));
+	/*---------------------------------------*/
+	// 3、关于遍历，更好的方法是直接使用iterable内置的foreach方法，它接收一个函数，每次迭代就自动调用该函数，以array为例
+	var foreachArray = ['a','b','c'];
+	foreachArray.forEach(function(element,index,array){
+		console.log(element);
+		console.log(index);
+	});
+	console.log('---'.repeat(20));
+	
+	// 该方法是ES5标准中引入的
+	// Set和Array类似，但是Set没有索引，因此回调函数前两个参数都是元素本身
+	var foreachSet = new Set(['q','w','e']);
+	foreachSet.forEach(function(element,sameElement,set){
+		console.log(element);
+		console.log(sameElement);
+	});
+	console.log('---'.repeat(20));
+
+	// Map的回调函数参数依次是value、key和Map本身
+	var foreachMap = new Map([[1,'z'],[2,'x'],[3,'c']]);
+	foreachMap.forEach(function(value,key,map){
+		console.log(value);
+		console.log(key);
+	});
+	console.log('---'.repeat(20));
+	// 注意：如果某些参数不需要，可以忽略它们。例如
+	var test1 = ['r','t','y'];
+	test1.forEach(function(element) {
+		console.log(element);
+	})
+	console.log('---'.repeat(20));
+	/*---------------------------------------*/
+</script>
+</body>
+</html>

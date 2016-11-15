@@ -1,0 +1,65 @@
+
+总结：
+1、使用xhr发起请求
+请求行：
+xhr.open('GET','url',true)
+请求头：
+注意一定要在 open()之后  send()之前
+xhr.setRequestHeader('name','value')
+空格
+ 不需要任何控制
+ 请求体
+ xhr.send();//发送请求体
+ 2.在nodejs服务器上就会接收到这个请求
+ 请求行
+ 获取请求行
+ 请求头
+ 获取请求头
+ req.headers//所有请求头
+ req.get('Content-Type')//获取一个请求头
+ 请求体
+ get请求  get请求里面的内容可以直接看到 并且写入的内容较少
+ req.query;;//获取请求体里面的内容
+ req.query.age; 获取请求体里面一个内容
+ 
+ post请求    由于请求里面的内容看不到 所以需要借助中间插件body-parser把内容反馈给浏览器
+ req.body;//获取请求体里面的内容
+ req.body.name 获取请求体里面一个内容(对象)
+ 
+ post 请求 数据格式 如果mulitpart/formdata
+ multer中间插件
+ req.body;//获取请求体里面的内容
+ req.body.name 获取请求体里面一个内容(对象)
+ 
+ 3.在nodejs服务器上响应数据
+ 
+ 响应行
+ res.status(200)//成功处理
+ 
+ 响应头
+ res.set('name','value');//设置一个响应头
+ res.set({ })//设置多个响应头
+ 
+ 响应体
+ res.send();//响应一个内容 一般为字符串
+ res.json({})//响应一个json数据
+ 
+ 4.在浏览器部分接收响应数据
+ 响应头接收
+ xhr.getResponseHeader('name')//接受一个响应头
+ xhr.getAllResponseHeaders()//接受所有响应头
+ 
+响应行接收
+ 设置onreadystatechange 回调函数
+ xhr.readyStates ==4成功返回
+ xhr.status==200 成功
+ 
+ 响应体接收
+ xhr.responseText
+ xhr.responseXML
+ 
+
+ 
+ 
+ 
+ 

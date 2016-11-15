@@ -1,0 +1,30 @@
+body{
+    padding-top: 60px;
+}
+.title{
+    background: #eeeeee;
+    margin-bottom:10px;
+}
+.lead{
+    padding: 12px 0;
+    font-family: "黑体";
+    margin: 0;      
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+}
+
+table{
+    margin-top: 10px;
+}
+
+lable {
+    float: left;
+    margin-top: 2px;
+    width:80px;
+    margin-right: 40px;
+}
+.content {
+    margin-bottom: 10px;
+}

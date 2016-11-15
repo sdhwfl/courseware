@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>金东方</title>
+    <style>
+        body {
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        header {
+            height: 90px;
+            width: 1000px;
+            background-color: blue;
+            background-image: url(images/bg.gif);
+            background-size: 100% 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        #table0 {
+            height: 90px;
+            width: 900px;
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            left: 80px;
+        }
+        
+        #td2 {
+            background-image: url(images/m_02.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            height: 90px;
+            width: 120px;
+        }
+        
+        #td2:hover {
+            background-image: url(images/m_002.jpg);
+            background-position: 50% 50%;
+        }
+        
+        #top_leftbg {
+            height: 330px;
+            width: 67px;
+            position: absolute;
+            top: 90px;
+            left: 455px;
+            background-image: url(images/top_leftbg.gif);
+        }
+        
+        #board {
+            height: 336px;
+            width: 203px;
+            position: absolute;
+            background-image: url(images/board.gif);
+            left: 530px;
+            top: 90px;
+            text-indent: 2em;
+        }
+        
+        #board>div {
+            height: 150px;
+            width: 120px;
+            margin: 75px 40px 96px 40px;
+            text-align: left;
+            font-size: 12px;
+        }
+        
+        #lxlt {
+            height: 415px;
+            width: 195px;
+            background-image: url(images/hot_bg.gif);
+            position: absolute;
+            top: 440px;
+            left: 540px;
+            text-align: left;
+            font-size: 12px;
+            color: #555;
+        }
+        
+        #lxlt>div {
+            height: 350px;
+            width: 155px;
+            margin: 50px 0px;
+            line-height: 200%;
+        }
+        
+        #mm {
+            height: 227px;
+            width: 406px;
+            position: absolute;
+            top: 440px;
+            left: 767px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .mm_d1 {
+            height: 167px;
+            width: 237px;
+            background-color: yellow;
+            background-image: url(images/intro_bg.gif);
+            background-repeat: no-repeat;
+        }
+        
+        .mm_d1>section {
+            height: 150px;
+            width: 200px;
+            position: absolute;
+            top: 50px;
+            left: 17.5px;
+            text-indent: 2em;
+        }
+        
+        .mm_d2 {
+            height: 167px;
+            width: 237px;
+            background-image: url(images/intro_bg.gif);
+            background-repeat: no-repeat;
+        }
+        
+        .mm_d2>section {
+            height: 150px;
+            width: 200px;
+            position: absolute;
+            top: 240px;
+            left: 17.5px;
+            text-indent: 2em;
+        }
+        
+        #table1 {
+            height: 330px;
+            width: 710px;
+            outline-width: 8px;
+            position: absolute;
+            top: 90px;
+            left: 735px;
+        }
+        
+        #table2 {
+            height: 410px;
+            width: 340px;
+            position: absolute;
+            top: 440px;
+            right: 540px;
+            /*text-align: center;*/
+            font-size: 14px;
+            color: #555;
+        }
+        
+        footer {
+            height: 75px;
+            width: 1000px;
+            background-image: url(images/footer_bg.gif);
+            margin: 780px 460px;
+            position: relative;
+        }
+        
+        #table3 {
+            height: 60px;
+            width: 420px;
+            font-size: 14px;
+            text-align: center;
+            position: absolute;
+            top: 8.5px;
+            left: 320px;
+            color: #555;
+        }
+        
+        #table3 td {
+            border-left: solid 0.5px #999;
+        }
+        
+        #table3 td:nth-of-type(1) {
+            border-left: none;
+        }
+        
+        #hr1 {
+            height: 410px;
+            width: 1px;
+            color: blanchedalmond;
+            position: absolute;
+            top: 440px;
+            left: 1010px;
+        }
+        
+        #hr2 {
+            height: 410px;
+            width: 1px;
+            color: blanchedalmond;
+            position: absolute;
+            top: 440px;
+            right: 710px;
+        }
+        
+        li {
+            list-style-type: square;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <table id="table0">
+            <tr>
+                <td><img src="images/logo.gif" alt=""></td>
+
+                <td><img src="images/m_01.jpg" alt=""></td>
+
+                <td id="td2"> </td>
+                <td><img src="images/m_03.jpg" alt=""></td>
+                <td><img src="images/m_04.jpg" alt=""></td>
+                <td><img src="images/m_05.jpg" alt=""></td>
+                <td><img src="images/m_06.jpg" alt=""></td>
+                <td><img src="images/m_07.jpg" alt=""></td>
+                <td><img src="images/m_08.jpg" alt=""></td>
+
+
+
+            </tr>
+        </table>
+
+    </header>
+
+    <div>
+        <div id="top_leftbg">
+
+        </div>
+
+        <div id="board">
+            <div>
+                <p>同学们注意了，校长有话要说，由于今年全国普遍高温，开学全部宿舍会装空调。学费不变。<br>黄河科技学院<br> 2016.7.30</p>
+            </div>
+        </div>
+
+        <div id="mm">
+            <img src="images/company_title.gif" alt="">
+
+            <!--<img src="images/intro_bg.gif" alt="">-->
+            <div class="mm_d1">
+                <section>
+                    <p>黄河科技学院与多家企业签订合作，为广大学子提供实训和就业的好平台，例如，郑州智游，洛阳惠普，洛阳一拖等等。</p>
+                </section>
+            </div>
+
+            <img src="images/school_title.gif" alt="">
+
+
+            <div class="mm_d2">
+                <section>
+                    <p>黄河科技学院是全国第三大高校，仅次于清华，北大。素有清华北大黄科大美称，欢迎广大莘莘学子踊跃报考。</p>
+                </section>
+            </div>
+
+        </div>
+        <table id="table1">
+            <tr>
+
+
+                <td><img src="images/banner.gif" alt=""></td>
+                <td><img src="images/top_rightbg.gif" alt=""></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <mian>
+        <div id="lxlt">
+
+            <div>
+                <ul>
+                    <li>同学：老师您好！</li>
+                    <li>老师：你好！请问有什么可以帮助你的？</li>
+                    <li>同学：我是一条龙，可以去你们学校吗？</li>
+                    <li>老师：这个...目前我们只招收人类</li>
+                    <li>同学：可我是中国人的祖先，不都说是龙的传人吗？</li>
+                    <li>老师：我咨询下上层领导吧。请问你的姓名是？</li>
+                    <li>同学：邱比龙</li>
+                </ul>
+            </div>
+        </div>
+        <!--竖线-->
+        <hr id="hr1">
+        <hr id="hr2">
+
+
+        <table id="table2">
+
+            <!--colspan:对行中的列进行合并 表示横向合并单元格-->
+            <!--colspan="5"表示水平合并5列单元格-->
+            <!--rowspan：竖向合并单元格-->
+            <!--rowspan="4" 表示纵向合并4个单元格-->
+
+
+            <!--第一行-->
+            <tr>
+                <!--<td><img src="images/company_title.gif" alt=""></td>-->
+                <td><img src="images/special.gif" alt=""></td>
+                <td><img src="images/customer.gif" alt=""></td>
+            </tr>
+            <!--第二行-->
+            <tr>
+                <!--<td></td>-->
+                <!--<td rowspan="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.neque aut mollitia quaerat voluptatibus laboriosam,
+                        dignissimos quia consequatur aliquam rem ipsum.</p>
+                </td>-->
+                <td><span><u>特色专业</u></span> <span><u>特色专业</u></span><br><span><u>特色专业</u></span> <span><u>特色专业</u></span> </td>
+
+                <td><span><u>韩国生活</u></span> <span><u>韩国生活</u></span> <br><span><u>韩国生活</u></span> <span><u>韩国生活</u></span></td>
+            </tr>
+            <!--第三行-->
+            <tr>
+
+                <!--<td></td>-->
+                <td><img src="images/pic_01.gif" alt=""></td>
+                <td><img src="images/pic_02.gif" alt=""></td>
+            </tr>
+            <!--第四行-->
+            <tr>
+
+                <!--<td><img src="images/school_title.gif" alt=""></td>-->
+                <td><img src="images/bbs.gif" alt=""></td>
+                <td><img src="images/contact.gif" alt=""></td>
+            </tr>
+            <!--第五行-->
+            <tr>
+
+                <!--<td rowspan="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptatibus laboriosam, dignissimos quia consequatur
+                        aliquam rem ipsum.</p>
+                </td>-->
+                <td><span><u>留学论坛</u></span> <span><u>留学论坛</u></span><br><span><u>留学论坛</u></span> <span><u>留学论坛</u></span> </td>
+                <td><span><u>联系我们</u></span> <span><u>联系我们</u></span><br><span><u>联系我们</u></span> <span><u>联系我们</u></span></td>
+
+
+            </tr>
+            <!--第六行-->
+            <tr>
+
+                <!--<td></td>-->
+                <td><img src="images/pic_03.gif" alt=""></td>
+                <td><img src="images/pic_04.gif" alt=""></td>
+            </tr>
+        </table>
+    </mian>
+
+    <footer>
+        <table id="table3">
+            <tr>
+                <td>公司简介</td>
+                <td>学校介绍</td>
+                <td>韩国生活</td>
+                <td>特色专业</td>
+                <td>留学论坛</td>
+                <td>联系方式</td>
+
+            </tr>
+            <tr>
+                <td colspan="6">Copyright &copy <a href="http://user.qzone.qq.com/1594996575" target="_blank">颂宋</a> 上面的图片跳转事件不会做，希望有空讲下</td>
+
+
+            </tr>
+        </table>
+    </footer>
+</body>
+<html>

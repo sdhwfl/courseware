@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>颂宋</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            background-image: radial-gradient(ellipse, white, pink, plum, palevioletred);
+            text-align: center;
+            position: relative;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+        
+        header {
+            height: 100px;
+            width: 300px;
+            background-image: url(8.jpg);
+            position: absolute;
+            top: 30px;
+            left: 45%;
+            border-radius: 10px;
+            border-bottom-right-radius: 300px;
+            border-bottom-left-radius: 300px;
+            /*box-shadow: 0 0 10px blue;*/
+            position: fixed;
+            box-shadow: 0 0 3px black;
+        }
+       
+        #dot {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-image: url(4.png);
+            position: absolute;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            box-shadow: 0 0 3px red;
+        }
+        
+        #m1 {
+            height: 300px;
+            width: 300px;
+            background-color: yellow;
+            border-radius: 10px;
+            border-top-right-radius: 300px;
+            border-bottom-left-radius: 300px;
+            position: absolute;
+            position: fixed;
+            top: 20%;
+            left: 35.5%;
+            box-shadow: 3px 3px 3px black;
+        }
+        
+        .m1_p {
+            height: 100px;
+            width: 200px;
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            line-height: 20%;
+            color: red;
+            font-family: "方正雅黑";
+            font-size: 14px;
+        }
+        
+        .m1_p2 {
+            height: 50px;
+            width: 200px;
+            position: absolute;
+            bottom: 60px;
+            right: 5px;
+            line-height: 20%;
+            color: purple;
+            font-family: "华文仿宋";
+        }
+        
+        #m2 {
+            height: 300px;
+            width: 300px;
+            background-color: hotpink;
+            border-radius: 10px;
+            border-top-left-radius: 300px;
+            border-bottom-right-radius: 300px;
+            position: absolute;
+            position: fixed;
+            top: 20%;
+            right: 30%;
+            box-shadow: 3px 3px 3px black;
+        }
+        
+        .m2_p {
+            height: 100px;
+            width: 300px;
+            position: absolute;
+            bottom: 100px;
+            right: 45px;
+            line-height: 10%;
+            font-size: 18px;
+            font-family: "华文行楷";
+            color: darkblue;
+        }
+        
+        #m3 {
+            height: 300px;
+            width: 300px;
+            background-color: green;
+            border-radius: 10px;
+            position: absolute;
+            position: fixed;
+            border-top-left-radius: 300px;
+            border-bottom-right-radius: 300px;
+            top: 55%;
+            left: 35%;
+            box-shadow: 3px 3px 3px black;
+        }
+        
+        .m3_p {
+            height: 100px;
+            width: 300px;
+            position: absolute;
+            top: 60px;
+            line-height: 40%;
+            color: yellow;
+        }
+        
+        #m4 {
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+            border-radius: 10px;
+            position: absolute;
+            position: fixed;
+            border-top-right-radius: 300px;
+            border-bottom-left-radius: 300px;
+            top: 55%;
+            right: 30%;
+            box-shadow: 3px 3px 3px black;
+        }
+        
+        .m4_p {
+            height: 100px;
+            width: 300px;
+            position: absolute;
+            top: 60px;
+            font-family: "仿宋";
+            color: blue;
+        }
+        
+        #d1 {
+            height: 150px;
+            width: 400px;
+            background-image: url(2.jpg);
+            position: absolute;
+            border-radius: 10px;
+            top: 200px;
+            left: 100px;
+            line-height: 30%;
+            box-shadow: 3px 3px 3px black;
+         
+        
+        }
+        
+        #d2 {
+            height: 150px;
+            width: 400px;
+            background-image: url(0.jpg);
+            position: absolute;
+            border-radius: 10px;
+            top: 200px;
+            left: 100px;
+            line-height: 30%;
+            box-shadow: 3px 3px 3px black;
+        }
+        
+        #d3 {
+            height: 150px;
+            width: 400px;
+            background-image: url(5.jpg);
+            position: absolute;
+            border-radius: 10px;
+            top: 200px;
+            left: 50px;
+            line-height: 30%;
+            box-shadow: 3px 3px 3px black;
+            font-size: 16px;
+            color: firebrick;
+        }
+        
+        #d21 {
+            height: 150px;
+            width: 400px;
+            background-image: url(9.jpg);
+            line-height: 40%;
+            border-radius: 10px;
+            position: absolute;
+            right: 50px;
+            top: 200px;
+            box-shadow: 3px 3px 3px black;
+            color: green;
+            font-size: 20px;
+        }
+        
+        #d22 {
+            height: 150px;
+            width: 400px;
+            background-image: url(12.jpg);
+            border-radius: 10px;
+            position: absolute;
+            top: 200px;
+            right: 50px;
+            box-shadow: 3px 3px 3px black;
+            color:hotpink;
+            font-size: 22px;
+            font-family: "华文新魏";
+        }
+        
+        #d33 {
+            height: 150px;
+            width: 400px;
+            background-image: url(13.jpg);
+            border-radius: 10px;
+            position: absolute;
+            top: 200px;
+            right: 50px;
+            box-shadow: 3px 3px 3px black;
+            color: blue;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .dot2 {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+        }
+        
+        .dot3 {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+            top: 30px;
+            right: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color:red;
+            font-size: 30px;
+            font-family: "方正舒体";
+        }
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>颂宋个人简历</p>
+        <p>&copy <abbr title="黄河科技学院&#x3000信息工程学院&#x3000 13级网络工程">宋典花</abbr></p>
+    </header>
+
+    <main id="dot"></main>
+    <main id="m1">
+        <main class="m1_p">
+            <h3>个人信息</h3>
+            <p>姓名:XXX</p>
+            <br>
+            <p>性别：X</p>
+            <br>
+            <p>&#x3000出生年月：XXX</p>
+        </main>
+
+        <main class="m1_p2">
+            <p>座右铭</p>
+            <br>
+            <p>no pains no gains</p>
+        </main>
+    </main>
+
+
+    <main id="m2">
+        <main class="m2_p">
+      
+            <p>做完才发现</p>
+            <br>
+            <p>我这不是简历</p>
+            <br>
+            <p>自己都感觉好幼稚</p>
+        </main>
+    </main>
+
+
+
+    <main id="m3">
+        <main class="m3_p">
+            <h3>技能水平</h3>
+            <p>可熟练操作</p>
+            <p>office Adobe photoshop </p>
+            <p>等办公软件</p>
+        </main>
+    </main>
+
+    <main id="m4">
+        <main class="m4_p">
+            <h3>求职意向</h3>
+            <p>淘宝美工月薪<b>6000+</b></p>
+        </main>
+    </main>
+
+
+    <div id="d1">
+        <p>联系方式</p>
+        <br>
+        <p><abbr title="非诚勿扰，谢谢！">电话</abbr>：180****4079</p>
+        <p><abbr title="没有真实姓名加不上的噢">QQ:1594996575</abbr></p>
+        <div class="dot2"></div>
+        <div id="d2">
+
+            <p>自我评价</p>
+            <br>
+            <p>&#x3000&#x3000<strong>1.大胆创新，具有敏锐的时尚视角，设计能力强</strong></p>
+            <br>
+            <p> <strong>2.具有良好的工作能力，良好的沟通能力和交流能力</strong></p>
+            <div class="dot2"></div>
+            <div id="d3">
+                <p><big>教育经历</big></p>
+                <br>
+                <p><a href="http://www.hhstu.edu.cn" target="_blank">黄河科技学院</a></p><br>
+                <p><a href="http://www.zhiyou100.com" target="_blank">郑州智游教育</a></p>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="d21">
+        <p><big>实践经历</big></p>
+        <br>
+        <p>2016.7.4-2016.7.15郑州智游教育</p>
+        <p>2.15.7.6-2.15.9.7陶老大百兴月饼厂</p>
+        <div class="dot3"></div>
+        <div id="d22">
+            <p>身高：160cm</p>
+
+            <p>身体状况：健康</p>
+
+            <p>政治面貌：共青团员</p>
+
+            <p> 婚姻状况：未婚</p>
+            <br>
+            <p></p>
+            <div class="dot3"></div>
+            <div id="d33">
+                <p><big>奖惩情况</big></p>
+                <br>
+                <p>河南省三好学生</p>
+                <p>优秀班干部</p>
+                <p>智游教育实训优秀学员</p>
+                <div class="dot3"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>数组对象</title>
+	</head>
+
+	<body>
+		<!--16. 数组对象中，concat(), join(),pop(), shift(),push()方法都有什么作用？-->
+		<script type="text/javascript">
+			//数组连接对象concat()
+			var myarr1 = new Array('I');
+			var myarr2 = new Array('Love');
+			var myarr3 = new Array('You');
+			var myarr4 = (myarr1.concat(myarr2)).concat(myarr3);
+			console.log(myarr4);
+			//指定分隔符链接数组元素join()
+			//join()方法用于把数组中所有的元素放入一个字符串。元素是通过指定的分隔符进行分割的   join()括号内部可以填分隔符的类型 默认是逗号(,)
+			var myarr = new Array(3);
+			myarr[0] = 'How';
+			myarr[1] = 'are';
+			myarr[2] = 'you'
+			document.write(myarr.join('❤') + '<br>');
+			//push()向数组尾部添加数据
+			var myarry = new Array('red', 'orange', 'yellow')
+			console.log("没有使用push属性之前数组元素为：" + myarry);
+			console.log("没有使用push属性之前数组的长度为" + myarry.length);
+			myarry.push('green');
+			console.log(myarry);
+			console.log(myarry.length);
+			//unshift()向数组开头添加元素
+			myarry.unshift('sdh');
+			console.log(myarry);
+			//shift移除数组的第一个元素
+			myarry.shift();
+			console.log(myarry);
+			//pop移除数组的最后一个元素
+			myarry.pop();
+			console.log(myarry);
+            //依次输出数组中的元素
+			//var myarry2 = ['sdh', 'bff', 'wfl', 'sdm'];
+			//for(var i = 0; i < myarry2.length; i++) {
+			//	document.write(' '+myarry2[i]);
+			//}
+             //声明数组的时候直接指定数组的长度
+			//var songlist = Array(3);
+			//for(var i = 0; i < songlist.length; i++) {
+			//	songlist[i] = 'fade' + i;
+			//	console.log(songlist[i]);
+			//}
+			//数组排序
+			//升序排列
+			var array1=[12,56,100,47,0,34,67,88,23];
+		    //console.log(array1.sort());
+			 console.log('升序排列：'+array1.sort(function(a,b){
+				return a -b;
+			}))
+			//降序排列
+			console.log('降序排列：'+array1.sort(function(a,b){
+				return b -a;
+			}))
+       
+		</script>
+	</body>
+
+</html>

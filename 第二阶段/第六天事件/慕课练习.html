@@ -1,0 +1,52 @@
+<head>
+	<title> 事件</title>
+	<script type="text/javascript">
+		function jisuan() {
+
+			var input1 = document.getElementById("text1").value;
+
+			var input2 = document.getElementById("text2").value;
+
+			var select = document.getElementById("select").value;
+			var result = null;
+			switch(select)
+
+			{
+				case "+":
+					result = parseInt(input1) + parseInt(input2);
+					break;
+
+				case "-":
+					result = parseInt(input1) - parseInt(input2);
+					break;
+
+				case "*":
+					result = parseInt(input1) * parseInt(input2);
+					break;
+
+				case "/":
+					result = parseInt(input1) / parseInt(input2);
+					break;
+
+			}
+			document.getElementById('fruit').value = result;
+		}
+		//
+	</script>
+</head>
+
+<body>
+	<input type='text' id='text1' />
+	<select id='select'>
+		<option value='+'>+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type='text' id='text2' />
+	<input type='button' value=' = ' onclick="jisuan()" />
+	<!--通过 = 按钮来调用创建的函数，得到结果-->
+	<input type='text' id='fruit' />
+</body>
+
+</html>

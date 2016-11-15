@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>artTemplate语法</title>
+		<script src="jquery-2.0.3.js"></script>
+		<script src="template.js"></script>
+		<style type="text/css">
+			.tages span {
+				display: inline-block;
+				height: 24px;
+				line-height: 24px;
+				font-size: 14px;
+				padding: 0 8px;
+				background-color: pink;
+				margin-right: 15px;
+				margin-bottom: 20px;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="contain"></div>
+
+		<!--模板是通过 script标签  并且把type 改为 type="text/html"-->
+		<!--既不是一个script语言不会报错 另外也不显示在页面中-->
+		<script id="test" type="text/html">
+			<!--模板-->
+			<h1>{{title}}</h1>
+			<h1>{{title.substr(2)}}</h1>
+			<div>{{#content}}</div>
+			<div>{{content}}</div>
+
+			{{if price ==0}}
+			<div style="color:red">免费</div>
+			{{else}}
+			<div>{{price}}元</div>
+			{{/if}}
+
+			<div class="tages">
+				{{each tages as element index}}
+				<span>{{element}}</span> {{/each}}
+			</div>
+
+			<div class="links">
+				{{each links as element  index}} {{if element.type =="img"}}
+				<a href="{{element.link}}"><img src="{{element.img}}" width="100px" ;height="100px" /></a>
+				{{else}}
+				<a href="{{element.link}}">{{element.text}}</a>
+				{{/if}} {{/each}}
+			</div>
+			<!--引入模板-->
+			<div class="links">
+				{{each links as value index}} {{if value.type=="img"}} {{include "imglink" value}} {{else}} {{include "textlink" value}} {{/if}} {{/each}}
+			</div>
+
+			<div>{{price | formatPrice}}{{time | formatTime}}</div>
+
+		</script>
+
+		<!--图片友情链接-->
+		<script id="imglink" type="text/html">
+			<a href="{{link}}"><img src="{{img}}" width="100px" ;height="100px" /></a>
+		</script>
+
+		<!--文字友情链接-->
+		<script id="textlink" type="text/html">
+			<a href="{{link}}">{{text}}</a>	
+		</script>
+
+		<script type="text/javascript">
+			//用于帮助格式化价格
+			template.helper("formatPrice", function(value) {
+					if(value == 0) {
+						return "免费"
+					}
+					return "￥" + value.toFixed(2)
+				})
+				//格式化时间
+			template.helper("formatTime", function(value) {
+
+					return value.toLocaleDateString();
+				})
+				//数据
+			var data = {
+					title: "我是一个标题",
+					content: "<div>我是一个内容</div>",
+					price: 10,
+					tages: ["html", "css", "javascript", "jQuery"],
+					links: [{
+						type: "text",
+						text: "百度",
+						link: "http://www.baidu.com",
+					}, {
+						type: "text",
+						text: "黄坑大",
+						link: "http://www.hhstu.edu.cn",
+					}, {
+						type: "img",
+						img: "./uemo.png",
+						link: "http://www.baidu.com",
+					}, {
+						type: "img",
+						img: "./uemo01.jpg",
+						link: "http://www.hhstu.edu.cn",
+					}],
+					time: new Date()
+
+				}
+				//第一个参数：模板的id名称  通过document.getelementById获取
+				//第二个参数：数据对象
+			var html = template("test", data)
+			$(".contain").html(html);
+			console.log(html)
+		</script>
+	</body>
+
+</html>

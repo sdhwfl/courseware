@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简测</title>
+	</head>
+	<body>
+		 <table id="tb" border="1">
+            <tbody>
+                <tr>
+                    <td>第1行</td>
+                    <td>第1行</td>
+                </tr>
+                <tr>
+                    <td>第2行</td>
+                    <td>第2行</td>
+                </tr>
+                <tr>
+                    <td>第3行</td>
+                    <td>第3行</td>
+                </tr>
+                <tr>
+                    <td>第4行</td>
+                    <td>第4行</td>
+                </tr>
+                <tr>
+                    <td>第5行</td>
+                    <td>第5行</td>
+                </tr>
+                <tr>
+                    <td>第6行</td>
+                    <td>第6行</td>
+                </tr>
+            </tbody>
+        </table>
+		<script type="text/javascript">
+			//获取id为tb的元素
+			var item=document.getElementById('tb');
+			console.log('00000');
+			//获取表格的第一个tbody元素
+			var tbody =item.getElementsByTagName('tbody')[0];
+			console.log('11111');
+			//获取tbody元素下的所有tr元素
+			var trs=tbody.getElementsByTagName('tr');
+			console.log('22222');
+			for(var i=0;i<trs.length;i++)
+			{
+				if(i%2 ==0){
+					console.log('33333');
+					trs[i].style.backgroundColor='pink';
+				}
+				else{
+					trs[i].style.backgroundColor='lightblue';
+				}
+			}
+		</script>
+	</body>
+</html>

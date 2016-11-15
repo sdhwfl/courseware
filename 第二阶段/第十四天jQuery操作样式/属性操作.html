@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>属性操作</title>
+		<script type="text/javascript" src="jquery-2.0.3.js"></script>
+		<style type="text/css">
+			.style0 {
+				width: 100px;
+				height: 100px;
+				background-color: deepskyblue;
+				font-size: 16px;
+			}
+			
+			.style1 {
+				width: 200px;
+				height: 200px;
+				background-color: lightblue;
+			}
+			
+			.style2 {
+				background-color: lightblue;
+				font-size: 20px;
+			}
+			
+			.style3 {
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#">无名连接</a>
+		<ul title="friut">
+			<li title="banana">香蕉</li>
+			<li title="orange">橘子</li>
+			<li title="apple">苹果</li>
+		</ul>
+		<div id="">这是一个可以改变样式的div</div>
+		<button onclick="btn1Clicked()">改变尺寸和颜色</button>
+		<button onclick="btn2Clicked()">改变字体</button>
+		<button onclick="btn3Clicked()">改变字体颜色</button>
+		<button onclick="btn4Clicked()">还原</button>
+
+		<script type="text/javascript">
+			var $ul = $('ul');
+			$(document).ready(
+				function() {
+					//dom节点树加载完成后，执行的操作
+					var ul_title = $ul.attr('title'); //获取属性值
+					console.log(ul_title);
+					$ul.attr('title', 'food'); //修改属性值
+					$ul.attr('name', '无序列表') //添加属性
+					$('a').attr('href', 'http://www.hhstu.edu.cn');
+
+					//操作div的样式
+					$('div').attr('class', 'style0');
+					
+				}
+			);
+           //eq(),索引值从0开始，nth-of-type：索引值从1开始
+			function btn1Clicked() {
+				$('div').attr('class', 'style1');
+			}
+
+			function btn2Clicked() {
+				$('div').attr('class', 'style2')
+			}
+
+			function btn3Clicked() {
+				$('div').attr('class', 'style3')
+			}
+			
+			function btn4Clicked() {
+				$('div').removeAttr('class');//移除class属性
+			}
+		</script>
+	</body>
+
+</html>

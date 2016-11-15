@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>自练习</title>
+	</head>
+
+	<body>
+		<audio src="魏新雨 - 恋人心.mp3"></audio>
+		<audio src="郁可唯 - We Are One.mp3" data-artist='郁可唯 ' data-duration='4min55secs'></audio>
+		<ul>
+			<li>第1个列表子项</li>
+			<li>第2个列表子项</li>
+			<li>第3个列表子项</li>
+			<li>第4个列表子项</li>
+			<li>第5个列表子项</li>
+		</ul>
+		<a href="http：//www.baidu.com" target="_blank" id="baidu" name="">百度一下</a>
+		<h2>A h2 element</h2>
+		<h3>A h3 element</h3>
+		<script type="text/javascript">
+		document.querySelector("h2").style.backgroundColor='pink';
+		document.querySelector("h3").style.backgroundColor='deepskyblue'
+			//			var myul=document.getElementsByTagName('ul')[0]
+			//			console.log(myul);
+			//			
+			//			
+			//			var myli=myul.children[2]
+			//			console.log(myli.nodeType);
+			//			console.log(myli.nodeName);
+			//			//nodeValue返回值为null或者undefined
+			//			console.log(myli.nodeValue);
+			//			
+			//			var mytextnode=myli.childNodes[0];
+			//			console.log('li内部的文本节点名是：'+mytextnode)
+			//			console.log('li内部的文本节点属性是：'+mytextnode)
+			//			console.log('li内部的文本节点值为：'+mytextnode)
+			//			
+			//			mytextnode.appendData('：第三个列表子项文本节点追加的内容')
+			//			
+			//			var mytextnode2=myul.children[3].childNodes[0]
+			//			//0的位置是添加的内容的索引，也就是从那里开始添加,后面是要添加的内容
+			//			mytextnode2.insertData(0,'通过索引添加的内容')
+			//			
+			//			 var mytextnode3=myul.children[4].childNodes[0]
+			//			 //0：表示开始替换的位置   7 ：表示替换的长度
+			//			 mytextnode3.replaceData(0,7,'第五个列表子项长度为7,从第一个字符开始全部被替换掉了，你现在看到的是全新的内容')
+			//			 
+			//			 var mytextnode4=myul.children[1].childNodes[0]
+			//			 mytextnode4.deleteData(3,4)
+			var link = document.getElementById('baidu');
+			//console.log(link.attributes);
+			//for循环输出link的全部属性
+			//			for(var i=0;i<link.attributes.length;i++){
+			//				var attr =link.attributes[i];
+			//				console.log(attr.name);
+			//				console.log(attr.value);
+			//			}
+			//getAttribute()函数可以得到指定的属性值
+			//   var target=link.getAttribute('target');
+			//   console.log(target);
+			//   //也可以用下面的方式
+			//   console.log(link.target);
+			//			.setAttribute()设置指定属性的值
+			//参数1表示属性名，参数2表示属性值
+			//			link.setAttribute('title', '百度一下，你就知道');
+			//			console.log(link.getAttribute('title'));
+			//			link.title='百度一下';
+			//			//设置快捷键，需要按下键盘的shift+alt+c
+			//			link.accessKey ='c';
+			////			.removeAttribute()彻底删除某个属性
+			//			link.removeAttribute('href');
+			//			//判断是否有指定的属性
+			//			console.log(link.hasAttribute('href'));
+			//			console.log(link.hasAttribute('title'));
+			//			//判断是否有属性，有一个就算
+			//			console.log(link.hasAttribute('id'));
+			//			console.log(document.body.hasAttribute());
+
+			//使用classname来设置类名，重置类名
+			//如果有类名就修改，如果没有就添加
+			//link.className='blue-text kaiti-text';
+			//console.log(link.getAttribute('class'));
+			//..classList.remove()移除类名
+			//link.classList.remove('kaiti-text');
+			//console.log(link.getAttribute('class'));
+			//.classlist.add()添加类名，会累加类名
+			//link.classList.add('italic-text');
+			//切换样式类，如果有就去掉，如果没有就添加
+			//link.classList.toggle('red-text');
+
+			//修改style
+			//link.style.border='1px solid red';
+			//link.style.padding='10px';
+			//link.style.fontFamily='华文行楷';
+			//link.style.textDecoration='none';
+			//link.style.marginTop='30px';
+			//link.style.marginLeft='30px';
+
+			//获得样式的值，只能够获得通过style设置的
+			//console.log(link.style.border);
+			//console.log(link.style.padding);
+      
+			//			自定义属性
+
+			//			var audio =document.getElementsByTagName('audio')[1];
+			//			console.log(audio);
+			//			console.log(audio.getAttribute('src'));
+			//			console.log(audio.getAttribute('data-duration'));
+			//			//得到自定义的属性
+			//			console.log(audio.dataset.duration);
+			//			console.log(audio.dataset.artist);
+		</script>
+
+	</body>
+
+</html>

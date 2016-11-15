@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="charles">
+        <title>简单页面</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body{
+                padding-top: 50px;
+            }
+            .demo{
+                text-align: center;
+                padding: 20px 0;
+            }
+            .navbar-toggle{
+                color: #ddd;
+                padding: 6px 12px;
+            }
+            .col24{
+                margin-top: 10px;
+            }
+            .col24>div:nth-child(2n){
+                background-color: red;
+                height: 50px;
+                color: white;
+            }
+            .col24>div:nth-child(2n+1){
+                background-color: blue;
+                height: 50px;
+                color: white;
+            }
+            .baogang{
+                margin-top: 10px;
+            }
+            .baogang div:nth-child(1){
+                background-color: red;
+                height: 100px;
+            }
+            .baogang div:nth-child(2){
+                background-color: blue;
+                height: 100px;
+            }
+            .baogang div:nth-child(3){
+                background-color: gold;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </button>
+                    
+                    <div class="dropdown pull-right">
+                        <button class="navbar-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">列表项1</a></li>
+                            <li><a href="#">列表项2</a></li>
+                            <li><a href="#">列表项3</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">列表项4</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="navbar-brand">智游教育</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">首页</a></li>
+                        <li><a href="#">HTML5</a></li>
+                        <li><a href="#">CSS3</a></li>
+                    </ul>
+                    <div class="dropdown pull-right">
+                        <button class="navbar-toggle show hidden-xs" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">列表项1</a></li>
+                            <li><a href="#">列表项2</a></li>
+                            <li><a href="#">列表项3</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">列表项4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="demo">
+                <h1>Bootstrap基本页面</h1>
+                <p class="lead">这个页面包含了定制的Bootstrap，把页面分成了24列，还有自定义颜色。</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">按扭1</button>
+                <button type="button" class="btn btn-default">按扭2</button>
+
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    下拉列表 <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">列表项1</a></li>
+                        <li><a href="#">列表项2</a></li>
+                        <li><a href="#">列表项3</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">列表项4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container col24">
+            <div class="col-md-1">1</div>
+            <div class="col-md-1">2</div>
+            <div class="col-md-1">3</div>
+            <div class="col-md-1">4</div>
+            <div class="col-md-1">5</div>
+            <div class="col-md-1">6</div>
+            <div class="col-md-1">7</div>
+            <div class="col-md-1">8</div>
+            <div class="col-md-1">9</div>
+            <div class="col-md-1">10</div>
+            <div class="col-md-1">11</div>
+            <div class="col-md-1">12</div>
+            <div class="col-md-1">13</div>
+            <div class="col-md-1">14</div>
+            <div class="col-md-1">15</div>
+            <div class="col-md-1">16</div>
+            <div class="col-md-1">17</div>
+            <div class="col-md-1">18</div>
+            <div class="col-md-1">19</div>
+            <div class="col-md-1">20</div>
+            <div class="col-md-1">21</div>
+            <div class="col-md-1">22</div>
+            <div class="col-md-1">23</div>
+            <div class="col-md-1">24</div>
+        </div>
+        <div class="container baogang">
+            <div class="col-md-9">1</div>
+            <div class="col-md-8">2</div>
+            <div class="col-md-7">3</div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

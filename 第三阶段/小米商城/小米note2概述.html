@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>概述</title>
+    <link rel="stylesheet" href="css/onepage-scroll.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="js/onepage-scroll.min.js"></script>
+    <script src="js/resizeEnd.min.js"></script>
+    <script src="js/custom.07427.js"></script>
+    <script src="js/hm.baidu.comh.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 1226px;
+            font-family: "微软雅黑";
+        }
+
+        .loading .main {
+            opacity: 0;
+            opacity: 0;
+        }
+
+        .main {
+            -webkit-transition: opacity .6s;
+            -moz-transition: opacity .6s;
+            -o-transition: opacity .6s;
+            transition: opacity .6s;
+        }
+
+        .page {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /*第一页*/
+
+        .page1 .txt {
+            position: absolute;
+            left: 50%;
+            top: calc(50% - 127px);
+            margin: 0px 0 0 -500px;
+            width: 550px;
+            height: 254px;
+        }
+
+        .page1 {
+            background: url(img/bg1.jpg);
+            background-size: 100%;
+        }
+
+        .page1 .txt p:first-child {
+            color: #e9ffff;
+            font-size: 41px;
+        }
+
+        .page1 .txt p:nth-child(2) {
+            color: #ffffff;
+            font-size: 24px;
+            margin-top: 35px;
+        }
+
+        .page1 .txt p:nth-child(3) {
+            color: #93a1aa;
+            margin-top: 68px;
+            font-size: 15px;
+        }
+
+        .page1 .txt p:last-child {
+            color: #ffffff;
+            margin-top: 21px;
+        }
+
+        /*第二页*/
+
+        .page2 {
+            background-color: #5f5f61;
+            display: flex;
+        }
+
+        /*第二页左边*/
+
+        .page2 .left {
+            height: 100%;
+            width: 50%;
+            background-image: url(img/bg2-1.jpg);
+            background-size: cover;
+        }
+
+        .page2 .left:hover {
+            background-image: url(img/bg2-1-h.jpg);
+            background-size: 100%;
+        }
+
+        .page2 .left .plays {
+            height: 92px;
+            width: 220px;
+            position: absolute;
+            left: calc(25% - 110px);
+            bottom: 40px;
+            text-align: center;
+        }
+
+        .page2 .left .plays p {
+            color: #ffffff;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .page2 .left .plays .btn {
+            height: 41px;
+            width: 41px;
+            background-image: url(img/icons.png);
+            background-position: -78.5px 0;
+            margin-left: 89px;
+        }
+
+        .page2 .left .text {
+            height: 304px;
+            width: 372px;
+            z-index: 8;
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+            position: absolute;
+            top: 19.3vh;
+            left: calc(50% - 186px);
+        }
+
+        .page2 .left .text p {
+            margin-top: 9px;
+        }
+
+        /*第二页右边*/
+
+        .page2 .right {
+            height: 100%;
+            width: 50%;
+            background-image: url(img/bg2-2.jpg);
+            background-size: 100%;
+        }
+
+        .page2 .right:hover {
+            background-image: url(img/bg2-2-h.jpg);
+            background-size: 100%;
+        }
+
+        .page2 .right .plays {
+            height: 92px;
+            width: 220px;
+            position: absolute;
+            right: calc(25% - 110px);
+            bottom: 40px;
+            text-align: center;
+        }
+
+        .page2 .right .plays p {
+            color: #ffffff;
+            font-size: 12px;
+            margin-top: 35px;
+        }
+
+        .page2 .right .plays .btn {
+            height: 41px;
+            width: 41px;
+            background-image: url(img/icons.png);
+            background-position: -78.5px 0;
+            margin-left: 89px;
+
+        }
+
+        /*第三页*/
+
+        .page3 {
+            background-image: url(img/bg3.jpg);
+            background-size: 100%;
+        }
+
+        .page3 .txt {
+            height: 190px;
+            width: 565px;
+            text-align: center;
+            position: absolute;
+            top: calc(50% - 85px);
+            left: calc(50% - 282.5px);
+        }
+
+        .page3 .txt p:first-child {
+            font-size: 33px;
+            color: #ffffff;
+        }
+
+        .page3 .txt p:last-child {
+            font-size: 13px;
+            color: #ffffff;
+            margin-top: 33px;
+        }
+
+        /*第四页*/
+
+        .page4 {
+            background-image: url(img/bg4.jpg);
+            background-size: 100%;
+        }
+
+        .page4 .txt {
+            height: 238px;
+            width: 410px;
+            color: #fff;
+            position: absolute;
+            left: 106px;
+            bottom: 130px;
+        }
+
+        .page4 .txt p:first-child {
+            font-size: 35px;
+            margin-bottom: 33px;
+        }
+
+        .page4 .txt span {
+            font-size: 14px;
+        }
+
+        /*第五页*/
+
+        .page5 {
+            background-image: url(img/bg5.jpg);
+            background-size: 100%;
+        }
+
+        .page5 .txt {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .page5 .txt div {
+            box-sizing: border-box;
+            width: 33.33vw;
+            height: 50vh;
+            border: solid 1px #b3bac3;
+            text-align: center;
+            color: #e5ffff;
+        }
+
+        .page5 .txt div span {
+            display: inline-block;
+            height: 96px;
+            width: 16.67vw;
+            margin-top: 20px;
+            background-image: url(img/icons.png);
+            background-repeat: no-repeat;
+        }
+
+        .page5 .txt div p:nth-of-type(1) {
+            font-size: 29px;
+            margin-top: 17px;
+            margin-bottom: 23px;
+        }
+
+        .page5 .txt div .p {
+            font-size: 14px;
+            margin-top: 13px;
+        }
+
+        .page5 .txt .d1 span {
+            background-position: 0 -41px;
+        }
+
+        .page5 .txt .d2 span {
+            background-position: 0 -136px;
+        }
+
+        .page5 .txt .d3 span {
+            background-position: 0 -234px;
+        }
+
+        .page5 .txt .d4 span {
+            background-position: 0 -340px;
+        }
+
+        .page5 .txt .d5 span {
+            background-position: 0 -414px;
+        }
+
+        .page5 .txt .d6 span {
+            background-position: 0 -512px;
+        }
+
+        /*第六页*/
+
+        .page6 {
+            background-image: url(img/bg6.jpg);
+            background-size: 100%;
+        }
+
+        .page6 .txt {
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            bottom: 102px;
+            left: 106px;
+            color: #ffffff;
+        }
+
+        .page6 .txt p:nth-of-type(1) {
+            font-size: 36px;
+        }
+
+        .page6 .txt .pro {
+            font-size: 15px;
+            line-height: 150%;
+        }
+
+        .page6 .txt .intro {
+            height: 54px;
+            width: 400px;
+            text-align: center;
+            margin-left: -40px;
+            margin-top: 26px;
+        }
+
+        .page6 .txt .intro span {
+            display: inline-block;
+            height: 54px;
+            width: 128px;
+            border-right: solid 1px #ffffff;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .page6 .txt .intro span:last-child {
+            border-right: none;
+        }
+
+        /*第七页*/
+
+        .page7 {
+            background-image: url(img/bg7_1.jpg);
+            background-size: 100%;
+        }
+
+        .page7 .txt {
+            height: 540px;
+            width: 648px;
+            position: absolute;
+            top: 69px;
+            right: 0px;
+            color: #ffffff;
+        }
+
+        .page7 .txt p:nth-of-type(1) {
+            font-size: 34px;
+        }
+
+        .page7 .txt .pro {
+            font-size: 15px;
+        }
+
+        .page7 .txt .intro {
+            height: 40px;
+            width: 200px;
+            margin-top: 34px;
+            font-size: 30px;
+        }
+
+        .page7 .txt .intro span:nth-of-type(2) {
+            margin: 0 30px;
+        }
+
+        .page8 {
+            background-image: url(img/bg8.jpg);
+            background-size: 100%;
+        }
+
+        .page8 .txt {
+            height: 300px;
+            width: 430px;
+            position: absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 215px);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .page8 .txt p:nth-of-type(1) {
+            font-size: 33px;
+        }
+
+        .page8 .txt p:nth-of-type(2) {
+            font-size: 14px;
+            margin-top: 34px;
+            line-height: 150%;
+        }
+
+        .page8 .txt .intro {
+            height: 60px;
+            width: 232px;
+            border: solid 1px #fff;
+            margin-left: 99px;
+            margin-top: 36px;
+        }
+
+        .page8 .txt .intro .order {
+            height: 42px;
+            width: 232px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .page8 .txt .intro .order span {
+            display: inline-block;
+            height: 40px;
+            width: 100px;
+            font-size: 14px;
+        }
+
+        .page8 .txt .intro .order span:first-child {
+            border-right: solid 1px #fff;
+            padding-right: 10px;
+        }
+
+        .page8 .txt .intro .order span:last-child {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body class="loading">
+<div class="main" id="main">
+    <div class="page page1">
+        <div class="txt">
+            <p>小米Note 2 双曲面商务旗舰</p>
+            <p>一面科技，一面艺术</p>
+            <p>5.7" 双曲面柔性屏，正反面 3D 曲面玻璃 / 2256万超高像素相机<br> 骁龙821 性能版，可选 6GB + 128GB </p>
+            <p>64GB 2799元 | 128GB 3299元</p>
+        </div>
+    </div>
+    <div class="page page2">
+
+        <div class="left">
+            <div class="text">
+                <p>就像经典的冰山理论，</p>
+                <p>第一眼看到的美，</p>
+                <p>只是全部创作的 1/8。</p>
+                <p>美的一面，是因为另一面了不起的探索：</p>
+                <p>小米Note 2 艺术品般的双曲面，背后是创新的柔性屏科技。</p>
+                <p>更强大的性能，则来自于更快的处理器、更快的存储、</p>
+                <p>更高像素的相机，以及对黑科技的不断探索。</p>
+                <p>创新的科技与艺术品般的工艺，</p>
+                <p>这就是我们为你打造的高端商务旗舰手机 。</p>
+                <p>小米Note 2 , 一面科技，一面艺术。 </p>
+            </div>
+            <div class="plays">
+                <div class="btn"></div>
+                <p>播放《梁朝伟 冰山理论》</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="plays">
+                <div class="btn"></div>
+                <p>播放《小米Note 2 工艺》</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="page page3">
+        <div class="txt">
+            <p>艺术品般的双曲面<br> 背后是创新的柔性屏科技
+            </p>
+            <p>双曲面的美，源自对屏幕科技的不断探索。小米Note 2 采用 OLED 柔性屏，<br> 一块可以弯曲的屏幕*，贴合于艺术品般的曲面玻璃，更高屏占比让纤薄的机身，
+                <br> 拥有更大显示面积。画面仿佛在曲面流动，视觉也得到了更大的延展。 </p>
+
+        </div>
+
+    </div>
+    <div class="page page4">
+        <div class="txt">
+            <p>商务旗舰<br> 黑科技，不仅仅是「快」
+            </p>
+            <span>这依然是小米最快的安卓旗舰*！</span><br>
+            <span>骁龙821 性能版，高性能下再提速 10%。</span> <br>
+            <span>可选 6GB +128GB 高速内存、闪存，进一步提升性能。</span> <br>
+            <span>4070mAh 电池、高精度定位、HD 高清音质，</span><br>
+            <span>小米Note 2 不仅更快，更是方方面面全高端配置。</span>
+        </div>
+
+    </div>
+    <div class="page page5">
+        <div class="txt">
+            <div class="d1">
+                <span></span>
+                <p>骁龙821 性能版</p>
+                <p class="p">最高主频达 2.35GHz ，应用启动速度相比骁龙</p>
+                <p class="p">820 提升10%，游戏、聊天、音乐、购物、阅</p>
+                <p class="p">读等多个应用同时使用，也能快的超乎想象。 </p>
+            </div>
+            <div class="d2">
+                <span></span>
+                <p>骁龙821 性能版</p>
+                <p class="p">最高主频达 2.35GHz ，应用启动速度相比骁龙</p>
+                <p class="p">820 提升10%，游戏、聊天、音乐、购物、阅</p>
+                <p class="p">读等多个应用同时使用，也能快的超乎想象。 </p>
+            </div>
+            <div class="d3">
+                <span></span>
+                <p>骁龙821 性能版</p>
+                <p class="p">最高主频达 2.35GHz ，应用启动速度相比骁龙</p>
+                <p class="p">820 提升10%，游戏、聊天、音乐、购物、阅</p>
+                <p class="p">读等多个应用同时使用，也能快的超乎想象。 </p>
+            </div>
+            <div class="d4">
+                <span></span>
+                <p>骁龙821 性能版</p>
+                <p class="p">最高主频达 2.35GHz ，应用启动速度相比骁龙</p>
+                <p class="p">820 提升10%，游戏、聊天、音乐、购物、阅</p>
+                <p class="p">读等多个应用同时使用，也能快的超乎想象。 </p>
+            </div>
+            <div class="d5">
+                <span></span>
+                <p>骁龙821 性能版</p>
+                <p class="p">最高主频达 2.35GHz ，应用启动速度相比骁龙</p>
+                <p class="p">820 提升10%，游戏、聊天、音乐、购物、阅</p>
+                <p class="p">读等多个应用同时使用，也能快的超乎想象。 </p>
+            </div>
+            <div class="d6">
+                <span></span>
+                <p>骁龙821 性能版</p>
+                <p class="p">最高主频达 2.35GHz ，应用启动速度相比骁龙</p>
+                <p class="p">820 提升10%，游戏、聊天、音乐、购物、阅</p>
+                <p class="p">读等多个应用同时使用，也能快的超乎想象。 </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="page page6">
+        <div class="txt">
+            <p>2256 万超高像素相机<br> 细节多得惊人 </p>
+            <p class="pro" style=" margin-top: 34px;">主相机多达 1.7 倍的像素数*，带来震撼人心的照片细节。</p>
+            <p class="pro"> 高像素为照片提供了超高分辨率，放大看，依然清晰。</p>
+            <p class="pro"> 强大的相机性能，甚至能为 4K 影片进行硬件级防抖。</p>
+            <p class="pro"> 前置相机首次支持自动对焦*，自拍美得有细节，合影人人都清晰。 </p>
+            <div class="intro">
+                <span> <p style="font-size:17px">IMX318</p> 超高像素</span>
+                <span> <p style="font-size:17px">IMX318</p> 超高像素</span>
+                <span> <p style="font-size:17px">IMX318</p> 超高像素</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="page page7">
+        <div class="txt">
+            <p>4G+ 全球版<br>小米Note 2 走遍全球</p>
+            <p class="pro" style="margin-top:34px">游览整个世界的美景，或准备去地球另一端开下一个</p>
+            <p class="pro">会议，带上小米Note 2 全球版 想去哪里都可以。对通讯</p>
+            <p class="pro">科技进一步的探索，使小米Note 2 支持全球主流频</p>
+            <p class="pro">段。6 模 37 频，意味着你在世界各地，都能使用</p>
+            <p class="pro">当地高速 4G 网络*。 </p>
+            <div class="intro">
+                <span>6 <span style="font-size:15px">模</span></span>
+                <span>|</span>
+                <span>37<span style="font-size:15px">频</span></span>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="page page8">
+        <div class="txt">
+            <p>亮黑与冰川银</p>
+            <p>一面光明，一面夜晚的亮黑色，<br> 黑得深邃，而光线照时却很明亮，优雅而神秘。
+                <br> 一面天空，一面大海的银色，
+                <br> 安静得像大海，光线流转时却像天空。
+                <br> 玻璃的材质，却拥有金属光泽，如梦如幻。
+            </p>
+            <div class="intro">
+                <div class="order">
+                    <span>64GB 2799元<br>立即预约</span>
+                    <span>64GB 2799元<br>立即预约</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        var $window = $(window);
+        var $wh = $window.height();
+        var $body = $('body');
+        var $main = $('.main');
+        var $responsiveImg = $('.responsiveImg');
+        var $responsiveFallback = false;
+
+        //页面加载时判断是否需要更换图片
+        if ($wh < 790) {
+            responsiveFn1();
+        }
+
+        //浏览器检测，判断是否为高级浏览器
+        if (Modernizr.cssanimations) {
+            $responsiveFallback = false;
+        } else {
+            $responsiveFallback = true;
+        }
+
+        //onepage_scroll方法
+        $main.onepage_scroll({
+            sectionContainer: '.page',
+            responsiveFallback: $responsiveFallback
+        });
+
+        //窗口改变大小切换不同的图片
+        $window.resizeEnd({
+            delay: 500
+        }, function () {
+            var $wh = $window.height();
+            if ($wh < 790) {
+                responsiveFn1();
+            } else {
+                responsiveFn2();
+            }
+        });
+
+        function responsiveFn1() {
+            $body.addClass('responsive-height-lt790')
+            $responsiveImg.each(function () {
+                var $dateSmall = $(this).attr('date-small');
+                $(this).attr('src', $dateSmall);
+            });
+        }
+
+        function responsiveFn2() {
+            $body.removeClass('responsive-height-lt790')
+            $responsiveImg.each(function () {
+                var $dateBig = $(this).attr('date-big');
+                $(this).attr('src', $dateBig);
+            });
+        }
+
+        $('a').click(function () {
+            return false;
+        });
+    });
+
+    //页面加载时的 Loading 效果
+    $(window).load(function () {
+        window.setTimeout(function () {
+            $('body').removeClass('loading');
+        }, 100);
+    });
+</script>
+</body>
+
+</html>

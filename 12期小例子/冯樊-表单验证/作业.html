@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main{
+            width: 700px;
+            margin: 0 auto;
+            /*background-color: red;*/
+        }
+        form{
+
+            width: 420px;
+            text-align: right;
+            margin: 0 auto;
+        }
+          label{
+              margin:15px;
+          }
+         input{
+             margin:15px;
+             width: 200px;
+             height: 20px;
+         }
+        span{
+            width: 10px;
+            height: 10px;
+            color: green;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <script src="jquery-3.1.0.js"></script>
+<form action="">
+    <label for="name">用户名:</label>
+    <input type="text" id="name" placeholder="6-16位英文数字组合，首位为字母"><span>√</span>
+    <br>
+    <label for="password">请输入密码:</label>
+    <input type="password" id="password" placeholder="6-20位英文数字组合"><span>√</span>
+    <br>
+    <label for="passwords">请再次输入密码:</label>
+    <input type="password" id="passwords" placeholder="请和密码保持一致"><span>√</span>
+    <br>
+    <label for="phone">手机号码:</label>
+    <input type="password" id="phone" placeholder="请输入手机号"><span>√</span>
+    <br>
+    <label for="qq">QQ号码:</label>
+    <input type="password" id="qq" placeholder="请输入QQ号码"><span>√</span>
+    <br>
+
+    
+</form>
+</main>
+</body>
+</html>
+<script>
+
+    $(function () {
+        var re1 = /^([a-z]|[A-Z])\w{5,15}$/;
+        var re2 = /^\w{6,20}$/;
+        var re3 = /^[0]?[1][0-9]{10}$/;
+        var re4 = /^[1-9]\d{4,11}$/;
+
+
+        $('#name').change(function () {
+//            test方法  正则.test('str')
+            if(re1.test($(this).val())){
+                $(this).next().css('visibility','visible')
+//                if(){}else if(){}else{}
+            }else{
+                alert('帐号格式不正确，首字必须为字母，且长度为6-20');
+                $(this).next().css('visibility','hidden');
+            }
+        });
+        $('#password').change(function () {
+            if(re2.test($(this).val())){
+                $(this).next().css('visibility','visible')
+            }else {
+                alert('密码长度为6-20位');
+                $(this).next().css('visibility','hidden')
+            }
+        });
+        $('#passwords').change(function () {
+            if($('#password').val() == $('#passwords').val()){
+                $(this).next().css('visibility','visible');
+
+            }else{
+                alert('两次密码输入不一致');
+                $(this).next().css('visibility','hidden')
+            }
+        })
+        $('#phone').change(function () {
+            if(re3.test($(this).val())){
+                $(this).next().css('visibility','visible')
+            }else{
+                alert('请输入正确的手机号码');
+                $(this).next().css('visibility','hidden')
+            }
+        });
+        $('#qq').change(function () {
+            if(re4.test($(this).val())){
+                $(this).next().css('visibility','visible')
+            }else{
+                alert('QQ格式不正确');
+                $(this).next().css('visibility','hidden')
+            }
+        })
+
+
+
+    })
+</script>

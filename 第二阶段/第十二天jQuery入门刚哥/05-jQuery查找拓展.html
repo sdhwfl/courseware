@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>jQuery拓展查找</title>
+        <style>
+            
+        </style>
+        <script src="jquery-2.0.3.js"></script>
+    </head>
+    <body>
+        <div>
+            <ul class="web">
+                <li>Web入门</li>
+                <li name="html">HTML5</li>
+                <li id="css">CSS3</li>
+                <li class="js">JavaScript</li>
+                <li class="js jquery">jQuery</li>
+            </ul>
+        </div>
+        
+        <p>paragraph</p>
+        <h1>title</h1>
+        <script>
+            // 当我们使用jQuery快速定位了一个元素之后，可能会以这个元素为基准，向周边进行查找或者过滤等进一步的操作.
+            // 1、常见的就是在某一个元素（节点）的所有子元素（节点）中进行二次查找，可以使用find(),从上往下查找。
+            // var ulObj = $('ul.web');
+            // // 在ul中查找class是js的元素
+            // var classObjs = ulObj.find('.js');//JavaScript/jQuery
+            // console.log(classObjs);
+            // var idObj = ulObj.find('#css');//CSS3
+            // console.log(idObj);
+            // var nameObj = ulObj.find('[name=html]');//HTML5
+            // console.log(nameObj);
+
+            // 2、假如想从下往上查找，可以使用parent()。
+            // var idObj = $('#css');//CSS3
+            // var parent = idObj.parent();//上层节点，ul
+            // console.log(parent);
+
+            // 3、在同级中查找元素，prev()、next()
+            var idObj = $('#css');//CSS3
+            var prevObj = idObj.prev();//查找css前面的元素
+            console.log(prevObj);
+            var nextObj = idObj.next();//查找css后面的元素
+            console.log(nextObj);
+        </script>
+    </body>
+</html>

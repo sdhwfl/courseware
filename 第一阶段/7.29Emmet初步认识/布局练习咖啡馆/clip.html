@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>咖啡图片裁剪</title>
+    <style>
+        section {
+            height: 283px;
+            width: 423px;
+            margin: 30px auto;
+            background-color: pink;
+            background-image: url(images/cappuccino.jpg);
+            background-repeat: no-repeat;
+            /*rect四个参数
+            第一个值：上方切掉的范围
+            第二个值：从左到右保留的范围
+            第三个值：从上到下保留的范围
+            第四个值：左侧切掉的范围*/
+            /*上 右 下 左*/
+            clip: rect(60px, 200px, 200px, 0px);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>显示和隐藏弹窗</title>
+		<script src="js/jquery-2.0.3.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<style type="text/css">
+			
+		</style>
+	</head>
+
+	<body>
+		<!--弹出层-->
+		<div class="popup popup1">
+			<div class="pop-close"><div>×</div></div>
+			<div class="pop-title"><div>提示信息</div></div>
+			<div class="pop-content">登录失败</div>
+		</div>
+		
+		
+		<!--弹出层2-->
+		<div class="popup popup2">
+			<div class="pop-close"><div>×</div></div>
+			<div class="pop-title"><div>提示信息</div></div>
+			<div class="pop-content">登录失败</div>
+		</div>
+	
+		
+		<!--弹出层3-->
+		<div class="popup popup3">
+			<div class="pop-close"><div>×</div></div>
+			<div class="pop-title"><div>提示信息</div></div>
+			<div class="pop-content">登录失败</div>
+		</div>
+		
+			<!--遮罩层-->
+		<!--<div class="mask"></div>-->
+		<div class="mask"></div>
+		<a href="javascript:;">弹出窗1</a>
+		<a href="javascript:;">弹出窗2</a>
+		<a href="javascript:;">弹出窗3</a>
+		<script type="text/javascript">
+			//全部隐藏
+			$('.popup,.mask').hide();
+			//点击事件
+			$('a:eq(0)').click(function() {
+				//显示一个层
+				$('.popup1,.mask').fadeIn();
+			})
+			
+			
+			//全部隐藏
+			$('.popup1,.mask').hide();
+			//点击事件
+			$('a:eq(1)').click(function() {
+				//显示一个层
+				$('.popup2,.mask:eq(0)').fadeIn();
+			})
+			
+			
+			
+			$('.popup2,.mask').hide();
+			//点击事件
+			$('a:eq(2)').click(function() {
+				//显示一个层
+				$('.popup3,.mask:eq(0)').fadeIn();
+			})
+			$('.pop-close').click(function() {
+				$(this).parents('.popup').fadeOut();
+				$('.mask').fadeOut();
+			})
+		</script>
+	</body>
+
+</html>

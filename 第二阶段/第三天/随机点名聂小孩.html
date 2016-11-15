@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>随机点名</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var callArray = ["聂保恩", "张亚风", "付泉", "黄成宏", "康希", "晏敬文", "鲍冲", "陈彩虹", "陈帅", "程宇", "董浩星","冯文秀","符旺旺","李建防","刘建军","刘强","刘晓伟","刘祎","卢鹏程","罗晓琪","罗雪峰","买文博","乔战成","乔仕行","邵要强","宋典花","孙博洋","孙诗咏","谭娇娇","王龙飞","王路坦","王泰星","王源鸿","王志超","杨帅","张鹏真","张苒","张晓莹","张旭东","张亚林","胡笑笑"];
+			
+			var timer = null;
+
+			function start() {
+				var txt = document.getElementById('txt');
+				var start = document.getElementById('start');
+				clearInterval(timer);
+				timer = setInterval(function() {
+					var random = Math.floor(Math.random() * 41);
+					txt.value = callArray[random];
+				}, 50);
+			}
+                 
+			function stop() {
+				clearInterval(timer);
+			}
+		</script>
+		<input type="button" name="call" id="start" value="开始点名" onclick="start()" />
+		<input type="text" name="" id="txt" value="" />
+		<input type="button" name="stop" id="stop" value="暂停" onclick="stop()" />
+	</body>
+
+</html>

@@ -1,0 +1,32 @@
+﻿Express怎么处理静态文件请求？
+express可以指定一个静态目录
+express.static（‘静态目录名’）
+可以直接通过静态文件的地址就可以访问的静态文件
+Express中使用什么模块可以获得POST数据？
+body-parser模块 
+multer 模块
+Express中怎么从URL的path中获得参数？
+req.path 获取路径
+
+//补充
+req.ip 获取ip
+req.method 获取提交方式
+
+Express中怎么从URL的QueryString中获得参数？
+通过express包里面的
+get请求
+req.query  获取参数对象
+req.query.name 获取一个参数
+post请求
+req.body
+npm是什么？npm init命令的作用是什么？
+npm是node js包管理器 nodeJs package manager
+npm init生成一个项目配置文件
+npm init安装package.json包
+
+
+1. 域名的正则
+2. 网页计数器
+3. 弹出的页面（静态页）
+4. 画图简述从在浏览器输入域名到显示出来页面的过程
+5. 画图简述从用户点击按钮到无刷新显示页面（ajax发生的过程）

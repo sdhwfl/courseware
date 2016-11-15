@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="尹学江">
+    <title>画图</title>
+    
+</head>
+
+<body>
+</body>
+<!-- <script src="calc.js"></script> -->
+<script src="point.js"></script>
+<script src="rectangle.js"></script>
+<script src="line.js"></script>
+<script type="text/javascript">
+    
+    // 调point(), 返回一个点坐标
+    var point1 = new Point(100, 100);
+    console.log(point1);
+    // 显示点
+    // point1.x = 600;
+    point1.color = 'blue';
+    point1.radius = 10;
+    point1.show();
+    // console.log(point1.color)
+
+
+    var point2 = new Point(600, 300, 'green');
+    point2.radius = 20;
+    point2.width = 5;
+
+    // 显示圆
+    point2.showCicle();
+    // showCicle( point2, 'green', 20 ,5 );
+
+    // 创建一个矩形对象
+    var rectangle1 = new Rectangle(point1, point2, 'black', 5);
+    // 在页面中显示
+    rectangle1.show();
+
+    //  显示一条线
+
+    var point3 = new Point(500, 200);
+    var line1 = new Line(point1, point2, '#a10281', 5);
+    // line1.show();
+    // line1.p2 = new Point(600, 500);
+    line1.show();
+    var line2 = new Line(point1, point3, 'red', 5);
+    line2.size = 8;
+    line2.color = 'grey';
+    line2.show();
+    // //想改变一下他的颜色，粗细 ...
+</script>
+</html>

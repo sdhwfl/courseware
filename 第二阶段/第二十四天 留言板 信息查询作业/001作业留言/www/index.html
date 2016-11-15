@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>留言系统</title>
+  <meta charset="utf-8">
+  <meta name="Keywords " content="$SiteKeywords " />
+  <meta name="Description " content="$SiteDescription " />
+  <link rel="stylesheet " type="text/css " href="css/globle.css " />
+  <link rel="stylesheet " type="text/css " href="css/style.css " />
+  <script src='js/jquery-2.0.3.js'></script>
+  <!--<script src='js/index.js'></script>-->
+</head>
+
+<body>
+  <main class="main">
+    <ul class="message-add clearfix">
+      <li>
+        <label>标题：</label>
+        <!-- required 必须填写内容-->
+        <!-- pattern -->
+        <input type="text" class="input-text" name="title" required>
+      </li>
+      <li>
+        <label>内容：</label>
+        <textarea class="textarea"></textarea>
+      </li>
+      <li>
+        <label>&nbsp;</label>
+        <input class="submit-btn" type="submit" value="提交留言">
+      </li>
+    </ul>
+    <ul class="message-list clearfix">     
+      <li>
+        <h2>全球最大的中文搜索引擎、最大的中文网站</h2>
+        <p class="pinfo"><span class="span-ip">ip地址：192.168.3.185</span>
+          <span class="span-time">发布时间：2016-09-29</span></p>
+        <p class="pcontent">百度拥</p>
+      </li>
+    </ul>    
+  </main>
+  <script>
+    $(function() {
+  // 加载留言
+  function loadMessages() {
+    // ajax
+    $.get('/loadMessages', function(resText, statusText, xhr) {
+      if (statusText == 'success') {
+        var messagesObj = JSON.parse('[' + resText + ']');
+        console.log(messagesObj);
+        $('.message-list').html("");
+        var ip1 = "::ffff:192.168.3.241";
+        // 处理ip
+        function formatIp(ip) {
+          if (ip.slice(0, 7) == ("::ffff:")) {
+            return ip.slice(7)
+          }
+          if (ip == "::1") {
+            return '192.168.1.1';
+          }
+        }
+        // 处理时间
+        function formatTime(time) {
+          var now = new Date(time);
+          var year = now.getFullYear();
+          var month = now.getMonth() + 1;
+          var day = now.getDate();
+          month = month < 10 ? "0" + month : month;
+          day = day < 10 ? "0" + day : day;
+          return year + '-' + month + "-" +day;
+        }
+
+        formatIp(ip1);
+        console.log(formatIp(ip1))
+          // 对信息处理
+        messagesObj.forEach(function(element, index) {
+          var li = "<li>" + "  <h2>" + element.title + "</h2>" + "  <p class=\"pinfo\"><span class=\"span-ip\">ip地址：" + formatIp(element.ip) + "</span>" + "  <span class=\"span-time\">发布时间：" + formatTime( element.time ) + "</span></p>" + "  <p class=\"pcontent\">" + element.content + "</p>" + "</li>";
+          $('.message-list').append(li);
+        });
+      }
+    });
+  }
+  loadMessages();
+
+  // 增加留言
+  $(".submit-btn").click(function() {
+    // console.log(111)
+    // 标题值
+    var title = $('input[name="title"]').val();
+    // 留言内容
+    var content = $('textarea').val();
+    // 如果对象属性名等于属性值变量的名字可以省略 值
+    $.post('/addMessage', { title, content }, function(resText, statusText, xhr) {
+      if (statusText == "success") {
+        if (resText == "ok") {
+          // 加载留言
+          loadMessages();
+        }
+      }
+    });
+  });
+});
+
+  </script>
+</body>
+
+</html>

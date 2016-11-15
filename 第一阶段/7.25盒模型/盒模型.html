@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="宋典花">
+    <title>盒模型</title>
+    <style>
+        h1 {
+            width: 300px;
+            border-bottom: 1px solid red;
+            /*内边距*/
+            /*padding 上 右 下 左 四个值，用来控制内容和边框之间的距离*/
+            /*假如设置 上 右 下，第四个值默认采用第二个值*/
+            /*第一个和第三个一对 第二个和第四个一对*/
+            /*padding: 50px 30px 40px  */
+            /*默认padding: 50px 30px 40px  30px*/
+            /*假如设置 上 右 */
+            /*padding: 30px 50px*/
+            /*默认padding: 30px 50px 30px 50px*/
+            /*除了统一设置也可以单独设置*/
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+        
+        hr {
+            width: 300px;
+            color: blue;
+        }
+        
+        section {
+            margin: 0 auto;
+            /*设置内容区域大小*/
+            width: 300px;
+            height: 300px;
+            /*border: 20px solid pink;*/
+            /*不要边框 border: none;*/
+            /*border-width: 20px;
+            border-style: dotted;*/
+            /*dotted:虚线比较圆 方正
+            dashed：虚线 趋向于长条
+            */
+            /*double:双实线*/
+            /*border-color: hotpink;*/
+            /*可以设置各个方向的边框*/
+            /*border-image: 实现自定义边框*/
+            /*border-radius: 边框圆角 50%正圆*/
+            border-radius: 50%;
+            border-top: 15px solid red;
+            border-right: 15px dotted blue;
+            border-bottom: 15px dashed yellow;
+            border-left: 15px double pink;
+            /*外边距主要控制元素位置*/
+            /*设置外边距的顺序按照顺时针的方向*/
+            margin: 10px 20px 30px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--内边距：内容距离边框的距离-->
+    <!--外边距：内容距离body的距离 主要用于定位-->
+    <h1>盒模型标题</h1>
+
+    <hr>
+    <section>
+        内容
+    </section>
+</body>
+
+</html>

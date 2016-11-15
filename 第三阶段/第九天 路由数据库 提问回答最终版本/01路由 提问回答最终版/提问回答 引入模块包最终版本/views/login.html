@@ -1,0 +1,33 @@
+{{include "share/header"}}
+		<div class="h50"></div>
+		<div id="nav">
+
+			<nav class="nav">
+
+				<div class="back">
+					<span class="glyphicon glyphicon-chevron-left">
+					</span>
+				</div>
+				<div class="title">登录</div>
+				<div class="user">
+					<span class="glyphicon glyphicon-home"></span>&#x3000;
+
+				</div>
+			</nav>
+		</div>
+
+		<main>
+			<div class="ask-content">
+				<form action="/login" method="get">
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" required pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}$" placeholder="请输入昵称">
+					</div>
+					<div class="form-group">
+						<input type="password" name="password" class="form-control" required pattern="^.{6,16}$" placeholder="请输入密码">
+					</div>
+
+					<input type="submit" class="btn btn-success form-control" value="登录" data-toggle="modal" data-target="#myModal">
+				</form>
+			</div>
+		</main>
+{{include "share/footer"}}
